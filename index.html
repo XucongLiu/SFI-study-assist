@@ -558,6 +558,12 @@
       background: #111;
     }
 
+    .voice-status {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .compare {
       display: grid;
       grid-template-columns: 160px minmax(0, 0.95fr) minmax(320px, 1.05fr);
@@ -683,6 +689,7 @@
           <a class="btn" href="#flashcards">Practice Words</a>
           <a class="btn" href="#pages">View Scans</a>
         </div>
+        <div class="voice-status" id="voiceStatus">Voice: Azure AI Speech when configured, browser voice as fallback.</div>
       </div>
       <div class="scan-preview" aria-label="Scanned worksheet preview">
         <img src="assets/sfi-week1-pages/page-01.jpg" alt="Cover page of the Swedish alphabet worksheet" />
@@ -1007,8 +1014,9 @@
     let quizIndex = 0;
     let score = 0;
     let answered = 0;
+    const audioCache = new Map();
 
-    function speak(text, rate = 0.86) {
+    function browserSpeak(text, rate = 0.86) {
       if (!("speechSynthesis" in window)) return;
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
@@ -1018,6 +1026,37 @@
       const swedishVoice = voices.find(voice => voice.lang && voice.lang.toLowerCase().startsWith("sv"));
       if (swedishVoice) utterance.voice = swedishVoice;
       window.speechSynthesis.speak(utterance);
+    }
+
+    function setVoiceStatus(message) {
+      const status = document.querySelector("#voiceStatus");
+      if (status) status.textContent = message;
+    }
+
+    async function speak(text, rate = 0.86) {
+      const slow = rate < 0.75;
+      const cacheKey = `${slow ? "slow" : "normal"}:${text}`;
+      try {
+        let audioUrl = audioCache.get(cacheKey);
+        if (!audioUrl) {
+          const response = await fetch("/api/tts", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ text, slow })
+          });
+          if (!response.ok) throw new Error(`Azure TTS unavailable: ${response.status}`);
+          const audioBlob = await response.blob();
+          audioUrl = URL.createObjectURL(audioBlob);
+          audioCache.set(cacheKey, audioUrl);
+        }
+        const audio = new Audio(audioUrl);
+        await audio.play();
+        setVoiceStatus("Voice: Azure AI Speech");
+      } catch (error) {
+        console.warn(error);
+        setVoiceStatus("Voice: browser fallback. Configure Azure Speech in Cloudflare for AI voice.");
+        browserSpeak(text, rate);
+      }
     }
 
     function shuffle(array) {
