@@ -1,4 +1,8 @@
 const DEFAULT_VOICE = "sv-SE-SofieNeural";
+const ALLOWED_VOICES = new Set([
+  "sv-SE-SofieNeural",
+  "sv-SE-MattiasNeural"
+]);
 
 function escapeXml(value) {
   return String(value)
@@ -23,7 +27,6 @@ export async function onRequestPost(context) {
   const { request, env } = context;
   const key = env.AZURE_SPEECH_KEY;
   const region = env.AZURE_SPEECH_REGION;
-  const voice = env.AZURE_SPEECH_VOICE || DEFAULT_VOICE;
 
   if (!key || !region) {
     return jsonResponse({ error: "Azure Speech is not configured. Set AZURE_SPEECH_KEY and AZURE_SPEECH_REGION in Cloudflare Pages." }, 500);
@@ -40,6 +43,8 @@ export async function onRequestPost(context) {
   if (!text) return jsonResponse({ error: "Missing text." }, 400);
   if (text.length > 500) return jsonResponse({ error: "Text is too long for this study helper." }, 400);
 
+  const requestedVoice = String(payload?.voice || env.AZURE_SPEECH_VOICE || DEFAULT_VOICE);
+  const voice = ALLOWED_VOICES.has(requestedVoice) ? requestedVoice : DEFAULT_VOICE;
   const rate = payload?.slow ? "-20%" : "0%";
   const ssml = `<?xml version="1.0" encoding="UTF-8"?>
 <speak version="1.0" xml:lang="sv-SE" xmlns="http://www.w3.org/2001/10/synthesis">

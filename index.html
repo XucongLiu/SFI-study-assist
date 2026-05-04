@@ -564,6 +564,28 @@
       font-size: 14px;
     }
 
+    .voice-control {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .voice-control label {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .voice-control select {
+      min-height: 40px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+    }
+
     .compare {
       display: grid;
       grid-template-columns: 160px minmax(0, 0.95fr) minmax(320px, 1.05fr);
@@ -688,6 +710,13 @@
           <button class="btn primary" type="button" data-say="Det svenska alfabetet har tjugonio bokstäver.">▶ Hear Swedish</button>
           <a class="btn" href="#flashcards">Practice Words</a>
           <a class="btn" href="#pages">View Scans</a>
+        </div>
+        <div class="voice-control">
+          <label for="voiceSelect">Swedish voice</label>
+          <select id="voiceSelect">
+            <option value="sv-SE-SofieNeural">Sofie</option>
+            <option value="sv-SE-MattiasNeural">Mattias</option>
+          </select>
         </div>
         <div class="voice-status" id="voiceStatus">Voice: Azure AI Speech when configured, browser voice as fallback.</div>
       </div>
@@ -1015,6 +1044,10 @@
     let score = 0;
     let answered = 0;
     const audioCache = new Map();
+    const voiceNames = {
+      "sv-SE-SofieNeural": "Sofie",
+      "sv-SE-MattiasNeural": "Mattias"
+    };
 
     function browserSpeak(text, rate = 0.86) {
       if (!("speechSynthesis" in window)) return;
@@ -1033,16 +1066,22 @@
       if (status) status.textContent = message;
     }
 
+    function selectedVoice() {
+      const select = document.querySelector("#voiceSelect");
+      return select ? select.value : "sv-SE-SofieNeural";
+    }
+
     async function speak(text, rate = 0.86) {
       const slow = rate < 0.75;
-      const cacheKey = `${slow ? "slow" : "normal"}:${text}`;
+      const voice = selectedVoice();
+      const cacheKey = `${voice}:${slow ? "slow" : "normal"}:${text}`;
       try {
         let audioUrl = audioCache.get(cacheKey);
         if (!audioUrl) {
           const response = await fetch("/api/tts", {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ text, slow })
+            body: JSON.stringify({ text, slow, voice })
           });
           if (!response.ok) throw new Error(`Azure TTS unavailable: ${response.status}`);
           const audioBlob = await response.blob();
@@ -1051,7 +1090,7 @@
         }
         const audio = new Audio(audioUrl);
         await audio.play();
-        setVoiceStatus("Voice: Azure AI Speech");
+        setVoiceStatus(`Voice: Azure AI Speech - ${voiceNames[voice] || voice}`);
       } catch (error) {
         console.warn(error);
         setVoiceStatus("Voice: browser fallback. Configure Azure Speech in Cloudflare for AI voice.");
@@ -1311,8 +1350,17 @@
       document.querySelector("#videoDock").classList.remove("open");
       document.querySelector("#videoFrame").src = "";
     });
+    document.querySelector("#voiceSelect").addEventListener("change", () => {
+      const voice = selectedVoice();
+      localStorage.setItem("sfi-week1-voice", voice);
+      setVoiceStatus(`Voice selected: ${voiceNames[voice] || voice}`);
+    });
 
     flashPool = shuffle(flashPool);
+    const savedVoice = localStorage.getItem("sfi-week1-voice");
+    if (savedVoice && voiceNames[savedVoice]) {
+      document.querySelector("#voiceSelect").value = savedVoice;
+    }
     renderAlphabet();
     renderVowels();
     setFlash(0);
