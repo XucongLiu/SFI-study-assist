@@ -1,0 +1,1292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>SFI Week 1 - Swedish Alphabet and Vowels</title>
+  <style>
+    :root {
+      --ink: #1f2328;
+      --muted: #687076;
+      --paper: #fffdf8;
+      --line: #d7d0c2;
+      --blue: #2f6f93;
+      --green: #2f7d62;
+      --red: #a94e44;
+      --gold: #b47b26;
+      --soft-blue: #e8f1f6;
+      --soft-green: #e9f4ee;
+      --soft-gold: #f6eedf;
+      --soft-red: #f7e9e6;
+      --shadow: 0 18px 45px rgba(31, 35, 40, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #eef5f2 0, #fffdf8 360px);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.45;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      overflow-x: auto;
+      padding: 10px 18px;
+      border-bottom: 1px solid rgba(31, 35, 40, 0.1);
+      background: rgba(255, 253, 248, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar a {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border-radius: 999px;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .topbar a:hover,
+    .topbar a:focus {
+      background: var(--soft-blue);
+      outline: none;
+    }
+
+    header {
+      min-height: 64vh;
+      display: grid;
+      align-items: center;
+      padding: 52px 22px 48px;
+    }
+
+    .hero {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: clamp(44px, 8vw, 92px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 0 22px;
+      color: #384047;
+      font-size: clamp(18px, 2vw, 23px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: #fff;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 1px 0 rgba(31, 35, 40, 0.05);
+    }
+
+    .btn.primary {
+      border-color: var(--green);
+      color: #fff;
+      background: var(--green);
+    }
+
+    .btn:hover,
+    .btn:focus {
+      outline: 3px solid rgba(47, 111, 147, 0.18);
+    }
+
+    .scan-preview {
+      overflow: hidden;
+      border: 1px solid rgba(31, 35, 40, 0.14);
+      border-radius: 8px;
+      background: white;
+      box-shadow: var(--shadow);
+      transform: rotate(1deg);
+    }
+
+    .scan-preview img {
+      display: block;
+      width: 100%;
+      max-height: 72vh;
+      aspect-ratio: 0.72;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto 80px;
+    }
+
+    section {
+      padding: 34px 0;
+      border-top: 1px solid rgba(31, 35, 40, 0.11);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      letter-spacing: 0;
+    }
+
+    .section-lead {
+      max-width: 760px;
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 28px rgba(31, 35, 40, 0.07);
+    }
+
+    .panel.pad {
+      padding: 18px;
+    }
+
+    .alphabet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
+      gap: 8px;
+    }
+
+    .letter {
+      min-height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .letter[data-kind="hard"] {
+      background: var(--soft-gold);
+      border-color: #dfc28f;
+    }
+
+    .letter[data-kind="soft"] {
+      background: var(--soft-blue);
+      border-color: #bed7e6;
+    }
+
+    .letter:hover,
+    .letter:focus {
+      outline: 3px solid rgba(47, 125, 98, 0.2);
+    }
+
+    .rule-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rule-list li {
+      padding: 12px;
+      border-left: 5px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      background: var(--soft-blue);
+    }
+
+    .rule-list strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .vowel-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tab {
+      min-width: 44px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      border-color: var(--blue);
+      color: white;
+      background: var(--blue);
+    }
+
+    .word-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 9px;
+    }
+
+    .word {
+      min-height: 43px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .word button,
+    .tiny {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      cursor: pointer;
+    }
+
+    .flash-area {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .flashcard {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft-green);
+      text-align: center;
+    }
+
+    .flash-word {
+      margin: 0;
+      font-size: clamp(48px, 8vw, 84px);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .flash-meta {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .quiz-options {
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .quiz-options button {
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .quiz-options button.correct {
+      border-color: var(--green);
+      background: var(--soft-green);
+    }
+
+    .quiz-options button.wrong {
+      border-color: var(--red);
+      background: var(--soft-red);
+    }
+
+    .result {
+      min-height: 28px;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .writing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .writing label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+    }
+
+    .writing input {
+      width: 100%;
+      min-height: 44px;
+      padding: 9px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+    }
+
+    .viewer {
+      display: grid;
+      grid-template-columns: 190px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .thumbs {
+      position: sticky;
+      top: 64px;
+      display: grid;
+      max-height: calc(100vh - 90px);
+      overflow: auto;
+      gap: 8px;
+    }
+
+    .thumbs button {
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .thumbs button.active {
+      border-color: var(--blue);
+      background: var(--soft-blue);
+    }
+
+    .page-frame {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .page-frame img {
+      display: block;
+      width: 100%;
+      max-height: 86vh;
+      object-fit: contain;
+      background: #f6f2ea;
+    }
+
+    .qr-stage {
+      position: relative;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .qr-stage img {
+      width: auto;
+      max-width: 100%;
+    }
+
+    .qr-overlay {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .qr-marker {
+      position: absolute;
+      min-width: 28px;
+      min-height: 28px;
+      border: 2px solid var(--green);
+      border-radius: 6px;
+      background: rgba(47, 125, 98, 0.12);
+      cursor: pointer;
+      pointer-events: auto;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .qr-marker:hover,
+    .qr-marker:focus {
+      outline: 3px solid rgba(47, 125, 98, 0.24);
+      background: rgba(47, 125, 98, 0.24);
+      transform: scale(1.08);
+    }
+
+    .qr-marker[data-kind="unreadable"] {
+      border-color: var(--red);
+      background: rgba(169, 78, 68, 0.14);
+    }
+
+    .qr-summary {
+      margin: 14px 0 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft-green);
+      color: #304038;
+    }
+
+    .video-dock {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      width: min(520px, calc(100vw - 36px));
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: var(--shadow);
+      transform: translateY(calc(100% + 24px));
+      transition: transform 0.2s ease;
+    }
+
+    .video-dock.open {
+      transform: translateY(0);
+    }
+
+    .video-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--soft-blue);
+    }
+
+    .video-head strong {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .video-tools {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+
+    .video-tools a,
+    .video-tools button {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: white;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+      background: #111;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .translation-panel {
+      max-height: 86vh;
+      overflow: auto;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .translation-panel h3 {
+      margin-bottom: 4px;
+    }
+
+    .translation-block {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .translation-block:first-of-type {
+      margin-top: 10px;
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .translation-block h4 {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+
+    .translation-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+      padding: 7px 0;
+      border-top: 1px solid rgba(31, 35, 40, 0.08);
+    }
+
+    .translation-row:first-of-type {
+      border-top: 0;
+    }
+
+    .sv {
+      font-weight: 650;
+    }
+
+    .en {
+      color: #48525a;
+    }
+
+    .note {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .hero,
+      .two,
+      .three,
+      .flash-area,
+      .compare,
+      .viewer {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        min-height: auto;
+      }
+
+      .scan-preview {
+        transform: none;
+      }
+
+      .thumbs {
+        position: static;
+        grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+        max-height: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="topbar" aria-label="Study sections">
+    <a href="#alphabet">Alphabet</a>
+    <a href="#rules">Spelling Rules</a>
+    <a href="#vowels">Vowels</a>
+    <a href="#flashcards">Flashcards</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#writing">Writing</a>
+    <a href="#compare">Translations</a>
+    <a href="#pages">Original Pages</a>
+  </nav>
+
+  <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
+    <div class="video-head">
+      <strong id="videoTitle">QR video</strong>
+      <div class="video-tools">
+        <a id="videoExternal" href="#" target="_blank" rel="noopener noreferrer" title="Open on YouTube">↗</a>
+        <button type="button" id="videoClose" title="Close video">×</button>
+      </div>
+    </div>
+    <iframe class="video-frame" id="videoFrame" title="Embedded YouTube video" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </aside>
+
+  <header>
+    <div class="hero">
+      <div>
+        <h1>SFI Week 1</h1>
+        <p>Swedish alphabet, hard and soft vowels, useful spelling patterns, and the worksheet word lists turned into practice you can hear, repeat, and test.</p>
+        <div class="actions">
+          <button class="btn primary" type="button" data-say="Det svenska alfabetet har tjugonio bokstäver.">▶ Hear Swedish</button>
+          <a class="btn" href="#flashcards">Practice Words</a>
+          <a class="btn" href="#pages">View Scans</a>
+        </div>
+      </div>
+      <div class="scan-preview" aria-label="Scanned worksheet preview">
+        <img src="assets/sfi-week1-pages/page-01.jpg" alt="Cover page of the Swedish alphabet worksheet" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="alphabet">
+      <h2>Alphabet</h2>
+      <p class="section-lead">Swedish has 29 letters. Tap a letter to hear it. The colored vowels are grouped from the worksheet: hard vowels and soft vowels.</p>
+      <div class="grid two">
+        <div class="panel pad">
+          <h3>Letters</h3>
+          <div class="alphabet" id="alphabetGrid"></div>
+        </div>
+        <div class="panel pad">
+          <h3>Vowel Groups</h3>
+          <ul class="rule-list">
+            <li><strong>Hard vowels</strong>A, O, U, Å. These often keep G and K hard: gata, god, kaka, kom.</li>
+            <li><strong>Soft vowels</strong>E, I, Y, Ä, Ö. These often make G and K softer: gör, gift, kyrka, kök.</li>
+            <li><strong>Consonants</strong>B C D F G H J K L M N P Q R S T V W X Z.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="rules">
+      <h2>Spelling Rules</h2>
+      <p class="section-lead">These are the sound patterns from the alphabet pages. Use them as shortcuts when you read new words.</p>
+      <div class="grid three">
+        <div class="panel pad">
+          <h3>G Sounds</h3>
+          <ul class="rule-list">
+            <li><strong>G like hard G</strong>gata, god, Gunilla.</li>
+            <li><strong>G like J</strong>gör, gift, gym, Göteborg.</li>
+          </ul>
+        </div>
+        <div class="panel pad">
+          <h3>K Sounds</h3>
+          <ul class="rule-list">
+            <li><strong>K like hard K</strong>kaka, kom, kan.</li>
+            <li><strong>K like soft tj</strong>kök, kyrka, kär.</li>
+          </ul>
+        </div>
+        <div class="panel pad">
+          <h3>Common Patterns</h3>
+          <ul class="rule-list">
+            <li><strong>sj / sk / stj</strong>sjuk, skjorta, stjärna.</li>
+            <li><strong>ng / rn / rs</strong>sång, barn, först.</li>
+            <li><strong>ck</strong>tack, mycket, kyckling.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="vowels">
+      <h2>Vowels</h2>
+      <p class="section-lead">Choose a vowel, listen to words from the worksheet, then repeat them out loud. The page includes the original scans below if you want the full worksheet view.</p>
+      <div class="panel pad">
+        <div class="vowel-tabs" id="vowelTabs"></div>
+        <div class="word-grid" id="wordGrid"></div>
+      </div>
+    </section>
+
+    <section id="flashcards">
+      <h2>Flashcards</h2>
+      <p class="section-lead">Use this for quick repetition. Say the word yourself, then press the sound button and compare.</p>
+      <div class="flash-area">
+        <div class="flashcard">
+          <div>
+            <p class="flash-word" id="flashWord">hej</p>
+            <div class="flash-meta" id="flashMeta">Press Next to begin</div>
+          </div>
+        </div>
+        <div class="panel pad">
+          <h3>Controls</h3>
+          <div class="grid">
+            <button class="btn primary" type="button" id="sayFlash">▶ Play</button>
+            <button class="btn" type="button" id="nextFlash">Next Word</button>
+            <button class="btn" type="button" id="slowFlash">Slow Repeat</button>
+          </div>
+          <p class="note">Browser voices vary. If Swedish pronunciation sounds odd, install or select a Swedish voice in your system speech settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <h2>Quiz</h2>
+      <p class="section-lead">A small self-check for the worksheet rules. The page keeps score only while it is open.</p>
+      <div class="grid two">
+        <div class="panel pad">
+          <h3 id="quizQuestion">Question</h3>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="result" id="quizResult"></div>
+          <button class="btn" type="button" id="nextQuiz">Next Question</button>
+        </div>
+        <div class="panel pad">
+          <h3>Score</h3>
+          <p class="flash-word" id="scoreText">0 / 0</p>
+          <p class="note">Try explaining every answer out loud in Swedish or English. That makes the rules stick faster.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="writing">
+      <h2>Writing Practice</h2>
+      <p class="section-lead">Write four words for each vowel, just like the worksheet. Your notes stay in this browser using local storage.</p>
+      <div class="writing" id="writingGrid"></div>
+      <p class="note">Tip: use the word lists above, then add new words from class.</p>
+    </section>
+
+    <section id="compare">
+      <h2>Original + English</h2>
+      <p class="section-lead">Pick a page to compare the scanned Swedish worksheet with English translations. The left side is the original page; the right side gives sentence and word meanings.</p>
+      <div class="compare">
+        <div class="thumbs" id="compareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="compareImage" src="assets/sfi-week1-pages/page-01.jpg" alt="Original worksheet page 1 for translation comparison" />
+            <div class="qr-overlay" id="compareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="translationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="pages">
+      <h2>Original Pages</h2>
+      <p class="section-lead">The full scanned PDF pages are embedded here, so the interactive version and the original worksheet stay together.</p>
+      <div class="viewer">
+        <div class="thumbs" id="thumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="pageImage" src="assets/sfi-week1-pages/page-01.jpg" alt="Original worksheet page 1" />
+            <div class="qr-overlay" id="pageQrOverlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const hardVowels = ["A", "O", "U", "Å"];
+    const softVowels = ["E", "I", "Y", "Ä", "Ö"];
+    const alphabet = "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Å Ä Ö".split(" ");
+
+    const vowelWords = {
+      A: ["jag", "har", "tar", "bad", "gav", "hav", "mat", "van", "val", "hatt", "katt", "tack", "kan", "man", "natt", "halv", "pass", "rast", "tala", "prata", "laga", "baka", "kaka", "lata", "saga", "varna", "svara", "tacka", "pasta", "vakta", "macka", "fakta", "vackra", "panna", "spanska", "skratta", "sallad", "gammal", "franska", "kappa", "backa", "skatta", "tappa", "landa", "packa"],
+      O: ["sol", "stol", "bor", "bok", "ord", "bord", "fot", "sko", "mot", "boll", "koll", "lock", "rock", "också", "torr", "sort", "rost", "kort", "borta", "ont", "ost", "fort", "kort", "hon", "bodde", "moster", "torsdag", "blomma"],
+      U: ["ut", "sur", "hur", "tur", "slut", "sju", "hus", "fru", "sjuk", "juni", "sluta", "tjugo", "ljuga", "mjuka", "kuta", "uttal", "duka", "upp", "buss", "kurs", "grupp", "dumt", "dusch", "puss", "mun", "rum", "tugga", "frukost", "hundra", "dubbel", "augusti", "undrar", "sjunger", "hungrig", "duschar"],
+      Å: ["år", "två", "hår", "får", "lås", "svår", "går", "sår", "åk", "fråga", "åka", "båda", "månad", "förlåt", "förstår", "lång", "gång", "sång", "åtta", "håller", "många", "gånger", "sånger"],
+      E: ["ren", "mer", "ler", "ner", "vet", "hel", "te", "sen", "en", "ett", "den", "sen", "men", "vem", "test", "fest", "hett", "fett"],
+      I: ["vi", "ni", "bil", "fri", "tid", "hit", "dit", "skriv", "min", "mitt", "din", "ditt", "sin", "sitt", "miss", "kiss", "drick", "lim"],
+      Y: ["ny", "sy", "by", "dyr", "yr", "hyr", "hy", "byt", "kyl", "frys", "nytt", "tyst", "rygg", "flytt", "nyss", "mygg", "flyger", "byter", "nyser", "fyra", "betyg", "betyder", "tycker", "mycket", "syster", "lyssnar", "flyttar", "bygger", "kyckling", "yrke", "kyrka", "nyckel"],
+      Ä: ["väg", "häl", "mät", "nät", "säl", "läs", "träd", "län", "käk", "bär", "här", "där", "kär", "lär", "vård", "värld", "lätt", "rätt", "rädd", "sätt", "vägg", "män", "länk", "läpp", "häst", "hämta", "tänka", "vänta", "lämna", "älska", "väcka", "ändra", "nästa", "läxa", "läsa", "näsa", "äta", "mäta", "städa", "äga", "räkna", "väga", "läka"],
+      Ö: ["söt", "snö", "grön", "blöt", "sjö", "kö", "lök", "röd", "bröd", "röker", "köper", "möter", "ökar", "möte", "söker", "för", "rör", "gör", "kör", "bör", "hör", "smör", "öra", "lördag", "dörr", "förr", "först", "höst", "röst", "trött", "kött", "öppna", "söndag", "önskar", "böcker", "fönster", "försöker"]
+    };
+
+    const pageSizes = {
+      1: [1438, 2078], 2: [1479, 2095], 3: [1450, 2115], 4: [1394, 2036], 5: [1508, 2115],
+      6: [1483, 2082], 7: [1406, 1935], 8: [1416, 2050], 9: [1415, 2047], 10: [1435, 2110],
+      11: [1426, 2080], 12: [1441, 2102], 13: [1483, 2091], 14: [1495, 2064], 15: [1568, 2240]
+    };
+
+    const qrCodes = [
+      { page: 2, type: "url", value: "https://youtu.be/mqDCAvWo7nE", x: 1225, y: 179, w: 81, h: 87 },
+      { page: 2, type: "url", value: "https://youtu.be/A1g9ez41XJQ", x: 822, y: 1084, w: 74, h: 75 },
+      { page: 2, type: "url", value: "https://youtu.be/UUDuBCxhcr8", x: 1137, y: 1098, w: 57, h: 59 },
+      { page: 2, type: "url", value: "https://youtu.be/BnkKXdilgRM", x: 286, y: 1362, w: 81, h: 81 },
+      { page: 2, type: "url", value: "https://youtu.be/1oMYEwYg0ic", x: 303, y: 1585, w: 64, h: 64 },
+      { page: 2, type: "url", value: "https://youtu.be/ZsLZMDP4Acg", x: 321, y: 1784, w: 70, h: 66 },
+      { page: 3, type: "url", value: "https://youtu.be/QdZ9_eG96ro", x: 299, y: 225, w: 116, h: 121 },
+      { page: 3, type: "url", value: "https://youtu.be/JNsigsv5gaY", x: 1227, y: 454, w: 98, h: 110 },
+      { page: 3, type: "url", value: "https://youtu.be/PSZYJE0LYFk", x: 254, y: 645, w: 101, h: 105 },
+      { page: 3, type: "url", value: "https://youtu.be/EIs_UxFbPEA", x: 1257, y: 893, w: 85, h: 96 },
+      { page: 3, type: "url", value: "https://youtu.be/8iBIO6VA1Fg", x: 262, y: 1105, w: 78, h: 82 },
+      { page: 3, type: "url", value: "https://youtu.be/jfqp4hmXfks", x: 1197, y: 1443, w: 80, h: 92 },
+      { page: 3, type: "url", value: "https://youtu.be/9Xba2mikMR8", x: 275, y: 1703, w: 85, h: 90 },
+      { page: 4, type: "url", value: "https://youtu.be/hyeVi_sPBGg", x: 1142, y: 181, w: 99, h: 110 },
+      { page: 4, type: "url", value: "https://youtu.be/4U-5Tx20BIw", x: 275, y: 367, w: 71, h: 76 },
+      { page: 4, type: "url", value: "https://youtu.be/PnRTBUt9JXw", x: 966, y: 578, w: 58, h: 61 },
+      { page: 4, type: "url", value: "https://youtu.be/GDLMTYiVuF0", x: 1191, y: 719, w: 68, h: 69 },
+      { page: 4, type: "url", value: "https://youtu.be/2vmfApM2W8g", x: 1183, y: 877, w: 73, h: 74 },
+      { page: 4, type: "url", value: "https://youtu.be/2nqgqGRI5T0", x: 198, y: 989, w: 61, h: 65 },
+      { page: 4, type: "url", value: "https://youtu.be/tuSjCHyA11A", x: 1183, y: 1100, w: 63, h: 64 },
+      { page: 4, type: "url", value: "https://youtu.be/h4v6OMYgQYk", x: 201, y: 1188, w: 66, h: 69 },
+      { page: 4, type: "url", value: "https://youtu.be/hVc2EMKA4qY", x: 1236, y: 1297, w: 68, h: 69 },
+      { page: 4, type: "url", value: "https://youtu.be/tyA9PT1PJmA", x: 201, y: 1393, w: 62, h: 66 },
+      { page: 4, type: "url", value: "https://youtu.be/zTO1eEDROAw", x: 1234, y: 1514, w: 58, h: 59 },
+      { page: 5, type: "url", value: "https://youtu.be/5apYihhl9xE", x: 1137, y: 582, w: 100, h: 104 },
+      { page: 5, type: "url", value: "https://youtu.be/-A3rd-k6xi0", x: 192, y: 780, w: 112, h: 113 },
+      { page: 6, type: "url", value: "https://youtu.be/keK4zAMo-no", x: 714, y: 1727, w: 79, h: 79 },
+      { page: 7, type: "unreadable", value: "Unreadable QR code in this scan. It appears to be a QR code, but the photographed code is too damaged/blurred to decode reliably.", x: 1095, y: 58, w: 165, h: 170 },
+      { page: 8, type: "url", value: "https://youtu.be/idO9oxR4h-c", x: 1212, y: 123, w: 68, h: 67 },
+      { page: 9, type: "url", value: "https://youtu.be/grhUMLYOTB0", x: 1255.5, y: 107, w: 57, h: 71.5 },
+      { page: 10, type: "url", value: "https://youtu.be/lo-PfOMIUKU", x: 1263, y: 115, w: 62, h: 62 },
+      { page: 11, type: "url", value: "https://youtu.be/7X_L6c1XUuQ", x: 1240, y: 150, w: 53, h: 60 },
+      { page: 12, type: "url", value: "https://youtu.be/RKIgPh1GWvA", x: 1255, y: 102, w: 82, h: 87 },
+      { page: 13, type: "url", value: "https://youtu.be/9CJebwUX-Do", x: 1304, y: 115.5, w: 67.5, h: 77.5 },
+      { page: 14, type: "url", value: "https://youtu.be/xxQ5Ie-wnuQ", x: 1274, y: 132, w: 88, h: 77 },
+      { page: 15, type: "url", value: "https://youtu.be/W1fryiam83s", x: 1380, y: 151, w: 64, h: 71 }
+    ];
+
+    const pageTranslations = [
+      {
+        title: "Page 1 - Cover",
+        sections: [
+          { heading: "Title", rows: [["Det svenska alfabetet", "The Swedish alphabet"], ["uttal, stavningsregler och reduktion", "pronunciation, spelling rules, and reduction"]] }
+        ]
+      },
+      {
+        title: "Page 2 - Alphabet",
+        sections: [
+          { heading: "Instructions and rules", rows: [["Titta på filmen om alfabetet.", "Watch the film about the alphabet."], ["Det svenska alfabetet har 29 bokstäver.", "The Swedish alphabet has 29 letters."], ["Du skriver med stor bokstav eller liten bokstav.", "You write with an uppercase letter or a lowercase letter."], ["Bokstävernas namn är:", "The names of the letters are:"], ["Nio bokstäver är vokaler.", "Nine letters are vowels."], ["A O U Å är hårda vokaler.", "A O U Å are hard vowels."], ["E I Y Ä Ö är mjuka vokaler.", "E I Y Ä Ö are soft vowels."], ["20 bokstäver är konsonanter.", "20 letters are consonants."], ["Lyssna på konsonanternas ljud.", "Listen to the sounds of the consonants."], ["Titta på film 1 om vokaler.", "Watch film 1 about vowels."], ["Titta på filmerna och skriv orden.", "Watch the films and write the words."]] }
+        ]
+      },
+      {
+        title: "Page 3 - More Vowel Practice",
+        sections: [
+          { heading: "Instructions", rows: [["Träna mer på vokaler", "Practice more with vowels"], ["Skriv fyra ord med A/O/U/Å/E/I/Y.", "Write four words with A/O/U/Å/E/I/Y."]] }
+        ]
+      },
+      {
+        title: "Page 4 - Vowels and Spelling Rules",
+        sections: [
+          { heading: "Instructions", rows: [["Skriv fyra ord med Ä.", "Write four words with Ä."], ["Skriv fyra ord med Ö.", "Write four words with Ö."], ["Titta på filmen om stavningsregler.", "Watch the film about spelling rules."]] },
+          { heading: "Patterns", rows: [["Skriv två ord med TJ.", "Write two words with TJ."], ["Skriv två ord med K.", "Write two words with K."], ["Skriv två ord med SJ.", "Write two words with SJ."], ["Skriv två ord med G.", "Write two words with G."], ["Skriv två ord med RN.", "Write two words with RN."], ["Skriv två ord med NG.", "Write two words with NG."], ["Skriv två ord med -J.", "Write two words ending in J."], ["Skriv två ord med RS.", "Write two words with RS."], ["Skriv två ord med CK.", "Write two words with CK."]] }
+        ]
+      },
+      {
+        title: "Page 5 - G, K, C and Word Reading",
+        sections: [
+          { heading: "Instructions", rows: [["Stryk under alla G som låter som J.", "Underline every G that sounds like J."], ["Stryk under alla K som låter som K.", "Underline every K that sounds like K."], ["Titta på filmen om C.", "Watch the film about C."], ["Läs: citron, cool, cykel, cirkel.", "Read: lemon, cool, bicycle, circle."], ["Titta på filmen och träna på orden.", "Watch the film and practice the words."], ["Läs orden för din lärare.", "Read the words for your teacher."]] },
+          { heading: "Word meanings", rows: [["går", "goes / walks"], ["gör", "does / makes"], ["Göteborg", "Gothenburg"], ["och", "and"], ["hjärta", "heart"], ["bord", "table"], ["sjuk", "sick"], ["tjugo", "twenty"], ["sax", "scissors"], ["hus", "house"], ["tack", "thanks"], ["första", "first"], ["kök", "kitchen"], ["djur", "animal"], ["sång", "song"], ["ljus", "light / candle"], ["gympa", "PE / gymnastics"], ["de", "they"], ["barn", "children"], ["mycket", "much / a lot"], ["regn", "rain"], ["gjorde", "did / made"], ["lektion", "lesson"], ["stjärna", "star"], ["språk", "language"], ["schema", "schedule"], ["kylskåp", "refrigerator"], ["laga", "cook / repair"], ["citron", "lemon"], ["garage", "garage"]] }
+        ]
+      },
+      {
+        title: "Page 6 - Vowels Cover",
+        sections: [
+          { heading: "Title", rows: [["Vokaler", "Vowels"], ["Namn", "Name"], ["Klass", "Class"]] }
+        ]
+      },
+      {
+        title: "Page 7 - A Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "A words", rows: [["jag", "I"], ["har", "have / has"], ["tar", "take / takes"], ["bad", "bath / swam"], ["gav", "gave"], ["hav", "sea"], ["mat", "food"], ["van", "used to / habit"], ["val", "choice / election / whale"], ["hatt", "hat"], ["katt", "cat"], ["tack", "thanks"], ["kan", "can / know how"], ["man", "man / one"], ["natt", "night"], ["halv", "half"], ["pass", "shift / pass / passport context"], ["rast", "break / recess"], ["tala", "speak"], ["prata", "talk"], ["laga", "cook / repair"], ["baka", "bake"], ["kaka", "cookie / cake"], ["lata", "lazy"], ["saga", "fairy tale"], ["varna", "warn"], ["svara", "answer"], ["tacka", "thank"], ["pasta", "pasta"], ["vakta", "guard / watch"], ["macka", "sandwich"], ["fakta", "facts"], ["vackra", "beautiful"], ["panna", "forehead / pan"], ["spanska", "Spanish"], ["skratta", "laugh"], ["sallad", "salad"], ["gammal", "old"], ["franska", "French"], ["kappa", "coat"], ["backa", "reverse / back up"], ["skatta", "tax / estimate"], ["tappa", "drop / lose"], ["landa", "land"], ["packa", "pack"]] }
+        ]
+      },
+      {
+        title: "Page 8 - O Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "O words", rows: [["sol", "sun"], ["stol", "chair"], ["bor", "live / lives"], ["bok", "book"], ["ord", "word"], ["bord", "table"], ["fot", "foot"], ["sko", "shoe"], ["mot", "against / toward"], ["boll", "ball"], ["koll", "check / control"], ["lock", "lid"], ["rock", "coat / rock music"], ["också", "also"], ["torr", "dry"], ["sort", "kind / type"], ["rost", "rust / toast"], ["kort", "short / card"], ["borta", "away / gone"], ["ont", "pain / sore"], ["ost", "cheese"], ["fort", "fast"], ["hon", "she"], ["bodde", "lived"], ["moster", "maternal aunt"], ["torsdag", "Thursday"], ["blomma", "flower"]] }
+        ]
+      },
+      {
+        title: "Page 9 - U Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "U words", rows: [["ut", "out"], ["sur", "sour / grumpy"], ["hur", "how"], ["tur", "luck / turn"], ["slut", "finished / end"], ["sju", "seven"], ["hus", "house"], ["fru", "wife / Mrs."], ["sjuk", "sick"], ["juni", "June"], ["sluta", "stop / finish"], ["tjugo", "twenty"], ["ljuga", "lie / tell a lie"], ["mjuka", "soft"], ["kuta", "run"], ["uttal", "pronunciation"], ["duka", "set the table"], ["upp", "up"], ["buss", "bus"], ["kurs", "course"], ["grupp", "group"], ["dumt", "stupid / silly"], ["dusch", "shower"], ["puss", "kiss"], ["mun", "mouth"], ["rum", "room"], ["tugga", "chew"], ["frukost", "breakfast"], ["hundra", "hundred"], ["dubbel", "double"], ["augusti", "August"], ["undrar", "wonder / wonders"], ["sjunger", "sing / sings"], ["hungrig", "hungry"], ["duschar", "shower / showers"]] }
+        ]
+      },
+      {
+        title: "Page 10 - Å Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "Å words", rows: [["år", "year"], ["två", "two"], ["hår", "hair"], ["får", "get / may / sheep"], ["lås", "lock"], ["svår", "difficult"], ["går", "goes / walks"], ["sår", "wound / sore"], ["åk", "ride / go by vehicle"], ["fråga", "question / ask"], ["åka", "go / ride"], ["båda", "both"], ["månad", "month"], ["förlåt", "sorry"], ["förstår", "understand / understands"], ["lång", "long"], ["gång", "time / occasion / path"], ["sång", "song"], ["åtta", "eight"], ["håller", "hold / holds"], ["många", "many"], ["gånger", "times"], ["sånger", "songs"]] }
+        ]
+      },
+      {
+        title: "Page 11 - E Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "E words", rows: [["ren", "clean / reindeer"], ["mer", "more"], ["ler", "smiles"], ["ner", "down"], ["vet", "know / knows"], ["hel", "whole"], ["te", "tea"], ["sen", "late / then"], ["en", "a / one"], ["ett", "a / one"], ["den", "it / that"], ["men", "but"], ["vem", "who"], ["test", "test"], ["fest", "party"], ["hett", "hot"], ["fett", "fat / cool slang"]] }
+        ]
+      },
+      {
+        title: "Page 12 - I Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "I words", rows: [["vi", "we"], ["ni", "you plural / you formal"], ["bil", "car"], ["fri", "free"], ["tid", "time"], ["hit", "here / to here"], ["dit", "there / to there"], ["skriv", "write"], ["min", "my / mine"], ["mitt", "my / mine neuter"], ["din", "your / yours"], ["ditt", "your / yours neuter"], ["sin", "his/her/its/their own"], ["sitt", "his/her/its/their own neuter"], ["miss", "mistake / miss"], ["kiss", "pee"], ["drick", "drink"], ["lim", "glue"]] }
+        ]
+      },
+      {
+        title: "Page 13 - Y Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "Y words", rows: [["ny", "new"], ["sy", "sew"], ["by", "village / change in compounds"], ["dyr", "expensive"], ["yr", "dizzy"], ["hyr", "rent / rents"], ["hy", "skin / complexion"], ["byt", "change / switch"], ["kyl", "cold / refrigerator"], ["frys", "freeze / freezer"], ["nytt", "new neuter"], ["tyst", "quiet"], ["rygg", "back"], ["flytt", "move / relocation"], ["nyss", "just now"], ["mygg", "mosquito"], ["flyger", "fly / flies"], ["byter", "change / changes"], ["nyser", "sneeze / sneezes"], ["fyra", "four"], ["betyg", "grade"], ["betyder", "means"], ["tycker", "think / thinks"], ["mycket", "much / a lot"], ["syster", "sister"], ["lyssnar", "listen / listens"], ["flyttar", "move / moves"], ["bygger", "build / builds"], ["kyckling", "chicken"], ["yrke", "profession"], ["kyrka", "church"], ["nyckel", "key"]] }
+        ]
+      },
+      {
+        title: "Page 14 - Ä Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "Ä words", rows: [["väg", "road / way"], ["häl", "heel"], ["mät", "measure"], ["nät", "net / network"], ["säl", "seal"], ["läs", "read"], ["träd", "tree"], ["län", "county"], ["käk", "jaw / food slang"], ["bär", "berry / carry"], ["här", "here"], ["där", "there"], ["kär", "in love / dear"], ["lär", "teach / learn"], ["vård", "care"], ["värld", "world"], ["lätt", "easy / light"], ["rätt", "right / correct / dish"], ["rädd", "afraid"], ["sätt", "way / put"], ["vägg", "wall"], ["män", "men"], ["länk", "link"], ["läpp", "lip"], ["häst", "horse"], ["hämta", "fetch / pick up"], ["tänka", "think"], ["vänta", "wait"], ["lämna", "leave / hand in"], ["älska", "love"], ["väcka", "wake up"], ["ändra", "change"], ["nästa", "next"], ["läxa", "homework"], ["läsa", "read"], ["näsa", "nose"], ["äta", "eat"], ["mäta", "measure"], ["städa", "clean / tidy"], ["äga", "own"], ["räkna", "count / calculate"], ["väga", "weigh"], ["läka", "heal"]] }
+        ]
+      },
+      {
+        title: "Page 15 - Ö Words",
+        sections: [
+          { heading: "Instruction", rows: [["Titta på filmen. Lyssna och säg efter.", "Watch the film. Listen and repeat."]] },
+          { heading: "Ö words", rows: [["söt", "cute / sweet"], ["snö", "snow"], ["grön", "green"], ["blöt", "wet"], ["sjö", "lake / sea"], ["kö", "queue"], ["lök", "onion"], ["röd", "red"], ["bröd", "bread"], ["röker", "smokes"], ["köper", "buys"], ["möter", "meet / meets"], ["ökar", "increase / increases"], ["möte", "meeting"], ["söker", "search / seeks"], ["för", "for / too"], ["rör", "touches / pipe"], ["gör", "does / makes"], ["kör", "drives"], ["bör", "should"], ["hör", "hear / hears"], ["smör", "butter"], ["öra", "ear"], ["lördag", "Saturday"], ["dörr", "door"], ["förr", "before / in the past"], ["först", "first"], ["höst", "autumn"], ["röst", "voice"], ["trött", "tired"], ["kött", "meat"], ["öppna", "open"], ["söndag", "Sunday"], ["önskar", "wish / wishes"], ["böcker", "books"], ["fönster", "window"], ["försöker", "try / tries"]] }
+        ]
+      }
+    ];
+
+    const quiz = [
+      { q: "How many letters are in the Swedish alphabet?", a: "29", options: ["26", "28", "29", "30"] },
+      { q: "Which group contains only hard vowels?", a: "A O U Å", options: ["A O U Å", "E I Y Ä Ö", "A E I O U", "Å Ä Ö"] },
+      { q: "Which group contains only soft vowels?", a: "E I Y Ä Ö", options: ["A O U Å", "E I Y Ä Ö", "B C D F G", "A Å Ä Ö"] },
+      { q: "In which word does G sound like J?", a: "gör", options: ["gata", "god", "gör", "Gunilla"] },
+      { q: "In which word does K sound hard?", a: "kaka", options: ["kök", "kyrka", "kär", "kaka"] },
+      { q: "Which word contains the pattern CK?", a: "tack", options: ["tack", "sjuk", "regn", "först"] },
+      { q: "Which word contains the pattern NG?", a: "sång", options: ["barn", "sång", "schema", "ljus"] }
+    ];
+
+    let activeVowel = "A";
+    let flashPool = Object.entries(vowelWords).flatMap(([vowel, words]) => words.map(word => ({ vowel, word })));
+    let flashIndex = 0;
+    let quizIndex = 0;
+    let score = 0;
+    let answered = 0;
+
+    function speak(text, rate = 0.86) {
+      if (!("speechSynthesis" in window)) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "sv-SE";
+      utterance.rate = rate;
+      const voices = window.speechSynthesis.getVoices();
+      const swedishVoice = voices.find(voice => voice.lang && voice.lang.toLowerCase().startsWith("sv"));
+      if (swedishVoice) utterance.voice = swedishVoice;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function shuffle(array) {
+      return [...array].sort(() => Math.random() - 0.5);
+    }
+
+    function renderAlphabet() {
+      const grid = document.querySelector("#alphabetGrid");
+      grid.innerHTML = "";
+      alphabet.forEach(letter => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "letter";
+        button.textContent = letter;
+        if (hardVowels.includes(letter)) button.dataset.kind = "hard";
+        if (softVowels.includes(letter)) button.dataset.kind = "soft";
+        button.addEventListener("click", () => speak(letter));
+        grid.appendChild(button);
+      });
+    }
+
+    function renderVowels() {
+      const tabs = document.querySelector("#vowelTabs");
+      tabs.innerHTML = "";
+      Object.keys(vowelWords).forEach(vowel => {
+        const tab = document.createElement("button");
+        tab.type = "button";
+        tab.className = `tab${vowel === activeVowel ? " active" : ""}`;
+        tab.textContent = vowel;
+        tab.addEventListener("click", () => {
+          activeVowel = vowel;
+          renderVowels();
+        });
+        tabs.appendChild(tab);
+      });
+
+      const words = document.querySelector("#wordGrid");
+      words.innerHTML = "";
+      vowelWords[activeVowel].forEach(word => {
+        const item = document.createElement("div");
+        item.className = "word";
+        item.innerHTML = `<span>${word}</span><button type="button" aria-label="Hear ${word}">▶</button>`;
+        item.querySelector("button").addEventListener("click", () => speak(word));
+        words.appendChild(item);
+      });
+    }
+
+    function setFlash(index) {
+      flashIndex = (index + flashPool.length) % flashPool.length;
+      const item = flashPool[flashIndex];
+      document.querySelector("#flashWord").textContent = item.word;
+      document.querySelector("#flashMeta").textContent = `Vowel focus: ${item.vowel}`;
+    }
+
+    function renderQuiz() {
+      const item = quiz[quizIndex % quiz.length];
+      const question = document.querySelector("#quizQuestion");
+      const options = document.querySelector("#quizOptions");
+      const result = document.querySelector("#quizResult");
+      question.textContent = item.q;
+      options.innerHTML = "";
+      result.textContent = "";
+      item.options.forEach(option => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = option;
+        button.addEventListener("click", () => {
+          if (options.dataset.locked === "true") return;
+          options.dataset.locked = "true";
+          answered += 1;
+          if (option === item.a) {
+            score += 1;
+            button.classList.add("correct");
+            result.textContent = "Correct.";
+          } else {
+            button.classList.add("wrong");
+            result.textContent = `Answer: ${item.a}`;
+            [...options.children].forEach(child => {
+              if (child.textContent === item.a) child.classList.add("correct");
+            });
+          }
+          document.querySelector("#scoreText").textContent = `${score} / ${answered}`;
+        });
+        options.appendChild(button);
+      });
+      options.dataset.locked = "false";
+    }
+
+    function renderWriting() {
+      const grid = document.querySelector("#writingGrid");
+      Object.keys(vowelWords).forEach(vowel => {
+        const label = document.createElement("label");
+        label.innerHTML = `<strong>${vowel}</strong><input type="text" placeholder="four words with ${vowel}" />`;
+        const input = label.querySelector("input");
+        const key = `sfi-week1-writing-${vowel}`;
+        input.value = localStorage.getItem(key) || "";
+        input.addEventListener("input", () => localStorage.setItem(key, input.value));
+        grid.appendChild(label);
+      });
+    }
+
+    function youtubeEmbedUrl(url) {
+      try {
+        const parsed = new URL(url);
+        let id = "";
+        if (parsed.hostname.includes("youtu.be")) {
+          id = parsed.pathname.replace("/", "");
+        } else if (parsed.hostname.includes("youtube.com")) {
+          id = parsed.searchParams.get("v") || parsed.pathname.split("/").filter(Boolean).pop();
+        }
+        const origin = location.origin && location.origin !== "null" ? `&origin=${encodeURIComponent(location.origin)}` : "";
+        return id ? `https://www.youtube.com/embed/${id}?autoplay=1&rel=0${origin}` : "";
+      } catch {
+        return "";
+      }
+    }
+
+    function playQrVideo(url) {
+      const embed = youtubeEmbedUrl(url);
+      if (!embed) {
+        window.open(url, "_blank", "noopener,noreferrer");
+        return;
+      }
+      document.querySelector("#videoFrame").src = embed;
+      document.querySelector("#videoExternal").href = url;
+      document.querySelector("#videoTitle").textContent = url;
+      document.querySelector("#videoDock").classList.add("open");
+    }
+
+    function renderQrOverlay(page, overlay) {
+      const size = pageSizes[page];
+      overlay.innerHTML = "";
+      if (!size) return;
+
+      const pageCodes = qrCodes.filter(code => code.page === page);
+      pageCodes.forEach((code, index) => {
+        const marker = document.createElement("button");
+        const isUrl = code.type === "url";
+        marker.className = "qr-marker";
+        marker.dataset.kind = code.type;
+        marker.title = isUrl ? code.value : code.value;
+        marker.setAttribute("aria-label", isUrl ? `Play QR video ${index + 1}: ${code.value}` : code.value);
+        marker.style.left = `${(code.x / size[0]) * 100}%`;
+        marker.style.top = `${(code.y / size[1]) * 100}%`;
+        marker.style.width = `${(code.w / size[0]) * 100}%`;
+        marker.style.height = `${(code.h / size[1]) * 100}%`;
+
+        marker.type = "button";
+        if (isUrl) {
+          marker.addEventListener("click", () => playQrVideo(code.value));
+        } else {
+          marker.addEventListener("click", () => alert(code.value));
+        }
+        overlay.appendChild(marker);
+      });
+    }
+
+    function qrSummary(page) {
+      const codes = qrCodes.filter(code => code.page === page);
+      if (!codes.length) return "No QR code was found on this page.";
+      const urls = codes.filter(code => code.type === "url").length;
+      const unreadable = codes.filter(code => code.type === "unreadable").length;
+      const parts = [];
+      if (urls) parts.push(`${urls} clickable link${urls === 1 ? "" : "s"}`);
+      if (unreadable) parts.push(`${unreadable} unreadable code`);
+      return `QR scan: ${parts.join(", ")}. Hover over a highlighted code to see its content. Click green codes to play the YouTube video inside this page.`;
+    }
+
+    function renderComparison() {
+      const thumbs = document.querySelector("#compareThumbs");
+      const image = document.querySelector("#compareImage");
+      const overlay = document.querySelector("#compareQrOverlay");
+      const panel = document.querySelector("#translationPanel");
+
+      function setPage(index) {
+        const page = String(index + 1).padStart(2, "0");
+        const data = pageTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week1-pages/page-${page}.jpg`;
+        image.alt = `Original worksheet page ${index + 1} for translation comparison`;
+        renderQrOverlay(index + 1, overlay);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Swedish original on the left, English meaning on the right.</p><p class="qr-summary">${qrSummary(index + 1)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            row.innerHTML = `<div class="sv">${sv}</div><div class="en">${en}</div>`;
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      pageTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
+    function renderPages() {
+      const thumbs = document.querySelector("#thumbs");
+      const image = document.querySelector("#pageImage");
+      const overlay = document.querySelector("#pageQrOverlay");
+      for (let i = 1; i <= 15; i += 1) {
+        const page = String(i).padStart(2, "0");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${i}`;
+        if (i === 1) button.classList.add("active");
+        button.addEventListener("click", () => {
+          [...thumbs.children].forEach(child => child.classList.remove("active"));
+          button.classList.add("active");
+          image.src = `assets/sfi-week1-pages/page-${page}.jpg`;
+          image.alt = `Original worksheet page ${i}`;
+          renderQrOverlay(i, overlay);
+        });
+        thumbs.appendChild(button);
+      }
+      renderQrOverlay(1, overlay);
+    }
+
+    document.addEventListener("click", event => {
+      const target = event.target.closest("[data-say]");
+      if (target) speak(target.dataset.say);
+    });
+
+    document.querySelector("#nextFlash").addEventListener("click", () => {
+      setFlash(flashIndex + 1);
+    });
+    document.querySelector("#sayFlash").addEventListener("click", () => {
+      speak(document.querySelector("#flashWord").textContent);
+    });
+    document.querySelector("#slowFlash").addEventListener("click", () => {
+      speak(document.querySelector("#flashWord").textContent, 0.62);
+    });
+    document.querySelector("#nextQuiz").addEventListener("click", () => {
+      quizIndex += 1;
+      renderQuiz();
+    });
+    document.querySelector("#videoClose").addEventListener("click", () => {
+      document.querySelector("#videoDock").classList.remove("open");
+      document.querySelector("#videoFrame").src = "";
+    });
+
+    flashPool = shuffle(flashPool);
+    renderAlphabet();
+    renderVowels();
+    setFlash(0);
+    renderQuiz();
+    renderWriting();
+    renderComparison();
+    renderPages();
+
+    window.addEventListener("load", () => {
+      if (!location.hash) return;
+      const target = document.querySelector(location.hash);
+      if (target) setTimeout(() => target.scrollIntoView(), 50);
+    });
+  </script>
+</body>
+</html>
