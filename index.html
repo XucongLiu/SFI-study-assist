@@ -78,6 +78,56 @@
       outline: none;
     }
 
+    .week-tabs {
+      position: sticky;
+      top: 0;
+      z-index: 18;
+      display: flex;
+      gap: 0;
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding-top: 18px;
+      padding-bottom: 12px;
+      background: linear-gradient(180deg, #eef5f2 0, rgba(238, 245, 242, 0.92) 80%, rgba(238, 245, 242, 0));
+    }
+
+    .week-tab {
+      min-height: 56px;
+      padding: 12px 22px;
+      border: 1px solid #111;
+      border-left: 0;
+      color: #fff;
+      background: #050505;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .week-tab:first-child {
+      border-left: 1px solid #111;
+      border-radius: 8px 0 0 0;
+    }
+
+    .week-tab:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .week-tab.active {
+      border-top: 4px solid var(--blue);
+      border-bottom-color: #fff;
+      color: var(--blue);
+      background: #fff;
+    }
+
+    .week-panel[hidden],
+    .week-nav[hidden] {
+      display: none !important;
+    }
+
+    .week-panel {
+      scroll-margin-top: 96px;
+    }
+
     header {
       min-height: 64vh;
       display: grid;
@@ -729,6 +779,16 @@
         display: none;
       }
 
+      .week-tabs {
+        position: static;
+        width: calc(100% - 32px);
+        overflow-x: auto;
+      }
+
+      .week-tab {
+        flex: 0 0 auto;
+      }
+
       .hero,
       .week-hero,
       .two,
@@ -758,21 +818,21 @@
 <body>
   <nav class="topbar" aria-label="Study sections">
     <strong>SFI Study</strong>
-    <span class="nav-label">Week 1</span>
-    <a href="#week1">Overview</a>
-    <a href="#alphabet">Alphabet</a>
-    <a href="#rules">Spelling Rules</a>
-    <a href="#vowels">Vowels</a>
-    <a href="#flashcards">Flashcards</a>
-    <a href="#quiz">Quiz</a>
-    <a href="#writing">Writing</a>
-    <a href="#compare">Translations</a>
-    <a href="#pages">Original Pages</a>
-    <span class="nav-label">Week 2</span>
-    <a href="#week2">Overview</a>
-    <a href="#week2-family">Family Words</a>
-    <a href="#week2-compare">Translations</a>
-    <a href="#week2-pages">Original Pages</a>
+    <span class="nav-label week-nav" data-week="week1">Week 1</span>
+    <a class="week-nav" data-week="week1" href="#week1">Overview</a>
+    <a class="week-nav" data-week="week1" href="#alphabet">Alphabet</a>
+    <a class="week-nav" data-week="week1" href="#rules">Spelling Rules</a>
+    <a class="week-nav" data-week="week1" href="#vowels">Vowels</a>
+    <a class="week-nav" data-week="week1" href="#flashcards">Flashcards</a>
+    <a class="week-nav" data-week="week1" href="#quiz">Quiz</a>
+    <a class="week-nav" data-week="week1" href="#writing">Writing</a>
+    <a class="week-nav" data-week="week1" href="#compare">Translations</a>
+    <a class="week-nav" data-week="week1" href="#pages">Original Pages</a>
+    <span class="nav-label week-nav" data-week="week2">Week 2</span>
+    <a class="week-nav" data-week="week2" href="#week2">Overview</a>
+    <a class="week-nav" data-week="week2" href="#week2-family">Family Words</a>
+    <a class="week-nav" data-week="week2" href="#week2-compare">Translations</a>
+    <a class="week-nav" data-week="week2" href="#week2-pages">Original Pages</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -786,7 +846,12 @@
     <iframe class="video-frame" id="videoFrame" title="Embedded YouTube video" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </aside>
 
-  <header id="week1">
+  <div class="week-tabs" role="tablist" aria-label="Weeks">
+    <button class="week-tab active" type="button" role="tab" aria-selected="true" data-week-tab="week1">Week 1</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week2">Week 2</button>
+  </div>
+
+  <header id="week1" class="week-panel" data-week="week1">
     <div class="hero">
       <div>
         <h1>SFI Week 1</h1>
@@ -812,7 +877,7 @@
   </header>
 
   <main>
-    <section id="alphabet">
+    <section id="alphabet" class="week-panel" data-week="week1">
       <h2>Alphabet</h2>
       <p class="section-lead">Swedish has 29 letters. Tap a letter to hear it. The colored vowels are grouped from the worksheet: hard vowels and soft vowels.</p>
       <div class="grid two">
@@ -831,7 +896,7 @@
       </div>
     </section>
 
-    <section id="rules">
+    <section id="rules" class="week-panel" data-week="week1">
       <h2>Spelling Rules</h2>
       <p class="section-lead">These are the sound patterns from the alphabet pages. Use them as shortcuts when you read new words.</p>
       <div class="grid three">
@@ -860,7 +925,7 @@
       </div>
     </section>
 
-    <section id="vowels">
+    <section id="vowels" class="week-panel" data-week="week1">
       <h2>Vowels</h2>
       <p class="section-lead">Choose a vowel, listen to words from the worksheet, then repeat them out loud. The page includes the original scans below if you want the full worksheet view.</p>
       <div class="panel pad">
@@ -869,7 +934,7 @@
       </div>
     </section>
 
-    <section id="flashcards">
+    <section id="flashcards" class="week-panel" data-week="week1">
       <h2>Flashcards</h2>
       <p class="section-lead">Use this for quick repetition. Say the word yourself, then press the sound button and compare.</p>
       <div class="flash-area">
@@ -891,7 +956,7 @@
       </div>
     </section>
 
-    <section id="quiz">
+    <section id="quiz" class="week-panel" data-week="week1">
       <h2>Quiz</h2>
       <p class="section-lead">A small self-check for the worksheet rules. The page keeps score only while it is open.</p>
       <div class="grid two">
@@ -909,14 +974,14 @@
       </div>
     </section>
 
-    <section id="writing">
+    <section id="writing" class="week-panel" data-week="week1">
       <h2>Writing Practice</h2>
       <p class="section-lead">Write four words for each vowel, just like the worksheet. Your notes stay in this browser using local storage.</p>
       <div class="writing" id="writingGrid"></div>
       <p class="note">Tip: use the word lists above, then add new words from class.</p>
     </section>
 
-    <section id="compare">
+    <section id="compare" class="week-panel" data-week="week1">
       <h2>Original + English</h2>
       <p class="section-lead">Pick a page to compare the scanned Swedish worksheet with English translations. The left side is the original page; the right side gives sentence and word meanings.</p>
       <div class="compare">
@@ -931,7 +996,7 @@
       </div>
     </section>
 
-    <section id="pages">
+    <section id="pages" class="week-panel" data-week="week1">
       <h2>Original Pages</h2>
       <p class="section-lead">The full scanned PDF pages are embedded here, so the interactive version and the original worksheet stay together.</p>
       <div class="viewer">
@@ -945,7 +1010,7 @@
       </div>
     </section>
 
-    <section id="week2">
+    <section id="week2" class="week-panel" data-week="week2">
       <h2>Week 2 - Familj</h2>
       <div class="week-hero">
         <div>
@@ -960,7 +1025,7 @@
       </div>
     </section>
 
-    <section id="week2-family">
+    <section id="week2-family" class="week-panel" data-week="week2">
       <h2>Family Words</h2>
       <p class="section-lead">Tap the play button to hear the Swedish word with the selected Azure voice.</p>
       <div class="panel pad">
@@ -968,7 +1033,7 @@
       </div>
     </section>
 
-    <section id="week2-compare">
+    <section id="week2-compare" class="week-panel" data-week="week2">
       <h2>Week 2 Original + English</h2>
       <p class="section-lead">Pick a page to compare the corrected Swedish page photo with English notes and translations.</p>
       <div class="compare">
@@ -983,7 +1048,7 @@
       </div>
     </section>
 
-    <section id="week2-pages">
+    <section id="week2-pages" class="week-panel" data-week="week2">
       <h2>Week 2 Original Pages</h2>
       <p class="section-lead">The corrected Week 2 photos are embedded here with QR video markers.</p>
       <div class="viewer">
@@ -1622,6 +1687,34 @@
       renderQrOverlay(1, overlay, week2PageSizes, week2QrCodes);
     }
 
+    function weekForHash(hash) {
+      if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
+      const target = document.querySelector(hash);
+      return target?.dataset?.week || (hash.startsWith("#week2") ? "week2" : "week1");
+    }
+
+    function setActiveWeek(week, options = {}) {
+      const activeWeek = week === "week2" ? "week2" : "week1";
+      document.querySelectorAll(".week-panel").forEach(panel => {
+        panel.hidden = panel.dataset.week !== activeWeek;
+      });
+      document.querySelectorAll(".week-nav").forEach(item => {
+        item.hidden = item.dataset.week !== activeWeek;
+      });
+      document.querySelectorAll(".week-tab").forEach(tab => {
+        const active = tab.dataset.weekTab === activeWeek;
+        tab.classList.toggle("active", active);
+        tab.setAttribute("aria-selected", active ? "true" : "false");
+      });
+      localStorage.setItem("sfi-active-week", activeWeek);
+
+      if (options.updateHash) {
+        const targetHash = activeWeek === "week2" ? "#week2" : "#week1";
+        history.pushState(null, "", targetHash);
+        document.querySelector(targetHash)?.scrollIntoView();
+      }
+    }
+
     document.addEventListener("click", event => {
       const target = event.target.closest("[data-say]");
       if (target) speak(target.dataset.say);
@@ -1649,6 +1742,14 @@
       localStorage.setItem("sfi-week1-voice", voice);
       setVoiceStatus(`Voice selected: ${voiceNames[voice] || voice}`);
     });
+    document.querySelectorAll(".week-tab").forEach(tab => {
+      tab.addEventListener("click", () => setActiveWeek(tab.dataset.weekTab, { updateHash: true }));
+    });
+    window.addEventListener("hashchange", () => {
+      setActiveWeek(weekForHash(location.hash));
+      const target = document.querySelector(location.hash);
+      if (target) setTimeout(() => target.scrollIntoView(), 20);
+    });
 
     flashPool = shuffle(flashPool);
     const savedVoice = localStorage.getItem("sfi-week1-voice");
@@ -1665,6 +1766,7 @@
     renderWeek2Terms();
     renderWeek2Comparison();
     renderWeek2Pages();
+    setActiveWeek(weekForHash(location.hash));
 
     window.addEventListener("load", () => {
       if (!location.hash) return;
