@@ -160,6 +160,33 @@ async function analyzeImage({ endpoint, key, apiVersion, imagePath }) {
   return payload;
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function retryDelayMs(errorMessage, fallbackMs) {
+  const match = /retry after\s+(\d+)\s+seconds/i.exec(errorMessage || "");
+  return match ? (Number(match[1]) + 2) * 1000 : fallbackMs;
+}
+
+async function analyzeImageWithRetry(options) {
+  const maxAttempts = 4;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      return await analyzeImage(options);
+    } catch (error) {
+      const message = error.message || "";
+      const retryable = message.includes("HTTP 429") || message.includes("HTTP 503") || message.includes("HTTP 504");
+      if (!retryable || attempt === maxAttempts) throw error;
+
+      const waitMs = retryDelayMs(message, 15000 * attempt);
+      console.log(`  Azure throttled the request. Waiting ${Math.round(waitMs / 1000)} seconds before retry ${attempt + 1}/${maxAttempts}...`);
+      await sleep(waitMs);
+    }
+  }
+}
+
 async function main() {
   readEnvFile(path.resolve(".env.local"));
   readEnvFile(path.resolve(".env"));
@@ -192,7 +219,7 @@ async function main() {
     }
 
     console.log(`OCR ${path.basename(imagePath)}...`);
-    const raw = await analyzeImage({
+    const raw = await analyzeImageWithRetry({
       ...credentials,
       apiVersion: args.apiVersion,
       imagePath,
