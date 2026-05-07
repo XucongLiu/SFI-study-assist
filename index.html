@@ -613,6 +613,21 @@
       background: #111;
     }
 
+    .video-fallback {
+      display: none;
+      padding: 14px;
+      border-top: 1px solid var(--line);
+      background: var(--soft-gold);
+    }
+
+    .video-dock.external-only .video-frame {
+      display: none;
+    }
+
+    .video-dock.external-only .video-fallback {
+      display: block;
+    }
+
     .voice-status {
       margin-top: 12px;
       color: var(--muted);
@@ -844,6 +859,9 @@
       </div>
     </div>
     <iframe class="video-frame" id="videoFrame" title="Embedded YouTube video" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="video-fallback">
+      This video cannot be embedded here. Use the external-open button to watch it on YouTube.
+    </div>
   </aside>
 
   <div class="week-tabs" role="tablist" aria-label="Weeks">
@@ -1330,6 +1348,9 @@
       "sv-SE-SofieNeural": "Sofie",
       "sv-SE-MattiasNeural": "Mattias"
     };
+    const nonEmbeddableVideos = new Set([
+      "https://youtu.be/cBM8O1T0cVc"
+    ]);
 
     function browserSpeak(text, rate = 0.86) {
       if (!("speechSynthesis" in window)) return;
@@ -1496,15 +1517,18 @@
     }
 
     function playQrVideo(url) {
+      const dock = document.querySelector("#videoDock");
+      const frame = document.querySelector("#videoFrame");
       const embed = youtubeEmbedUrl(url);
       if (!embed) {
         window.open(url, "_blank", "noopener,noreferrer");
         return;
       }
-      document.querySelector("#videoFrame").src = embed;
+      frame.src = nonEmbeddableVideos.has(url) ? "" : embed;
       document.querySelector("#videoExternal").href = url;
       document.querySelector("#videoTitle").textContent = url;
-      document.querySelector("#videoDock").classList.add("open");
+      dock.classList.toggle("external-only", nonEmbeddableVideos.has(url));
+      dock.classList.add("open");
     }
 
     function renderQrOverlay(page, overlay, sizes = pageSizes, codes = qrCodes) {
@@ -1734,7 +1758,7 @@
       renderQuiz();
     });
     document.querySelector("#videoClose").addEventListener("click", () => {
-      document.querySelector("#videoDock").classList.remove("open");
+      document.querySelector("#videoDock").classList.remove("open", "external-only");
       document.querySelector("#videoFrame").src = "";
     });
     document.querySelector("#voiceSelect").addEventListener("change", () => {
