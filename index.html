@@ -43,7 +43,10 @@
     button,
     input,
     select {
-      font: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: 650;
     }
 
     .topbar {
@@ -760,6 +763,30 @@
 
     .sv {
       font-weight: 650;
+    }
+
+    .speakable-text {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 6px;
+      color: inherit;
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      font-weight: 650;
+      text-align: left;
+      transition: background 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .speakable-text:hover,
+    .speakable-text:focus {
+      outline: none;
+      background: var(--soft-blue);
+      box-shadow: 0 0 0 4px var(--soft-blue);
     }
 
     .en {
@@ -1609,6 +1636,17 @@
       return `QR scan: ${parts.join(", ")}. Hover over a highlighted code to see its content. Click green codes to play the YouTube video inside this page.`;
     }
 
+    function createSpeakableText(text) {
+      const element = document.createElement("button");
+      element.className = "sv speakable-text";
+      element.type = "button";
+      element.textContent = text;
+      element.title = "Click to hear this Swedish text";
+      element.setAttribute("aria-label", `Hear Swedish: ${text}`);
+      element.addEventListener("click", () => speak(text));
+      return element;
+    }
+
     function renderComparison() {
       const thumbs = document.querySelector("#compareThumbs");
       const image = document.querySelector("#compareImage");
@@ -1632,7 +1670,10 @@
           section.rows.forEach(([sv, en]) => {
             const row = document.createElement("div");
             row.className = "translation-row";
-            row.innerHTML = `<div class="sv">${sv}</div><div class="en">${en}</div>`;
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
             block.appendChild(row);
           });
           panel.appendChild(block);
@@ -1687,7 +1728,10 @@
           section.rows.forEach(([sv, en]) => {
             const row = document.createElement("div");
             row.className = "translation-row";
-            row.innerHTML = `<div class="sv">${sv}</div><div class="en">${en}</div>`;
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
             block.appendChild(row);
           });
           panel.appendChild(block);
