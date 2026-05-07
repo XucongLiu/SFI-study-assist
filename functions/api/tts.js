@@ -23,6 +23,12 @@ function jsonResponse(body, status = 200) {
   });
 }
 
+async function sha256(value) {
+  const data = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const key = env.AZURE_SPEECH_KEY;
@@ -46,6 +52,21 @@ export async function onRequestPost(context) {
   const requestedVoice = String(payload?.voice || env.AZURE_SPEECH_VOICE || DEFAULT_VOICE);
   const voice = ALLOWED_VOICES.has(requestedVoice) ? requestedVoice : DEFAULT_VOICE;
   const rate = payload?.slow ? "-20%" : "0%";
+  const cacheKeyHash = await sha256(JSON.stringify({ text, voice, rate }));
+  const cacheUrl = new URL(`/api/tts-cache/${cacheKeyHash}.mp3`, request.url);
+  const cacheKey = new Request(cacheUrl.toString(), { method: "GET" });
+  const cache = caches.default;
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    return new Response(cached.body, {
+      headers: {
+        "content-type": "audio/mpeg",
+        "cache-control": "public, max-age=31536000, immutable",
+        "x-sfi-tts-cache": "hit"
+      }
+    });
+  }
+
   const ssml = `<?xml version="1.0" encoding="UTF-8"?>
 <speak version="1.0" xml:lang="sv-SE" xmlns="http://www.w3.org/2001/10/synthesis">
   <voice name="${escapeXml(voice)}">
@@ -70,12 +91,16 @@ export async function onRequestPost(context) {
     return jsonResponse({ error: "Azure Speech request failed.", status: azureResponse.status, details }, 502);
   }
 
-  return new Response(azureResponse.body, {
+  const audio = await azureResponse.arrayBuffer();
+  const response = new Response(audio, {
     headers: {
       "content-type": "audio/mpeg",
-      "cache-control": "public, max-age=31536000, immutable"
+      "cache-control": "public, max-age=31536000, immutable",
+      "x-sfi-tts-cache": "miss"
     }
   });
+  context.waitUntil(cache.put(cacheKey, response.clone()));
+  return response;
 }
 
 export function onRequestGet() {

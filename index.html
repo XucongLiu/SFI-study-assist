@@ -36,6 +36,7 @@
       background: linear-gradient(180deg, #eef5f2 0, #fffdf8 360px);
       font-family: "Segoe UI", Arial, sans-serif;
       line-height: 1.45;
+      padding-left: 220px;
     }
 
     button,
@@ -45,15 +46,19 @@
     }
 
     .topbar {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      bottom: 0;
       z-index: 20;
       display: flex;
+      flex-direction: column;
       gap: 10px;
-      align-items: center;
-      overflow-x: auto;
-      padding: 10px 18px;
-      border-bottom: 1px solid rgba(31, 35, 40, 0.1);
+      align-items: stretch;
+      width: 220px;
+      overflow-y: auto;
+      padding: 18px 14px;
+      border-right: 1px solid rgba(31, 35, 40, 0.1);
       background: rgba(255, 253, 248, 0.94);
       backdrop-filter: blur(14px);
     }
@@ -61,7 +66,7 @@
     .topbar a {
       flex: 0 0 auto;
       padding: 8px 11px;
-      border-radius: 999px;
+      border-radius: 8px;
       color: var(--ink);
       text-decoration: none;
       white-space: nowrap;
@@ -586,6 +591,58 @@
       color: var(--ink);
     }
 
+    .nav-label {
+      margin: 12px 10px 2px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .week-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 0.65fr);
+      gap: 18px;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--soft-green);
+    }
+
+    .week-hero img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .term-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 10px;
+    }
+
+    .term {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .term button {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      cursor: pointer;
+    }
+
     .compare {
       display: grid;
       grid-template-columns: 160px minmax(0, 0.95fr) minmax(320px, 1.05fr);
@@ -653,7 +710,27 @@
     }
 
     @media (max-width: 820px) {
+      body {
+        padding-left: 0;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        bottom: auto;
+        width: auto;
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: 0;
+        border-bottom: 1px solid rgba(31, 35, 40, 0.1);
+      }
+
+      .nav-label {
+        display: none;
+      }
+
       .hero,
+      .week-hero,
       .two,
       .three,
       .flash-area,
@@ -680,6 +757,9 @@
 </head>
 <body>
   <nav class="topbar" aria-label="Study sections">
+    <strong>SFI Study</strong>
+    <span class="nav-label">Week 1</span>
+    <a href="#week1">Overview</a>
     <a href="#alphabet">Alphabet</a>
     <a href="#rules">Spelling Rules</a>
     <a href="#vowels">Vowels</a>
@@ -688,6 +768,11 @@
     <a href="#writing">Writing</a>
     <a href="#compare">Translations</a>
     <a href="#pages">Original Pages</a>
+    <span class="nav-label">Week 2</span>
+    <a href="#week2">Overview</a>
+    <a href="#week2-family">Family Words</a>
+    <a href="#week2-compare">Translations</a>
+    <a href="#week2-pages">Original Pages</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -701,7 +786,7 @@
     <iframe class="video-frame" id="videoFrame" title="Embedded YouTube video" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </aside>
 
-  <header>
+  <header id="week1">
     <div class="hero">
       <div>
         <h1>SFI Week 1</h1>
@@ -859,6 +944,58 @@
         </div>
       </div>
     </section>
+
+    <section id="week2">
+      <h2>Week 2 - Familj</h2>
+      <div class="week-hero">
+        <div>
+          <p class="section-lead">Week 2 focuses on family words, possessive pronouns, simple questions, forms, and numbers. The iPhone photos have been converted from HEIC and perspective-corrected where the page border was detected.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week2-family">Practice Family Words</a>
+            <a class="btn" href="#week2-compare">Compare Pages</a>
+            <a class="btn" href="#week2-pages">View Scans</a>
+          </div>
+        </div>
+        <img src="assets/sfi-week2-pages/page-01.jpg" alt="Week 2 family cover page" />
+      </div>
+    </section>
+
+    <section id="week2-family">
+      <h2>Family Words</h2>
+      <p class="section-lead">Tap the play button to hear the Swedish word with the selected Azure voice.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week2Terms"></div>
+      </div>
+    </section>
+
+    <section id="week2-compare">
+      <h2>Week 2 Original + English</h2>
+      <p class="section-lead">Pick a page to compare the corrected Swedish page photo with English notes and translations.</p>
+      <div class="compare">
+        <div class="thumbs" id="week2CompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week2CompareImage" src="assets/sfi-week2-pages/page-01.jpg" alt="Week 2 page 1 for translation comparison" />
+            <div class="qr-overlay" id="week2CompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week2TranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week2-pages">
+      <h2>Week 2 Original Pages</h2>
+      <p class="section-lead">The corrected Week 2 photos are embedded here with QR video markers.</p>
+      <div class="viewer">
+        <div class="thumbs" id="week2Thumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week2PageImage" src="assets/sfi-week2-pages/page-01.jpg" alt="Week 2 original page 1" />
+            <div class="qr-overlay" id="week2PageQrOverlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -921,6 +1058,86 @@
       { page: 13, type: "url", value: "https://youtu.be/9CJebwUX-Do", x: 1304, y: 115.5, w: 67.5, h: 77.5 },
       { page: 14, type: "url", value: "https://youtu.be/xxQ5Ie-wnuQ", x: 1274, y: 132, w: 88, h: 77 },
       { page: 15, type: "url", value: "https://youtu.be/W1fryiam83s", x: 1380, y: 151, w: 64, h: 71 }
+    ];
+
+    const week2PageSizes = {
+      1: [1400, 1975], 2: [1400, 1957], 3: [1400, 1990], 4: [1400, 1991], 5: [1400, 1994],
+      6: [1400, 1971], 7: [1400, 1961], 8: [1400, 1866], 9: [1400, 1866], 10: [1400, 1866],
+      11: [1400, 1866], 12: [1400, 1866], 13: [1400, 1866], 14: [1400, 1866]
+    };
+
+    const week2QrCodes = [
+      { page: 1, type: "url", value: "https://youtu.be/RoJhiFy8PUM", x: 199, y: 226, w: 78, h: 80 },
+      { page: 1, type: "url", value: "https://youtu.be/Fq14mupZ5n8", x: 1239, y: 233, w: 66, h: 72 },
+      { page: 2, type: "url", value: "https://youtu.be/cBM8O1T0cVc", x: 1147, y: 176, w: 91, h: 97 },
+      { page: 3, type: "url", value: "https://youtu.be/zK-5J6wUW9I", x: 1122, y: 185, w: 95, h: 98 },
+      { page: 4, type: "url", value: "https://youtu.be/i4wEvwv8kQ8", x: 1120, y: 500, w: 104, h: 108 },
+      { page: 4, type: "url", value: "https://youtu.be/2d0wBTcBghw", x: 214, y: 1579, w: 92, h: 95 },
+      { page: 5, type: "url", value: "https://youtu.be/rZdxkL046I4", x: 218, y: 511, w: 88, h: 86 },
+      { page: 6, type: "url", value: "https://youtu.be/veX8Z2Vbvh0", x: 1097, y: 187, w: 91, h: 94 },
+      { page: 7, type: "url", value: "https://youtu.be/e-rG5np3kmw", x: 1187, y: 192, w: 83, h: 86 },
+      { page: 9, type: "url", value: "https://youtu.be/-PK2CCpEDP4", x: 1170, y: 162, w: 76, h: 78 },
+      { page: 10, type: "url", value: "https://youtu.be/aMoXbf0qV3U", x: 1056, y: 168, w: 132, h: 134 },
+      { page: 11, type: "url", value: "https://youtu.be/q8eC-KEYRks", x: 1151, y: 1060, w: 76, h: 75 },
+      { page: 12, type: "url", value: "https://youtu.be/aNtLbSESo8g", x: 1228, y: 1056, w: 73, h: 74 },
+      { page: 14, type: "url", value: "https://youtu.be/0s-oaqKMN4A", x: 1186, y: 162, w: 65, h: 63 }
+    ];
+
+    const week2Terms = [
+      ["familj", "family"], ["mamma", "mother"], ["pappa", "father"], ["son", "son"], ["dotter", "daughter"],
+      ["barn", "child / children"], ["bror", "brother"], ["syster", "sister"], ["mormor", "maternal grandmother"],
+      ["morfar", "maternal grandfather"], ["farmor", "paternal grandmother"], ["farfar", "paternal grandfather"],
+      ["moster", "maternal aunt"], ["morbror", "maternal uncle"], ["faster", "paternal aunt"], ["farbror", "paternal uncle"],
+      ["kusin", "cousin"], ["fru", "wife"], ["man", "husband / man"], ["sambo", "partner / cohabiting partner"],
+      ["gift", "married"], ["skild", "divorced"], ["min", "my"], ["mitt", "my"], ["mina", "my plural"],
+      ["din", "your"], ["ditt", "your"], ["dina", "your plural"], ["hans", "his"], ["hennes", "her"], ["deras", "their"]
+    ];
+
+    const week2Translations = [
+      { title: "Page 1 - Familj", sections: [
+        { heading: "Title", rows: [["Familj", "Family"], ["Lyssna på filmen", "Listen to the film"]] },
+        { heading: "Core words", rows: [["mamma / pappa", "mother / father"], ["barn", "child / children"], ["bror / syster", "brother / sister"], ["mormor / morfar", "mother's mother / mother's father"], ["farmor / farfar", "father's mother / father's father"]] }
+      ] },
+      { title: "Page 2 - Listen To My Family", sections: [
+        { heading: "Instruction", rows: [["Lyssna och häng på min familj.", "Listen and follow along with my family."], ["Jag är gift.", "I am married."], ["Vi har tre barn.", "We have three children."], ["Min mamma heter ...", "My mother is called ..."], ["Min pappa heter ...", "My father is called ..."]] }
+      ] },
+      { title: "Page 3 - Write Words", sections: [
+        { heading: "Instruction", rows: [["Skriv orden på ditt språk och på svenska igen.", "Write the words in your language and in Swedish again."], ["ditt språk", "your language"], ["svenska", "Swedish"]] },
+        { heading: "Vocabulary", rows: week2Terms.slice(0, 18) }
+      ] },
+      { title: "Page 4 - This Is / Who Is It?", sections: [
+        { heading: "Phrases", rows: [["Det är Gunillas penna.", "It is Gunilla's pen."], ["Det är Annas bil.", "It is Anna's car."], ["Vem är det?", "Who is it?"], ["Det är ...", "It is ..."]] }
+      ] },
+      { title: "Page 5 - Dialogue", sections: [
+        { heading: "Questions", rows: [["Vem är du?", "Who are you?"], ["Jag är Anitas ...", "I am Anita's ..."], ["Vad heter Anitas man?", "What is Anita's husband's name?"], ["Hur många barn har Anita och Kent?", "How many children do Anita and Kent have?"]] }
+      ] },
+      { title: "Page 6 - Yes / No And Where", sections: [
+        { heading: "Questions", rows: [["Är du gift?", "Are you married?"], ["Är du skild?", "Are you divorced?"], ["Har du några syskon?", "Do you have any siblings?"], ["Var bor din syster?", "Where does your sister live?"], ["Han delar el med dem.", "He shares electricity with them."]] }
+      ] },
+      { title: "Page 7 - Listen And Fill In", sections: [
+        { heading: "Exercise", rows: [["Lyssna och fyll i rätt ord.", "Listen and fill in the correct word."], ["Min mamma/mormor är min ...", "My mother/grandmother is my ..."], ["Prata med en kompis om Sonjas familj.", "Talk with a classmate about Sonja's family."]] }
+      ] },
+      { title: "Page 8 - Write Questions", sections: [
+        { heading: "Exercise", rows: [["Svara på frågorna. Börja om ditt familj.", "Answer the questions. Start with your family."], ["Berätta om andra i din familj.", "Tell about others in your family."]] }
+      ] },
+      { title: "Page 9 - Listen And Mark Stress", sections: [
+        { heading: "Exercise", rows: [["Lyssna på orden och sätt dem på raderna.", "Listen to the words and put them on the lines."], ["tredje gången", "the third time"]] }
+      ] },
+      { title: "Page 10 - Subject And Object", sections: [
+        { heading: "Pronouns", rows: [["jag / mig", "I / me"], ["du / dig", "you / you"], ["han / honom", "he / him"], ["hon / henne", "she / her"], ["vi / oss", "we / us"], ["ni / er", "you / you plural"], ["de / dem", "they / them"]] }
+      ] },
+      { title: "Page 11 - Min, Mitt, Mina", sections: [
+        { heading: "Possessive forms", rows: [["min", "my, for en-words"], ["mitt", "my, for ett-words"], ["mina", "my, plural"], ["din / ditt / dina", "your forms"], ["hans / hennes / deras", "his / her / their"]] }
+      ] },
+      { title: "Page 12 - Vi eller dem?", sections: [
+        { heading: "Exercise", rows: [["Vi eller dem?", "We or them?"], ["Skriv och prata.", "Write and speak."], ["Prata på dialogen med en kompis.", "Practice the dialogue with a classmate."]] }
+      ] },
+      { title: "Page 13 - Form Fields", sections: [
+        { heading: "Personal information", rows: [["datum", "date"], ["förnamn", "first name"], ["efternamn", "last name"], ["gata", "street"], ["postnummer", "postal code"], ["ort", "city/town"], ["personnummer", "personal identity number"], ["telefonnummer", "phone number"], ["e-post", "email"], ["ålder", "age"], ["språk", "language"], ["nationalitet", "nationality"]] }
+      ] },
+      { title: "Page 14 - Numbers", sections: [
+        { heading: "Exercise", rows: [["Lyssna på filmen. Läs. Skriv siffrorna.", "Watch the film. Read. Write the numbers."], ["Skriv siffrorna med bokstäver.", "Write the numbers with letters."]] }
+      ] }
     ];
 
     const pageTranslations = [
@@ -1225,12 +1442,12 @@
       document.querySelector("#videoDock").classList.add("open");
     }
 
-    function renderQrOverlay(page, overlay) {
-      const size = pageSizes[page];
+    function renderQrOverlay(page, overlay, sizes = pageSizes, codes = qrCodes) {
+      const size = sizes[page];
       overlay.innerHTML = "";
       if (!size) return;
 
-      const pageCodes = qrCodes.filter(code => code.page === page);
+      const pageCodes = codes.filter(code => code.page === page);
       pageCodes.forEach((code, index) => {
         const marker = document.createElement("button");
         const isUrl = code.type === "url";
@@ -1253,8 +1470,8 @@
       });
     }
 
-    function qrSummary(page) {
-      const codes = qrCodes.filter(code => code.page === page);
+    function qrSummary(page, codesSource = qrCodes) {
+      const codes = codesSource.filter(code => code.page === page);
       if (!codes.length) return "No QR code was found on this page.";
       const urls = codes.filter(code => code.type === "url").length;
       const unreadable = codes.filter(code => code.type === "unreadable").length;
@@ -1328,6 +1545,83 @@
       renderQrOverlay(1, overlay);
     }
 
+    function renderWeek2Terms() {
+      const grid = document.querySelector("#week2Terms");
+      grid.innerHTML = "";
+      week2Terms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button type="button" aria-label="Hear ${sv}">▶</button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek2Comparison() {
+      const thumbs = document.querySelector("#week2CompareThumbs");
+      const image = document.querySelector("#week2CompareImage");
+      const overlay = document.querySelector("#week2CompareQrOverlay");
+      const panel = document.querySelector("#week2TranslationPanel");
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week2Translations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week2-pages/page-${page}.jpg`;
+        image.alt = `Week 2 page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week2PageSizes, week2QrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Corrected page photo on the left, English notes on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week2QrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            row.innerHTML = `<div class="sv">${sv}</div><div class="en">${en}</div>`;
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week2Translations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
+    function renderWeek2Pages() {
+      const thumbs = document.querySelector("#week2Thumbs");
+      const image = document.querySelector("#week2PageImage");
+      const overlay = document.querySelector("#week2PageQrOverlay");
+      for (let i = 1; i <= 14; i += 1) {
+        const page = String(i).padStart(2, "0");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${i}`;
+        if (i === 1) button.classList.add("active");
+        button.addEventListener("click", () => {
+          [...thumbs.children].forEach(child => child.classList.remove("active"));
+          button.classList.add("active");
+          image.src = `assets/sfi-week2-pages/page-${page}.jpg`;
+          image.alt = `Week 2 original page ${i}`;
+          renderQrOverlay(i, overlay, week2PageSizes, week2QrCodes);
+        });
+        thumbs.appendChild(button);
+      }
+      renderQrOverlay(1, overlay, week2PageSizes, week2QrCodes);
+    }
+
     document.addEventListener("click", event => {
       const target = event.target.closest("[data-say]");
       if (target) speak(target.dataset.say);
@@ -1368,6 +1662,9 @@
     renderWriting();
     renderComparison();
     renderPages();
+    renderWeek2Terms();
+    renderWeek2Comparison();
+    renderWeek2Pages();
 
     window.addEventListener("load", () => {
       if (!location.hash) return;
