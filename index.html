@@ -1056,14 +1056,14 @@
 
     const week1Terms = [
       ["bokstav", "letter"], ["alfabet", "alphabet"], ["uttal", "pronunciation"], ["stavning", "spelling"],
-      ["vokal", "vowel"], ["konsonant", "consonant"], ["h?rd", "hard"], ["mjuk", "soft"],
-      ["ord", "word"], ["ljud", "sound"], ["skriva", "write"], ["l?sa", "read"], ["lyssna", "listen"],
-      ["fr?ga", "question"], ["svara", "answer"], ["f?rst?r", "understand"], ["f?rl?t", "sorry"],
-      ["g?r", "goes / walks"], ["g?r", "does / makes"], ["hus", "house"], ["bord", "table"], ["k?k", "kitchen"],
-      ["sjuk", "sick"], ["hj?rta", "heart"], ["djur", "animal"], ["s?ng", "song"], ["barn", "children"],
-      ["spr?k", "language"], ["schema", "schedule"], ["lektion", "lesson"], ["tjugo", "twenty"], ["hundra", "hundred"],
-      ["m?ndag", "Monday"], ["tisdag", "Tuesday"], ["onsdag", "Wednesday"], ["torsdag", "Thursday"], ["fredag", "Friday"],
-      ["l?rdag", "Saturday"], ["s?ndag", "Sunday"]
+      ["vokal", "vowel"], ["konsonant", "consonant"], ["hård", "hard"], ["mjuk", "soft"],
+      ["ord", "word"], ["ljud", "sound"], ["skriva", "write"], ["läsa", "read"], ["lyssna", "listen"],
+      ["fråga", "question"], ["svara", "answer"], ["förstår", "understand"], ["förlåt", "sorry"],
+      ["går", "goes / walks"], ["gör", "does / makes"], ["hus", "house"], ["bord", "table"], ["kök", "kitchen"],
+      ["sjuk", "sick"], ["hjärta", "heart"], ["djur", "animal"], ["sång", "song"], ["barn", "children"],
+      ["språk", "language"], ["schema", "schedule"], ["lektion", "lesson"], ["tjugo", "twenty"], ["hundra", "hundred"],
+      ["måndag", "Monday"], ["tisdag", "Tuesday"], ["onsdag", "Wednesday"], ["torsdag", "Thursday"], ["fredag", "Friday"],
+      ["lördag", "Saturday"], ["söndag", "Sunday"]
     ];
 
     const pageSizes = {
@@ -1146,86 +1146,86 @@
 
     const week2FamilyStoryRows = [
       ["Jag heter Anita.", "My name is Anita."],
-      ["Jag ?r gift.", "I am married."],
+      ["Jag är gift.", "I am married."],
       ["Min man heter Kent.", "My husband is called Kent."],
-      ["Jag ?r Kents fru.", "I am Kent's wife."],
+      ["Jag är Kents fru.", "I am Kent's wife."],
       ["Vi har tre barn.", "We have three children."],
       ["De heter Sofia, Sonja och Amir.", "They are called Sofia, Sonja and Amir."],
-      ["Sofia och Sonja ?r mina d?ttrar.", "Sofia and Sonja are my daughters."],
-      ["Amir ?r min son.", "Amir is my son."],
-      ["Sofia, Sonja och Amir ?r syskon.", "Sofia, Sonja and Amir are siblings."],
+      ["Sofia och Sonja är mina döttrar.", "Sofia and Sonja are my daughters."],
+      ["Amir är min son.", "Amir is my son."],
+      ["Sofia, Sonja och Amir är syskon.", "Sofia, Sonja and Amir are siblings."],
       ["Min mamma heter Maria.", "My mother is called Maria."],
-      ["Hon ?r barnens mormor.", "She is the children's maternal grandmother."],
-      ["Min pappa ?r d?d.", "My father is dead."],
+      ["Hon är barnens mormor.", "She is the children's maternal grandmother."],
+      ["Min pappa är död.", "My father is dead."],
       ["Han var barnens morfar.", "He was the children's maternal grandfather."],
-      ["Kents pappa och mamma ?r barnens farfar och farmor.", "Kent's father and mother are the children's paternal grandfather and paternal grandmother."],
+      ["Kents pappa och mamma är barnens farfar och farmor.", "Kent's father and mother are the children's paternal grandfather and paternal grandmother."],
       ["Min syster heter Kristina.", "My sister is called Kristina."],
-      ["Hon ?r mina barns moster.", "She is my children's maternal aunt."],
-      ["Kristina har tv? barn.", "Kristina has two children."],
+      ["Hon är mina barns moster.", "She is my children's maternal aunt."],
+      ["Kristina har två barn.", "Kristina has two children."],
       ["De heter Niklas och Dennis.", "They are called Niklas and Dennis."],
-      ["Kristinas barn och mina barn ?r kusiner.", "Kristina's children and my children are cousins."],
+      ["Kristinas barn och mina barn är kusiner.", "Kristina's children and my children are cousins."],
       ["Min bror heter Per.", "My brother is called Per."],
-      ["Per ?r barnens morbror.", "Per is the children's maternal uncle."]
+      ["Per är barnens morbror.", "Per is the children's maternal uncle."]
     ];
 
     const week2Translations = [
       { title: "Page 1 - Familj", sections: [
-        { heading: "Title and instruction", rows: [["Familj", "Family"], ["Lyssna p? filmen", "Listen to the film."]] },
+        { heading: "Title and instruction", rows: [["Familj", "Family"], ["Lyssna på filmen", "Listen to the film."]] },
         { heading: "Family words", rows: [["mamma", "mother"], ["pappa", "father"], ["barn", "child / children"], ["bror", "brother"], ["syster", "sister"], ["son", "son"], ["dotter", "daughter"], ["fru", "wife"], ["man", "husband / man"], ["kusin", "cousin"], ["mormor / morfar", "mother's mother / mother's father"], ["farmor / farfar", "father's mother / father's father"], ["moster / morbror", "mother's sister / mother's brother"], ["faster / farbror", "father's sister / father's brother"]] }
       ] },
       { title: "Page 2 - Min familj", sections: [
-        { heading: "Instruction", rows: [["L?s och lyssna p? Min familj.", "Read and listen to My family."]] },
+        { heading: "Instruction", rows: [["Läs och lyssna på Min familj.", "Read and listen to My family."]] },
         { heading: "Full text", rows: week2FamilyStoryRows }
       ] },
       { title: "Page 3 - Write The Words", sections: [
-        { heading: "Instruction", rows: [["Skriv orden p? ditt spr?k och p? svenska igen.", "Write the words in your language and in Swedish again."], ["ditt spr?k", "your language"], ["svenska", "Swedish"]] },
+        { heading: "Instruction", rows: [["Skriv orden på ditt språk och på svenska igen.", "Write the words in your language and in Swedish again."], ["ditt språk", "your language"], ["svenska", "Swedish"]] },
         { heading: "Vocabulary", rows: week2Terms.slice(0, 18) }
       ] },
       { title: "Page 4 - Possessive Names", sections: [
-        { heading: "Read", rows: [["Gunilla har en penna.", "Gunilla has a pen."], ["Det ?r Gunillas penna.", "It is Gunilla's pen."], ["Anna har en bil.", "Anna has a car."], ["Det ?r Annas bil.", "It is Anna's car."], ["Peter har en bok.", "Peter has a book."], ["Det ?r Peters bok.", "It is Peter's book."]] },
-        { heading: "Fill in", rows: [["Sara har en dotter. Det ?r ___ dotter.", "Sara has a daughter. It is ___ daughter."], ["Robin har en son. Det ?r ___ son.", "Robin has a son. It is ___ son."], ["Kristina har tv? barn. Det ?r ___ barn.", "Kristina has two children. They are ___ children."], ["Barnen har en mormor. Det ?r ___ mormor.", "The children have a maternal grandmother. It is ___ grandmother."], ["Anita har en mamma. Det ?r ___ mamma.", "Anita has a mother. It is ___ mother."]] },
-        { heading: "Video task", rows: [["Titta p? filmen och fyll i r?tt namn.", "Watch the film and fill in the correct name."], ["Vem ?r det? Det ?r ___", "Who is it? It is ___"]] }
+        { heading: "Read", rows: [["Gunilla har en penna.", "Gunilla has a pen."], ["Det är Gunillas penna.", "It is Gunilla's pen."], ["Anna har en bil.", "Anna has a car."], ["Det är Annas bil.", "It is Anna's car."], ["Peter har en bok.", "Peter has a book."], ["Det är Peters bok.", "It is Peter's book."]] },
+        { heading: "Fill in", rows: [["Sara har en dotter. Det är ___ dotter.", "Sara has a daughter. It is ___ daughter."], ["Robin har en son. Det är ___ son.", "Robin has a son. It is ___ son."], ["Kristina har två barn. Det är ___ barn.", "Kristina has two children. They are ___ children."], ["Barnen har en mormor. Det är ___ mormor.", "The children have a maternal grandmother. It is ___ grandmother."], ["Anita har en mamma. Det är ___ mamma.", "Anita has a mother. It is ___ mother."]] },
+        { heading: "Video task", rows: [["Titta på filmen och fyll i rätt namn.", "Watch the film and fill in the correct name."], ["Vem är det? Det är ___", "Who is it? It is ___"]] }
       ] },
       { title: "Page 5 - Who Are You?", sections: [
-        { heading: "Dialogue prompts", rows: [["Titta p? filmen och skriv r?tt ord.", "Watch the film and write the correct word."], ["Vem ?r du?", "Who are you?"], ["Jag ?r Anitas ___.", "I am Anita's ___."], ["Jag ?r Kents ___.", "I am Kent's ___."]] },
-        { heading: "Questions about page 2", rows: [["Svara p? fr?gorna till texten p? sidan 2.", "Answer the questions about the text on page 2."], ["Vad heter Anitas man?", "What is Anita's husband's name?"], ["Hur m?nga barn har Anita och Kent?", "How many children do Anita and Kent have?"], ["Vem ?r Maria?", "Who is Maria?"], ["Vem ?r d?d?", "Who is dead?"], ["Vad heter Anitas syster?", "What is Anita's sister called?"], ["Vad heter barnens morbror?", "What is the children's maternal uncle called?"], ["Hur m?nga syskon har Anita?", "How many siblings does Anita have?"]] }
+        { heading: "Dialogue prompts", rows: [["Titta på filmen och skriv rätt ord.", "Watch the film and write the correct word."], ["Vem är du?", "Who are you?"], ["Jag är Anitas ___.", "I am Anita's ___."], ["Jag är Kents ___.", "I am Kent's ___."]] },
+        { heading: "Questions about page 2", rows: [["Svara på frågorna till texten på sidan 2.", "Answer the questions about the text on page 2."], ["Vad heter Anitas man?", "What is Anita's husband's name?"], ["Hur många barn har Anita och Kent?", "How many children do Anita and Kent have?"], ["Vem är Maria?", "Who is Maria?"], ["Vem är död?", "Who is dead?"], ["Vad heter Anitas syster?", "What is Anita's sister called?"], ["Vad heter barnens morbror?", "What is the children's maternal uncle called?"], ["Hur många syskon har Anita?", "How many siblings does Anita have?"]] }
       ] },
       { title: "Page 6 - Questions And Answers", sections: [
-        { heading: "Instruction", rows: [["Titta p? filmen. L?s fr?gor och svar.", "Watch the film. Read questions and answers."]] },
-        { heading: "Per", rows: [["?r du gift?", "Are you married?"], ["Nej, jag ?r inte gift.", "No, I am not married."], ["Har du barn?", "Do you have children?"], ["Nej, jag har inga barn.", "No, I do not have any children."]] },
-        { heading: "Maria", rows: [["?r du skild?", "Are you divorced?"], ["Nej, jag ?r inte skild.", "No, I am not divorced."], ["?r du ?nka?", "Are you a widow?"], ["Ja, jag ?r ?nka.", "Yes, I am a widow."], ["Har du n?gra syskon?", "Do you have any siblings?"], ["Nej, jag har inga syskon.", "No, I do not have any siblings."]] },
-        { heading: "Anita", rows: [["Har du syskon?", "Do you have siblings?"], ["Ja, jag har tv? syskon.", "Yes, I have two siblings."], ["Jag har en lillasyster och en storebror.", "I have a little sister and an older brother."], ["Var bor din syster?", "Where does your sister live?"], ["Min syster bor i Malm?.", "My sister lives in Malm?."], ["Var bor din bror?", "Where does your brother live?"], ["Min bror bor i Vetlanda.", "My brother lives in Vetlanda."], ["Vad g?r din syster?", "What does your sister do?"], ["Hon jobbar p? bank.", "She works at a bank."], ["Vad g?r din bror?", "What does your brother do?"], ["Han delar ut reklam.", "He delivers advertising leaflets."]] }
+        { heading: "Instruction", rows: [["Titta på filmen. Läs frågor och svar.", "Watch the film. Read questions and answers."]] },
+        { heading: "Per", rows: [["Är du gift?", "Are you married?"], ["Nej, jag är inte gift.", "No, I am not married."], ["Har du barn?", "Do you have children?"], ["Nej, jag har inga barn.", "No, I do not have any children."]] },
+        { heading: "Maria", rows: [["Är du skild?", "Are you divorced?"], ["Nej, jag är inte skild.", "No, I am not divorced."], ["Är du änka?", "Are you a widow?"], ["Ja, jag är änka.", "Yes, I am a widow."], ["Har du några syskon?", "Do you have any siblings?"], ["Nej, jag har inga syskon.", "No, I do not have any siblings."]] },
+        { heading: "Anita", rows: [["Har du syskon?", "Do you have siblings?"], ["Ja, jag har två syskon.", "Yes, I have two siblings."], ["Jag har en lillasyster och en storebror.", "I have a little sister and an older brother."], ["Var bor din syster?", "Where does your sister live?"], ["Min syster bor i Malmö.", "My sister lives in Malmö."], ["Var bor din bror?", "Where does your brother live?"], ["Min bror bor i Vetlanda.", "My brother lives in Vetlanda."], ["Vad gör din syster?", "What does your sister do?"], ["Hon jobbar på bank.", "She works at a bank."], ["Vad gör din bror?", "What does your brother do?"], ["Han delar ut reklam.", "He delivers advertising leaflets."]] }
       ] },
       { title: "Page 7 - Family Relations", sections: [
-        { heading: "Fill in", rows: [["Titta p? filmen. L?s och fyll i r?tt ord.", "Watch the film. Read and fill in the correct word."], ["Min mammas mamma ?r min ___.", "My mother's mother is my ___."], ["Min mammas pappa ?r min ___.", "My mother's father is my ___."], ["Min pappas mamma ?r min ___.", "My father's mother is my ___."], ["Min pappas pappa ?r min ___.", "My father's father is my ___."], ["Min mammas bror ?r min ___.", "My mother's brother is my ___."], ["Min mammas syster ?r min ___.", "My mother's sister is my ___."], ["Min pappas bror ?r min ___.", "My father's brother is my ___."], ["Min pappas syster ?r min ___.", "My father's sister is my ___."]] },
-        { heading: "Talk task", rows: [["Prata med en kompis om Sonjas familj.", "Talk with a classmate about Sonja's family."], ["Dennis och Niklas ?r Sonjas kusiner.", "Dennis and Niklas are Sonja's cousins."], ["Ber?tta: Sonjas mamma heter ...", "Tell: Sonja's mother is called ..."], ["Sonjas farfar heter ...", "Sonja's paternal grandfather is called ..."]] }
+        { heading: "Fill in", rows: [["Titta på filmen. Läs och fyll i rätt ord.", "Watch the film. Read and fill in the correct word."], ["Min mammas mamma är min ___.", "My mother's mother is my ___."], ["Min mammas pappa är min ___.", "My mother's father is my ___."], ["Min pappas mamma är min ___.", "My father's mother is my ___."], ["Min pappas pappa är min ___.", "My father's father is my ___."], ["Min mammas bror är min ___.", "My mother's brother is my ___."], ["Min mammas syster är min ___.", "My mother's sister is my ___."], ["Min pappas bror är min ___.", "My father's brother is my ___."], ["Min pappas syster är min ___.", "My father's sister is my ___."]] },
+        { heading: "Talk task", rows: [["Prata med en kompis om Sonjas familj.", "Talk with a classmate about Sonja's family."], ["Dennis och Niklas är Sonjas kusiner.", "Dennis and Niklas are Sonja's cousins."], ["Berätta: Sonjas mamma heter ...", "Tell: Sonja's mother is called ..."], ["Sonjas farfar heter ...", "Sonja's paternal grandfather is called ..."]] }
       ] },
       { title: "Page 8 - Write About Your Family", sections: [
-        { heading: "Writing prompts", rows: [["Svara p? fr?gorna. Ber?tta om ditt familj.", "Answer the questions. Tell about your family."], ["Vem m?nga syskon har du?", "How many siblings do you have?"], ["Var bor de? Vad g?r de?", "Where do they live? What do they do?"], ["Ber?tta om andra i din familj.", "Tell about others in your family."], ["Var bor de? Vad g?r de?", "Where do they live? What do they do?"]] }
+        { heading: "Writing prompts", rows: [["Svara på frågorna. Berätta om ditt familj.", "Answer the questions. Tell about your family."], ["Vem många syskon har du?", "How many siblings do you have?"], ["Var bor de? Vad gör de?", "Where do they live? What do they do?"], ["Berätta om andra i din familj.", "Tell about others in your family."], ["Var bor de? Vad gör de?", "Where do they live? What do they do?"]] }
       ] },
       { title: "Page 9 - Numbers Practice", sections: [
-        { heading: "Listening task", rows: [["Lyssna p? orden och skriv dem p? raderna.", "Listen to the words and write them on the lines."], ["tredje g?ngen", "the third time"]] },
-        { heading: "Numbers", rows: [["1, 2, 3 ... 10", "one, two, three ... ten"], ["Skriv siffror eller ord p? raderna.", "Write numbers or words on the lines."]] }
+        { heading: "Listening task", rows: [["Lyssna på orden och skriv dem på raderna.", "Listen to the words and write them on the lines."], ["tredje gången", "the third time"]] },
+        { heading: "Numbers", rows: [["1, 2, 3 ... 10", "one, two, three ... ten"], ["Skriv siffror eller ord på raderna.", "Write numbers or words on the lines."]] }
       ] },
       { title: "Page 10 - Subject Pronouns", sections: [
-        { heading: "Instruction", rows: [["Titta p? filmen om subjekt.", "Watch the film about subjects."], ["?vers?tt orden till ditt spr?k.", "Translate the words into your language."], ["hen = hon eller han", "hen = she or he / gender-neutral pronoun"]] },
+        { heading: "Instruction", rows: [["Titta på filmen om subjekt.", "Watch the film about subjects."], ["Översätt orden till ditt språk.", "Translate the words into your language."], ["hen = hon eller han", "hen = she or he / gender-neutral pronoun"]] },
         { heading: "Pronouns", rows: [["jag", "I"], ["du", "you"], ["hon", "she"], ["han", "he"], ["den/det", "it"], ["vi", "we"], ["ni", "you plural"], ["de", "they"]] },
-        { heading: "Fill in: Han, Hon, Den, Det", rows: [["En kvinna dansar.", "A woman dances."], ["En man cyklar.", "A man bikes."], ["En pojke skrattar.", "A boy laughs."], ["En flicka springer.", "A girl runs."], ["H?sten ?ter.", "The horse eats."], ["Taket ?r vitt.", "The roof is white."], ["Golvet ?r svart.", "The floor is black."], ["Katten dricker.", "The cat drinks."]] }
+        { heading: "Fill in: Han, Hon, Den, Det", rows: [["En kvinna dansar.", "A woman dances."], ["En man cyklar.", "A man bikes."], ["En pojke skrattar.", "A boy laughs."], ["En flicka springer.", "A girl runs."], ["Hästen äter.", "The horse eats."], ["Taket är vitt.", "The roof is white."], ["Golvet är svart.", "The floor is black."], ["Katten dricker.", "The cat drinks."]] }
       ] },
       { title: "Page 11 - Possessive Pronouns", sections: [
         { heading: "Possessive forms", rows: [["min", "my, for en-words"], ["mitt", "my, for ett-words"], ["mina", "my, plural"], ["din / ditt / dina", "your forms"], ["hans", "his"], ["hennes", "her"], ["deras", "their"]] },
-        { heading: "Example patterns", rows: [["Jag har en syster. Hon ?r min syster.", "I have a sister. She is my sister."], ["Jag har ett barn. Det ?r mitt barn.", "I have a child. It is my child."], ["Jag har tv? barn. De ?r mina barn.", "I have two children. They are my children."]] }
+        { heading: "Example patterns", rows: [["Jag har en syster. Hon är min syster.", "I have a sister. She is my sister."], ["Jag har ett barn. Det är mitt barn.", "I have a child. It is my child."], ["Jag har två barn. De är mina barn.", "I have two children. They are my children."]] }
       ] },
       { title: "Page 12 - Pronouns: Den, Det, De", sections: [
-        { heading: "Fill in the correct pronoun", rows: [["Fyll i r?tt pronomen.", "Fill in the correct pronoun."], ["Den, det eller de?", "Den, det or de?"], ["Jag ser en hund. ___ ?r stor.", "I see a dog. ___ is big."], ["Jag ser fem hundar. ___ ?r stora.", "I see five dogs. ___ are big."], ["Jag ser en katt. ___ ?r stor.", "I see a cat. ___ is big."], ["Jag ser fem katter. ___ ?r stora.", "I see five cats. ___ are big."], ["Jag ser ett hus. ___ ?r stort.", "I see a house. ___ is big."], ["Jag ser sex hus. ___ ?r stora.", "I see six houses. ___ are big."], ["Jag ser ett tr?d. ___ ?r stort.", "I see a tree. ___ is big."], ["Jag ser tv? tr?d. ___ ?r stora.", "I see two trees. ___ are big."], ["Jag ser en bil. ___ ?r stor.", "I see a car. ___ is big."], ["Jag ser tre bilar. ___ ?r stora.", "I see three cars. ___ are big."]] },
-        { heading: "Hon, han eller de?", rows: [["Det ?r en kvinna. ___ heter Anita.", "It is a woman. ___ is called Anita."], ["Det ?r tv? kvinnor. ___ heter Sara och Anita.", "They are two women. ___ are called Sara and Anita."], ["Det ?r en pojke. ___ heter Sven.", "It is a boy. ___ is called Sven."], ["Det ?r tv? pojkar. ___ heter Samuel och Fredrik.", "They are two boys. ___ are called Samuel and Fredrik."], ["Det ?r en man. ___ heter David.", "It is a man. ___ is called David."], ["Det ?r tv? m?n. ___ heter Pelle och Kalle.", "They are two men. ___ are called Pelle and Kalle."], ["Det ?r en flicka. ___ heter Anna.", "It is a girl. ___ is called Anna."], ["Det ?r tv? flickor. ___ heter Tina och Anna.", "They are two girls. ___ are called Tina and Anna."]] }
+        { heading: "Fill in the correct pronoun", rows: [["Fyll i rätt pronomen.", "Fill in the correct pronoun."], ["Den, det eller de?", "Den, det or de?"], ["Jag ser en hund. ___ är stor.", "I see a dog. ___ is big."], ["Jag ser fem hundar. ___ är stora.", "I see five dogs. ___ are big."], ["Jag ser en katt. ___ är stor.", "I see a cat. ___ is big."], ["Jag ser fem katter. ___ är stora.", "I see five cats. ___ are big."], ["Jag ser ett hus. ___ är stort.", "I see a house. ___ is big."], ["Jag ser sex hus. ___ är stora.", "I see six houses. ___ are big."], ["Jag ser ett träd. ___ är stort.", "I see a tree. ___ is big."], ["Jag ser två träd. ___ är stora.", "I see two trees. ___ are big."], ["Jag ser en bil. ___ är stor.", "I see a car. ___ is big."], ["Jag ser tre bilar. ___ är stora.", "I see three cars. ___ are big."]] },
+        { heading: "Hon, han eller de?", rows: [["Det är en kvinna. ___ heter Anita.", "It is a woman. ___ is called Anita."], ["Det är två kvinnor. ___ heter Sara och Anita.", "They are two women. ___ are called Sara and Anita."], ["Det är en pojke. ___ heter Sven.", "It is a boy. ___ is called Sven."], ["Det är två pojkar. ___ heter Samuel och Fredrik.", "They are two boys. ___ are called Samuel and Fredrik."], ["Det är en man. ___ heter David.", "It is a man. ___ is called David."], ["Det är två män. ___ heter Pelle och Kalle.", "They are two men. ___ are called Pelle and Kalle."], ["Det är en flicka. ___ heter Anna.", "It is a girl. ___ is called Anna."], ["Det är två flickor. ___ heter Tina och Anna.", "They are two girls. ___ are called Tina and Anna."]] }
       ] },
       { title: "Page 13 - Form Fields", sections: [
-        { heading: "Instruction", rows: [["Titta p? filmen och fyll i blanketten.", "Watch the film and fill in the form."]] },
-        { heading: "Personal information", rows: [["datum", "date"], ["f?rnamn", "first name"], ["efternamn", "last name"], ["gata", "street"], ["postnummer", "postal code"], ["ort", "city/town"], ["personnummer", "personal identity number"], ["telefonnummer", "phone number"], ["e-post", "email"], ["?lder", "age"], ["antal barn", "number of children"], ["antal ?r i Sverige", "number of years in Sweden"], ["spr?k", "language"], ["nationalitet", "nationality"]] }
+        { heading: "Instruction", rows: [["Titta på filmen och fyll i blanketten.", "Watch the film and fill in the form."]] },
+        { heading: "Personal information", rows: [["datum", "date"], ["förnamn", "first name"], ["efternamn", "last name"], ["gata", "street"], ["postnummer", "postal code"], ["ort", "city/town"], ["personnummer", "personal identity number"], ["telefonnummer", "phone number"], ["e-post", "email"], ["ålder", "age"], ["antal barn", "number of children"], ["antal år i Sverige", "number of years in Sweden"], ["språk", "language"], ["nationalitet", "nationality"]] }
       ] },
       { title: "Page 14 - Larger Numbers", sections: [
-        { heading: "Instructions", rows: [["Titta p? filmen. L?s. Skriv siffrorna.", "Watch the film. Read. Write the numbers."], ["Skriv siffrorna med bokst?ver.", "Write the numbers with letters."]] },
+        { heading: "Instructions", rows: [["Titta på filmen. Läs. Skriv siffrorna.", "Watch the film. Read. Write the numbers."], ["Skriv siffrorna med bokstäver.", "Write the numbers with letters."]] },
         { heading: "Number words", rows: [["tjugo", "twenty"], ["trettio", "thirty"], ["fyrtio", "forty"], ["femtio", "fifty"], ["hundra", "hundred"], ["tusen", "thousand"], ["miljon", "million"]] }
       ] }
     ];
