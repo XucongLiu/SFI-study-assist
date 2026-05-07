@@ -372,6 +372,18 @@
       cursor: pointer;
     }
 
+    .speak-button::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      margin: auto;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      border-left: 10px solid var(--ink);
+      transform: translateX(1px);
+    }
+
     .flash-area {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
@@ -853,7 +865,7 @@
         <h1>SFI Week 1</h1>
         <p>Swedish alphabet, hard and soft vowels, useful spelling patterns, and the worksheet word lists turned into practice you can hear, repeat, and test.</p>
         <div class="actions">
-          <button class="btn primary" type="button" data-say="Det svenska alfabetet har tjugonio bokstäver.">▶ Hear Swedish</button>
+          <button class="btn primary" type="button" data-say="Det svenska alfabetet har tjugonio bokstäver.">Hear Swedish</button>
             <a class="btn" href="#week1-words">Practice Words</a>
         </div>
         <div class="voice-control">
@@ -934,7 +946,7 @@
         <div class="panel pad">
           <h3>Controls</h3>
           <div class="grid">
-            <button class="btn primary" type="button" id="sayFlash">▶ Play</button>
+            <button class="btn primary" type="button" id="sayFlash">Play</button>
             <button class="btn" type="button" id="nextFlash">Next Word</button>
             <button class="btn" type="button" id="slowFlash">Slow Repeat</button>
           </div>
@@ -1441,7 +1453,7 @@
       week1Terms.forEach(([sv, en]) => {
         const item = document.createElement("div");
         item.className = "term";
-        item.innerHTML = '<span><strong>' + sv + '</strong><br><span class="en">' + en + '</span></span><button type="button" aria-label="Hear ' + sv + '">?</button>';
+        item.innerHTML = '<span><strong>' + sv + '</strong><br><span class="en">' + en + '</span></span><button class="speak-button" type="button" aria-label="Hear ' + sv + '"></button>';
         item.querySelector("button").addEventListener("click", () => speak(sv));
         grid.appendChild(item);
       });
@@ -1467,7 +1479,7 @@
       vowelWords[activeVowel].forEach(word => {
         const item = document.createElement("div");
         item.className = "word";
-        item.innerHTML = `<span>${word}</span><button type="button" aria-label="Hear ${word}">▶</button>`;
+        item.innerHTML = `<span>${word}</span><button class="speak-button" type="button" aria-label="Hear ${word}"></button>`;
         item.querySelector("button").addEventListener("click", () => speak(word));
         words.appendChild(item);
       });
@@ -1645,7 +1657,7 @@
       week2Terms.forEach(([sv, en]) => {
         const item = document.createElement("div");
         item.className = "term";
-        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button type="button" aria-label="Hear ${sv}">▶</button>`;
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
         item.querySelector("button").addEventListener("click", () => speak(sv));
         grid.appendChild(item);
       });
