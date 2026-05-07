@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="icon" href="data:," />
   <title>SFI Week 1 - Swedish Alphabet and Vowels</title>
   <style>
     :root {
@@ -121,6 +122,10 @@
 
     .week-panel[hidden],
     .week-nav[hidden] {
+      display: none !important;
+    }
+
+    .legacy-panel {
       display: none !important;
     }
 
@@ -664,25 +669,6 @@
       text-transform: uppercase;
     }
 
-    .week-hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(250px, 0.65fr);
-      gap: 18px;
-      align-items: center;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--soft-green);
-    }
-
-    .week-hero img {
-      width: 100%;
-      max-height: 420px;
-      object-fit: contain;
-      border-radius: 8px;
-      background: white;
-    }
-
     .term-list {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
@@ -805,7 +791,6 @@
       }
 
       .hero,
-      .week-hero,
       .two,
       .three,
       .flash-area,
@@ -835,19 +820,12 @@
     <strong>SFI Study</strong>
     <span class="nav-label week-nav" data-week="week1">Week 1</span>
     <a class="week-nav" data-week="week1" href="#week1">Overview</a>
-    <a class="week-nav" data-week="week1" href="#alphabet">Alphabet</a>
-    <a class="week-nav" data-week="week1" href="#rules">Spelling Rules</a>
-    <a class="week-nav" data-week="week1" href="#vowels">Vowels</a>
-    <a class="week-nav" data-week="week1" href="#flashcards">Flashcards</a>
-    <a class="week-nav" data-week="week1" href="#quiz">Quiz</a>
-    <a class="week-nav" data-week="week1" href="#writing">Writing</a>
     <a class="week-nav" data-week="week1" href="#compare">Translations</a>
-    <a class="week-nav" data-week="week1" href="#pages">Original Pages</a>
+    <a class="week-nav" data-week="week1" href="#week1-words">Word Learning</a>
     <span class="nav-label week-nav" data-week="week2">Week 2</span>
     <a class="week-nav" data-week="week2" href="#week2">Overview</a>
-    <a class="week-nav" data-week="week2" href="#week2-family">Family Words</a>
     <a class="week-nav" data-week="week2" href="#week2-compare">Translations</a>
-    <a class="week-nav" data-week="week2" href="#week2-pages">Original Pages</a>
+    <a class="week-nav" data-week="week2" href="#week2-family">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -876,8 +854,7 @@
         <p>Swedish alphabet, hard and soft vowels, useful spelling patterns, and the worksheet word lists turned into practice you can hear, repeat, and test.</p>
         <div class="actions">
           <button class="btn primary" type="button" data-say="Det svenska alfabetet har tjugonio bokstäver.">▶ Hear Swedish</button>
-          <a class="btn" href="#flashcards">Practice Words</a>
-          <a class="btn" href="#pages">View Scans</a>
+            <a class="btn" href="#week1-words">Practice Words</a>
         </div>
         <div class="voice-control">
           <label for="voiceSelect">Swedish voice</label>
@@ -895,7 +872,7 @@
   </header>
 
   <main>
-    <section id="alphabet" class="week-panel" data-week="week1">
+    <section id="alphabet" class="legacy-panel" hidden>
       <h2>Alphabet</h2>
       <p class="section-lead">Swedish has 29 letters. Tap a letter to hear it. The colored vowels are grouped from the worksheet: hard vowels and soft vowels.</p>
       <div class="grid two">
@@ -914,7 +891,7 @@
       </div>
     </section>
 
-    <section id="rules" class="week-panel" data-week="week1">
+    <section id="rules" class="legacy-panel" hidden>
       <h2>Spelling Rules</h2>
       <p class="section-lead">These are the sound patterns from the alphabet pages. Use them as shortcuts when you read new words.</p>
       <div class="grid three">
@@ -943,16 +920,8 @@
       </div>
     </section>
 
-    <section id="vowels" class="week-panel" data-week="week1">
-      <h2>Vowels</h2>
-      <p class="section-lead">Choose a vowel, listen to words from the worksheet, then repeat them out loud. The page includes the original scans below if you want the full worksheet view.</p>
-      <div class="panel pad">
-        <div class="vowel-tabs" id="vowelTabs"></div>
-        <div class="word-grid" id="wordGrid"></div>
-      </div>
-    </section>
-
-    <section id="flashcards" class="week-panel" data-week="week1">
+    
+    <section id="flashcards" class="legacy-panel" hidden>
       <h2>Flashcards</h2>
       <p class="section-lead">Use this for quick repetition. Say the word yourself, then press the sound button and compare.</p>
       <div class="flash-area">
@@ -974,7 +943,7 @@
       </div>
     </section>
 
-    <section id="quiz" class="week-panel" data-week="week1">
+    <section id="quiz" class="legacy-panel" hidden>
       <h2>Quiz</h2>
       <p class="section-lead">A small self-check for the worksheet rules. The page keeps score only while it is open.</p>
       <div class="grid two">
@@ -992,7 +961,7 @@
       </div>
     </section>
 
-    <section id="writing" class="week-panel" data-week="week1">
+    <section id="writing" class="legacy-panel" hidden>
       <h2>Writing Practice</h2>
       <p class="section-lead">Write four words for each vowel, just like the worksheet. Your notes stay in this browser using local storage.</p>
       <div class="writing" id="writingGrid"></div>
@@ -1000,8 +969,8 @@
     </section>
 
     <section id="compare" class="week-panel" data-week="week1">
-      <h2>Original + English</h2>
-      <p class="section-lead">Pick a page to compare the scanned Swedish worksheet with English translations. The left side is the original page; the right side gives sentence and word meanings.</p>
+      <h2>Translation</h2>
+      <p class="section-lead">Compare the scanned Swedish pages with English translations. QR codes are highlighted on the page photo and can be clicked when available.</p>
       <div class="compare">
         <div class="thumbs" id="compareThumbs"></div>
         <div class="page-frame">
@@ -1014,46 +983,36 @@
       </div>
     </section>
 
-    <section id="pages" class="week-panel" data-week="week1">
-      <h2>Original Pages</h2>
-      <p class="section-lead">The full scanned PDF pages are embedded here, so the interactive version and the original worksheet stay together.</p>
-      <div class="viewer">
-        <div class="thumbs" id="thumbs"></div>
-        <div class="page-frame">
-          <div class="qr-stage">
-            <img id="pageImage" src="assets/sfi-week1-pages/page-01.jpg" alt="Original worksheet page 1" />
-            <div class="qr-overlay" id="pageQrOverlay"></div>
-          </div>
-        </div>
+    
+
+    <section id="week1-words" class="week-panel" data-week="week1">
+      <h2>Word Learning</h2>
+      <p class="section-lead">Important Week 1 words from the alphabet and vowel material. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week1Terms"></div>
       </div>
     </section>
 
     <section id="week2" class="week-panel" data-week="week2">
-      <h2>Week 2 - Familj</h2>
-      <div class="week-hero">
+      <div class="hero">
         <div>
-          <p class="section-lead">Week 2 focuses on family words, possessive pronouns, simple questions, forms, and numbers. The iPhone photos have been converted from HEIC and perspective-corrected where the page border was detected.</p>
+          <h1>SFI Week 2</h1>
+          <p>Family words, possessive pronouns, simple questions, forms, and numbers, with corrected page photos, translations, QR videos, and word pronunciation practice.</p>
           <div class="actions">
-            <a class="btn primary" href="#week2-family">Practice Family Words</a>
-            <a class="btn" href="#week2-compare">Compare Pages</a>
-            <a class="btn" href="#week2-pages">View Scans</a>
+            <a class="btn primary" href="#week2-compare">Study Translations</a>
+            <a class="btn" href="#week2-family">Practice Words</a>
           </div>
         </div>
-        <img src="assets/sfi-week2-pages/page-01.jpg" alt="Week 2 family cover page" />
+        <div class="scan-preview" aria-label="Week 2 worksheet preview">
+          <img src="assets/sfi-week2-pages/page-01.jpg" alt="Week 2 family cover page" />
+        </div>
       </div>
     </section>
 
-    <section id="week2-family" class="week-panel" data-week="week2">
-      <h2>Family Words</h2>
-      <p class="section-lead">Tap the play button to hear the Swedish word with the selected Azure voice.</p>
-      <div class="panel pad">
-        <div class="term-list" id="week2Terms"></div>
-      </div>
-    </section>
-
+    
     <section id="week2-compare" class="week-panel" data-week="week2">
-      <h2>Week 2 Original + English</h2>
-      <p class="section-lead">Pick a page to compare the corrected Swedish page photo with English notes and translations.</p>
+      <h2>Translation</h2>
+      <p class="section-lead">Compare the corrected Swedish page photos with English translations. QR codes are highlighted on the page photo and can be clicked when available.</p>
       <div class="compare">
         <div class="thumbs" id="week2CompareThumbs"></div>
         <div class="page-frame">
@@ -1066,19 +1025,16 @@
       </div>
     </section>
 
-    <section id="week2-pages" class="week-panel" data-week="week2">
-      <h2>Week 2 Original Pages</h2>
-      <p class="section-lead">The corrected Week 2 photos are embedded here with QR video markers.</p>
-      <div class="viewer">
-        <div class="thumbs" id="week2Thumbs"></div>
-        <div class="page-frame">
-          <div class="qr-stage">
-            <img id="week2PageImage" src="assets/sfi-week2-pages/page-01.jpg" alt="Week 2 original page 1" />
-            <div class="qr-overlay" id="week2PageQrOverlay"></div>
-          </div>
-        </div>
+    
+
+    <section id="week2-family" class="week-panel" data-week="week2">
+      <h2>Word Learning</h2>
+      <p class="section-lead">Important Week 2 words from the family material. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week2Terms"></div>
       </div>
     </section>
+
   </main>
 
   <script>
@@ -1097,6 +1053,18 @@
       Ä: ["väg", "häl", "mät", "nät", "säl", "läs", "träd", "län", "käk", "bär", "här", "där", "kär", "lär", "vård", "värld", "lätt", "rätt", "rädd", "sätt", "vägg", "män", "länk", "läpp", "häst", "hämta", "tänka", "vänta", "lämna", "älska", "väcka", "ändra", "nästa", "läxa", "läsa", "näsa", "äta", "mäta", "städa", "äga", "räkna", "väga", "läka"],
       Ö: ["söt", "snö", "grön", "blöt", "sjö", "kö", "lök", "röd", "bröd", "röker", "köper", "möter", "ökar", "möte", "söker", "för", "rör", "gör", "kör", "bör", "hör", "smör", "öra", "lördag", "dörr", "förr", "först", "höst", "röst", "trött", "kött", "öppna", "söndag", "önskar", "böcker", "fönster", "försöker"]
     };
+
+    const week1Terms = [
+      ["bokstav", "letter"], ["alfabet", "alphabet"], ["uttal", "pronunciation"], ["stavning", "spelling"],
+      ["vokal", "vowel"], ["konsonant", "consonant"], ["h?rd", "hard"], ["mjuk", "soft"],
+      ["ord", "word"], ["ljud", "sound"], ["skriva", "write"], ["l?sa", "read"], ["lyssna", "listen"],
+      ["fr?ga", "question"], ["svara", "answer"], ["f?rst?r", "understand"], ["f?rl?t", "sorry"],
+      ["g?r", "goes / walks"], ["g?r", "does / makes"], ["hus", "house"], ["bord", "table"], ["k?k", "kitchen"],
+      ["sjuk", "sick"], ["hj?rta", "heart"], ["djur", "animal"], ["s?ng", "song"], ["barn", "children"],
+      ["spr?k", "language"], ["schema", "schedule"], ["lektion", "lesson"], ["tjugo", "twenty"], ["hundra", "hundred"],
+      ["m?ndag", "Monday"], ["tisdag", "Tuesday"], ["onsdag", "Wednesday"], ["torsdag", "Thursday"], ["fredag", "Friday"],
+      ["l?rdag", "Saturday"], ["s?ndag", "Sunday"]
+    ];
 
     const pageSizes = {
       1: [1438, 2078], 2: [1479, 2095], 3: [1450, 2115], 4: [1394, 2036], 5: [1508, 2115],
@@ -1176,50 +1144,89 @@
       ["din", "your"], ["ditt", "your"], ["dina", "your plural"], ["hans", "his"], ["hennes", "her"], ["deras", "their"]
     ];
 
+    const week2FamilyStoryRows = [
+      ["Jag heter Anita.", "My name is Anita."],
+      ["Jag ?r gift.", "I am married."],
+      ["Min man heter Kent.", "My husband is called Kent."],
+      ["Jag ?r Kents fru.", "I am Kent's wife."],
+      ["Vi har tre barn.", "We have three children."],
+      ["De heter Sofia, Sonja och Amir.", "They are called Sofia, Sonja and Amir."],
+      ["Sofia och Sonja ?r mina d?ttrar.", "Sofia and Sonja are my daughters."],
+      ["Amir ?r min son.", "Amir is my son."],
+      ["Sofia, Sonja och Amir ?r syskon.", "Sofia, Sonja and Amir are siblings."],
+      ["Min mamma heter Maria.", "My mother is called Maria."],
+      ["Hon ?r barnens mormor.", "She is the children's maternal grandmother."],
+      ["Min pappa ?r d?d.", "My father is dead."],
+      ["Han var barnens morfar.", "He was the children's maternal grandfather."],
+      ["Kents pappa och mamma ?r barnens farfar och farmor.", "Kent's father and mother are the children's paternal grandfather and paternal grandmother."],
+      ["Min syster heter Kristina.", "My sister is called Kristina."],
+      ["Hon ?r mina barns moster.", "She is my children's maternal aunt."],
+      ["Kristina har tv? barn.", "Kristina has two children."],
+      ["De heter Niklas och Dennis.", "They are called Niklas and Dennis."],
+      ["Kristinas barn och mina barn ?r kusiner.", "Kristina's children and my children are cousins."],
+      ["Min bror heter Per.", "My brother is called Per."],
+      ["Per ?r barnens morbror.", "Per is the children's maternal uncle."]
+    ];
+
     const week2Translations = [
       { title: "Page 1 - Familj", sections: [
-        { heading: "Title", rows: [["Familj", "Family"], ["Lyssna på filmen", "Listen to the film"]] },
-        { heading: "Core words", rows: [["mamma / pappa", "mother / father"], ["barn", "child / children"], ["bror / syster", "brother / sister"], ["mormor / morfar", "mother's mother / mother's father"], ["farmor / farfar", "father's mother / father's father"]] }
+        { heading: "Title and instruction", rows: [["Familj", "Family"], ["Lyssna p? filmen", "Listen to the film."]] },
+        { heading: "Family words", rows: [["mamma", "mother"], ["pappa", "father"], ["barn", "child / children"], ["bror", "brother"], ["syster", "sister"], ["son", "son"], ["dotter", "daughter"], ["fru", "wife"], ["man", "husband / man"], ["kusin", "cousin"], ["mormor / morfar", "mother's mother / mother's father"], ["farmor / farfar", "father's mother / father's father"], ["moster / morbror", "mother's sister / mother's brother"], ["faster / farbror", "father's sister / father's brother"]] }
       ] },
-      { title: "Page 2 - Listen To My Family", sections: [
-        { heading: "Instruction", rows: [["Lyssna och häng på min familj.", "Listen and follow along with my family."], ["Jag är gift.", "I am married."], ["Vi har tre barn.", "We have three children."], ["Min mamma heter ...", "My mother is called ..."], ["Min pappa heter ...", "My father is called ..."]] }
+      { title: "Page 2 - Min familj", sections: [
+        { heading: "Instruction", rows: [["L?s och lyssna p? Min familj.", "Read and listen to My family."]] },
+        { heading: "Full text", rows: week2FamilyStoryRows }
       ] },
-      { title: "Page 3 - Write Words", sections: [
-        { heading: "Instruction", rows: [["Skriv orden på ditt språk och på svenska igen.", "Write the words in your language and in Swedish again."], ["ditt språk", "your language"], ["svenska", "Swedish"]] },
+      { title: "Page 3 - Write The Words", sections: [
+        { heading: "Instruction", rows: [["Skriv orden p? ditt spr?k och p? svenska igen.", "Write the words in your language and in Swedish again."], ["ditt spr?k", "your language"], ["svenska", "Swedish"]] },
         { heading: "Vocabulary", rows: week2Terms.slice(0, 18) }
       ] },
-      { title: "Page 4 - This Is / Who Is It?", sections: [
-        { heading: "Phrases", rows: [["Det är Gunillas penna.", "It is Gunilla's pen."], ["Det är Annas bil.", "It is Anna's car."], ["Vem är det?", "Who is it?"], ["Det är ...", "It is ..."]] }
+      { title: "Page 4 - Possessive Names", sections: [
+        { heading: "Read", rows: [["Gunilla har en penna.", "Gunilla has a pen."], ["Det ?r Gunillas penna.", "It is Gunilla's pen."], ["Anna har en bil.", "Anna has a car."], ["Det ?r Annas bil.", "It is Anna's car."], ["Peter har en bok.", "Peter has a book."], ["Det ?r Peters bok.", "It is Peter's book."]] },
+        { heading: "Fill in", rows: [["Sara har en dotter. Det ?r ___ dotter.", "Sara has a daughter. It is ___ daughter."], ["Robin har en son. Det ?r ___ son.", "Robin has a son. It is ___ son."], ["Kristina har tv? barn. Det ?r ___ barn.", "Kristina has two children. They are ___ children."], ["Barnen har en mormor. Det ?r ___ mormor.", "The children have a maternal grandmother. It is ___ grandmother."], ["Anita har en mamma. Det ?r ___ mamma.", "Anita has a mother. It is ___ mother."]] },
+        { heading: "Video task", rows: [["Titta p? filmen och fyll i r?tt namn.", "Watch the film and fill in the correct name."], ["Vem ?r det? Det ?r ___", "Who is it? It is ___"]] }
       ] },
-      { title: "Page 5 - Dialogue", sections: [
-        { heading: "Questions", rows: [["Vem är du?", "Who are you?"], ["Jag är Anitas ...", "I am Anita's ..."], ["Vad heter Anitas man?", "What is Anita's husband's name?"], ["Hur många barn har Anita och Kent?", "How many children do Anita and Kent have?"]] }
+      { title: "Page 5 - Who Are You?", sections: [
+        { heading: "Dialogue prompts", rows: [["Titta p? filmen och skriv r?tt ord.", "Watch the film and write the correct word."], ["Vem ?r du?", "Who are you?"], ["Jag ?r Anitas ___.", "I am Anita's ___."], ["Jag ?r Kents ___.", "I am Kent's ___."]] },
+        { heading: "Questions about page 2", rows: [["Svara p? fr?gorna till texten p? sidan 2.", "Answer the questions about the text on page 2."], ["Vad heter Anitas man?", "What is Anita's husband's name?"], ["Hur m?nga barn har Anita och Kent?", "How many children do Anita and Kent have?"], ["Vem ?r Maria?", "Who is Maria?"], ["Vem ?r d?d?", "Who is dead?"], ["Vad heter Anitas syster?", "What is Anita's sister called?"], ["Vad heter barnens morbror?", "What is the children's maternal uncle called?"], ["Hur m?nga syskon har Anita?", "How many siblings does Anita have?"]] }
       ] },
-      { title: "Page 6 - Yes / No And Where", sections: [
-        { heading: "Questions", rows: [["Är du gift?", "Are you married?"], ["Är du skild?", "Are you divorced?"], ["Har du några syskon?", "Do you have any siblings?"], ["Var bor din syster?", "Where does your sister live?"], ["Han delar el med dem.", "He shares electricity with them."]] }
+      { title: "Page 6 - Questions And Answers", sections: [
+        { heading: "Instruction", rows: [["Titta p? filmen. L?s fr?gor och svar.", "Watch the film. Read questions and answers."]] },
+        { heading: "Per", rows: [["?r du gift?", "Are you married?"], ["Nej, jag ?r inte gift.", "No, I am not married."], ["Har du barn?", "Do you have children?"], ["Nej, jag har inga barn.", "No, I do not have any children."]] },
+        { heading: "Maria", rows: [["?r du skild?", "Are you divorced?"], ["Nej, jag ?r inte skild.", "No, I am not divorced."], ["?r du ?nka?", "Are you a widow?"], ["Ja, jag ?r ?nka.", "Yes, I am a widow."], ["Har du n?gra syskon?", "Do you have any siblings?"], ["Nej, jag har inga syskon.", "No, I do not have any siblings."]] },
+        { heading: "Anita", rows: [["Har du syskon?", "Do you have siblings?"], ["Ja, jag har tv? syskon.", "Yes, I have two siblings."], ["Jag har en lillasyster och en storebror.", "I have a little sister and an older brother."], ["Var bor din syster?", "Where does your sister live?"], ["Min syster bor i Malm?.", "My sister lives in Malm?."], ["Var bor din bror?", "Where does your brother live?"], ["Min bror bor i Vetlanda.", "My brother lives in Vetlanda."], ["Vad g?r din syster?", "What does your sister do?"], ["Hon jobbar p? bank.", "She works at a bank."], ["Vad g?r din bror?", "What does your brother do?"], ["Han delar ut reklam.", "He delivers advertising leaflets."]] }
       ] },
-      { title: "Page 7 - Listen And Fill In", sections: [
-        { heading: "Exercise", rows: [["Lyssna och fyll i rätt ord.", "Listen and fill in the correct word."], ["Min mamma/mormor är min ...", "My mother/grandmother is my ..."], ["Prata med en kompis om Sonjas familj.", "Talk with a classmate about Sonja's family."]] }
+      { title: "Page 7 - Family Relations", sections: [
+        { heading: "Fill in", rows: [["Titta p? filmen. L?s och fyll i r?tt ord.", "Watch the film. Read and fill in the correct word."], ["Min mammas mamma ?r min ___.", "My mother's mother is my ___."], ["Min mammas pappa ?r min ___.", "My mother's father is my ___."], ["Min pappas mamma ?r min ___.", "My father's mother is my ___."], ["Min pappas pappa ?r min ___.", "My father's father is my ___."], ["Min mammas bror ?r min ___.", "My mother's brother is my ___."], ["Min mammas syster ?r min ___.", "My mother's sister is my ___."], ["Min pappas bror ?r min ___.", "My father's brother is my ___."], ["Min pappas syster ?r min ___.", "My father's sister is my ___."]] },
+        { heading: "Talk task", rows: [["Prata med en kompis om Sonjas familj.", "Talk with a classmate about Sonja's family."], ["Dennis och Niklas ?r Sonjas kusiner.", "Dennis and Niklas are Sonja's cousins."], ["Ber?tta: Sonjas mamma heter ...", "Tell: Sonja's mother is called ..."], ["Sonjas farfar heter ...", "Sonja's paternal grandfather is called ..."]] }
       ] },
-      { title: "Page 8 - Write Questions", sections: [
-        { heading: "Exercise", rows: [["Svara på frågorna. Börja om ditt familj.", "Answer the questions. Start with your family."], ["Berätta om andra i din familj.", "Tell about others in your family."]] }
+      { title: "Page 8 - Write About Your Family", sections: [
+        { heading: "Writing prompts", rows: [["Svara p? fr?gorna. Ber?tta om ditt familj.", "Answer the questions. Tell about your family."], ["Vem m?nga syskon har du?", "How many siblings do you have?"], ["Var bor de? Vad g?r de?", "Where do they live? What do they do?"], ["Ber?tta om andra i din familj.", "Tell about others in your family."], ["Var bor de? Vad g?r de?", "Where do they live? What do they do?"]] }
       ] },
-      { title: "Page 9 - Listen And Mark Stress", sections: [
-        { heading: "Exercise", rows: [["Lyssna på orden och sätt dem på raderna.", "Listen to the words and put them on the lines."], ["tredje gången", "the third time"]] }
+      { title: "Page 9 - Numbers Practice", sections: [
+        { heading: "Listening task", rows: [["Lyssna p? orden och skriv dem p? raderna.", "Listen to the words and write them on the lines."], ["tredje g?ngen", "the third time"]] },
+        { heading: "Numbers", rows: [["1, 2, 3 ... 10", "one, two, three ... ten"], ["Skriv siffror eller ord p? raderna.", "Write numbers or words on the lines."]] }
       ] },
-      { title: "Page 10 - Subject And Object", sections: [
-        { heading: "Pronouns", rows: [["jag / mig", "I / me"], ["du / dig", "you / you"], ["han / honom", "he / him"], ["hon / henne", "she / her"], ["vi / oss", "we / us"], ["ni / er", "you / you plural"], ["de / dem", "they / them"]] }
+      { title: "Page 10 - Subject Pronouns", sections: [
+        { heading: "Instruction", rows: [["Titta p? filmen om subjekt.", "Watch the film about subjects."], ["?vers?tt orden till ditt spr?k.", "Translate the words into your language."], ["hen = hon eller han", "hen = she or he / gender-neutral pronoun"]] },
+        { heading: "Pronouns", rows: [["jag", "I"], ["du", "you"], ["hon", "she"], ["han", "he"], ["den/det", "it"], ["vi", "we"], ["ni", "you plural"], ["de", "they"]] },
+        { heading: "Fill in: Han, Hon, Den, Det", rows: [["En kvinna dansar.", "A woman dances."], ["En man cyklar.", "A man bikes."], ["En pojke skrattar.", "A boy laughs."], ["En flicka springer.", "A girl runs."], ["H?sten ?ter.", "The horse eats."], ["Taket ?r vitt.", "The roof is white."], ["Golvet ?r svart.", "The floor is black."], ["Katten dricker.", "The cat drinks."]] }
       ] },
-      { title: "Page 11 - Min, Mitt, Mina", sections: [
-        { heading: "Possessive forms", rows: [["min", "my, for en-words"], ["mitt", "my, for ett-words"], ["mina", "my, plural"], ["din / ditt / dina", "your forms"], ["hans / hennes / deras", "his / her / their"]] }
+      { title: "Page 11 - Possessive Pronouns", sections: [
+        { heading: "Possessive forms", rows: [["min", "my, for en-words"], ["mitt", "my, for ett-words"], ["mina", "my, plural"], ["din / ditt / dina", "your forms"], ["hans", "his"], ["hennes", "her"], ["deras", "their"]] },
+        { heading: "Example patterns", rows: [["Jag har en syster. Hon ?r min syster.", "I have a sister. She is my sister."], ["Jag har ett barn. Det ?r mitt barn.", "I have a child. It is my child."], ["Jag har tv? barn. De ?r mina barn.", "I have two children. They are my children."]] }
       ] },
-      { title: "Page 12 - Vi eller dem?", sections: [
-        { heading: "Exercise", rows: [["Vi eller dem?", "We or them?"], ["Skriv och prata.", "Write and speak."], ["Prata på dialogen med en kompis.", "Practice the dialogue with a classmate."]] }
+      { title: "Page 12 - Pronouns: Den, Det, De", sections: [
+        { heading: "Fill in the correct pronoun", rows: [["Fyll i r?tt pronomen.", "Fill in the correct pronoun."], ["Den, det eller de?", "Den, det or de?"], ["Jag ser en hund. ___ ?r stor.", "I see a dog. ___ is big."], ["Jag ser fem hundar. ___ ?r stora.", "I see five dogs. ___ are big."], ["Jag ser en katt. ___ ?r stor.", "I see a cat. ___ is big."], ["Jag ser fem katter. ___ ?r stora.", "I see five cats. ___ are big."], ["Jag ser ett hus. ___ ?r stort.", "I see a house. ___ is big."], ["Jag ser sex hus. ___ ?r stora.", "I see six houses. ___ are big."], ["Jag ser ett tr?d. ___ ?r stort.", "I see a tree. ___ is big."], ["Jag ser tv? tr?d. ___ ?r stora.", "I see two trees. ___ are big."], ["Jag ser en bil. ___ ?r stor.", "I see a car. ___ is big."], ["Jag ser tre bilar. ___ ?r stora.", "I see three cars. ___ are big."]] },
+        { heading: "Hon, han eller de?", rows: [["Det ?r en kvinna. ___ heter Anita.", "It is a woman. ___ is called Anita."], ["Det ?r tv? kvinnor. ___ heter Sara och Anita.", "They are two women. ___ are called Sara and Anita."], ["Det ?r en pojke. ___ heter Sven.", "It is a boy. ___ is called Sven."], ["Det ?r tv? pojkar. ___ heter Samuel och Fredrik.", "They are two boys. ___ are called Samuel and Fredrik."], ["Det ?r en man. ___ heter David.", "It is a man. ___ is called David."], ["Det ?r tv? m?n. ___ heter Pelle och Kalle.", "They are two men. ___ are called Pelle and Kalle."], ["Det ?r en flicka. ___ heter Anna.", "It is a girl. ___ is called Anna."], ["Det ?r tv? flickor. ___ heter Tina och Anna.", "They are two girls. ___ are called Tina and Anna."]] }
       ] },
       { title: "Page 13 - Form Fields", sections: [
-        { heading: "Personal information", rows: [["datum", "date"], ["förnamn", "first name"], ["efternamn", "last name"], ["gata", "street"], ["postnummer", "postal code"], ["ort", "city/town"], ["personnummer", "personal identity number"], ["telefonnummer", "phone number"], ["e-post", "email"], ["ålder", "age"], ["språk", "language"], ["nationalitet", "nationality"]] }
+        { heading: "Instruction", rows: [["Titta p? filmen och fyll i blanketten.", "Watch the film and fill in the form."]] },
+        { heading: "Personal information", rows: [["datum", "date"], ["f?rnamn", "first name"], ["efternamn", "last name"], ["gata", "street"], ["postnummer", "postal code"], ["ort", "city/town"], ["personnummer", "personal identity number"], ["telefonnummer", "phone number"], ["e-post", "email"], ["?lder", "age"], ["antal barn", "number of children"], ["antal ?r i Sverige", "number of years in Sweden"], ["spr?k", "language"], ["nationalitet", "nationality"]] }
       ] },
-      { title: "Page 14 - Numbers", sections: [
-        { heading: "Exercise", rows: [["Lyssna på filmen. Läs. Skriv siffrorna.", "Watch the film. Read. Write the numbers."], ["Skriv siffrorna med bokstäver.", "Write the numbers with letters."]] }
+      { title: "Page 14 - Larger Numbers", sections: [
+        { heading: "Instructions", rows: [["Titta p? filmen. L?s. Skriv siffrorna.", "Watch the film. Read. Write the numbers."], ["Skriv siffrorna med bokst?ver.", "Write the numbers with letters."]] },
+        { heading: "Number words", rows: [["tjugo", "twenty"], ["trettio", "thirty"], ["fyrtio", "forty"], ["femtio", "fifty"], ["hundra", "hundred"], ["tusen", "thousand"], ["miljon", "million"]] }
       ] }
     ];
 
@@ -1420,6 +1427,18 @@
       });
     }
 
+    function renderWeek1Terms() {
+      const grid = document.querySelector("#week1Terms");
+      grid.innerHTML = "";
+      week1Terms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = '<span><strong>' + sv + '</strong><br><span class="en">' + en + '</span></span><button type="button" aria-label="Hear ' + sv + '">?</button>';
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
     function renderVowels() {
       const tabs = document.querySelector("#vowelTabs");
       tabs.innerHTML = "";
@@ -1612,28 +1631,6 @@
       setPage(0);
     }
 
-    function renderPages() {
-      const thumbs = document.querySelector("#thumbs");
-      const image = document.querySelector("#pageImage");
-      const overlay = document.querySelector("#pageQrOverlay");
-      for (let i = 1; i <= 15; i += 1) {
-        const page = String(i).padStart(2, "0");
-        const button = document.createElement("button");
-        button.type = "button";
-        button.textContent = `Page ${i}`;
-        if (i === 1) button.classList.add("active");
-        button.addEventListener("click", () => {
-          [...thumbs.children].forEach(child => child.classList.remove("active"));
-          button.classList.add("active");
-          image.src = `assets/sfi-week1-pages/page-${page}.jpg`;
-          image.alt = `Original worksheet page ${i}`;
-          renderQrOverlay(i, overlay);
-        });
-        thumbs.appendChild(button);
-      }
-      renderQrOverlay(1, overlay);
-    }
-
     function renderWeek2Terms() {
       const grid = document.querySelector("#week2Terms");
       grid.innerHTML = "";
@@ -1662,7 +1659,7 @@
         image.alt = `Week 2 page ${pageNumber} for translation comparison`;
         renderQrOverlay(pageNumber, overlay, week2PageSizes, week2QrCodes);
 
-        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Corrected page photo on the left, English notes on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week2QrCodes)}</p>`;
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Corrected page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week2QrCodes)}</p>`;
         data.sections.forEach(section => {
           const block = document.createElement("div");
           block.className = "translation-block";
@@ -1687,28 +1684,6 @@
       });
 
       setPage(0);
-    }
-
-    function renderWeek2Pages() {
-      const thumbs = document.querySelector("#week2Thumbs");
-      const image = document.querySelector("#week2PageImage");
-      const overlay = document.querySelector("#week2PageQrOverlay");
-      for (let i = 1; i <= 14; i += 1) {
-        const page = String(i).padStart(2, "0");
-        const button = document.createElement("button");
-        button.type = "button";
-        button.textContent = `Page ${i}`;
-        if (i === 1) button.classList.add("active");
-        button.addEventListener("click", () => {
-          [...thumbs.children].forEach(child => child.classList.remove("active"));
-          button.classList.add("active");
-          image.src = `assets/sfi-week2-pages/page-${page}.jpg`;
-          image.alt = `Week 2 original page ${i}`;
-          renderQrOverlay(i, overlay, week2PageSizes, week2QrCodes);
-        });
-        thumbs.appendChild(button);
-      }
-      renderQrOverlay(1, overlay, week2PageSizes, week2QrCodes);
     }
 
     function weekForHash(hash) {
@@ -1781,15 +1756,15 @@
       document.querySelector("#voiceSelect").value = savedVoice;
     }
     renderAlphabet();
-    renderVowels();
+    renderWeek1Terms();
     setFlash(0);
     renderQuiz();
     renderWriting();
     renderComparison();
-    renderPages();
+
     renderWeek2Terms();
     renderWeek2Comparison();
-    renderWeek2Pages();
+
     setActiveWeek(weekForHash(location.hash));
 
     window.addEventListener("load", () => {
