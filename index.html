@@ -761,6 +761,40 @@
       border-top: 0;
     }
 
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 12px 28px rgba(31, 35, 40, 0.07);
+    }
+
+    .grammar-table th,
+    .grammar-table td {
+      padding: 10px 12px;
+      border-top: 1px solid rgba(31, 35, 40, 0.08);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .grammar-table th {
+      border-top: 0;
+      color: #fff;
+      background: var(--blue);
+      font-weight: 750;
+    }
+
+    .grammar-table td:first-child {
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+
     .sv {
       font-weight: 650;
     }
@@ -865,6 +899,7 @@
     <a class="week-nav" data-week="week2" href="#week2">Overview</a>
     <a class="week-nav" data-week="week2" href="#week2-compare">Translations</a>
     <a class="week-nav" data-week="week2" href="#week2-family">Word Learning</a>
+    <a class="week-nav" data-week="week2" href="#week2-possessives">Pronoun Chart</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1072,6 +1107,38 @@
       <div class="panel pad">
         <div class="term-list" id="week2Terms"></div>
       </div>
+    </section>
+
+    <section id="week2-possessives" class="week-panel" data-week="week2">
+      <h2>Possessive Pronoun Chart</h2>
+      <p class="section-lead">Use this as a Week 2 reference for Swedish possessive pronouns. The forms change for en-words, ett-words, and plural nouns when the pronoun is variable.</p>
+      <div class="table-wrap">
+        <table class="grammar-table">
+          <thead>
+            <tr>
+              <th>Owner</th>
+              <th>En-word</th>
+              <th>Ett-word</th>
+              <th>Plural</th>
+              <th>English</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>jag</td><td>min</td><td>mitt</td><td>mina</td><td>my</td><td>min mamma, mitt barn, mina syskon</td></tr>
+            <tr><td>du</td><td>din</td><td>ditt</td><td>dina</td><td>your</td><td>din pappa, ditt namn, dina barn</td></tr>
+            <tr><td>han</td><td>hans</td><td>hans</td><td>hans</td><td>his</td><td>hans syster, hans barn, hans kusiner</td></tr>
+            <tr><td>hon</td><td>hennes</td><td>hennes</td><td>hennes</td><td>her</td><td>hennes bror, hennes namn, hennes föräldrar</td></tr>
+            <tr><td>den / det</td><td>dess</td><td>dess</td><td>dess</td><td>its</td><td>dess namn, dess barn, dess färger</td></tr>
+            <tr><td>vi</td><td>vår</td><td>vårt</td><td>våra</td><td>our</td><td>vår familj, vårt hus, våra barn</td></tr>
+            <tr><td>ni</td><td>er</td><td>ert</td><td>era</td><td>your plural</td><td>er lärare, ert klassrum, era böcker</td></tr>
+            <tr><td>de</td><td>deras</td><td>deras</td><td>deras</td><td>their</td><td>deras mamma, deras hem, deras frågor</td></tr>
+            <tr><td>reflexive</td><td>sin</td><td>sitt</td><td>sina</td><td>one's own / his own / her own / their own</td><td>Anita pratar med sin bror. Barnen träffar sina kusiner.</td></tr>
+            <tr><td>general</td><td>ens</td><td>ens</td><td>ens</td><td>one's</td><td>ens familj, ens namn, ens vänner</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Tip: <strong>sin, sitt, sina</strong> points back to the subject of the same sentence. Compare: <strong>Hon träffar sin syster</strong> means she meets her own sister, but <strong>Hon träffar hennes syster</strong> means she meets another woman's sister.</p>
     </section>
 
   </main>
