@@ -270,6 +270,35 @@
       font-size: 18px;
     }
 
+    .material-switch {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 22px 0 0;
+    }
+
+    .material-card {
+      display: block;
+      min-height: 116px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 253, 248, 0.9);
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .material-card strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--blue);
+      font-size: 18px;
+    }
+
+    .material-card span {
+      color: var(--muted);
+    }
+
     .grid {
       display: grid;
       gap: 16px;
@@ -920,18 +949,34 @@
   <nav class="topbar" aria-label="Study sections">
     <strong>SFI Study</strong>
     <span class="nav-label week-nav" data-week="week1">Week 1</span>
+    <span class="nav-label week-nav" data-week="week1">Off-class</span>
     <a class="week-nav" data-week="week1" href="#week1">Overview</a>
     <a class="week-nav" data-week="week1" href="#compare">Translations</a>
     <a class="week-nav" data-week="week1" href="#week1-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week1">In-class</span>
+    <a class="week-nav" data-week="week1" href="#week1-in-class">In-class Slot</a>
     <span class="nav-label week-nav" data-week="week2">Week 2</span>
+    <span class="nav-label week-nav" data-week="week2">Off-class</span>
     <a class="week-nav" data-week="week2" href="#week2">Overview</a>
     <a class="week-nav" data-week="week2" href="#week2-compare">Translations</a>
     <a class="week-nav" data-week="week2" href="#week2-family">Word Learning</a>
     <a class="week-nav" data-week="week2" href="#week2-possessives">Pronoun Chart</a>
+    <span class="nav-label week-nav" data-week="week2">In-class</span>
+    <a class="week-nav" data-week="week2" href="#week2-in-class">In-class Slot</a>
     <span class="nav-label week-nav" data-week="week3">Week 3</span>
+    <span class="nav-label week-nav" data-week="week3">Off-class</span>
     <a class="week-nav" data-week="week3" href="#week3">Overview</a>
     <a class="week-nav" data-week="week3" href="#week3-compare">Translations</a>
     <a class="week-nav" data-week="week3" href="#week3-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week3">In-class</span>
+    <a class="week-nav" data-week="week3" href="#week3-in-class">In-class Slot</a>
+    <span class="nav-label week-nav" data-week="week4">Week 4</span>
+    <span class="nav-label week-nav" data-week="week4">In-class</span>
+    <a class="week-nav" data-week="week4" href="#week4">Overview</a>
+    <a class="week-nav" data-week="week4" href="#week4-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week4" href="#week4-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week4">Off-class</span>
+    <a class="week-nav" data-week="week4" href="#week4-off-class">Off-class Slot</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -952,6 +997,7 @@
     <button class="week-tab active" type="button" role="tab" aria-selected="true" data-week-tab="week1">Week 1</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week2">Week 2</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week3">Week 3</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week4">Week 4</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -971,6 +1017,10 @@
           </select>
         </div>
         <div class="voice-status" id="voiceStatus">Voice: Azure AI Speech when configured, browser voice as fallback.</div>
+        <div class="material-switch">
+          <a class="material-card" href="#compare"><strong>Off-class material</strong><span>Alphabet and vowel workbook pages already built for Week 1.</span></a>
+          <a class="material-card" href="#week1-in-class"><strong>In-class material</strong><span>Reserved for Week 1 classroom handouts when you upload them.</span></a>
+        </div>
       </div>
       <div class="scan-preview" aria-label="Scanned worksheet preview">
         <img src="assets/sfi-week1-pages/page-01.jpg" alt="Cover page of the Swedish alphabet worksheet" />
@@ -1100,6 +1150,14 @@
       </div>
     </section>
 
+    <section id="week1-in-class" class="week-panel" data-week="week1">
+      <h2>Week 1 In-class Material</h2>
+      <p class="section-lead">No in-class material has been uploaded for Week 1 yet. This slot is ready for classroom pages when you add them later.</p>
+      <div class="panel pad">
+        <p class="note">Planned structure: scanned class pages on the left, translation and pronunciation on the right, plus important words for practice.</p>
+      </div>
+    </section>
+
     <section id="week2" class="week-panel" data-week="week2">
       <div class="hero">
         <div>
@@ -1108,6 +1166,10 @@
           <div class="actions">
             <a class="btn primary" href="#week2-compare">Study Translations</a>
             <a class="btn" href="#week2-family">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week2-compare"><strong>Off-class material</strong><span>Family workbook pages, translations, QR videos, and words.</span></a>
+            <a class="material-card" href="#week2-in-class"><strong>In-class material</strong><span>Reserved for Week 2 classroom handouts.</span></a>
           </div>
         </div>
         <div class="scan-preview" aria-label="Week 2 worksheet preview">
@@ -1174,6 +1236,14 @@
       <p class="note">Tip: <strong>sin, sitt, sina</strong> points back to the subject of the same sentence. Compare: <strong>Hon träffar sin syster</strong> means she meets her own sister, but <strong>Hon träffar hennes syster</strong> means she meets another woman's sister.</p>
     </section>
 
+    <section id="week2-in-class" class="week-panel" data-week="week2">
+      <h2>Week 2 In-class Material</h2>
+      <p class="section-lead">No in-class material has been uploaded for Week 2 yet. This slot is ready for future classroom pages.</p>
+      <div class="panel pad">
+        <p class="note">When you add files, I can convert them into the same translation and word-learning format.</p>
+      </div>
+    </section>
+
     <section id="week3" class="week-panel" data-week="week3">
       <div class="hero">
         <div>
@@ -1182,6 +1252,10 @@
           <div class="actions">
             <a class="btn primary" href="#week3-compare">Study Translations</a>
             <a class="btn" href="#week3-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week3-compare"><strong>Off-class material</strong><span>Daily-routine workbook pages, clock time, translations, and words.</span></a>
+            <a class="material-card" href="#week3-in-class"><strong>In-class material</strong><span>Reserved for Week 3 classroom handouts.</span></a>
           </div>
         </div>
         <div class="scan-preview" aria-label="Week 3 worksheet preview">
@@ -1210,6 +1284,65 @@
       <p class="section-lead">Important Week 3 words from the daily routine and clock-time material. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week3Terms"></div>
+      </div>
+    </section>
+
+    <section id="week3-in-class" class="week-panel" data-week="week3">
+      <h2>Week 3 In-class Material</h2>
+      <p class="section-lead">No in-class material has been uploaded for Week 3 yet. This slot is ready for future classroom pages.</p>
+      <div class="panel pad">
+        <p class="note">The current Week 3 pages remain classified as off-class material.</p>
+      </div>
+    </section>
+
+    <section id="week4" class="week-panel" data-week="week4">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 4</h1>
+          <p>In-class material about weather, November, sentence order, question words, pronouns, and noun plural practice.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week4-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week4-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week4-in-class-compare"><strong>In-class material</strong><span>Five classroom pages converted from the Week 4 photo folder.</span></a>
+            <a class="material-card" href="#week4-off-class"><strong>Off-class material</strong><span>Reserved for Week 4 homework/off-class pages when you upload them.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 4 in-class worksheet preview">
+          <img src="assets/sfi-week4-in-class-pages/page-01.jpg" alt="Week 4 in-class weather vocabulary page" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week4-in-class-compare" class="week-panel" data-week="week4">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 4 classroom page photos with English translations and notes.</p>
+      <div class="compare">
+        <div class="thumbs" id="week4InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week4InClassCompareImage" src="assets/sfi-week4-in-class-pages/page-01.jpg" alt="Week 4 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week4InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week4InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week4-in-class-words" class="week-panel" data-week="week4">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 4 in-class words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week4InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week4-off-class" class="week-panel" data-week="week4">
+      <h2>Week 4 Off-class Material</h2>
+      <p class="section-lead">No Week 4 off-class material has been uploaded yet. This slot is ready for homework pages later.</p>
+      <div class="panel pad">
+        <p class="note">The new folder structure supports both <strong>in-class</strong> and <strong>off-class</strong> material for every week.</p>
       </div>
     </section>
 
@@ -1518,6 +1651,65 @@
       ] },
       { title: "Page 14 - Picture Writing", sections: [
         { heading: "Writing practice", rows: [["Skriv meningar till bilderna.", "Write sentences for the pictures."], ["Träna på att skriva en kort text om en vanlig dag.", "Practice writing a short text about a normal day."]] }
+      ] }
+    ];
+
+    const week4InClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867], 5: [1400, 1867]
+    };
+
+    const week4InClassQrCodes = [];
+
+    const week4InClassTerms = [
+      ["väder", "weather"], ["vaknar", "wakes up"], ["en klocka", "a clock"], ["trött", "tired"],
+      ["mörkt", "dark"], ["ute", "outside"], ["november", "November"], ["regnar", "rains / is raining"],
+      ["fryser", "is cold / freezes"], ["åker", "goes / travels"], ["en buss", "a bus"],
+      ["en människa", "a person"], ["hostar", "coughs"], ["nyser", "sneezes"], ["slutar", "finishes"],
+      ["har ont", "has pain / hurts"], ["ett huvud", "a head"], ["tittar på teve", "watches TV"],
+      ["somnar", "falls asleep"], ["tycker om", "likes"], ["frågeord", "question word"], ["vem", "who"],
+      ["när", "when"], ["vad", "what"], ["vilken", "which"], ["var", "where"], ["pronomen", "pronoun"],
+      ["singular", "singular"], ["plural", "plural"], ["en månad", "a month"], ["månader", "months"],
+      ["skolor", "schools"], ["bussar", "buses"]
+    ];
+
+    const week4JonasRows = [
+      ["Han heter Jonas.", "His name is Jonas."],
+      ["Han vaknar klockan sju.", "He wakes up at seven o'clock."],
+      ["Han är trött.", "He is tired."],
+      ["Det är mörkt ute.", "It is dark outside."],
+      ["Det är november.", "It is November."],
+      ["Det regnar.", "It is raining."],
+      ["Jonas fryser.", "Jonas is cold."],
+      ["Jonas åker buss till skolan.", "Jonas goes by bus to school."],
+      ["Människor hostar och nyser på bussen.", "People cough and sneeze on the bus."],
+      ["Klockan tre slutar skolan.", "School finishes at three o'clock."],
+      ["Det är mörkt ute.", "It is dark outside."],
+      ["Jonas är trött och har ont i huvudet.", "Jonas is tired and has a headache."],
+      ["Han äter och tittar på teve.", "He eats and watches TV."],
+      ["Klockan nio somnar han.", "At nine o'clock he falls asleep."],
+      ["Han tycker inte om november.", "He does not like November."]
+    ];
+
+    const week4InClassTranslations = [
+      { title: "In-class Page 1 - Ordlista: Väder", sections: [
+        { heading: "Title", rows: [["Ordlista: Väder", "Word list: Weather"]] },
+        { heading: "Vocabulary", rows: [["vaknar", "wakes up"], ["en klocka", "a clock"], ["trött", "tired"], ["mörkt", "dark"], ["ute", "outside"], ["november", "November"], ["regnar", "rains / is raining"], ["fryser", "is cold / freezes"], ["åker", "goes / travels"], ["en buss", "a bus"], ["en människa", "a person"], ["hostar", "coughs"], ["nyser", "sneezes"], ["slutar", "finishes"], ["har ont", "has pain / hurts"], ["ett huvud", "a head"], ["äter", "eats"], ["tittar", "watches"], ["en teve", "a TV"], ["somnar", "falls asleep"], ["tycker om", "likes"]] }
+      ] },
+      { title: "In-class Page 2 - November", sections: [
+        { heading: "Full text", rows: week4JonasRows },
+        { heading: "Questions", rows: [["När vaknar Jonas?", "When does Jonas wake up?"], ["Vilken månad är det?", "Which month is it?"], ["Vilket väder är det?", "What is the weather?"], ["Hur åker han till skolan?", "How does he go to school?"], ["Vad gör människor på bussen?", "What do people do on the bus?"], ["När slutar skolan?", "When does school finish?"], ["Hur mår Jonas?", "How does Jonas feel?"], ["Vad gör han efter skolan?", "What does he do after school?"], ["När somnar han?", "When does he fall asleep?"], ["Vad tycker han inte om?", "What does he not like?"]] }
+      ] },
+      { title: "In-class Page 3 - Grammatik: Word Order", sections: [
+        { heading: "Start with the subject", rows: [["Börja med subjekt.", "Start with the subject."], ["Jonas / han / heter", "Jonas / he / is called"], ["Han heter Jonas.", "His name is Jonas."], ["han / klockan sju / vaknar", "he / at seven o'clock / wakes up"], ["trött / han / är", "tired / he / is"], ["det / november / är", "it / November / is"], ["ute / är / det / mörkt", "outside / is / it / dark"], ["till skolan / buss / åker / han", "to school / bus / goes / he"], ["slutar / skolan / klockan tre", "finishes / school / at three o'clock"], ["han / efter skolan / äter / mat", "he / after school / eats / food"], ["inte / tycker / han / om / november", "not / likes / he / November"]] },
+        { heading: "Start with time or place", rows: [["Börja med tid.", "Start with time."], ["han / klockan sju / vaknar", "he / at seven o'clock / wakes up"], ["slutar / skolan / klockan tre", "finishes / school / at three o'clock"], ["Börja med plats.", "Start with place."], ["mörkt / det / är / ute", "dark / it / is / outside"], ["nyser / människor / på bussen", "sneeze / people / on the bus"]] }
+      ] },
+      { title: "In-class Page 4 - Punctuation And Question Words", sections: [
+        { heading: "Punctuation", rows: [["Skriv punkt (.) eller frågetecken (?) efter meningarna.", "Write a full stop (.) or question mark (?) after the sentences."], ["Det är november.", "It is November."], ["Är det november?", "Is it November?"], ["Vaknar han klockan sju?", "Does he wake up at seven o'clock?"], ["Åker han buss?", "Does he go by bus?"], ["Han åker buss.", "He goes by bus."], ["Regnar det?", "Is it raining?"], ["Han fryser.", "He is cold."], ["Människor hostar.", "People cough."], ["Är det mörkt?", "Is it dark?"], ["Tycker han om november?", "Does he like November?"]] },
+        { heading: "Question words", rows: [["Skriv rätt frågeord.", "Write the correct question word."], ["Välj bland orden i rutan.", "Choose from the words in the box."], ["Vem?", "Who?"], ["När?", "When?"], ["Vad?", "What?"], ["Vilken?", "Which?"], ["Var?", "Where?"], ["När vaknar Jonas?", "When does Jonas wake up?"], ["Vilken månad är det?", "Which month is it?"], ["Vem är trött?", "Who is tired?"], ["När slutar skolan?", "When does school finish?"], ["Vad gör människor på bussen?", "What do people do on the bus?"], ["Vad gör Jonas efter skolan?", "What does Jonas do after school?"], ["När somnar han?", "When does he fall asleep?"], ["Var äter han?", "Where does he eat?"]] }
+      ] },
+      { title: "In-class Page 5 - Pronouns And Nouns", sections: [
+        { heading: "Pronouns", rows: [["Skriv ett pronomen.", "Write a pronoun."], ["Välj bland orden i rutan.", "Choose from the words in the box."], ["jag", "I"], ["vi", "we"], ["du", "you"], ["ni", "you plural"], ["han", "he"], ["de", "they"], ["hon", "she"], ["den, det", "it / that"], ["Jonas vaknar klockan sju.", "Jonas wakes up at seven o'clock."], ["han", "he"], ["Människor hostar och nyser på bussen.", "People cough and sneeze on the bus."], ["Skolan slutar klockan tre.", "School finishes at three o'clock."], ["Jonas är trött.", "Jonas is tired."]] },
+        { heading: "Nouns", rows: [["Fyll i tabellen.", "Fill in the table."], ["Substantiv", "nouns"], ["singular", "singular"], ["plural", "plural"], ["en månad", "a month"], ["månader", "months"], ["bussar", "buses"], ["en människa", "a person"], ["skolor", "schools"], ["en klocka", "a clock"]] }
       ] }
     ];
 
@@ -2052,14 +2244,72 @@
       setPage(0);
     }
 
+    function renderWeek4InClassTerms() {
+      const grid = document.querySelector("#week4InClassTerms");
+      grid.innerHTML = "";
+      week4InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek4InClassComparison() {
+      const thumbs = document.querySelector("#week4InClassCompareThumbs");
+      const image = document.querySelector("#week4InClassCompareImage");
+      const overlay = document.querySelector("#week4InClassCompareQrOverlay");
+      const panel = document.querySelector("#week4InClassTranslationPanel");
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week4InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week4-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 4 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week4InClassPageSizes, week4InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week4InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week4InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -2132,6 +2382,8 @@
     renderWeek2Comparison();
     renderWeek3Terms();
     renderWeek3Comparison();
+    renderWeek4InClassTerms();
+    renderWeek4InClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
