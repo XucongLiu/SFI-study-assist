@@ -928,6 +928,10 @@
     <a class="week-nav" data-week="week2" href="#week2-compare">Translations</a>
     <a class="week-nav" data-week="week2" href="#week2-family">Word Learning</a>
     <a class="week-nav" data-week="week2" href="#week2-possessives">Pronoun Chart</a>
+    <span class="nav-label week-nav" data-week="week3">Week 3</span>
+    <a class="week-nav" data-week="week3" href="#week3">Overview</a>
+    <a class="week-nav" data-week="week3" href="#week3-compare">Translations</a>
+    <a class="week-nav" data-week="week3" href="#week3-words">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -947,6 +951,7 @@
   <div class="week-tabs" role="tablist" aria-label="Weeks">
     <button class="week-tab active" type="button" role="tab" aria-selected="true" data-week-tab="week1">Week 1</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week2">Week 2</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week3">Week 3</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1169,6 +1174,45 @@
       <p class="note">Tip: <strong>sin, sitt, sina</strong> points back to the subject of the same sentence. Compare: <strong>Hon träffar sin syster</strong> means she meets her own sister, but <strong>Hon träffar hennes syster</strong> means she meets another woman's sister.</p>
     </section>
 
+    <section id="week3" class="week-panel" data-week="week3">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 3</h1>
+          <p>A normal day, daily routines, clock times, parts of the day, listening tasks, and short writing practice, with iPhone page photos converted into study pages.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week3-compare">Study Translations</a>
+            <a class="btn" href="#week3-words">Practice Words</a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 3 worksheet preview">
+          <img src="assets/sfi-week3-pages/page-01.jpg" alt="Week 3 ordinary day cover page" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week3-compare" class="week-panel" data-week="week3">
+      <h2>Translation</h2>
+      <p class="section-lead">Compare the Week 3 page photos with English translations. QR codes are highlighted on the page photo and can be clicked when available.</p>
+      <div class="compare">
+        <div class="thumbs" id="week3CompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week3CompareImage" src="assets/sfi-week3-pages/page-01.jpg" alt="Week 3 page 1 for translation comparison" />
+            <div class="qr-overlay" id="week3CompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week3TranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week3-words" class="week-panel" data-week="week3">
+      <h2>Word Learning</h2>
+      <p class="section-lead">Important Week 3 words from the daily routine and clock-time material. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week3Terms"></div>
+      </div>
+    </section>
+
   </main>
 
   <script>
@@ -1369,6 +1413,110 @@
         { heading: "Instructions", rows: [["Titta på filmen. Läs. Skriv siffrorna.", "Watch the film. Read. Write the numbers."], ["Skriv siffrorna med bokstäver.", "Write the numbers with letters."]] },
         { heading: "Number words", rows: [["tjugosju", "twenty-seven"], ["nittiosex", "ninety-six"], ["etthundra", "one hundred"], ["trettioåtta", "thirty-eight"], ["ettusen", "one thousand"], ["en miljon", "one million"], ["femhundra", "five hundred"], ["femtiotvå", "fifty-two"], ["sextiofem", "sixty-five"], ["sjuttiotre", "seventy-three"], ["tretusen", "three thousand"], ["fyrtioett", "forty-one"], ["sjuhundra", "seven hundred"], ["åttionio", "eighty-nine"], ["tvåhundrafemtio", "two hundred fifty"], ["etthundrafem", "one hundred five"]] },
         { heading: "Write these numbers with letters", rows: [["14", "fourteen"], ["23", "twenty-three"], ["17", "seventeen"], ["46", "forty-six"], ["30", "thirty"], ["57", "fifty-seven"], ["19", "nineteen"], ["62", "sixty-two"], ["80", "eighty"], ["103", "one hundred three"], ["18", "eighteen"], ["71", "seventy-one"], ["20", "twenty"], ["248", "two hundred forty-eight"], ["1254", "one thousand two hundred fifty-four"], ["3.000.000", "three million"]] }
+      ] }
+    ];
+
+    const week3PageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867], 5: [1400, 1867],
+      6: [1400, 1867], 7: [1400, 1867], 8: [1400, 1867], 9: [1400, 1867], 10: [1400, 1867],
+      11: [1400, 1867], 12: [1400, 1867], 13: [1400, 1867], 14: [1400, 1867]
+    };
+
+    const week3QrCodes = [
+      { page: 1, type: "url", value: "https://youtu.be/RoJhiFy8PUM", x: 191, y: 160, w: 73, h: 73 },
+      { page: 2, type: "url", value: "https://youtu.be/1wVKNJcis8Y", x: 201, y: 1218, w: 120, h: 119 },
+      { page: 3, type: "url", value: "https://youtu.be/khkOyiyQ8FI", x: 1120, y: 264, w: 78, h: 78 },
+      { page: 5, type: "url", value: "https://youtu.be/d3QQAXBXkUQ", x: 1082, y: 233, w: 95, h: 100 },
+      { page: 7, type: "url", value: "https://youtu.be/nftQassLWBw", x: 1061, y: 207, w: 108, h: 109 },
+      { page: 7, type: "url", value: "https://youtu.be/h0--HdRQyPg", x: 542, y: 207, w: 113, h: 114 },
+      { page: 7, type: "url", value: "https://youtu.be/JxrzJ3sEJrk", x: 1189, y: 882, w: 76, h: 78 },
+      { page: 10, type: "url", value: "https://youtu.be/_WGNeIT_dGE", x: 1036, y: 271, w: 102, h: 103 },
+      { page: 11, type: "url", value: "https://youtu.be/xY1D5kORjmw", x: 1110, y: 202, w: 76, h: 75 }
+    ];
+
+    const week3Terms = [
+      ["en vanlig dag", "a normal day"], ["vaknar", "wake up / wakes up"], ["duschar", "shower / showers"],
+      ["klär på mig", "get dressed"], ["äter frukost", "eat breakfast"], ["låser", "lock / locks"],
+      ["en dörr", "a door"], ["cyklar", "bike / bikes"], ["börjar", "begin / begins"],
+      ["slutar", "finish / finishes"], ["trivs", "enjoy / feels comfortable"], ["träffar", "meet / meets"],
+      ["en vän", "a friend"], ["en kväll", "an evening"], ["pratar", "talk / talks"],
+      ["skrattar", "laugh / laughs"], ["mycket", "a lot"], ["somnar", "fall asleep / falls asleep"],
+      ["morgon", "morning"], ["förmiddag", "late morning"], ["eftermiddag", "afternoon"],
+      ["kväll", "evening"], ["natt", "night"], ["klockan", "o'clock / the clock"],
+      ["halv sju", "half past six"], ["kvart över", "quarter past"], ["kvart i", "quarter to"],
+      ["fem över", "five past"], ["tio i", "ten to"], ["lägger mig", "go to bed"],
+      ["handlar", "shop / shops"], ["middag", "dinner"], ["saknar", "miss / misses"]
+    ];
+
+    const week3EvaStoryRows = [
+      ["Eva berättar.", "Eva tells / Eva is telling."],
+      ["Jag vaknar klockan sex.", "I wake up at six o'clock."],
+      ["Jag duschar och klär på mig.", "I shower and get dressed."],
+      ["Jag äter frukost vid halv sju.", "I eat breakfast at about half past six."],
+      ["Jag låser dörren och cyklar till jobbet klockan halv åtta.", "I lock the door and bike to work at half past seven."],
+      ["Jag börjar klockan åtta och slutar klockan fem.", "I start at eight o'clock and finish at five o'clock."],
+      ["Jag trivs på jobbet.", "I like it at work / I feel good at work."],
+      ["Jag träffar vänner på kvällarna.", "I meet friends in the evenings."],
+      ["Vi pratar och skrattar mycket.", "We talk and laugh a lot."],
+      ["Jag somnar klockan elva.", "I fall asleep at eleven o'clock."]
+    ];
+
+    const week3Translations = [
+      { title: "Page 1 - En vanlig dag", sections: [
+        { heading: "Title", rows: [["En vanlig dag", "A normal day"], ["pausgympa", "pause exercise / movement break"]] },
+        { heading: "Overview", rows: [["Häftet handlar om en vanlig dag.", "The booklet is about a normal day."], ["Här tränar du på:", "Here you practice:"]] },
+        { heading: "Goals", rows: [["några vanliga verb", "some common verbs"], ["klockan", "clock time"], ["att skriva om din dag", "writing about your day"], ["att berätta vad du gör en vanlig dag", "telling what you do on a normal day"], ["att förstå en person som berättar om en vanlig dag", "understanding a person who talks about a normal day"], ["att förstå orden morgon, förmiddag, eftermiddag, kväll och natt", "understanding the words morning, late morning, afternoon, evening and night"]] }
+      ] },
+      { title: "Page 2 - Eva berättar", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen många gånger.", "Watch the film many times."]] },
+        { heading: "Full text", rows: week3EvaStoryRows }
+      ] },
+      { title: "Page 3 - Träna på orden", sections: [
+        { heading: "Instruction", rows: [["Skriv orden på ett papper på svenska och på ditt språk.", "Write the words on a paper in Swedish and in your language."], ["Träna på orden.", "Practice the words."], ["svenska", "Swedish"], ["ditt språk", "your language"]] },
+        { heading: "Vocabulary", rows: [["berättar", "tells / is telling"], ["vaknar", "wakes up"], ["duschar", "showers"], ["klär på mig", "get dressed"], ["frukost", "breakfast"], ["vid", "at / around"], ["låser", "locks"], ["en dörr", "a door"], ["cyklar", "bikes"], ["börjar", "begins / starts"], ["slutar", "finishes / ends"], ["trivs", "enjoys / feels comfortable"], ["träffar", "meets"], ["en vän", "a friend"], ["en kväll", "an evening"], ["pratar", "talks"], ["skrattar", "laughs"], ["mycket", "a lot"], ["somnar", "falls asleep"]] }
+      ] },
+      { title: "Page 4 - Questions About Eva", sections: [
+        { heading: "Answer the questions", rows: [["Svara på frågorna till texten.", "Answer the questions about the text."], ["När vaknar Eva?", "When does Eva wake up?"], ["Vad gör hon vid halv sju?", "What does she do at half past six?"], ["Vad gör Eva halv åtta?", "What does Eva do at half past seven?"], ["Hur kommer Eva till jobbet?", "How does Eva get to work?"], ["När träffar Eva sina vänner?", "When does Eva meet her friends?"], ["Vad gör Eva och vännerna?", "What do Eva and the friends do?"]] },
+        { heading: "Yes or no", rows: [["Läs och sätt kryss för JA eller NEJ.", "Read and put a cross for YES or NO."], ["Eva vaknar klockan fem.", "Eva wakes up at five o'clock."], ["Eva vaknar klockan sex.", "Eva wakes up at six o'clock."], ["Eva duschar klockan åtta.", "Eva showers at eight o'clock."], ["Eva klär på sig klockan 10.00.", "Eva gets dressed at 10:00."], ["Eva äter frukost vid halv sju.", "Eva eats breakfast at about half past six."], ["Eva åker bil till jobbet.", "Eva goes by car to work."], ["Eva åker buss till jobbet.", "Eva goes by bus to work."], ["Eva cyklar till jobbet.", "Eva bikes to work."], ["Eva börjar klockan tolv.", "Eva starts at twelve o'clock."], ["Eva slutar jobbet klockan åtta.", "Eva finishes work at eight o'clock."], ["Eva trivs på jobbet.", "Eva likes it at work."], ["Eva träffar kompisar på kvällarna.", "Eva meets friends in the evenings."], ["Eva somnar klockan tio.", "Eva falls asleep at ten o'clock."], ["Eva somnar klockan elva.", "Eva falls asleep at eleven o'clock."], ["Eva somnar klockan tolv.", "Eva falls asleep at twelve o'clock."]] }
+      ] },
+      { title: "Page 5 - Talk About Your Day", sections: [
+        { heading: "Instructions", rows: [["Titta på filmen och träna på frågorna.", "Watch the film and practice the questions."], ["Svara på frågorna.", "Answer the questions."]] },
+        { heading: "Questions", rows: [["Hur mår du idag?", "How are you today?"], ["Vad gör du kl. 05.00?", "What do you do at 05:00?"], ["När vaknar du på vardagar?", "When do you wake up on weekdays?"], ["Vad gör du kl. 8.00 på lördagar?", "What do you do at 8:00 on Saturdays?"], ["Vad gör du kl. 12.00 på vardagar?", "What do you do at 12:00 on weekdays?"], ["Vad gör du kl. 14.00 på lördagar?", "What do you do at 14:00 on Saturdays?"], ["När tvättar du kläder?", "When do you wash clothes?"], ["Vad gör du kl. 21.00 på fredagar?", "What do you do at 21:00 on Fridays?"], ["När lägger du dig?", "When do you go to bed?"]] }
+      ] },
+      { title: "Page 6 - Listening Practice", sections: [
+        { heading: "Instruction", rows: [["Lyssna på orden och skriv dem på raderna.", "Listen to the words and write them on the lines."], ["Öva fyra gånger.", "Practice four times."]] },
+        { heading: "Exercise layout", rows: [["1-10", "Write the words on lines 1-10."], ["1-10", "Repeat the exercise four times."]] }
+      ] },
+      { title: "Page 7 - Clock Time And Parts Of The Day", sections: [
+        { heading: "Analog and digital clock", rows: [["Klockan analog", "Analog clock"], ["Klockan digital", "Digital clock"], ["Kl. 13.00 = klockan ett", "13:00 = one o'clock"], ["Kl. 14.00 = klockan två", "14:00 = two o'clock"], ["Kl. 15.00 = klockan tre", "15:00 = three o'clock"], ["Kl. 16.00 = klockan fyra", "16:00 = four o'clock"], ["Kl. 17.00 = klockan fem", "17:00 = five o'clock"], ["Kl. 18.00 = klockan sex", "18:00 = six o'clock"], ["kl 19.00 = klockan sju", "19:00 = seven o'clock"], ["kl 20.00 = klockan åtta", "20:00 = eight o'clock"], ["kl 21.00 = klockan nio", "21:00 = nine o'clock"], ["kl 22.00 = klockan tio", "22:00 = ten o'clock"], ["kl 23.00 = klockan elva", "23:00 = eleven o'clock"], ["kl 00.00 = klockan tolv", "00:00 = twelve o'clock"]] },
+        { heading: "Parts of the day", rows: [["Morgonen är klockan fem, sex, sju, åtta, nio.", "The morning is five, six, seven, eight, nine o'clock."], ["Förmiddagen är klockan nio, tio, elva.", "The late morning is nine, ten, eleven o'clock."], ["Eftermiddagen är efter kl. 12.00 till kl. 17.00.", "The afternoon is after 12:00 until 17:00."], ["Kvällen är 18.00, 19.00, 20.00, 21.00, 22.00, 23.00.", "The evening is 18:00, 19:00, 20:00, 21:00, 22:00, 23:00."], ["Natten är klockan tolv, ett, två, tre, fyra.", "The night is twelve, one, two, three, four o'clock."]] },
+        { heading: "Write the correct time", rows: [["Skriv rätt klockslag på raden.", "Write the correct clock time on the line."], ["Klockan ett på natten", "one o'clock at night"], ["Klockan två på eftermiddagen", "two o'clock in the afternoon"], ["Klockan sex på morgonen", "six o'clock in the morning"], ["Klockan åtta på kvällen", "eight o'clock in the evening"], ["Klockan elva på förmiddagen", "eleven o'clock in the late morning"], ["Klockan fem på eftermiddagen", "five o'clock in the afternoon"], ["Klockan tio på förmiddagen", "ten o'clock in the late morning"], ["Klockan ett på eftermiddagen", "one o'clock in the afternoon"], ["Klockan tio på kvällen", "ten o'clock in the evening"], ["Klockan fyra på natten", "four o'clock at night"], ["Klockan sju på kvällen", "seven o'clock in the evening"], ["Klockan halv nio på morgonen", "half past eight in the morning"]] }
+      ] },
+      { title: "Page 8 - More Clock Expressions", sections: [
+        { heading: "Read", rows: [["11.00 elva", "11:00 eleven"], ["11.05 fem över elva", "11:05 five past eleven"], ["11.10 tio över elva", "11:10 ten past eleven"], ["11.15 kvart över elva", "11:15 quarter past eleven"], ["11.20 tjugo över elva", "11:20 twenty past eleven"], ["11.25 fem i halv tolv", "11:25 five to half past eleven / five before half twelve"], ["11.30 halv tolv", "11:30 half past eleven"], ["11.35 fem över halv tolv", "11:35 five after half twelve"], ["11.40 tjugo i tolv", "11:40 twenty to twelve"], ["11.45 kvart i tolv", "11:45 quarter to twelve"], ["11.50 tio i tolv", "11:50 ten to twelve"], ["11.55 fem i tolv", "11:55 five to twelve"]] },
+        { heading: "Write the correct time", rows: [["halv ett på natten", "half past twelve at night"], ["Klockan tre på eftermiddagen", "three o'clock in the afternoon"], ["kvart i sex på morgonen", "quarter to six in the morning"], ["halv åtta på kvällen", "half past seven in the evening"], ["Fem över elva på förmiddagen", "five past eleven in the late morning"], ["fem i fem på eftermiddagen", "five to five in the afternoon"], ["Tjugo i tio på förmiddagen", "twenty to ten in the late morning"], ["tio över ett på eftermiddagen", "ten past one in the afternoon"], ["Halv tio på kvällen", "half past nine in the evening"], ["fem över halv fyra på natten", "five after half past three at night"], ["fem i halv sju på kvällen", "five before half past six in the evening"], ["tio i nio på morgonen", "ten to nine in the morning"], ["kvart över nio på kvällen", "quarter past nine in the evening"], ["tjugo över åtta på morgonen", "twenty past eight in the morning"]] },
+        { heading: "Write your own times", rows: [["Skriv tiden med siffror.", "Write the time with digits."], ["Jag vaknar klockan ___ på morgonen.", "I wake up at ___ in the morning."], ["Jag äter frukost klockan ___.", "I eat breakfast at ___."], ["Jag äter lunch klockan ___.", "I eat lunch at ___."], ["Jag äter middag klockan ___.", "I eat dinner at ___."], ["Jag äter kvällsmat klockan ___ på kvällen.", "I eat evening food at ___ in the evening."], ["Jag somnar klockan ___.", "I fall asleep at ___."]] }
+      ] },
+      { title: "Page 9 - What Time Is It?", sections: [
+        { heading: "Instruction", rows: [["Vad är klockan?", "What time is it?"]] },
+        { heading: "Examples and prompts", rows: [["02.30 halv tre på natten", "02:30 half past two at night"], ["01.00 ett på natten", "01:00 one o'clock at night"], ["03.05", "03:05"], ["05.10", "05:10"], ["10.30", "10:30"], ["01.15", "01:15"], ["04.35", "04:35"], ["09.20", "09:20"], ["08.25", "08:25"], ["07.45", "07:45"], ["06.50", "06:50"], ["11.00", "11:00"], ["12.55", "12:55"], ["07.30", "07:30"], ["02.35", "02:35"], ["04.10", "04:10"], ["05.25", "05:25"], ["10.10", "10:10"], ["11.50", "11:50"], ["02.45", "02:45"]] }
+      ] },
+      { title: "Page 10 - Gustav's Normal Day", sections: [
+        { heading: "Listen and circle", rows: [["Lyssna på EN VANLIG DAG.", "Listen to A Normal Day."], ["Ringa in rätt svar.", "Circle the correct answer."], ["Gustav berättar om en vanlig dag.", "Gustav talks about a normal day."], ["Vad gör Gustav på morgonen?", "What does Gustav do in the morning?"], ["dricker kaffe", "drinks coffee"], ["lagar mat", "cooks food"], ["tittar på tv", "watches TV"], ["Hur åker han till jobbet?", "How does he go to work?"], ["Han promenerar.", "He walks."], ["Han åker buss.", "He goes by bus."], ["Han cyklar.", "He bikes."], ["När handlar Gustav?", "When does Gustav shop?"], ["på eftermiddagen", "in the afternoon"], ["på förmiddagen", "in the late morning"], ["på kvällen", "in the evening"], ["Vilka lagar mat?", "Who cooks?"], ["Gustav och barnen", "Gustav and the children"], ["Gustav själv", "Gustav himself"], ["Gustav och hans fru", "Gustav and his wife"], ["Hur länge sover Gustav?", "How long does Gustav sleep?"], ["20.00", "20:00"], ["23.00", "23:00"], ["8 timmar", "8 hours"]] },
+        { heading: "Fill in missing words", rows: [["Lyssna en gång till och fyll i orden som fattas.", "Listen one more time and fill in the missing words."], ["Jag vaknar ___ sju på morgonen och dricker en kopp kaffe.", "I wake up ___ seven in the morning and drink a cup of coffee."], ["Mina ___ vaknar vid sju och äter frukost.", "My ___ wake up at about seven and eat breakfast."], ["De går till ___ vid halv åtta och jag går hemifrån vid åtta.", "They go to ___ at half past seven and I leave home at eight."], ["Jag åker ___ till jobbet.", "I go by ___ to work."], ["Jag jobbar på en bank.", "I work at a bank."], ["Jag kommer ___ från jobbet vid 17.00 på eftermiddagen.", "I come ___ from work at about 17:00 in the afternoon."], ["Jag ___ och sen lagar jag och barnen mat tillsammans.", "I ___ and then the children and I cook together."], ["Vi äter ___ och jag dricker en kopp te efter maten.", "We eat ___ and I drink a cup of tea after the food."], ["Sen ___ vi på tv.", "Then we ___ TV."], ["På kvällen talar jag med min mamma i telefon.", "In the evening I talk with my mother on the phone."], ["Jag ___ henne.", "I ___ her."], ["Sen lägger jag mig och somnar vid 23.00.", "Then I go to bed and fall asleep at about 23:00."], ["Jag ___ ungefär åtta timmar.", "I ___ about eight hours."]] },
+        { heading: "Word bank", rows: [["sover", "sleep / sleeps"], ["saknar", "miss / misses"], ["vid", "at / about"], ["hem", "home"], ["tittar", "watch / watches"], ["skolan", "the school"], ["handlar", "shop / shops"], ["barn", "children"], ["buss", "bus"], ["middag", "dinner"]] }
+      ] },
+      { title: "Page 11 - Write Sentences", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen.", "Watch the film."], ["Skriv meningarna.", "Write the sentences."]] }
+      ] },
+      { title: "Page 12 - Picture Writing", sections: [
+        { heading: "Writing practice", rows: [["Skriv meningar till bilderna.", "Write sentences for the pictures."], ["Använd orden från veckan: vaknar, duschar, äter, cyklar, jobbar, träffar, somnar.", "Use the words from the week: wakes up, showers, eats, bikes, works, meets, falls asleep."]] }
+      ] },
+      { title: "Page 13 - Picture Writing", sections: [
+        { heading: "Writing practice", rows: [["Skriv meningar till bilderna.", "Write sentences for the pictures."], ["Berätta vad personen gör och när det händer.", "Tell what the person does and when it happens."]] }
+      ] },
+      { title: "Page 14 - Picture Writing", sections: [
+        { heading: "Writing practice", rows: [["Skriv meningar till bilderna.", "Write sentences for the pictures."], ["Träna på att skriva en kort text om en vanlig dag.", "Practice writing a short text about a normal day."]] }
       ] }
     ];
 
@@ -1845,14 +1993,72 @@
       setPage(0);
     }
 
+    function renderWeek3Terms() {
+      const grid = document.querySelector("#week3Terms");
+      grid.innerHTML = "";
+      week3Terms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek3Comparison() {
+      const thumbs = document.querySelector("#week3CompareThumbs");
+      const image = document.querySelector("#week3CompareImage");
+      const overlay = document.querySelector("#week3CompareQrOverlay");
+      const panel = document.querySelector("#week3TranslationPanel");
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week3Translations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week3-pages/page-${page}.jpg`;
+        image.alt = `Week 3 page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week3PageSizes, week3QrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Converted iPhone page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week3QrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week3Translations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = week === "week2" ? "week2" : "week1";
+      const activeWeek = ["week1", "week2", "week3"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -1867,7 +2073,7 @@
       localStorage.setItem("sfi-active-week", activeWeek);
 
       if (options.updateHash) {
-        const targetHash = activeWeek === "week2" ? "#week2" : "#week1";
+        const targetHash = `#${activeWeek}`;
         history.pushState(null, "", targetHash);
         document.querySelector(targetHash)?.scrollIntoView();
       }
@@ -1923,6 +2129,8 @@
 
     renderWeek2Terms();
     renderWeek2Comparison();
+    renderWeek3Terms();
+    renderWeek3Comparison();
 
     setActiveWeek(weekForHash(location.hash));
 
