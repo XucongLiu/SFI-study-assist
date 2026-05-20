@@ -1307,7 +1307,7 @@
             <a class="btn" href="#week4-in-class-words">Practice Words</a>
           </div>
           <div class="material-switch">
-            <a class="material-card" href="#week4-in-class-compare"><strong>In-class material</strong><span>Seven classroom pages converted from the Week 4 photo folder.</span></a>
+            <a class="material-card" href="#week4-in-class-compare"><strong>In-class material</strong><span>Twenty classroom pages converted from the Week 4 photo folder.</span></a>
             <a class="material-card" href="#week4-off-class"><strong>Off-class material</strong><span>Reserved for Week 4 homework/off-class pages when you upload them.</span></a>
           </div>
         </div>
@@ -1658,10 +1658,15 @@
 
     const week4InClassPageSizes = {
       1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867], 5: [1400, 1867],
-      6: [1400, 1867], 7: [1400, 1867]
+      6: [1400, 1867], 7: [1400, 1867], 8: [1400, 1867], 9: [1400, 1867], 10: [1400, 1867],
+      11: [1400, 1867], 12: [1400, 1867], 13: [1400, 1867], 14: [1400, 1867], 15: [1400, 1867],
+      16: [1400, 1867], 17: [1400, 1867], 18: [1400, 1867], 19: [1400, 1867], 20: [1400, 1867]
     };
 
-    const week4InClassQrCodes = [];
+    const week4InClassQrCodes = [
+      { page: 14, type: "url", value: "https://blip.sano.ma/player/a/HzG8C", x: 1087, y: 31, w: 97, h: 96 },
+      { page: 16, type: "url", value: "https://blip.sano.ma/player/a/oa7Bc", x: 884, y: 68, w: 60, h: 57 }
+    ];
 
     const week4InClassTerms = [
       ["väder", "weather"], ["vaknar", "wakes up"], ["en klocka", "a clock"], ["trött", "tired"],
@@ -1679,7 +1684,17 @@
       ["en fot", "a foot"], ["fötter", "feet"], ["en bok", "a book"], ["böcker", "books"],
       ["ett öga", "an eye"], ["ögon", "eyes"], ["ett öra", "an ear"], ["öron", "ears"],
       ["en moster", "a maternal aunt"], ["mostrar", "maternal aunts"], ["substantiv", "noun"],
-      ["singular", "singular"], ["plural", "plural"]
+      ["singular", "singular"], ["plural", "plural"], ["vardagsliv", "everyday life"], ["stressig", "stressful"],
+      ["duschar", "showers"], ["länge", "for a long time"], ["fixar", "fixes / prepares"], ["en frukost", "a breakfast"],
+      ["ställer", "puts / places"], ["juice", "juice"], ["bröd", "bread"], ["en ost", "a cheese"], ["smör", "butter"],
+      ["ett bord", "a table"], ["väcker", "wakes"], ["skyndar sig", "hurries"], ["bråttom", "in a hurry"],
+      ["släcker", "turns off"], ["springer", "runs"], ["hämtar", "picks up"], ["ett fritids", "after-school center"],
+      ["handlar", "shops"], ["gråter", "cries"], ["en affär", "a shop"], ["stressad", "stressed"],
+      ["lagar mat", "cooks food"], ["steker", "fries"], ["en köttbulle", "a meatball"], ["kokar", "boils"],
+      ["pasta", "pasta"], ["en läxa", "homework"], ["diskar", "does the dishes"], ["tvättar", "washes"],
+      ["en soffa", "a sofa"], ["längtar till", "longs for"], ["en helg", "a weekend"], ["rak ordföljd", "straight word order"],
+      ["omvänd ordföljd", "inverted word order"], ["fundament", "first sentence position"], ["verb", "verb"],
+      ["subjekt", "subject"], ["plats", "place"], ["tid", "time"]
     ];
 
     const week4JonasRows = [
@@ -1698,6 +1713,33 @@
       ["Han äter och tittar på teve.", "He eats and watches TV."],
       ["Klockan nio somnar han.", "At nine o'clock he falls asleep."],
       ["Han tycker inte om november.", "He does not like November."]
+    ];
+
+    const week4StressStoryRows = [
+      ["Han vaknar klockan 6.00.", "He wakes up at 6:00."],
+      ["Han duschar länge.", "He showers for a long time."],
+      ["Sedan fixar han frukost.", "Then he prepares breakfast."],
+      ["Han ställer juice, bröd, ost och smör på bordet.", "He puts juice, bread, cheese and butter on the table."],
+      ["Han väcker barnen.", "He wakes the children."],
+      ["De är trötta.", "They are tired."],
+      ["Skynda er! Kom och ät frukost nu, säger han.", "Hurry up! Come and eat breakfast now, he says."],
+      ["Skolan börjar klockan 8.00.", "School starts at 8:00."],
+      ["Det är bråttom.", "It is urgent / they are in a hurry."],
+      ["Han släcker i huset och låser dörren.", "He turns off the lights in the house and locks the door."],
+      ["Barnen går till skolan och han springer till bussen.", "The children walk to school and he runs to the bus."],
+      ["Han slutar jobbet klockan 16.00.", "He finishes work at 16:00."],
+      ["Sedan hämtar han barnen på fritids.", "Then he picks up the children at the after-school center."],
+      ["De åker och handlar mat.", "They go and shop for food."],
+      ["Barnen är trötta och gråter i affären.", "The children are tired and cry in the shop."],
+      ["Han är stressad.", "He is stressed."],
+      ["Han lagar mat och barnen ser på teve.", "He cooks food and the children watch TV."],
+      ["Han steker köttbullar och kokar pasta.", "He fries meatballs and boils pasta."],
+      ["Maten är klar. Kom och ät nu, säger han.", "The food is ready. Come and eat now, he says."],
+      ["Barnen gör sina läxor efter maten.", "The children do their homework after the meal."],
+      ["Han diskar och tvättar.", "He does the dishes and laundry."],
+      ["Barnen somnar klockan 20.00.", "The children fall asleep at 20:00."],
+      ["Han somnar i soffan.", "He falls asleep on the sofa."],
+      ["Han längtar till helgen.", "He longs for the weekend."]
     ];
 
     const week4InClassTranslations = [
@@ -1732,6 +1774,58 @@
         { heading: "Instruction", rows: [["Läs texten om Julias mostrar.", "Read the text about Julia's maternal aunts."], ["Stryk under alla substantiv som har pluralform.", "Underline all nouns that have plural form."]] },
         { heading: "Full text", rows: [["Julia har två mostrar som heter Sigrid och Ingrid.", "Julia has two maternal aunts called Sigrid and Ingrid."], ["Sigrid är 58 år.", "Sigrid is 58 years old."], ["Hon lever ensam och har inga barn.", "She lives alone and has no children."], ["Men hon har ett intressant jobb.", "But she has an interesting job."], ["Ibland gör hon långa resor.", "Sometimes she takes long trips."], ["Hon träffar också många människor, både män och kvinnor.", "She also meets many people, both men and women."], ["Hon tycker om att köpa dyra saker och gå på fina restauranger.", "She likes buying expensive things and going to nice restaurants."], ["Men hennes syster Ingrid lever ett lugnt liv.", "But her sister Ingrid lives a calm life."], ["Hon är 60 år, gift och har två döttrar och fyra barnbarn.", "She is 60 years old, married, and has two daughters and four grandchildren."], ["Hon gillar att baka bullar och att sitta hemma och prata med vänner och grannar.", "She likes baking buns and sitting at home talking with friends and neighbors."], ["Julia tänker ibland: Hur kan två systrar bli så olika?", "Julia sometimes thinks: How can two sisters become so different?"]] },
         { heading: "Noun practice", rows: [["Skriv substantiven i både singular och plural obestämd form.", "Write the nouns in both singular and plural indefinite form."], ["Skriv på separat papper.", "Write on a separate paper."], ["Exempel: en moster, mostrar", "Example: a maternal aunt, maternal aunts"], ["Hitta på substantiv i plural som passar ihop med orden.", "Think of plural nouns that fit together with the words."], ["kakor och bullar", "cookies/cakes and buns"], ["äpplen och ...", "apples and ..."], ["händer och ...", "hands and ..."], ["bilar och ...", "cars and ..."], ["kvinnor och ...", "women and ..."], ["systrar och ...", "sisters and ..."], ["knivar och ...", "knives and ..."], ["koppar och ...", "cups and ..."], ["väggar och ...", "walls and ..."], ["armar och ...", "arms and ..."]] }
+      ] },
+      { title: "In-class Page 8 - Hörförståelse", sections: [
+        { heading: "Listening task", rows: [["Hörförståelse", "Listening comprehension"], ["Du kommer att få lyssna på en kvinna som berättar om en vanlig dag i sitt liv.", "You will listen to a woman who talks about an ordinary day in her life."], ["Svara sedan på frågorna.", "Then answer the questions."], ["Sätt ett kryss vid rätt alternativ.", "Put a cross next to the correct option."], ["Du får lyssna två gånger.", "You may listen two times."]] },
+        { heading: "Questions", rows: [["När vaknar hon?", "When does she wake up?"], ["När lämnar hon på förskolan?", "When does she drop off at preschool?"], ["När börjar hon jobbet?", "When does she start work?"], ["När äter hon lunch?", "When does she eat lunch?"], ["När slutar hon på fredagar?", "When does she finish on Fridays?"], ["När hämtar hon på förskolan?", "When does she pick up at preschool?"], ["När äter de middag?", "When do they eat dinner?"], ["När lägger sig kvinnan?", "When does the woman go to bed?"]] }
+      ] },
+      { title: "In-class Page 9 - Question Words And Time", sections: [
+        { heading: "Short dialogues", rows: [["Vilken gata bor du på?", "What street do you live on?"], ["På Linnégatan.", "On Linnégatan."], ["Hur många barn har du?", "How many children do you have?"], ["Vad har du för telefonnummer?", "What phone number do you have?"], ["När är du född?", "When were you born?"], ["Morfar, är du gammal?", "Grandpa, are you old?"], ["Hur mycket kaffe dricker man i Sverige?", "How much coffee do people drink in Sweden?"]] },
+        { heading: "Question words", rows: [["Vilken?", "Which?"], ["Vilket?", "Which? / neuter form"], ["Vad ... för?", "What kind of?"], ["Hur många?", "How many?"], ["Hur mycket?", "How much?"]] },
+        { heading: "Ask about time", rows: [["När är det fika?", "When is the coffee break?"], ["Vilken tid börjar vi?", "What time do we start?"], ["Hur dags äter vi lunch?", "At what time do we eat lunch?"], ["När slutar vi?", "When do we finish?"], ["Fråga varandra.", "Ask each other."], ["Vilken tid börjar kursen?", "What time does the course start?"], ["Vilken tid slutar kursen?", "What time does the course finish?"], ["Vilken tid har ni fikapaus?", "What time do you have a coffee break?"]] }
+      ] },
+      { title: "In-class Page 10 - Omvänd ordföljd", sections: [
+        { heading: "Rule", rows: [["Omvänd ordföljd som inleds med tid eller plats", "Inverted word order that starts with time or place"], ["Jag dricker kaffe klockan sju.", "I drink coffee at seven o'clock."], ["Klockan sju dricker jag kaffe.", "At seven o'clock I drink coffee."], ["Vi läser svenska i skolan.", "We read/study Swedish at school."], ["I skolan läser vi svenska.", "At school we study Swedish."]] },
+        { heading: "Exercise", rows: [["Skriv meningen med tid eller plats först.", "Write the sentence with time or place first."], ["Bussen går nu.", "The bus leaves now."], ["De tittar på tv på kvällen.", "They watch TV in the evening."], ["Det regnar mycket på hösten.", "It rains a lot in autumn."], ["Tim spelar fotboll på rasten.", "Tim plays football during the break."], ["De äter frukost på morgonen.", "They eat breakfast in the morning."], ["Man äter mycket ris i Asien.", "People eat a lot of rice in Asia."], ["Lotta tvättar varje lördag.", "Lotta does laundry every Saturday."], ["Tim går på fritids efter skolan.", "Tim goes to after-school care after school."], ["Det är varmt på sommaren.", "It is warm in summer."], ["Det står ett runt matbord i köket.", "There is a round dining table in the kitchen."], ["Ali arbetar på lördagar och söndagar.", "Ali works on Saturdays and Sundays."], ["Vi har högertrafik i Sverige.", "We have right-hand traffic in Sweden."]] }
+      ] },
+      { title: "In-class Page 11 - Ordföljd", sections: [
+        { heading: "Sentence pattern", rows: [["Ordföljd", "Word order"], ["Fundament", "First sentence position"], ["Verb", "Verb"], ["Subjekt", "Subject"], ["Inte", "Not"], ["Sofia talar inte engelska.", "Sofia does not speak English."], ["Pelle vaknar klockan åtta.", "Pelle wakes up at eight o'clock."], ["Klockan åtta vaknar Pelle.", "At eight o'clock Pelle wakes up."], ["Varför pluggar du svenska?", "Why are you studying Swedish?"], ["Vilken tid äter du lunch?", "What time do you eat lunch?"], ["Arbetar du här?", "Do you work here?"]] },
+        { heading: "Exercise", rows: [["Sortera orden och skriv meningar.", "Sort the words and write sentences."], ["Börja med ordet i fet stil.", "Start with the bold word."]] }
+      ] },
+      { title: "In-class Page 12 - Rak ordföljd med inte", sections: [
+        { heading: "Rule", rows: [["Rak ordföljd med inte", "Straight word order with inte"], ["Vi åker tåg till Spanien.", "We go by train to Spain."], ["Vi åker inte tåg till Spanien.", "We do not go by train to Spain."], ["Martin arbetar på lördag.", "Martin works on Saturday."], ["Martin arbetar inte på lördag.", "Martin does not work on Saturday."]] },
+        { heading: "Exercise", rows: [["Skriv meningarna med rätt ordföljd.", "Write the sentences with correct word order."], ["Börja med ordet i fet stil.", "Start with the bold word."], ["De stannar inte hemma på semestern.", "They do not stay at home during vacation."], ["Hon tittar inte på tv på eftermiddagen.", "She does not watch TV in the afternoon."], ["Zahra läser inte matematik i skolan.", "Zahra does not study math at school."], ["Malin handlar inte mat efter jobbet.", "Malin does not shop for food after work."], ["De bor inte i en villa.", "They do not live in a house."], ["Tim cyklar inte till skolan på morgonen.", "Tim does not bike to school in the morning."]] }
+      ] },
+      { title: "In-class Page 13 - More Sentences With Inte", sections: [
+        { heading: "Exercise continuation", rows: [["Han svarar inte i telefon.", "He does not answer the phone."], ["Lisa går inte i skolan.", "Lisa does not go to school."], ["Det är inte söndag i morgon.", "It is not Sunday tomorrow."], ["Tim har inte någon penna.", "Tim does not have any pen."], ["Ni börjar inte klockan elva i morgon.", "You do not start at eleven o'clock tomorrow."], ["Malin är inte hemma från jobbet i dag.", "Malin is not home from work today."]] }
+      ] },
+      { title: "In-class Page 14 - Vardagsliv Ordlista 1", sections: [
+        { heading: "Instructions", rows: [["Vardagsliv", "Everyday life"], ["Öva uttalet med din lärare.", "Practice pronunciation with your teacher."], ["Översätt orden till ditt språk.", "Translate the words into your language."], ["Träna att skriva orden på svenska.", "Practice writing the words in Swedish."]] },
+        { heading: "Vocabulary", rows: [["stressig", "stressful"], ["vaknar", "wakes up"], ["duschar", "showers"], ["länge", "for a long time"], ["fixar", "fixes / prepares"], ["en frukost", "a breakfast"], ["ställer", "puts / places"], ["juice", "juice"], ["bröd", "bread"], ["en ost", "a cheese"], ["smör", "butter"], ["ett bord", "a table"], ["väcker", "wakes"], ["ett barn", "a child"], ["trött", "tired"], ["skyndar sig", "hurries"], ["äter", "eats"], ["en skola", "a school"], ["börjar", "begins"], ["bråttom", "in a hurry"]] }
+      ] },
+      { title: "In-class Page 15 - Vardagsliv Ordlista 2", sections: [
+        { heading: "Vocabulary", rows: [["släcker", "turns off"], ["ett hus", "a house"], ["låser", "locks"], ["en dörr", "a door"], ["springer", "runs"], ["en buss", "a bus"], ["slutar", "finishes"], ["ett jobb", "a job"], ["hämtar", "picks up"], ["ett fritids", "after-school center"], ["åker", "goes / travels"], ["handlar", "shops"], ["gråter", "cries"], ["en affär", "a shop"], ["stressad", "stressed"], ["lagar mat", "cooks food"], ["steker", "fries"], ["en köttbulle", "a meatball"], ["kokar", "boils"], ["pasta", "pasta"], ["en läxa", "homework"], ["diskar", "does the dishes"], ["tvättar", "washes"], ["somnar", "falls asleep"], ["en soffa", "a sofa"], ["längtar till", "longs for"], ["en helg", "a weekend"]] }
+      ] },
+      { title: "In-class Page 16 - En stressig dag", sections: [
+        { heading: "Full text", rows: week4StressStoryRows },
+        { heading: "Questions", rows: [["När vaknar han?", "When does he wake up?"], ["Vad ställer han på bordet?", "What does he put on the table?"], ["När börjar skolan?", "When does school start?"], ["Hur kommer barnen till skolan?", "How do the children get to school?"], ["Hur kommer han till jobbet?", "How does he get to work?"], ["När slutar han jobbet?", "When does he finish work?"], ["Var hämtar han barnen?", "Where does he pick up the children?"], ["Vad gör de efter fritids?", "What do they do after after-school care?"], ["Vad gör barnen i affären?", "What do the children do in the shop?"], ["Vad lagar han?", "What does he cook?"], ["Vad gör barnen efter maten?", "What do the children do after the meal?"], ["Vad gör han efter maten?", "What does he do after the meal?"], ["När somnar barnen?", "When do the children fall asleep?"], ["Var somnar han?", "Where does he fall asleep?"], ["Vad längtar han till?", "What does he long for?"]] }
+      ] },
+      { title: "In-class Page 17 - Stressig Dag Ordföljd", sections: [
+        { heading: "Instruction", rows: [["Grammatik", "Grammar"], ["Ordföljd", "Word order"], ["Skriv meningar.", "Write sentences."], ["Börja med subjekt.", "Start with the subject."], ["Använd stor bokstav och punkt.", "Use a capital letter and a full stop."], ["Exempel: klockan 6.00 / han / vaknar", "Example: 6:00 / he / wakes up"], ["Han vaknar klockan 6.00.", "He wakes up at 6:00."]] },
+        { heading: "Prompts", rows: [["juice / ställer / på bordet / han", "juice / puts / on the table / he"], ["klockan 8.00 / börjar / skolan", "8:00 / starts / school"], ["bråttom / det / är", "in a hurry / it / is"], ["till skolan / barnen / går", "to school / the children / walk"], ["till bussen / springer / han", "to the bus / runs / he"], ["jobbet / klockan 16.00 / slutar", "work / at 16:00 / finishes"], ["efter fritids / mat / handlar / de", "after after-school care / food / shop / they"], ["efter maten / gör / de / läxor", "after the meal / do / they / homework"], ["de / klockan 20.00 / somnar", "they / at 20:00 / fall asleep"], ["till helgen / längtar / han", "for the weekend / longs / he"]] }
+      ] },
+      { title: "In-class Page 18 - Clock And Questions", sections: [
+        { heading: "Clock", rows: [["Klockan", "The clock"], ["Para ihop klockslagen.", "Match the times."], ["Välj bland klockslagen i rutan.", "Choose from the times in the box."], ["2.00 = 14.00", "2 o'clock = 14:00"], ["3.00", "3:00"], ["5.00", "5:00"], ["8.00", "8:00"], ["10.00", "10:00"], ["12.00", "12:00"]] },
+        { heading: "Questions and answers", rows: [["Para ihop frågorna med rätt svar.", "Match the questions with the correct answer."], ["När vaknar han?", "When does he wake up?"], ["När börjar skolan?", "When does school start?"], ["Var hämtar han barnen?", "Where does he pick up the children?"], ["Vad gör de efter fritids?", "What do they do after after-school care?"], ["Varför gråter barnen?", "Why do the children cry?"], ["Han hämtar dem på fritids.", "He picks them up at the after-school center."], ["De handlar mat.", "They shop for food."], ["Den börjar klockan 8.00.", "It starts at 8:00."], ["De är trötta.", "They are tired."], ["Han vaknar klockan 6.00.", "He wakes up at 6:00."]] }
+      ] },
+      { title: "In-class Page 19 - Nouns And Verbs", sections: [
+        { heading: "Nouns", rows: [["Substantiv", "Nouns"], ["Skriv substantiven i singular och plural.", "Write the nouns in singular and plural."], ["ett barn, barn", "a child, children"], ["bord", "tables / table form to complete"], ["skolor", "schools"], ["hus", "houses"], ["dörrar", "doors"], ["jobb", "jobs"], ["en läxa", "homework / an assignment"], ["en soffa", "a sofa"], ["helger", "weekends"]] },
+        { heading: "Verbs", rows: [["Verb", "Verbs"], ["Ringa in verben.", "Circle the verbs."], ["vakna", "wake up"], ["gråter", "cries"], ["duschar", "showers"], ["låser", "locks"], ["släcker", "turns off"], ["ställer", "puts"], ["springer", "runs"], ["börjar", "begins"], ["stressar", "stresses"], ["skyndar", "hurries"], ["handlar", "shops"], ["gör", "does"], ["somnar", "falls asleep"], ["diskar", "does the dishes"], ["tvättar", "washes"], ["längtar", "longs"], ["lagar", "cooks"], ["ser", "watches / sees"]] }
+      ] },
+      { title: "In-class Page 20 - Verbs, Place And Time", sections: [
+        { heading: "Verbs", rows: [["Verb, plats och tid", "Verbs, place and time"], ["Stryk under alla verb som finns i meningarna.", "Underline all verbs in the sentences."], ["Han vaknar klockan 6.00.", "He wakes up at 6:00."], ["Han duschar länge.", "He showers for a long time."], ["Sedan fixar han frukost.", "Then he prepares breakfast."], ["Han ställer juice, bröd, ost och smör på bordet.", "He puts juice, bread, cheese and butter on the table."], ["Han väcker barnen.", "He wakes the children."], ["De är trötta.", "They are tired."]] },
+        { heading: "Place", rows: [["Stryk under alla ord eller fraser som beskriver plats i meningarna.", "Underline all words or phrases that describe place in the sentences."], ["Han släcker i huset.", "He turns off the lights in the house."], ["Sedan hämtar han barnen på fritids.", "Then he picks up the children at after-school care."], ["Barnen är trötta och gråter i affären.", "The children are tired and cry in the shop."], ["Han somnar i soffan.", "He falls asleep on the sofa."]] },
+        { heading: "Time", rows: [["Stryk under alla ord eller fraser som beskriver tid i meningarna.", "Underline all words or phrases that describe time in the sentences."], ["Sedan fixar han frukost.", "Then he prepares breakfast."], ["Kom och ät frukost nu, säger han.", "Come and eat breakfast now, he says."], ["Skolan börjar klockan 8.00.", "School starts at 8:00."], ["Han slutar jobbet klockan 16.00.", "He finishes work at 16:00."], ["Barnen gör sina läxor efter maten.", "The children do their homework after the meal."], ["Barnen somnar klockan 20.00.", "The children fall asleep at 20:00."]] }
       ] }
     ];
 
