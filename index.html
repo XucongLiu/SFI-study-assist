@@ -978,7 +978,8 @@
     <a class="week-nav" data-week="week4" href="#week4-in-class-compare">Translations</a>
     <a class="week-nav" data-week="week4" href="#week4-in-class-words">Word Learning</a>
     <span class="nav-label week-nav" data-week="week4">Off-class</span>
-    <a class="week-nav" data-week="week4" href="#week4-off-class">Off-class Slot</a>
+    <a class="week-nav" data-week="week4" href="#week4-off-class-compare">Translations</a>
+    <a class="week-nav" data-week="week4" href="#week4-off-class-words">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1308,7 +1309,7 @@
           </div>
           <div class="material-switch">
             <a class="material-card" href="#week4-in-class-compare"><strong>In-class material</strong><span>Twenty classroom pages converted from the Week 4 photo folder.</span></a>
-            <a class="material-card" href="#week4-off-class"><strong>Off-class material</strong><span>Reserved for Week 4 homework/off-class pages when you upload them.</span></a>
+            <a class="material-card" href="#week4-off-class-compare"><strong>Off-class material</strong><span>Weather booklet pages, QR videos, translations, and word practice.</span></a>
           </div>
         </div>
         <div class="scan-preview" aria-label="Week 4 in-class worksheet preview">
@@ -1340,11 +1341,26 @@
       </div>
     </section>
 
-    <section id="week4-off-class" class="week-panel" data-week="week4">
-      <h2>Week 4 Off-class Material</h2>
-      <p class="section-lead">No Week 4 off-class material has been uploaded yet. This slot is ready for homework pages later.</p>
+    <section id="week4-off-class-compare" class="week-panel" data-week="week4">
+      <h2>Off-class Translation</h2>
+      <p class="section-lead">Compare the Week 4 off-class weather booklet photos with English translations and QR video links.</p>
+      <div class="compare">
+        <div class="thumbs" id="week4OffClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week4OffClassCompareImage" src="assets/sfi-week4-off-class-pages/page-01.jpg" alt="Week 4 off-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week4OffClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week4OffClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week4-off-class-words" class="week-panel" data-week="week4">
+      <h2>Off-class Word Learning</h2>
+      <p class="section-lead">Important Week 4 off-class weather words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
-        <p class="note">The new folder structure supports both <strong>in-class</strong> and <strong>off-class</strong> material for every week.</p>
+        <div class="term-list" id="week4OffClassTerms"></div>
       </div>
     </section>
 
@@ -1826,6 +1842,80 @@
         { heading: "Verbs", rows: [["Verb, plats och tid", "Verbs, place and time"], ["Stryk under alla verb som finns i meningarna.", "Underline all verbs in the sentences."], ["Han vaknar klockan 6.00.", "He wakes up at 6:00."], ["Han duschar länge.", "He showers for a long time."], ["Sedan fixar han frukost.", "Then he prepares breakfast."], ["Han ställer juice, bröd, ost och smör på bordet.", "He puts juice, bread, cheese and butter on the table."], ["Han väcker barnen.", "He wakes the children."], ["De är trötta.", "They are tired."]] },
         { heading: "Place", rows: [["Stryk under alla ord eller fraser som beskriver plats i meningarna.", "Underline all words or phrases that describe place in the sentences."], ["Han släcker i huset.", "He turns off the lights in the house."], ["Sedan hämtar han barnen på fritids.", "Then he picks up the children at after-school care."], ["Barnen är trötta och gråter i affären.", "The children are tired and cry in the shop."], ["Han somnar i soffan.", "He falls asleep on the sofa."]] },
         { heading: "Time", rows: [["Stryk under alla ord eller fraser som beskriver tid i meningarna.", "Underline all words or phrases that describe time in the sentences."], ["Sedan fixar han frukost.", "Then he prepares breakfast."], ["Kom och ät frukost nu, säger han.", "Come and eat breakfast now, he says."], ["Skolan börjar klockan 8.00.", "School starts at 8:00."], ["Han slutar jobbet klockan 16.00.", "He finishes work at 16:00."], ["Barnen gör sina läxor efter maten.", "The children do their homework after the meal."], ["Barnen somnar klockan 20.00.", "The children fall asleep at 20:00."]] }
+      ] }
+    ];
+
+    const week4OffClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867], 5: [1400, 1867],
+      6: [1400, 1867], 7: [1400, 1867], 8: [1400, 1867], 9: [1400, 1867], 10: [1400, 1867], 11: [1400, 1867]
+    };
+
+    const week4OffClassQrCodes = [
+      { page: 1, type: "url", value: "https://youtu.be/RoJhiFy8PUM", x: 636, y: 156, w: 67, h: 66 },
+      { page: 1, type: "url", value: "https://youtu.be/Fq14mupZ5n8", x: 1144, y: 142, w: 57, h: 55 },
+      { page: 2, type: "url", value: "https://youtu.be/mrBq9_gIeeI", x: 929, y: 244, w: 107, h: 114 },
+      { page: 3, type: "url", value: "https://youtu.be/XqqxT07vbH0", x: 1134, y: 220, w: 77, h: 79 },
+      { page: 5, type: "url", value: "https://youtu.be/4_JYqzRghkw", x: 1003, y: 906, w: 104, h: 103 },
+      { page: 6, type: "url", value: "https://youtu.be/wtazwGaYz_Q", x: 1087, y: 878, w: 77, h: 76 },
+      { page: 8, type: "url", value: "https://youtu.be/8jxmRNiPGLk", x: 1020, y: 150, w: 89, h: 96 },
+      { page: 9, type: "url", value: "https://youtu.be/DBh6bmDSO3c", x: 1097, y: 169, w: 75, h: 75 },
+      { page: 9, type: "url", value: "https://youtu.be/5WCH4F_a2Ug", x: 1138, y: 746, w: 73, h: 74 },
+      { page: 10, type: "url", value: "https://youtu.be/QtHB55o64zU", x: 1140, y: 139, w: 71, h: 69 },
+      { page: 11, type: "url", value: "https://youtu.be/g-3rROzc6dw", x: 1173, y: 191, w: 62, h: 62 }
+    ];
+
+    const week4OffClassTerms = [
+      ["vädret", "the weather"], ["det blåser", "it is windy"], ["det regnar", "it is raining"], ["det snöar", "it is snowing"],
+      ["det är kallt", "it is cold"], ["det är varmt", "it is warm"], ["solen skiner", "the sun is shining"], ["det är soligt", "it is sunny"],
+      ["det haglar", "it is hailing"], ["det åskar", "there is thunder"], ["det är dimmigt", "it is foggy"], ["det är molnigt", "it is cloudy"],
+      ["grader", "degrees"], ["varmt", "warm"], ["kallt", "cold"], ["vilket fint väder", "what nice weather"],
+      ["vilket tråkigt väder", "what boring/bad weather"], ["termometer", "thermometer"], ["temperatur", "temperature"], ["regn", "rain"],
+      ["sol", "sun"], ["åska", "thunder"], ["dimma", "fog"], ["moln", "clouds"], ["hagel", "hail"], ["blåst", "wind"],
+      ["jag tycker om", "I like"], ["jag tycker inte om", "I do not like"], ["promenera", "walk"], ["kasta snöbollar", "throw snowballs"],
+      ["halka", "slip"], ["imorgon", "tomorrow"], ["i norr", "in the north"], ["nästan", "almost"], ["i alla fall", "at least"]
+    ];
+
+    const week4OffClassTranslations = [
+      { title: "Off-class Page 1 - Vädret", sections: [
+        { heading: "Overview", rows: [["Vädret", "The weather"], ["Detta häfte handlar om vädret.", "This booklet is about the weather."], ["några väderord", "some weather words"], ["att skriva inte på rätt plats i en mening", "writing inte in the correct place in a sentence"], ["att skriva om vädret", "writing about the weather"], ["att läsa av en termometer", "reading a thermometer"], ["att prata lite om vädret", "talking a little about the weather"], ["att lyssna på några som pratar om vädret", "listening to some people who talk about the weather"], ["att säga att du tycker om något", "saying that you like something"]] }
+      ] },
+      { title: "Off-class Page 2 - Weather Phrases", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen många gånger.", "Watch the film many times."], ["Pausa och säg efter.", "Pause and repeat."]] },
+        { heading: "Weather phrases", rows: [["Det blåser.", "It is windy."], ["Det regnar.", "It is raining."], ["Det snöar.", "It is snowing."], ["Det är kallt.", "It is cold."], ["Det är varmt.", "It is warm."], ["Solen skiner.", "The sun is shining."], ["Det är soligt.", "It is sunny."], ["Det haglar.", "It is hailing."], ["Det åskar.", "There is thunder."], ["Det är dimmigt.", "It is foggy."], ["Det är molnigt.", "It is cloudy."], ["Det är 39 grader varmt.", "It is 39 degrees warm."], ["Det är 10 grader kallt.", "It is 10 degrees cold."], ["Vilket fint väder!", "What nice weather!"], ["Vilket tråkigt väder!", "What bad/boring weather!"]] }
+      ] },
+      { title: "Off-class Page 3 - Write Weather Sentences", sections: [
+        { heading: "Instruction", rows: [["Skriv meningarna på ditt språk och på svenska igen.", "Write the sentences in your language and in Swedish again."], ["Hur är vädret idag?", "How is the weather today?"]] },
+        { heading: "Practice sentences", rows: [["Det blåser.", "It is windy."], ["Det regnar.", "It is raining."], ["Det snöar.", "It is snowing."], ["Det är kallt.", "It is cold."], ["Det är varmt.", "It is warm."], ["Solen skiner.", "The sun is shining."], ["Det är soligt.", "It is sunny."], ["Det haglar.", "It is hailing."], ["Det åskar.", "There is thunder."], ["Det är dimmigt.", "It is foggy."], ["Det är molnigt.", "It is cloudy."], ["Det är 39 grader.", "It is 39 degrees."], ["Vilket fint väder!", "What nice weather!"], ["Vilket tråkigt väder!", "What bad/boring weather!"]] }
+      ] },
+      { title: "Off-class Page 4 - Picture Sentences", sections: [
+        { heading: "Instruction", rows: [["Skriv meningar till bilderna på svenska och på ditt modersmål.", "Write sentences for the pictures in Swedish and in your mother tongue."]] }
+      ] },
+      { title: "Off-class Page 5 - Weather Table And Listening", sections: [
+        { heading: "Weather table", rows: [["Titta på tabellen och svara på frågorna.", "Look at the table and answer the questions."], ["Vilket väder är det i Göteborg på tisdag?", "What is the weather in Gothenburg on Tuesday?"], ["Vilket väder är det i Malmö på fredag?", "What is the weather in Malmö on Friday?"], ["Vilken temperatur är det i Stockholm på söndag?", "What temperature is it in Stockholm on Sunday?"], ["Vilken temperatur är det i Göteborg på onsdag?", "What temperature is it in Gothenburg on Wednesday?"]] },
+        { heading: "Listening task", rows: [["Lyssna på VÄDER.", "Listen to WEATHER."], ["Ringa in rätt svar.", "Circle the correct answer."], ["Asta och Vera pratar.", "Asta and Vera are talking."], ["Vilket väder är det idag?", "What is the weather today?"], ["Vad har de på sig?", "What are they wearing?"], ["Hur blir vädret imorgon i Göteborg?", "What will the weather be like tomorrow in Gothenburg?"], ["Vilket väder blir det imorgon i norr?", "What will the weather be like tomorrow in the north?"], ["Var bor Asta och Vera?", "Where do Asta and Vera live?"]] }
+      ] },
+      { title: "Off-class Page 6 - Fill In Weather Words", sections: [
+        { heading: "Dialogue", rows: [["Lyssna en gång till och fyll i orden som fattas.", "Listen one more time and fill in the missing words."], ["Huh, vilket väder det är i Sverige.", "Huh, what weather it is in Sweden."], ["Ja, det både blåser och regnar.", "Yes, it is both windy and raining."], ["Jag fick ta på mig regnkläder.", "I had to put on rain clothes."], ["Men hur blir vädret imorgon?", "But what will the weather be like tomorrow?"], ["Det ska bli sol, sa de på TV.", "It will be sunny, they said on TV."], ["Det ska regna i norr.", "It will rain in the north."], ["Vi i Göteborg får sol i alla fall.", "We in Gothenburg will get sun at least."], ["Vilken tur!", "How lucky!"]] },
+        { heading: "Video task", rows: [["Titta på filmen.", "Watch the film."], ["Skriv en mening under bilden.", "Write a sentence under the picture."]] }
+      ] },
+      { title: "Off-class Page 7 - Thermometer Practice", sections: [
+        { heading: "Temperatures", rows: [["Skriv rätt bokstav på rätt rad på termometern.", "Write the correct letter on the correct line on the thermometer."], ["Det är 5 grader varmt.", "It is 5 degrees warm."], ["Det är 15 grader kallt.", "It is 15 degrees cold."], ["I norra Sverige är det 30 grader kallt på vintern.", "In northern Sweden it is 30 degrees cold in winter."], ["I Irak är det 45 grader varmt på sommaren.", "In Iraq it is 45 degrees warm in summer."], ["I Norge är det 25 grader varmt på sommaren.", "In Norway it is 25 degrees warm in summer."], ["I Marocko är det 10 grader varmt på vintern.", "In Morocco it is 10 degrees warm in winter."], ["I Uganda är det 30 grader varmt på sommaren och 30 grader varmt på vintern.", "In Uganda it is 30 degrees warm in summer and winter."]] }
+      ] },
+      { title: "Off-class Page 8 - Inte", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen om inte.", "Watch the film about inte."], ["Skriv inte på rätt plats i meningarna.", "Write inte in the correct place in the sentences."]] },
+        { heading: "Example and prompts", rows: [["Det är dåligt väder.", "It is bad weather."], ["Det är inte dåligt väder.", "It is not bad weather."], ["Det blåser.", "It is windy."], ["Det regnar.", "It is raining."], ["Det snöar.", "It is snowing."], ["Det är kallt.", "It is cold."], ["Det är varmt.", "It is warm."], ["Solen skiner.", "The sun is shining."], ["Det är soligt.", "It is sunny."], ["Det haglar.", "It is hailing."], ["Det åskar.", "There is thunder."], ["Det är dimma.", "There is fog."], ["Det är molnigt.", "It is cloudy."], ["Det är 39 grader.", "It is 39 degrees."], ["Det är fint väder.", "It is nice weather."], ["Det är bra.", "It is good."]] }
+      ] },
+      { title: "Off-class Page 9 - Jag tycker om", sections: [
+        { heading: "Model sentences", rows: [["Jag tycker om sol.", "I like sun."], ["Jag tycker om snö.", "I like snow."], ["Jag tycker inte om regn.", "I do not like rain."], ["Jag tycker inte om hagel.", "I do not like hail."], ["Jag tycker om att promenera i solen.", "I like walking in the sun."], ["Jag tycker om att kasta snöbollar.", "I like throwing snowballs."], ["Jag tycker inte om att vänta i regn.", "I do not like waiting in rain."], ["Jag tycker inte om att halka.", "I do not like slipping."]] },
+        { heading: "Writing task", rows: [["Skriv fortsättning på meningarna.", "Write continuations for the sentences."], ["Jag tycker om ...", "I like ..."], ["Jag tycker inte om ...", "I do not like ..."], ["Jag tycker om att ...", "I like to ..."], ["Jag tycker inte om att ...", "I do not like to ..."]] }
+      ] },
+      { title: "Off-class Page 10 - Weather Dialogue", sections: [
+        { heading: "Dialogue", rows: [["Vilket fint väder!", "What nice weather!"], ["Ja, visst är det.", "Yes, it really is."], ["Vilket tråkigt väder!", "What bad/boring weather!"], ["Ja, verkligen.", "Yes, really."], ["Vad ska det bli för väder imorgon?", "What will the weather be like tomorrow?"], ["Det ska bli sol.", "It will be sunny."], ["Det ska regna.", "It will rain."]] },
+        { heading: "Conversation and thermometer", rows: [["Vilket väder tycker du om?", "What weather do you like?"], ["Vilket väder tycker du inte om?", "What weather do you not like?"], ["regn, sol, åska, dimma, moln, hagel, blåst", "rain, sun, thunder, fog, clouds, hail, wind"], ["Det är 3 grader varmt idag.", "It is 3 degrees warm today."], ["Det var 4 grader kallt igår.", "It was 4 degrees cold yesterday."], ["I Finland är det -20 grader på vintern.", "In Finland it is -20 degrees in winter."]] }
+      ] },
+      { title: "Off-class Page 11 - Listening Practice", sections: [
+        { heading: "Instruction", rows: [["Lyssna på orden och skriv dem på raderna.", "Listen to the words and write them on the lines."], ["Öva fyra gånger.", "Practice four times."]] },
+        { heading: "Exercise layout", rows: [["1-10", "Write the words on lines 1-10."], ["1-10", "Repeat the exercise four times."]] }
       ] }
     ];
 
@@ -2418,6 +2508,64 @@
       setPage(0);
     }
 
+    function renderWeek4OffClassTerms() {
+      const grid = document.querySelector("#week4OffClassTerms");
+      grid.innerHTML = "";
+      week4OffClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek4OffClassComparison() {
+      const thumbs = document.querySelector("#week4OffClassCompareThumbs");
+      const image = document.querySelector("#week4OffClassCompareImage");
+      const overlay = document.querySelector("#week4OffClassCompareQrOverlay");
+      const panel = document.querySelector("#week4OffClassTranslationPanel");
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week4OffClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week4-off-class-pages/page-${page}.jpg`;
+        image.alt = `Week 4 off-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week4OffClassPageSizes, week4OffClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Off-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week4OffClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week4OffClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
@@ -2500,6 +2648,8 @@
     renderWeek3Comparison();
     renderWeek4InClassTerms();
     renderWeek4InClassComparison();
+    renderWeek4OffClassTerms();
+    renderWeek4OffClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
