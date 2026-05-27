@@ -980,6 +980,13 @@
     <span class="nav-label week-nav" data-week="week4">Off-class</span>
     <a class="week-nav" data-week="week4" href="#week4-off-class-compare">Translations</a>
     <a class="week-nav" data-week="week4" href="#week4-off-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week5">Week 5</span>
+    <span class="nav-label week-nav" data-week="week5">In-class</span>
+    <a class="week-nav" data-week="week5" href="#week5">Overview</a>
+    <a class="week-nav" data-week="week5" href="#week5-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week5" href="#week5-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week5">Off-class</span>
+    <a class="week-nav" data-week="week5" href="#week5-off-class">Off-class Slot</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1001,6 +1008,7 @@
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week2">Week 2</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week3">Week 3</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week4">Week 4</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week5">Week 5</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1361,6 +1369,57 @@
       <p class="section-lead">Important Week 4 off-class weather words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week4OffClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week5" class="week-panel" data-week="week5">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 5</h1>
+          <p>In-class material about clothes, shopping phrases, colors, patterns, and a clothing crossword, converted from the new Week 5 photo folder.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week5-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week5-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week5-in-class-compare"><strong>In-class material</strong><span>Four classroom pages with translations and pronunciation-ready text.</span></a>
+            <a class="material-card" href="#week5-off-class"><strong>Off-class material</strong><span>Reserved for Week 5 homework/off-class pages when you upload them.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 5 in-class worksheet preview">
+          <img src="assets/sfi-week5-in-class-pages/page-01.jpg" alt="Week 5 in-class clothing worksheet page" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week5-in-class-compare" class="week-panel" data-week="week5">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 5 classroom page photos with English translations and notes.</p>
+      <div class="compare">
+        <div class="thumbs" id="week5InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week5InClassCompareImage" src="assets/sfi-week5-in-class-pages/page-01.jpg" alt="Week 5 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week5InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week5InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week5-in-class-words" class="week-panel" data-week="week5">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 5 in-class words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week5InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week5-off-class" class="week-panel" data-week="week5">
+      <h2>Week 5 Off-class Material</h2>
+      <p class="section-lead">No Week 5 off-class material was found yet. This slot is ready for homework pages when you add them later.</p>
+      <div class="panel pad">
+        <p class="note">When you say “update week 5” again, I will scan the folder, compress new images, and add any new pages here.</p>
       </div>
     </section>
 
@@ -2101,6 +2160,47 @@
       return [...array].sort(() => Math.random() - 0.5);
     }
 
+    const week5InClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867]
+    };
+
+    const week5InClassQrCodes = [];
+
+    const week5InClassTerms = [
+      ["kläder", "clothes"], ["en pyjamas", "pajamas"], ["en skjorta", "a shirt"], ["en kappa", "a coat"],
+      ["en kavaj", "a suit jacket"], ["ett par strumpbyxor", "a pair of tights"], ["en tröja", "a sweater"],
+      ["en klänning", "a dress"], ["en bh", "a bra"], ["en kostym", "a suit"], ["ett par byxor", "a pair of trousers"],
+      ["en blus", "a blouse"], ["ett linne", "a tank top"], ["en kjol", "a skirt"], ["en slips", "a tie"],
+      ["en jacka", "a jacket"], ["ett par strumpor", "a pair of socks"], ["en affär", "a shop"],
+      ["en expedit", "a shop assistant"], ["ett provrum", "a fitting room"], ["en storlek", "a size"],
+      ["passar", "fits"], ["lagom", "just right"], ["öppet köp", "right to return"], ["ett kvitto", "a receipt"],
+      ["röd", "red"], ["orange", "orange"], ["gul", "yellow"], ["grön", "green"], ["blå", "blue"],
+      ["lila", "purple"], ["rosa", "pink"], ["vit", "white"], ["svart", "black"], ["brun", "brown"],
+      ["randig", "striped"], ["rutig", "checked"], ["prickig", "dotted"], ["blommig", "floral"]
+    ];
+
+    const week5InClassTranslations = [
+      { title: "In-class Page 1 - Kläder", sections: [
+        { heading: "Instruction", rows: [["Kläder", "Clothes"], ["Läs orden i rutan och skriv orden under rätt bild.", "Read the words in the box and write the words under the correct picture."]] },
+        { heading: "Vocabulary", rows: [["en pyjamas", "pajamas"], ["en skjorta", "a shirt"], ["en kappa", "a coat"], ["en kavaj", "a suit jacket / blazer"], ["ett par strumpbyxor", "a pair of tights"], ["en tröja", "a sweater"], ["en klänning", "a dress"], ["en bh", "a bra"], ["en kostym", "a suit"], ["ett par byxor", "a pair of trousers"], ["en blus", "a blouse"], ["ett linne", "a tank top"], ["en kjol", "a skirt"], ["en slips", "a tie"], ["en jacka", "a jacket"], ["ett par strumpor", "a pair of socks"]] }
+      ] },
+      { title: "In-class Page 2 - Hur säger man?", sections: [
+        { heading: "Instruction", rows: [["Hur säger man?", "How do you say it?"], ["Skriv replikerna i rutan på rätt plats i texten.", "Write the lines from the box in the correct place in the text."]] },
+        { heading: "Lines in the box", rows: [["Nej, den är för stor.", "No, it is too big."], ["Kan jag få prova den här?", "Can I try this one?"], ["Javisst, provrummet ligger därborta.", "Of course, the fitting room is over there."], ["Passar den?", "Does it fit?"], ["Nej tack, jag tittar bara.", "No thanks, I am just looking."], ["Vill du ha hjälp?", "Do you want help?"], ["Kan jag få den på öppet köp?", "Can I buy it with the right to return it?"], ["Vad kostar den?", "What does it cost?"]] },
+        { heading: "Story", rows: [["Lars går in i en affär.", "Lars goes into a shop."], ["Han vill köpa en tröja.", "He wants to buy a sweater."], ["En expedit kommer fram till honom.", "A shop assistant comes up to him."], ["Vill du ha hjälp? frågar hon.", "Do you want help? she asks."], ["Nej tack, jag tittar bara, svarar han.", "No thanks, I am just looking, he answers."], ["Lars tittar själv runt i affären.", "Lars looks around the shop by himself."], ["Han ser en tröja han vill ha.", "He sees a sweater he wants."], ["Han går fram till expediten.", "He goes up to the shop assistant."], ["Kan jag få prova den här? frågar han.", "Can I try this one? he asks."], ["Javisst, provrummet ligger därborta, svarar hon.", "Of course, the fitting room is over there, she answers."], ["Lars provar tröjan.", "Lars tries on the sweater."], ["Den är för stor.", "It is too big."], ["Expediten kommer fram till honom.", "The shop assistant comes up to him."], ["Passar den? frågar hon.", "Does it fit? she asks."], ["Nej, den är för stor, svarar han.", "No, it is too big, he answers."], ["Expediten hämtar en tröja i en annan storlek.", "The shop assistant gets a sweater in another size."], ["Lars provar den nya tröjan.", "Lars tries on the new sweater."], ["Den passar bra.", "It fits well."], ["Den är lagom stor.", "It is just the right size."], ["Vad kostar den? frågar han.", "What does it cost? he asks."], ["299 kronor, svarar expediten.", "299 kronor, answers the shop assistant."], ["Kan jag få den på öppet köp? frågar Lars.", "Can I buy it with the right to return it? Lars asks."], ["Javisst, spara kvittot bara, säger expediten.", "Of course, just save the receipt, says the shop assistant."]] }
+      ] },
+      { title: "In-class Page 3 - Korsord", sections: [
+        { heading: "Instruction", rows: [["Korsord", "Crossword"], ["Skriv rätt ord i korsordet.", "Write the correct words in the crossword."]] },
+        { heading: "Key phrase", rows: [["Kontokort eller kontant", "Card or cash"], ["kontokort", "bank card / payment card"], ["kontant", "cash"], ["betala", "pay"], ["pengar", "money"], ["affär", "shop"]] },
+        { heading: "Note", rows: [["Sidan är ett korsord med kläd- och affärsord.", "This page is a crossword with clothes and shopping words."], ["OCR kan läsa enskilda bokstäver i korsordet, men lösningen behöver kontrolleras visuellt.", "OCR can read individual crossword letters, but the answers should be checked visually."]] }
+      ] },
+      { title: "In-class Page 4 - Färger och mönster", sections: [
+        { heading: "Title", rows: [["Färger och mönster", "Colors and patterns"]] },
+        { heading: "Colors", rows: [["röd", "red"], ["orange", "orange"], ["gul", "yellow"], ["grön", "green"], ["blå", "blue"], ["lila", "purple"], ["rosa", "pink"], ["vit", "white"], ["svart", "black"], ["brun", "brown"]] },
+        { heading: "Patterns", rows: [["randig", "striped"], ["rutig", "checked / plaid"], ["prickig", "dotted"], ["blommig", "floral"]] }
+      ] }
+    ];
+
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
       grid.innerHTML = "";
@@ -2566,14 +2666,72 @@
       setPage(0);
     }
 
+    function renderWeek5InClassTerms() {
+      const grid = document.querySelector("#week5InClassTerms");
+      grid.innerHTML = "";
+      week5InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek5InClassComparison() {
+      const thumbs = document.querySelector("#week5InClassCompareThumbs");
+      const image = document.querySelector("#week5InClassCompareImage");
+      const overlay = document.querySelector("#week5InClassCompareQrOverlay");
+      const panel = document.querySelector("#week5InClassTranslationPanel");
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week5InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week5-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 5 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week5InClassPageSizes, week5InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week5InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week5InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3", "week4"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4", "week5"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -2650,6 +2808,8 @@
     renderWeek4InClassComparison();
     renderWeek4OffClassTerms();
     renderWeek4OffClassComparison();
+    renderWeek5InClassTerms();
+    renderWeek5InClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
