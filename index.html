@@ -986,7 +986,8 @@
     <a class="week-nav" data-week="week5" href="#week5-in-class-compare">Translations</a>
     <a class="week-nav" data-week="week5" href="#week5-in-class-words">Word Learning</a>
     <span class="nav-label week-nav" data-week="week5">Off-class</span>
-    <a class="week-nav" data-week="week5" href="#week5-off-class">Off-class Slot</a>
+    <a class="week-nav" data-week="week5" href="#week5-off-class-compare">Translations</a>
+    <a class="week-nav" data-week="week5" href="#week5-off-class-words">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1376,14 +1377,14 @@
       <div class="hero">
         <div>
           <h1>SFI Week 5</h1>
-          <p>In-class material about clothes, shopping phrases, colors, patterns, and a clothing crossword, converted from the new Week 5 photo folder.</p>
+          <p>Clothes, shopping phrases, colors, patterns, adjective forms, receipts, laundry labels, and short clothing descriptions.</p>
           <div class="actions">
             <a class="btn primary" href="#week5-in-class-compare">Study In-class Pages</a>
             <a class="btn" href="#week5-in-class-words">Practice Words</a>
           </div>
           <div class="material-switch">
-            <a class="material-card" href="#week5-in-class-compare"><strong>In-class material</strong><span>Four classroom pages with translations and pronunciation-ready text.</span></a>
-            <a class="material-card" href="#week5-off-class"><strong>Off-class material</strong><span>Reserved for Week 5 homework/off-class pages when you upload them.</span></a>
+            <a class="material-card" href="#week5-in-class-compare"><strong>In-class material</strong><span>Eight classroom pages with translations and pronunciation-ready text.</span></a>
+            <a class="material-card" href="#week5-off-class-compare"><strong>Off-class material</strong><span>Fourteen clothes booklet pages with QR videos, translations, and words.</span></a>
           </div>
         </div>
         <div class="scan-preview" aria-label="Week 5 in-class worksheet preview">
@@ -1415,11 +1416,26 @@
       </div>
     </section>
 
-    <section id="week5-off-class" class="week-panel" data-week="week5">
-      <h2>Week 5 Off-class Material</h2>
-      <p class="section-lead">No Week 5 off-class material was found yet. This slot is ready for homework pages when you add them later.</p>
+    <section id="week5-off-class-compare" class="week-panel" data-week="week5">
+      <h2>Off-class Translation</h2>
+      <p class="section-lead">Compare the Week 5 off-class clothes booklet photos with English translations and QR video links.</p>
+      <div class="compare">
+        <div class="thumbs" id="week5OffClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week5OffClassCompareImage" src="assets/sfi-week5-off-class-pages/page-01.jpg" alt="Week 5 off-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week5OffClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week5OffClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week5-off-class-words" class="week-panel" data-week="week5">
+      <h2>Off-class Word Learning</h2>
+      <p class="section-lead">Important Week 5 off-class words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
-        <p class="note">When you say “update week 5” again, I will scan the folder, compress new images, and add any new pages here.</p>
+        <div class="term-list" id="week5OffClassTerms"></div>
       </div>
     </section>
 
@@ -2161,22 +2177,52 @@
     }
 
     const week5InClassPageSizes = {
-      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867]
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867],
+      5: [1400, 1866], 6: [1400, 1866], 7: [1400, 1866], 8: [1400, 1866]
+    };
+
+    const week5OffClassPageSizes = {
+      1: [1400, 1866], 2: [1400, 1866], 3: [1400, 1866], 4: [1400, 1866],
+      5: [1400, 1866], 6: [1400, 1866], 7: [1400, 1866], 8: [1400, 1866],
+      9: [1400, 1866], 10: [1400, 1866], 11: [1400, 1866], 12: [1400, 1866],
+      13: [1400, 1866], 14: [1400, 1866]
     };
 
     const week5InClassQrCodes = [];
+
+    const week5OffClassQrCodes = [
+      { page: 1, type: "url", value: "https://youtu.be/Fq14mupZ5n8", x: 1130, y: 120, w: 54, h: 54 },
+      { page: 2, type: "url", value: "https://youtu.be/VgYpIccZ11U", x: 944, y: 334, w: 73, h: 74 },
+      { page: 3, type: "url", value: "https://youtu.be/d2P1Cj3UhRc", x: 1074, y: 190, w: 82, h: 86 },
+      { page: 4, type: "url", value: "https://youtu.be/YsOTKWMZ_pk", x: 1093, y: 942, w: 71, h: 71 },
+      { page: 5, type: "url", value: "https://youtu.be/ofrcQh3MYUM", x: 991, y: 226, w: 78, h: 82 },
+      { page: 7, type: "url", value: "https://youtu.be/gzZV430UUzM", x: 1106, y: 190, w: 68, h: 70 },
+      { page: 11, type: "url", value: "https://youtu.be/o91FBkfaVxo", x: 973, y: 164, w: 84, h: 86 },
+      { page: 12, type: "url", value: "https://youtu.be/XFHnKYUXyuE", x: 1094, y: 1211, w: 64, h: 64 }
+    ];
 
     const week5InClassTerms = [
       ["kläder", "clothes"], ["en pyjamas", "pajamas"], ["en skjorta", "a shirt"], ["en kappa", "a coat"],
       ["en kavaj", "a suit jacket"], ["ett par strumpbyxor", "a pair of tights"], ["en tröja", "a sweater"],
       ["en klänning", "a dress"], ["en bh", "a bra"], ["en kostym", "a suit"], ["ett par byxor", "a pair of trousers"],
       ["en blus", "a blouse"], ["ett linne", "a tank top"], ["en kjol", "a skirt"], ["en slips", "a tie"],
-      ["en jacka", "a jacket"], ["ett par strumpor", "a pair of socks"], ["en affär", "a shop"],
-      ["en expedit", "a shop assistant"], ["ett provrum", "a fitting room"], ["en storlek", "a size"],
-      ["passar", "fits"], ["lagom", "just right"], ["öppet köp", "right to return"], ["ett kvitto", "a receipt"],
+      ["en jacka", "a jacket"], ["ett par strumpor", "a pair of socks"], ["stor", "big"], ["liten", "small"],
+      ["ny", "new"], ["gammal", "old"], ["fin", "nice / fine"], ["ett äpple", "an apple"], ["ett skåp", "a cupboard"],
+      ["en soffa", "a sofa"], ["en tårta", "a cake"], ["ett paket", "a package"], ["en blomma", "a flower"],
       ["röd", "red"], ["orange", "orange"], ["gul", "yellow"], ["grön", "green"], ["blå", "blue"],
       ["lila", "purple"], ["rosa", "pink"], ["vit", "white"], ["svart", "black"], ["brun", "brown"],
       ["randig", "striped"], ["rutig", "checked"], ["prickig", "dotted"], ["blommig", "floral"]
+    ];
+
+    const week5OffClassTerms = [
+      ["arbetar", "works"], ["säljer", "sells"], ["köper", "buys"], ["handlar", "shops"], ["får", "gets"],
+      ["ett kvitto", "a receipt"], ["ett skärp", "a belt"], ["en mössa", "a hat / cap"], ["en halsduk", "a scarf"],
+      ["ett par vantar", "a pair of mittens"], ["ett par skor", "a pair of shoes"], ["ett par gummistövlar", "a pair of rubber boots"],
+      ["regnkläder", "rain clothes"], ["på dig", "on you / wearing"], ["ta på sig", "put on / wear"],
+      ["en plånbok", "a wallet"], ["lägga undan", "put aside / reserve"], ["en jacka", "a jacket"],
+      ["öppet köp", "right to return"], ["kontokort", "card payment"], ["kontant", "cash"], ["tvättlapp", "laundry label"],
+      ["handtvätt", "hand wash"], ["häng-torkas", "hang dry"], ["torktumlas", "tumble dry"], ["kemtvättas", "dry-cleaned"],
+      ["stryka", "iron"], ["låg temperatur", "low temperature"], ["mönster", "pattern"], ["en väst", "a vest"]
     ];
 
     const week5InClassTranslations = [
@@ -2187,7 +2233,7 @@
       { title: "In-class Page 2 - Hur säger man?", sections: [
         { heading: "Instruction", rows: [["Hur säger man?", "How do you say it?"], ["Skriv replikerna i rutan på rätt plats i texten.", "Write the lines from the box in the correct place in the text."]] },
         { heading: "Lines in the box", rows: [["Nej, den är för stor.", "No, it is too big."], ["Kan jag få prova den här?", "Can I try this one?"], ["Javisst, provrummet ligger därborta.", "Of course, the fitting room is over there."], ["Passar den?", "Does it fit?"], ["Nej tack, jag tittar bara.", "No thanks, I am just looking."], ["Vill du ha hjälp?", "Do you want help?"], ["Kan jag få den på öppet köp?", "Can I buy it with the right to return it?"], ["Vad kostar den?", "What does it cost?"]] },
-        { heading: "Story", rows: [["Lars går in i en affär.", "Lars goes into a shop."], ["Han vill köpa en tröja.", "He wants to buy a sweater."], ["En expedit kommer fram till honom.", "A shop assistant comes up to him."], ["Vill du ha hjälp? frågar hon.", "Do you want help? she asks."], ["Nej tack, jag tittar bara, svarar han.", "No thanks, I am just looking, he answers."], ["Lars tittar själv runt i affären.", "Lars looks around the shop by himself."], ["Han ser en tröja han vill ha.", "He sees a sweater he wants."], ["Han går fram till expediten.", "He goes up to the shop assistant."], ["Kan jag få prova den här? frågar han.", "Can I try this one? he asks."], ["Javisst, provrummet ligger därborta, svarar hon.", "Of course, the fitting room is over there, she answers."], ["Lars provar tröjan.", "Lars tries on the sweater."], ["Den är för stor.", "It is too big."], ["Expediten kommer fram till honom.", "The shop assistant comes up to him."], ["Passar den? frågar hon.", "Does it fit? she asks."], ["Nej, den är för stor, svarar han.", "No, it is too big, he answers."], ["Expediten hämtar en tröja i en annan storlek.", "The shop assistant gets a sweater in another size."], ["Lars provar den nya tröjan.", "Lars tries on the new sweater."], ["Den passar bra.", "It fits well."], ["Den är lagom stor.", "It is just the right size."], ["Vad kostar den? frågar han.", "What does it cost? he asks."], ["299 kronor, svarar expediten.", "299 kronor, answers the shop assistant."], ["Kan jag få den på öppet köp? frågar Lars.", "Can I buy it with the right to return it? Lars asks."], ["Javisst, spara kvittot bara, säger expediten.", "Of course, just save the receipt, says the shop assistant."]] }
+        { heading: "Story", rows: [["Lars går in i en affär.", "Lars goes into a shop."], ["Han vill köpa en tröja.", "He wants to buy a sweater."], ["En expedit kommer fram till honom.", "A shop assistant comes up to him."], ["Vill du ha hjälp? frågar hon.", "Do you want help? she asks."], ["Nej tack, jag tittar bara, svarar han.", "No thanks, I am just looking, he answers."], ["Lars tittar själv runt i affären.", "Lars looks around the shop by himself."], ["Han ser en tröja han vill ha.", "He sees a sweater he wants."], ["Kan jag få prova den här? frågar han.", "Can I try this one? he asks."], ["Javisst, provrummet ligger därborta, svarar hon.", "Of course, the fitting room is over there, she answers."], ["Lars provar tröjan.", "Lars tries on the sweater."], ["Den är för stor.", "It is too big."], ["Passar den? frågar hon.", "Does it fit? she asks."], ["Nej, den är för stor, svarar han.", "No, it is too big, he answers."], ["Expediten hämtar en tröja i en annan storlek.", "The shop assistant gets a sweater in another size."], ["Den passar bra.", "It fits well."], ["Den är lagom stor.", "It is just the right size."], ["Vad kostar den? frågar han.", "What does it cost? he asks."], ["299 kronor, svarar expediten.", "299 kronor, answers the shop assistant."], ["Kan jag få den på öppet köp? frågar Lars.", "Can I buy it with the right to return it? Lars asks."], ["Javisst, spara kvittot bara, säger expediten.", "Of course, just save the receipt, says the shop assistant."]] }
       ] },
       { title: "In-class Page 3 - Korsord", sections: [
         { heading: "Instruction", rows: [["Korsord", "Crossword"], ["Skriv rätt ord i korsordet.", "Write the correct words in the crossword."]] },
@@ -2198,6 +2244,80 @@
         { heading: "Title", rows: [["Färger och mönster", "Colors and patterns"]] },
         { heading: "Colors", rows: [["röd", "red"], ["orange", "orange"], ["gul", "yellow"], ["grön", "green"], ["blå", "blue"], ["lila", "purple"], ["rosa", "pink"], ["vit", "white"], ["svart", "black"], ["brun", "brown"]] },
         { heading: "Patterns", rows: [["randig", "striped"], ["rutig", "checked / plaid"], ["prickig", "dotted"], ["blommig", "floral"]] }
+      ] },
+      { title: "In-class Page 5 - Att beskriva", sections: [
+        { heading: "Instruction", rows: [["Att beskriva", "Describing"], ["Vad betyder orden? Titta i lexikon och skriv på ditt språk.", "What do the words mean? Look in a dictionary and write in your language."], ["Skriv rätt ord. Titta på sidan 26 och fyll i orden.", "Write the correct word. Look at page 26 and fill in the words."]] },
+        { heading: "Adjectives", rows: [["stor", "big"], ["liten", "small"], ["ny", "new"], ["gammal", "old"], ["fin", "nice / fine"]] },
+        { heading: "Forms", rows: [["en stor bil", "a big car"], ["ett stort äpple", "a big apple"], ["många stora träd", "many big trees"], ["en liten bil", "a small car"], ["ett litet äpple", "a small apple"], ["många små träd", "many small trees"], ["en ny soffa", "a new sofa"], ["ett nytt skåp", "a new cupboard"], ["många nya mattor", "many new rugs"], ["en gammal soffa", "an old sofa"], ["ett gammalt skåp", "an old cupboard"], ["många gamla mattor", "many old rugs"], ["en fin tårta", "a nice cake"], ["ett fint paket", "a nice package"], ["många fina blommor", "many nice flowers"]] }
+      ] },
+      { title: "In-class Page 6 - En stor bil", sections: [
+        { heading: "Instruction", rows: [["En stor bil", "A big car"], ["Titta på sidan 25 och skriv orden i rätt form.", "Look at page 25 and write the words in the correct form."]] },
+        { heading: "Practice answers", rows: [["en stor bil", "a big car"], ["ett stort äpple", "a big apple"], ["många stora träd", "many big trees"], ["en gammal soffa", "an old sofa"], ["ett gammalt skåp", "an old cupboard"], ["många gamla mattor", "many old rugs"], ["en fin tårta", "a nice cake"], ["ett fint paket", "a nice package"], ["många fina blommor", "many nice flowers"], ["en liten bil", "a small car"], ["ett litet äpple", "a small apple"], ["många små träd", "many small trees"], ["en ny soffa", "a new sofa"], ["ett nytt skåp", "a new cupboard"], ["många nya mattor", "many new rugs"]] }
+      ] },
+      { title: "In-class Page 7 - Färger", sections: [
+        { heading: "Instruction", rows: [["Färger", "Colors"], ["Skriv färgerna på ditt språk och måla cirkeln.", "Write the colors in your language and color the circle."], ["Läs och fyll i rätt ord.", "Read and fill in the correct word."]] },
+        { heading: "Color forms", rows: [["en röd bil", "a red car"], ["ett rött hus", "a red house"], ["många röda bilar", "many red cars"], ["en blå bil", "a blue car"], ["ett blått hus", "a blue house"], ["många blåa bilar", "many blue cars"], ["en gul bil", "a yellow car"], ["ett gult hus", "a yellow house"], ["många gula bilar", "many yellow cars"], ["en grön bil", "a green car"], ["ett grönt hus", "a green house"], ["många gröna bilar", "many green cars"], ["en vit bil", "a white car"], ["ett vitt hus", "a white house"], ["många vita bilar", "many white cars"], ["en svart bil", "a black car"], ["ett svart hus", "a black house"], ["ett par svarta skor", "a pair of black shoes"]] }
+      ] },
+      { title: "In-class Page 8 - En röd penna", sections: [
+        { heading: "Instruction", rows: [["En röd penna", "A red pen"], ["Titta på sidan 27 och skriv orden i rätt form.", "Look at page 27 and write the words in the correct form."]] },
+        { heading: "Practice prompts", rows: [["en röd penna", "a red pen"], ["ett rött äpple", "a red apple"], ["många röda blommor", "many red flowers"], ["en grön växt", "a green plant"], ["ett grönt löv", "a green leaf"], ["många gröna buskar", "many green bushes"], ["en blå gardin", "a blue curtain"], ["ett blått hus", "a blue house"], ["många blåa lampor", "many blue lamps"], ["en vit bil", "a white car"], ["ett vitt bord", "a white table"], ["många vita pärmar", "many white binders"], ["en gul katt", "a yellow cat"], ["ett gult päron", "a yellow pear"], ["många gula citroner", "many yellow lemons"], ["en svart fåtölj", "a black armchair"], ["ett svart bord", "a black table"], ["ett par svarta skor", "a pair of black shoes"]] }
+      ] }
+    ];
+
+    const week5OffClassTranslations = [
+      { title: "Off-class Page 1 - Kläder", sections: [
+        { heading: "Overview", rows: [["Kläder", "Clothes"], ["Häftet handlar om kläder.", "The booklet is about clothes."], ["Här tränar du på några kläder på svenska.", "Here you practice some clothes in Swedish."], ["att skriva och berätta om dina kläder", "writing and telling about your clothes"], ["färger", "colors"], ["hur du kan säga i affären", "how you can speak in the shop"], ["några adjektiv", "some adjectives"], ["några tvättsymboler", "some laundry symbols"]] }
+      ] },
+      { title: "Off-class Page 2 - Text About Shopping", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen många gånger.", "Watch the film many times."], ["Pausa och säg efter.", "Pause and repeat."]] },
+        { heading: "Text", rows: [["Asta arbetar i en affär.", "Asta works in a shop."], ["Hon säljer kläder.", "She sells clothes."], ["Eva köper en tröja.", "Eva buys a sweater."], ["Hon köper en jacka.", "She buys a jacket."], ["Hon köper ett par byxor.", "She buys a pair of trousers."], ["Hasse köper ett par vantar.", "Hasse buys a pair of mittens."], ["Han köper ett par strumpor.", "He buys a pair of socks."], ["Ida köper en blus.", "Ida buys a blouse."], ["Hon köper ett skärp och en kjol.", "She buys a belt and a skirt."], ["Dennis köper en mössa och en halsduk.", "Dennis buys a hat and a scarf."], ["Ada köper ett par skor.", "Ada buys a pair of shoes."], ["Hon köper ett par gummistövlar.", "She buys a pair of rubber boots."], ["Lotta köper regnkläder.", "Lotta buys rain clothes."], ["När du handlar får du ett kvitto.", "When you shop, you get a receipt."]] }
+      ] },
+      { title: "Off-class Page 3 - Word List", sections: [
+        { heading: "Instruction", rows: [["Skriv orden på ditt språk och på svenska.", "Write the words in your language and in Swedish."]] },
+        { heading: "Words", rows: [["arbetar", "works"], ["en affär", "a shop"], ["säljer", "sells"], ["kläder", "clothes"], ["köper", "buys"], ["en tröja", "a sweater"], ["en jacka", "a jacket"], ["ett par byxor", "a pair of trousers"], ["ett par vantar", "a pair of mittens"], ["ett par strumpor", "a pair of socks"], ["en blus", "a blouse"], ["ett skärp", "a belt"], ["en kjol", "a skirt"], ["en mössa", "a hat / cap"], ["en halsduk", "a scarf"], ["ett par skor", "a pair of shoes"], ["regnkläder", "rain clothes"], ["handlar", "shops"], ["får", "gets"], ["ett kvitto", "a receipt"]] }
+      ] },
+      { title: "Off-class Page 4 - Questions And Receipt", sections: [
+        { heading: "Questions to the text", rows: [["Var arbetar Asta?", "Where does Asta work?"], ["Vad säljer Asta?", "What does Asta sell?"], ["Vad köper Eva?", "What does Eva buy?"], ["Vad köper Hasse?", "What does Hasse buy?"], ["Vad köper Ida?", "What does Ida buy?"], ["Vad köper Dennis?", "What does Dennis buy?"], ["Vad köper Lotta?", "What does Lotta buy?"], ["Vad får du när du handlar?", "What do you get when you shop?"]] },
+        { heading: "Receipt questions", rows: [["Vad heter affären?", "What is the shop called?"], ["Vilket datum var det?", "What date was it?"], ["Vad handlade hen?", "What did they buy?"], ["Vad betalade hen?", "What did they pay?"], ["Betalade hen med kort eller kontant?", "Did they pay by card or cash?"], ["Kappahl", "Kappahl"], ["Datum: 2023-12-27", "Date: 2023-12-27"], ["Byxor 1 st", "Trousers, 1 item"], ["Total 124,50", "Total 124.50"], ["Kontokort", "Card payment"]] }
+      ] },
+      { title: "Off-class Page 5 - Write The Clothes", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen.", "Watch the film."], ["Skriv kläderna.", "Write the clothes."]] },
+        { heading: "Picture vocabulary", rows: [["en halsduk", "a scarf"], ["en blus", "a blouse"], ["en hatt / mössa", "a hat / cap"], ["en kjol", "a skirt"], ["ett par skor", "a pair of shoes"], ["ett par vantar", "a pair of mittens"], ["ett par strumpor", "a pair of socks"], ["en jacka", "a jacket"], ["en t-shirt", "a T-shirt"], ["en skjorta", "a shirt"], ["en klänning", "a dress"], ["ett par byxor", "a pair of trousers"], ["ett linne", "a tank top"]] }
+      ] },
+      { title: "Off-class Page 6 - Clothing Pictures", sections: [
+        { heading: "Picture vocabulary", rows: [["en slips", "a tie"], ["ett par shorts", "a pair of shorts"], ["ett par strumpor", "a pair of socks"], ["ett par jeans", "a pair of jeans"], ["ett par sandaler", "a pair of sandals"], ["en bh", "a bra"], ["ett par trosor", "a pair of panties"], ["en pyjamas", "pajamas"], ["en kjol", "a skirt"]] }
+      ] },
+      { title: "Off-class Page 7 - Färger", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen om färg.", "Watch the film about color."], ["Fyll i rätt färg på raderna.", "Fill in the correct color on the lines."]] },
+        { heading: "Text", rows: [["Jag har en blå tröja.", "I have a blue sweater."], ["Jag har en röd blus.", "I have a red blouse."], ["Jag har ett rött linne.", "I have a red tank top."], ["Jag har ett grönt skärp.", "I have a green belt."], ["Jag har ett par svarta skor.", "I have a pair of black shoes."], ["Jag har ett par bruna strumpor.", "I have a pair of brown socks."]] }
+      ] },
+      { title: "Off-class Page 8 - What Are You Wearing?", sections: [
+        { heading: "Instruction", rows: [["Skriv vad du har på dig.", "Write what you are wearing."]] },
+        { heading: "Examples", rows: [["Jag har en vit tröja.", "I have a white sweater."], ["Jag har en grön jacka.", "I have a green jacket."], ["Jag har ett vitt linne.", "I have a white tank top."], ["Jag har ett grönt skärp.", "I have a green belt."], ["Jag har ett par vita skor.", "I have a pair of white shoes."], ["Jag har ett par gröna byxor.", "I have a pair of green trousers."]] },
+        { heading: "Color forms", rows: [["vit, vitt, vita", "white: en-word, ett-word, plural"], ["svart, svart, svarta", "black: en-word, ett-word, plural"], ["röd, rött, röda", "red: en-word, ett-word, plural"], ["gul, gult, gula", "yellow: en-word, ett-word, plural"], ["brun, brunt, bruna", "brown: en-word, ett-word, plural"], ["blå, blått, blå", "blue: en-word, ett-word, plural"], ["rosa, rosa, rosa", "pink: same form"], ["grå, grått, grå", "gray: en-word, ett-word, plural"], ["grön, grönt, gröna", "green: en-word, ett-word, plural"]] }
+      ] },
+      { title: "Off-class Page 9 - Fill In The Right Word", sections: [
+        { heading: "Practice", rows: [["Jag har en röd tröja.", "I have a red sweater."], ["Jag har ett grönt linne.", "I have a green tank top."], ["Jag har ett par bruna skor.", "I have a pair of brown shoes."], ["Jag har en vit kjol.", "I have a white skirt."]] }
+      ] },
+      { title: "Off-class Page 10 - Listening Practice", sections: [
+        { heading: "Instruction", rows: [["Lyssna på orden och skriv dem på raderna.", "Listen to the words and write them on the lines."], ["Öva fyra gånger.", "Practice four times."]] },
+        { heading: "Exercise layout", rows: [["1-10", "Write ten words."], ["Öva fyra gånger.", "Practice four rounds."]] }
+      ] },
+      { title: "Off-class Page 11 - Shop Dialogue", sections: [
+        { heading: "Instruction", rows: [["Titta på filmen.", "Watch the film."], ["Fyll i ord som fattas.", "Fill in the missing words."]] },
+        { heading: "Dialogue", rows: [["Kan jag hjälpa dig?", "Can I help you?"], ["Ja, tack. Jag vill köpa en jacka.", "Yes, please. I want to buy a jacket."], ["Vilken storlek?", "What size?"], ["Medium.", "Medium."], ["Jaha. Varsågod!", "Okay. Here you go!"], ["Tack. Vad kostar den?", "Thanks. What does it cost?"], ["799 kr.", "799 kronor."], ["Oj, jag har glömt min plånbok.", "Oh, I have forgotten my wallet."], ["Kan ni lägga undan jackan till imorgon?", "Can you put the jacket aside until tomorrow?"], ["Ja, visst. Vilket namn?", "Yes, of course. What name?"], ["Laura Svensson.", "Laura Svensson."], ["Fint. Kom imorgon då!", "Good. Come tomorrow then!"], ["Tack så jättemycket. Hej då!", "Thank you very much. Bye!"]] },
+        { heading: "Receipt questions", rows: [["Vilket datum handlade Eva?", "What date did Eva shop?"], ["Vilken storlek har tröjan?", "What size is the sweater?"], ["Vad kostar tröjan?", "What does the sweater cost?"], ["Hur länge är det öppet köp?", "How long is the return period?"], ["I vilken affär handlade Eva?", "In which shop did Eva shop?"], ["Lindex", "Lindex"], ["2024-01-03", "2024-01-03"], ["Tröja stl. 42", "Sweater size 42"], ["199 kr", "199 kronor"], ["Öppet köp 14 dagar", "Return period 14 days"]] }
+      ] },
+      { title: "Off-class Page 12 - Laundry Labels And Patterns", sections: [
+        { heading: "Laundry labels", rows: [["Kläder har tvätt-lappar.", "Clothes have laundry labels."], ["Vad betyder lapparna?", "What do the labels mean?"], ["Dra streck till rätt förklaring.", "Draw a line to the correct explanation."], ["handtvätt", "hand wash"], ["häng-torkas", "hang dry"], ["får inte torktumlas", "must not be tumble dried"], ["kemtvättas", "dry-cleaned"], ["tål 60 graders tvätt", "can handle washing at 60 degrees"], ["kan strykas vid låg temperatur", "can be ironed at low temperature"]] },
+        { heading: "Patterns", rows: [["Läs. Vad heter alla mönster?", "Read. What are all the patterns called?"], ["Skriv på rätt rad.", "Write on the correct line."], ["randig", "striped"], ["rutig", "checked"], ["prickig", "dotted"], ["blommig", "floral"], ["Titta på filmen om kvinnan som har glömt en jacka på en restaurang.", "Watch the film about the woman who forgot a jacket at a restaurant."], ["Skriv om jackan.", "Write about the jacket."]] }
+      ] },
+      { title: "Off-class Page 13 - Describe Their Clothes", sections: [
+        { heading: "Instruction", rows: [["Skriv och berätta om deras kläder.", "Write and tell about their clothes."], ["Han har ...", "He has / He is wearing ..."], ["Hon har ...", "She has / She is wearing ..."]] }
+      ] },
+      { title: "Off-class Page 14 - Fill In The Right Word", sections: [
+        { heading: "Adjective practice", rows: [["Jag har en röd tröja.", "I have a red sweater."], ["Hon har en randig kjol.", "She has a striped skirt."], ["Han har ett par bruna skor.", "He has a pair of brown shoes."], ["Jag har ett svart linne.", "I have a black tank top."], ["Hon har en vit jacka.", "She has a white jacket."], ["Han har ett vitt linne.", "He has a white tank top."], ["Jag har ett par blå byxor.", "I have a pair of blue trousers."], ["Hon har ett grönt skärp.", "She has a green belt."], ["Han har en svart kavaj.", "He has a black suit jacket."], ["Jag har en gul t-shirt.", "I have a yellow T-shirt."], ["Hon har ett par grå strumpor.", "She has a pair of gray socks."], ["Han har en rutig väst.", "He has a checked vest."]] },
+        { heading: "Dialogue", rows: [["Vad ska du ta på dig i kväll?", "What are you going to wear tonight?"], ["Jag ska ta min svarta kostym. Vad ska du ta på dig?", "I am going to wear my black suit. What are you going to wear?"], ["Jag ska ta min vita klänning.", "I am going to wear my white dress."]] }
       ] }
     ];
 
@@ -2724,6 +2844,64 @@
       setPage(0);
     }
 
+    function renderWeek5OffClassTerms() {
+      const grid = document.querySelector("#week5OffClassTerms");
+      grid.innerHTML = "";
+      week5OffClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek5OffClassComparison() {
+      const thumbs = document.querySelector("#week5OffClassCompareThumbs");
+      const image = document.querySelector("#week5OffClassCompareImage");
+      const overlay = document.querySelector("#week5OffClassCompareQrOverlay");
+      const panel = document.querySelector("#week5OffClassTranslationPanel");
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week5OffClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week5-off-class-pages/page-${page}.jpg`;
+        image.alt = `Week 5 off-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week5OffClassPageSizes, week5OffClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Off-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week5OffClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week5OffClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
@@ -2810,6 +2988,8 @@
     renderWeek4OffClassComparison();
     renderWeek5InClassTerms();
     renderWeek5InClassComparison();
+    renderWeek5OffClassTerms();
+    renderWeek5OffClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
