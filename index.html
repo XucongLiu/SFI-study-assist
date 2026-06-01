@@ -988,6 +988,13 @@
     <span class="nav-label week-nav" data-week="week5">Off-class</span>
     <a class="week-nav" data-week="week5" href="#week5-off-class-compare">Translations</a>
     <a class="week-nav" data-week="week5" href="#week5-off-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week6">Week 6</span>
+    <span class="nav-label week-nav" data-week="week6">In-class</span>
+    <a class="week-nav" data-week="week6" href="#week6">Overview</a>
+    <a class="week-nav" data-week="week6" href="#week6-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week6" href="#week6-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week6">Off-class</span>
+    <a class="week-nav" data-week="week6" href="#week6-off-class">Off-class Slot</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1010,6 +1017,7 @@
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week3">Week 3</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week4">Week 4</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week5">Week 5</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week6">Week 6</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1436,6 +1444,57 @@
       <p class="section-lead">Important Week 5 off-class words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week5OffClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week6" class="week-panel" data-week="week6">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 6</h1>
+          <p>In-class material about opposites, adjective practice, and describing people by height, build, hair, age, and appearance.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week6-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week6-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week6-in-class-compare"><strong>In-class material</strong><span>Four classroom pages with translations and pronunciation-ready text.</span></a>
+            <a class="material-card" href="#week6-off-class"><strong>Off-class material</strong><span>Reserved for Week 6 homework/off-class pages when you upload them.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 6 in-class worksheet preview">
+          <img src="assets/sfi-week6-in-class-pages/page-01.jpg" alt="Week 6 in-class opposites worksheet page" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week6-in-class-compare" class="week-panel" data-week="week6">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 6 classroom page photos with English translations and notes.</p>
+      <div class="compare">
+        <div class="thumbs" id="week6InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week6InClassCompareImage" src="assets/sfi-week6-in-class-pages/page-01.jpg" alt="Week 6 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week6InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week6InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week6-in-class-words" class="week-panel" data-week="week6">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 6 in-class words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week6InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week6-off-class" class="week-panel" data-week="week6">
+      <h2>Week 6 Off-class Material</h2>
+      <p class="section-lead">No Week 6 off-class material was found yet. This slot is ready for homework pages when you add them later.</p>
+      <div class="panel pad">
+        <p class="note">When you say “update week 6” again, I will scan the folder, compress new images, and add any new pages here.</p>
       </div>
     </section>
 
@@ -2321,6 +2380,42 @@
       ] }
     ];
 
+    const week6InClassPageSizes = {
+      1: [1400, 1866], 2: [1400, 1866], 3: [1400, 1866], 4: [1400, 1866]
+    };
+
+    const week6InClassQrCodes = [];
+
+    const week6InClassTerms = [
+      ["motsatser", "opposites"], ["kort", "short"], ["lång", "long / tall"], ["dyr", "expensive"],
+      ["billig", "cheap"], ["ledsen", "sad"], ["glad", "happy"], ["ljus", "light"], ["mörk", "dark"],
+      ["stor", "big"], ["liten", "small"], ["bra", "good"], ["dålig", "bad"], ["rolig", "funny / fun"],
+      ["tråkig", "boring"], ["fin", "nice / fine"], ["ful", "ugly"], ["långsam", "slow"], ["snabb", "fast"],
+      ["mycket", "much / a lot"], ["lite", "little"], ["smal", "slim / narrow"], ["kraftig", "stout / heavy-built"],
+      ["i tjugoårsåldern", "in their twenties"], ["medellängd", "average height"], ["mellanblond", "dark blond / medium blond"],
+      ["tunnhårig", "thin-haired / balding"], ["rakt hår", "straight hair"], ["lockigt hår", "curly hair"],
+      ["snygg", "good-looking"], ["trevlig", "nice / pleasant"], ["söt", "cute"], ["glasögon", "glasses"],
+      ["skägg", "beard"], ["mustasch", "mustache"]
+    ];
+
+    const week6InClassTranslations = [
+      { title: "In-class Page 1 - Motsatser", sections: [
+        { heading: "Instruction", rows: [["Motsatser", "Opposites"], ["Vilka ord är motsatser?", "Which words are opposites?"], ["Dra ett streck mellan orden.", "Draw a line between the words."], ["Skriv orden i par.", "Write the words in pairs."]] },
+        { heading: "Opposite pairs", rows: [["kort - lång", "short - long / tall"], ["dyr - billig", "expensive - cheap"], ["ledsen - glad", "sad - happy"], ["ljus - mörk", "light - dark"], ["stor - liten", "big - small"], ["bra - dålig", "good - bad"], ["rolig - tråkig", "funny/fun - boring"], ["fin - ful", "nice/fine - ugly"], ["långsam - snabb", "slow - fast"], ["mycket - lite", "much/a lot - little"], ["smal - kraftig", "slim/narrow - stout/heavy-built"]] }
+      ] },
+      { title: "In-class Page 2 - Write Sentences", sections: [
+        { heading: "Instruction", rows: [["Välj 10 ord på föregående sida, sidan 18, och skriv meningar med orden.", "Choose 10 words from the previous page, page 18, and write sentences with the words."]] },
+        { heading: "Example sentences", rows: [["Han är lång.", "He is tall."], ["Bilen är dyr.", "The car is expensive."], ["Hon är glad.", "She is happy."], ["Rummet är mörkt.", "The room is dark."], ["Huset är stort.", "The house is big."], ["Filmen är tråkig.", "The film is boring."], ["Tåget är långsamt.", "The train is slow."], ["Katten är liten.", "The cat is small."], ["Maten är bra.", "The food is good."], ["Skorna är billiga.", "The shoes are cheap."]] }
+      ] },
+      { title: "In-class Page 3 - Att beskriva", sections: [
+        { heading: "Instruction", rows: [["Att beskriva", "Describing"], ["Hur ser han ut?", "What does he look like?"], ["Beskriv personerna på bilderna.", "Describe the people in the pictures."]] },
+        { heading: "Description phrases", rows: [["Han är i tjugoårsåldern.", "He is in his twenties."], ["Han är lång.", "He is tall."], ["Han är av medellängd.", "He is of average height."], ["Han är kort.", "He is short."], ["Han är smal.", "He is slim."], ["Han är kraftig.", "He is heavy-built."], ["Han är mörk.", "He has dark coloring / dark hair."], ["Han är mellanblond.", "He is medium blond / dark blond."], ["Han är ljus.", "He has light coloring / light hair."], ["Han har kort hår.", "He has short hair."], ["Han har långt hår.", "He has long hair."], ["Han är tunnhårig.", "He is balding / thin-haired."], ["Han har rakt hår.", "He has straight hair."], ["Han har lockigt hår.", "He has curly hair."], ["Han är snygg.", "He is good-looking."], ["Han ser trevlig ut.", "He looks nice."], ["Han är söt.", "He is cute."], ["Han har glasögon.", "He has glasses."], ["Han har skägg.", "He has a beard."], ["Han har mustasch.", "He has a mustache."]] }
+      ] },
+      { title: "In-class Page 4 - Describe The Pictures", sections: [
+        { heading: "Writing practice", rows: [["Beskriv personerna på bilderna.", "Describe the people in the pictures."], ["Använd orden från sidan om att beskriva.", "Use the words from the page about describing."], ["Skriv hela meningar.", "Write complete sentences."], ["Hon är lång.", "She is tall."], ["Hon har långt hår.", "She has long hair."], ["Han är kort.", "He is short."], ["Han har lockigt hår.", "He has curly hair."]] }
+      ] }
+    ];
+
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
       grid.innerHTML = "";
@@ -2902,14 +2997,72 @@
       setPage(0);
     }
 
+    function renderWeek6InClassTerms() {
+      const grid = document.querySelector("#week6InClassTerms");
+      grid.innerHTML = "";
+      week6InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek6InClassComparison() {
+      const thumbs = document.querySelector("#week6InClassCompareThumbs");
+      const image = document.querySelector("#week6InClassCompareImage");
+      const overlay = document.querySelector("#week6InClassCompareQrOverlay");
+      const panel = document.querySelector("#week6InClassTranslationPanel");
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week6InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week6-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 6 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week6InClassPageSizes, week6InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week6InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week6InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3", "week4", "week5"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -2990,6 +3143,8 @@
     renderWeek5InClassComparison();
     renderWeek5OffClassTerms();
     renderWeek5OffClassComparison();
+    renderWeek6InClassTerms();
+    renderWeek6InClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
