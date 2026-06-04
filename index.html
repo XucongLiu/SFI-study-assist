@@ -994,7 +994,8 @@
     <a class="week-nav" data-week="week6" href="#week6-in-class-compare">Translations</a>
     <a class="week-nav" data-week="week6" href="#week6-in-class-words">Word Learning</a>
     <span class="nav-label week-nav" data-week="week6">Off-class</span>
-    <a class="week-nav" data-week="week6" href="#week6-off-class">Off-class Slot</a>
+    <a class="week-nav" data-week="week6" href="#week6-off-class-compare">Translations</a>
+    <a class="week-nav" data-week="week6" href="#week6-off-class-words">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1457,8 +1458,8 @@
             <a class="btn" href="#week6-in-class-words">Practice Words</a>
           </div>
           <div class="material-switch">
-            <a class="material-card" href="#week6-in-class-compare"><strong>In-class material</strong><span>Six classroom pages with translations and pronunciation-ready text.</span></a>
-            <a class="material-card" href="#week6-off-class"><strong>Off-class material</strong><span>Reserved for Week 6 homework/off-class pages when you upload them.</span></a>
+            <a class="material-card" href="#week6-in-class-compare"><strong>In-class material</strong><span>Sixteen classroom pages with translations and pronunciation-ready text.</span></a>
+            <a class="material-card" href="#week6-off-class-compare"><strong>Off-class material</strong><span>Eight housing booklet pages with QR videos, translations, and words.</span></a>
           </div>
         </div>
         <div class="scan-preview" aria-label="Week 6 in-class worksheet preview">
@@ -1490,11 +1491,26 @@
       </div>
     </section>
 
-    <section id="week6-off-class" class="week-panel" data-week="week6">
-      <h2>Week 6 Off-class Material</h2>
-      <p class="section-lead">No Week 6 off-class material was found yet. This slot is ready for homework pages when you add them later.</p>
+    <section id="week6-off-class-compare" class="week-panel" data-week="week6">
+      <h2>Off-class Translation</h2>
+      <p class="section-lead">Compare the Week 6 off-class housing booklet photos with English translations and QR video links.</p>
+      <div class="compare">
+        <div class="thumbs" id="week6OffClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week6OffClassCompareImage" src="assets/sfi-week6-off-class-pages/page-01.jpg" alt="Week 6 off-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week6OffClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week6OffClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week6-off-class-words" class="week-panel" data-week="week6">
+      <h2>Off-class Word Learning</h2>
+      <p class="section-lead">Important Week 6 off-class housing words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
-        <p class="note">When you say “update week 6” again, I will scan the folder, compress new images, and add any new pages here.</p>
+        <div class="term-list" id="week6OffClassTerms"></div>
       </div>
     </section>
 
@@ -2381,109 +2397,2115 @@
     ];
 
     const week6InClassPageSizes = {
-      1: [1400, 1866], 2: [1400, 1866], 3: [1400, 1866], 4: [1400, 1866], 5: [1536, 2048], 6: [1536, 2048]
-    };
+  "1": [
+    1400,
+    1866
+  ],
+  "2": [
+    1400,
+    1866
+  ],
+  "3": [
+    1400,
+    1866
+  ],
+  "4": [
+    1400,
+    1866
+  ],
+  "5": [
+    1536,
+    2048
+  ],
+  "6": [
+    1536,
+    2048
+  ],
+  "7": [
+    1400,
+    1866
+  ],
+  "8": [
+    1400,
+    1866
+  ],
+  "9": [
+    1400,
+    1866
+  ],
+  "10": [
+    1400,
+    1866
+  ],
+  "11": [
+    1400,
+    1866
+  ],
+  "12": [
+    1400,
+    1866
+  ],
+  "13": [
+    1400,
+    1866
+  ],
+  "14": [
+    1400,
+    1866
+  ],
+  "15": [
+    1400,
+    1866
+  ],
+  "16": [
+    1400,
+    1866
+  ]
+};
 
     const week6InClassQrCodes = [];
 
     const week6InClassTerms = [
-      ["motsatser", "opposites"], ["kort", "short"], ["lång", "long / tall"], ["dyr", "expensive"],
-      ["billig", "cheap"], ["ledsen", "sad"], ["glad", "happy"], ["ljus", "light"], ["mörk", "dark"],
-      ["stor", "big"], ["liten", "small"], ["bra", "good"], ["dålig", "bad"], ["rolig", "funny / fun"],
-      ["tråkig", "boring"], ["fin", "nice / fine"], ["ful", "ugly"], ["långsam", "slow"], ["snabb", "fast"],
-      ["mycket", "much / a lot"], ["lite", "little"], ["smal", "slim / narrow"], ["kraftig", "stout / heavy-built"],
-      ["i tjugoårsåldern", "in their twenties"], ["medellängd", "average height"], ["mellanblond", "dark blond / medium blond"],
-      ["tunnhårig", "thin-haired / balding"], ["rakt hår", "straight hair"], ["lockigt hår", "curly hair"],
-      ["snygg", "good-looking"], ["trevlig", "nice / pleasant"], ["söt", "cute"], ["glasögon", "glasses"],
-      ["skägg", "beard"], ["mustasch", "mustache"],
-      ["Det är varmt", "It's warm"], ["Det är kallt", "It's cold"], ["Det åskar", "It's thundering"],
-      ["Solen skiner", "The sun is shining"], ["Det är mulet / molnigt", "It's cloudy"], ["Det blåser", "It's windy"],
-      ["Det regnar", "It's raining"], ["Det snöar", "It's snowing"], ["Det är dimma", "It's foggy"],
-      ["mörk", "dark"], ["första april", "first of April"], ["en ljus vårdag", "a bright spring day"],
-      ["stiga upp", "get up"], ["ta på sig", "put on"], ["ett par ljusa jeans", "a pair of light jeans"],
-      ["hitta", "find"], ["en blommig blus", "a flowery blouse"], ["en rea", "a sale"],
-      ["lämna", "leave"], ["en mössa", "a cap / beanie"], ["en vante", "a mitten"],
-      ["en spegel", "a mirror"], ["blåsa", "blow"], ["kall", "cold"],
-      ["värma", "warm"], ["gå i moln", "become cloudy"], ["en snöflinga", "a snowflake"],
-      ["börja falla", "begin to fall"], ["fortfarande", "still"], ["typisk", "typical"],
-      ["ett aprilväder", "April weather"]
-    ];
+  [
+    "motsatser",
+    "opposites"
+  ],
+  [
+    "kort",
+    "short"
+  ],
+  [
+    "lång",
+    "long / tall"
+  ],
+  [
+    "dyr",
+    "expensive"
+  ],
+  [
+    "billig",
+    "cheap"
+  ],
+  [
+    "ledsen",
+    "sad"
+  ],
+  [
+    "glad",
+    "happy"
+  ],
+  [
+    "ljus",
+    "light"
+  ],
+  [
+    "mörk",
+    "dark"
+  ],
+  [
+    "stor",
+    "big"
+  ],
+  [
+    "liten",
+    "small"
+  ],
+  [
+    "bra",
+    "good"
+  ],
+  [
+    "dålig",
+    "bad"
+  ],
+  [
+    "rolig",
+    "funny / fun"
+  ],
+  [
+    "tråkig",
+    "boring"
+  ],
+  [
+    "fin",
+    "nice / fine"
+  ],
+  [
+    "ful",
+    "ugly"
+  ],
+  [
+    "långsam",
+    "slow"
+  ],
+  [
+    "snabb",
+    "fast"
+  ],
+  [
+    "mycket",
+    "much / a lot"
+  ],
+  [
+    "lite",
+    "little"
+  ],
+  [
+    "smal",
+    "slim / narrow"
+  ],
+  [
+    "kraftig",
+    "stout / heavy-built"
+  ],
+  [
+    "i tjugoårsåldern",
+    "in their twenties"
+  ],
+  [
+    "medellängd",
+    "average height"
+  ],
+  [
+    "mellanblond",
+    "dark blond / medium blond"
+  ],
+  [
+    "tunnhårig",
+    "thin-haired / balding"
+  ],
+  [
+    "rakt hår",
+    "straight hair"
+  ],
+  [
+    "lockigt hår",
+    "curly hair"
+  ],
+  [
+    "snygg",
+    "good-looking"
+  ],
+  [
+    "trevlig",
+    "nice / pleasant"
+  ],
+  [
+    "söt",
+    "cute"
+  ],
+  [
+    "glasögon",
+    "glasses"
+  ],
+  [
+    "skägg",
+    "beard"
+  ],
+  [
+    "mustasch",
+    "mustache"
+  ],
+  [
+    "Det är varmt",
+    "It's warm"
+  ],
+  [
+    "Det är kallt",
+    "It's cold"
+  ],
+  [
+    "Det åskar",
+    "It's thundering"
+  ],
+  [
+    "Solen skiner",
+    "The sun is shining"
+  ],
+  [
+    "Det är mulet / molnigt",
+    "It's cloudy"
+  ],
+  [
+    "Det blåser",
+    "It's windy"
+  ],
+  [
+    "Det regnar",
+    "It's raining"
+  ],
+  [
+    "Det snöar",
+    "It's snowing"
+  ],
+  [
+    "Det är dimma",
+    "It's foggy"
+  ],
+  [
+    "en resa",
+    "a trip / journey"
+  ],
+  [
+    "planera",
+    "to plan"
+  ],
+  [
+    "ett hotell",
+    "a hotel"
+  ],
+  [
+    "en semester",
+    "a holiday"
+  ],
+  [
+    "äventyr",
+    "adventure"
+  ],
+  [
+    "exotisk",
+    "exotic"
+  ],
+  [
+    "personliga pronomen",
+    "personal pronouns"
+  ],
+  [
+    "subjektsform",
+    "subject form"
+  ],
+  [
+    "objektsform",
+    "object form"
+  ],
+  [
+    "jag – mig",
+    "I – me"
+  ],
+  [
+    "du – dig",
+    "you – you"
+  ],
+  [
+    "han – honom",
+    "he – him"
+  ],
+  [
+    "hon – henne",
+    "she – her"
+  ],
+  [
+    "vi – oss",
+    "we – us"
+  ],
+  [
+    "ni – er",
+    "you (pl.) – you (pl.)"
+  ],
+  [
+    "de – dem",
+    "they – them"
+  ],
+  [
+    "nationaldag",
+    "national day"
+  ],
+  [
+    "ledig",
+    "free / off work"
+  ],
+  [
+    "fira",
+    "to celebrate"
+  ],
+  [
+    "picknick",
+    "picnic"
+  ],
+  [
+    "hissa",
+    "to hoist / raise"
+  ],
+  [
+    "folkdräkt",
+    "folk costume"
+  ],
+  [
+    "historia",
+    "history"
+  ],
+  [
+    "kung",
+    "king"
+  ],
+  [
+    "lag",
+    "law"
+  ],
+  [
+    "officiell",
+    "official"
+  ],
+  [
+    "röd dag",
+    "public holiday"
+  ],
+  [
+    "tal",
+    "speech"
+  ],
+  [
+    "torg",
+    "town square"
+  ],
+  [
+    "jämfört med",
+    "compared to"
+  ],
+  [
+    "sill",
+    "herring"
+  ],
+  [
+    "filt",
+    "blanket"
+  ],
+  [
+    "inträde",
+    "entrance fee"
+  ],
+  [
+    "angöra",
+    "to dock"
+  ],
+  [
+    "brygga",
+    "pier / jetty"
+  ],
+  [
+    "inställa",
+    "to cancel"
+  ],
+  [
+    "kiosk",
+    "kiosk / small shop"
+  ]
+];
 
     const week6InClassTranslations = [
-      { title: "In-class Page 1 - Motsatser", sections: [
-        { heading: "Instruction", rows: [["Motsatser", "Opposites"], ["Vilka ord är motsatser?", "Which words are opposites?"], ["Dra ett streck mellan orden.", "Draw a line between the words."], ["Skriv orden i par.", "Write the words in pairs."]] },
-        { heading: "Opposite pairs", rows: [["kort - lång", "short - long / tall"], ["dyr - billig", "expensive - cheap"], ["ledsen - glad", "sad - happy"], ["ljus - mörk", "light - dark"], ["stor - liten", "big - small"], ["bra - dålig", "good - bad"], ["rolig - tråkig", "funny/fun - boring"], ["fin - ful", "nice/fine - ugly"], ["långsam - snabb", "slow - fast"], ["mycket - lite", "much/a lot - little"], ["smal - kraftig", "slim/narrow - stout/heavy-built"]] }
-      ] },
-      { title: "In-class Page 2 - Write Sentences", sections: [
-        { heading: "Instruction", rows: [["Välj 10 ord på föregående sida, sidan 18, och skriv meningar med orden.", "Choose 10 words from the previous page, page 18, and write sentences with the words."]] },
-        { heading: "Example sentences", rows: [["Han är lång.", "He is tall."], ["Bilen är dyr.", "The car is expensive."], ["Hon är glad.", "She is happy."], ["Rummet är mörkt.", "The room is dark."], ["Huset är stort.", "The house is big."], ["Filmen är tråkig.", "The film is boring."], ["Tåget är långsamt.", "The train is slow."], ["Katten är liten.", "The cat is small."], ["Maten är bra.", "The food is good."], ["Skorna är billiga.", "The shoes are cheap."]] }
-      ] },
-      { title: "In-class Page 3 - Att beskriva", sections: [
-        { heading: "Instruction", rows: [["Att beskriva", "Describing"], ["Hur ser han ut?", "What does he look like?"], ["Beskriv personerna på bilderna.", "Describe the people in the pictures."]] },
-        { heading: "Description phrases", rows: [["Han är i tjugoårsåldern.", "He is in his twenties."], ["Han är lång.", "He is tall."], ["Han är av medellängd.", "He is of average height."], ["Han är kort.", "He is short."], ["Han är smal.", "He is slim."], ["Han är kraftig.", "He is heavy-built."], ["Han är mörk.", "He has dark coloring / dark hair."], ["Han är mellanblond.", "He is medium blond / dark blond."], ["Han är ljus.", "He has light coloring / light hair."], ["Han har kort hår.", "He has short hair."], ["Han har långt hår.", "He has long hair."], ["Han är tunnhårig.", "He is balding / thin-haired."], ["Han har rakt hår.", "He has straight hair."], ["Han har lockigt hår.", "He has curly hair."], ["Han är snygg.", "He is good-looking."], ["Han ser trevlig ut.", "He looks nice."], ["Han är söt.", "He is cute."], ["Han har glasögon.", "He has glasses."], ["Han har skägg.", "He has a beard."], ["Han har mustasch.", "He has a mustache."]] }
-      ] },
-      { title: "In-class Page 4 - Describe The Pictures", sections: [
-        { heading: "Writing practice", rows: [["Beskriv personerna på bilderna.", "Describe the people in the pictures."], ["Använd orden från sidan om att beskriva.", "Use the words from the page about describing."], ["Skriv hela meningar.", "Write complete sentences."], ["Hon är lång.", "She is tall."], ["Hon har långt hår.", "She has long hair."], ["Han är kort.", "He is short."], ["Han har lockigt hår.", "He has curly hair."]] }
-      ] },
-      { title: "In-class Page 5 - Väder", sections: [
-        { heading: "Weather phrases", rows: [
-          ["Det är varmt.", "It's warm."],
-          ["Det är kallt.", "It's cold."],
-          ["Det åskar.", "It's thundering."],
-          ["Solen skiner.", "The sun is shining."],
-          ["Det är mulet / molnigt.", "It's cloudy."],
-          ["Det blåser.", "It's windy."],
-          ["Det regnar.", "It's raining."],
-          ["Det snöar.", "It's snowing."],
-          ["Det är dimma.", "It's foggy."]
-        ] },
-        { heading: "Numbered weather icons", rows: [
-          ["1 Solen skiner", "1 The sun is shining"],
-          ["2 Det är mulet / molnigt", "2 It's cloudy"],
-          ["3–9 Olika väder", "3–9 Various weather"]
-        ] },
-        { heading: "Discussion", rows: [
-          ["Prata med varandra om väder. Vad är det för väder idag?", "Talk to each other about weather. What's the weather like today?"],
-          ["Vad var det för väder igår?", "What was the weather like yesterday?"],
-          ["Vad är det för väder i ditt land nu?", "What's the weather like in your country now?"]
-        ] }
-      ] },
-      { title: "In-class Page 6 - Kläder efter väder", sections: [
-        { heading: "Reading text", rows: [
-          ["Det har varit en lång, mörk vinter. Idag är det första april.", "It has been a long, dark winter. Today is the first of April."],
-          ["Ylva vaknar. Det är en ljus vårdag. Solen skiner. Det känns som sommar.", "Ylva wakes up. It is a bright spring day. The sun is shining. It feels like summer."],
-          ["Ylva stiger upp. Hon letar i sin garderob.", "Ylva gets up. She looks in her wardrobe."],
-          ["Hon tar på sig ett par ljusa jeans.", "She puts on a pair of light jeans."],
-          ["Hon hittar också en blommig blus. Den köpte hon på rea i höstas.", "She also finds a flowery blouse. She bought it on sale last autumn."],
-          ["Ylva ska gå till jobbet. Men hon vill inte ha sin varma vinterjacka.", "Ylva is going to work. But she doesn't want her warm winter jacket."],
-          ["Den har hon haft på sig hela hösten och vintern.", "She has worn it all autumn and winter."],
-          ["Idag vill hon ha sin nya vårjacka.", "Today she wants her new spring jacket."],
-          ["Hon lämnar sin mössa och sina vantar. Nu är det ju vår.", "She leaves her cap and mittens. After all, it's spring."],
-          ["Innan Ylva går hemifrån tittar hon i spegeln. Hon är fin. Vårfin.", "Before Ylva leaves home she looks in the mirror. She looks nice. Spring-nice."],
-          ["Hon går ut. Det blåser och är kallt. Solen skiner i ögonen. Men solen värmer inte.", "She goes outside. It's windy and cold. The sun shines in her eyes. But the sun doesn't warm."],
-          ["Ylva skyndar sig till jobbet. Solen går i moln.", "Ylva hurries to work. The sun goes behind clouds."],
-          ["Små, vita snöflingor börjar falla. Vintern är visst fortfarande kvar. Typiskt aprilväder.", "Small, white snowflakes begin to fall. Winter is apparently still here. Typical April weather."]
-        ] },
-        { heading: "Vocabulary", rows: [
-          ["mörk", "dark"], ["första april", "first of April"], ["en ljus vårdag", "a bright spring day"],
-          ["stiga upp", "get up"], ["ta på sig", "put on"], ["ett par ljusa jeans", "a pair of light jeans"],
-          ["hitta", "find"], ["en blommig blus", "a flowery blouse"], ["en rea", "a sale"],
-          ["lämna", "leave"], ["en mössa", "a cap / beanie"], ["en vante", "a mitten"],
-          ["en spegel", "a mirror"], ["blåsa", "blow"], ["kall", "cold"],
-          ["värma", "warm"], ["gå i moln", "become cloudy"], ["en snöflinga", "a snowflake"],
-          ["börja falla", "begin to fall"], ["fortfarande", "still"], ["typisk", "typical"],
-          ["ett aprilväder", "April weather"]
-        ] },
-        { heading: "Comprehension questions", rows: [
-          ["Vad är det för datum? Första oktober, första april, eller första mars?", "What date is it? First of October, first of April, or first of March?"],
-          ["Vad tar Ylva på sig för kläder?", "What clothes does Ylva put on?"],
-          ["Vad köpte Ylva på rea i höstas?", "What did Ylva buy on sale last autumn?"],
-          ["Vad lämnar Ylva hemma? Mössa och vantar, sin nya vårjacka, eller sin blommiga blus?", "What does Ylva leave at home? Cap and mittens, her new spring jacket, or her flowery blouse?"],
-          ["Vad händer med vädret när Ylva går ut?", "What happens to the weather when Ylva goes outside?"],
-          ["Vad är typiskt aprilväder?", "What is typical April weather?"]
-        ] }
-      ] }
-    ];
+  {
+    "title": "In-class Page 1 - Motsatser",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Vilka ord är motsatser?",
+            "Which words are opposites?"
+          ],
+          [
+            "Dra ett streck mellan orden.",
+            "Draw a line between the words."
+          ],
+          [
+            "Skriv orden i par.",
+            "Write the words in pairs."
+          ]
+        ]
+      },
+      {
+        "heading": "Opposite pairs",
+        "rows": [
+          [
+            "kort - lång",
+            "short - long / tall"
+          ],
+          [
+            "dyr - billig",
+            "expensive - cheap"
+          ],
+          [
+            "ledsen - glad",
+            "sad - happy"
+          ],
+          [
+            "ljus - mörk",
+            "light - dark"
+          ],
+          [
+            "stor - liten",
+            "big - small"
+          ],
+          [
+            "bra - dålig",
+            "good - bad"
+          ],
+          [
+            "rolig - tråkig",
+            "funny/fun - boring"
+          ],
+          [
+            "fin - ful",
+            "nice/fine - ugly"
+          ],
+          [
+            "långsam - snabb",
+            "slow - fast"
+          ],
+          [
+            "mycket - lite",
+            "much/a lot - little"
+          ],
+          [
+            "smal - kraftig",
+            "slim/narrow - stout/heavy-built"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 2 - Write Sentences",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Välj 10 ord på föregående sida och skriv meningar med orden.",
+            "Choose 10 words from the previous page and write sentences with the words."
+          ]
+        ]
+      },
+      {
+        "heading": "Example sentences",
+        "rows": [
+          [
+            "Han är lång.",
+            "He is tall."
+          ],
+          [
+            "Bilen är dyr.",
+            "The car is expensive."
+          ],
+          [
+            "Hon är glad.",
+            "She is happy."
+          ],
+          [
+            "Rummet är mörkt.",
+            "The room is dark."
+          ],
+          [
+            "Huset är stort.",
+            "The house is big."
+          ],
+          [
+            "Filmen är tråkig.",
+            "The film is boring."
+          ],
+          [
+            "Tåget är långsamt.",
+            "The train is slow."
+          ],
+          [
+            "Katten är liten.",
+            "The cat is small."
+          ],
+          [
+            "Maten är bra.",
+            "The food is good."
+          ],
+          [
+            "Skorna är billiga.",
+            "The shoes are cheap."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 3 - Att beskriva",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Att beskriva",
+            "Describing"
+          ],
+          [
+            "Hur ser han ut?",
+            "What does he look like?"
+          ],
+          [
+            "Beskriv personerna på bilderna.",
+            "Describe the people in the pictures."
+          ]
+        ]
+      },
+      {
+        "heading": "Description phrases",
+        "rows": [
+          [
+            "Han är i tjugoårsåldern.",
+            "He is in his twenties."
+          ],
+          [
+            "Han är lång.",
+            "He is tall."
+          ],
+          [
+            "Han är av medellängd.",
+            "He is of average height."
+          ],
+          [
+            "Han är kort.",
+            "He is short."
+          ],
+          [
+            "Han är smal.",
+            "He is slim."
+          ],
+          [
+            "Han är kraftig.",
+            "He is heavy-built."
+          ],
+          [
+            "Han är mörk.",
+            "He has dark coloring."
+          ],
+          [
+            "Han är mellanblond.",
+            "He is medium blond."
+          ],
+          [
+            "Han är ljus.",
+            "He has light coloring."
+          ],
+          [
+            "Han har kort hår.",
+            "He has short hair."
+          ],
+          [
+            "Han har långt hår.",
+            "He has long hair."
+          ],
+          [
+            "Han är tunnhårig.",
+            "He is balding."
+          ],
+          [
+            "Han har rakt hår.",
+            "He has straight hair."
+          ],
+          [
+            "Han har lockigt hår.",
+            "He has curly hair."
+          ],
+          [
+            "Han är snygg.",
+            "He is good-looking."
+          ],
+          [
+            "Han ser trevlig ut.",
+            "He looks nice."
+          ],
+          [
+            "Han är söt.",
+            "He is cute."
+          ],
+          [
+            "Han har glasögon.",
+            "He has glasses."
+          ],
+          [
+            "Han har skägg.",
+            "He has a beard."
+          ],
+          [
+            "Han har mustasch.",
+            "He has a mustache."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 4 - Describe The Pictures",
+    "sections": [
+      {
+        "heading": "Writing practice",
+        "rows": [
+          [
+            "Beskriv personerna på bilderna.",
+            "Describe the people in the pictures."
+          ],
+          [
+            "Skriv hela meningar.",
+            "Write complete sentences."
+          ],
+          [
+            "Han är lång.",
+            "He is tall."
+          ],
+          [
+            "Hon har långt hår.",
+            "She has long hair."
+          ],
+          [
+            "Han är kort.",
+            "He is short."
+          ],
+          [
+            "Han har lockigt hår.",
+            "He has curly hair."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 5 - Väder",
+    "sections": [
+      {
+        "heading": "Weather phrases",
+        "rows": [
+          [
+            "Det är varmt.",
+            "It's warm."
+          ],
+          [
+            "Det är kallt.",
+            "It's cold."
+          ],
+          [
+            "Det åskar.",
+            "It's thundering."
+          ],
+          [
+            "Solen skiner.",
+            "The sun is shining."
+          ],
+          [
+            "Det är mulet / molnigt.",
+            "It's cloudy."
+          ],
+          [
+            "Det blåser.",
+            "It's windy."
+          ],
+          [
+            "Det regnar.",
+            "It's raining."
+          ],
+          [
+            "Det snöar.",
+            "It's snowing."
+          ],
+          [
+            "Det är dimma.",
+            "It's foggy."
+          ]
+        ]
+      },
+      {
+        "heading": "Discussion",
+        "rows": [
+          [
+            "Prata med varandra om väder. Vad är det för väder idag?",
+            "Talk to each other about weather. What's the weather like today?"
+          ],
+          [
+            "Vad var det för väder igår?",
+            "What was the weather like yesterday?"
+          ],
+          [
+            "Vad är det för väder i ditt land nu?",
+            "What's the weather like in your country now?"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 6 - Kläder efter väder",
+    "sections": [
+      {
+        "heading": "Reading text",
+        "rows": [
+          [
+            "Det har varit en lång, mörk vinter. Idag är det första april.",
+            "It has been a long, dark winter. Today is the first of April."
+          ],
+          [
+            "Ylva vaknar. Det är en ljus vårdag. Solen skiner.",
+            "Ylva wakes up. It is a bright spring day. The sun is shining."
+          ],
+          [
+            "Hon tar på sig ett par ljusa jeans och en blommig blus.",
+            "She puts on a pair of light jeans and a flowery blouse."
+          ],
+          [
+            "Hon lämnar sin mössa och sina vantar. Nu är det ju vår.",
+            "She leaves her cap and mittens. After all, it's spring."
+          ],
+          [
+            "Hon går ut. Det blåser och är kallt. Solen värmer inte.",
+            "She goes outside. It's windy and cold. The sun doesn't warm."
+          ],
+          [
+            "Små, vita snöflingor börjar falla. Typiskt aprilväder.",
+            "Small, white snowflakes begin to fall. Typical April weather."
+          ]
+        ]
+      },
+      {
+        "heading": "Comprehension questions",
+        "rows": [
+          [
+            "Vad är det för datum?",
+            "What date is it?"
+          ],
+          [
+            "Vad tar Ylva på sig?",
+            "What does Ylva put on?"
+          ],
+          [
+            "Vad lämnar Ylva hemma?",
+            "What does Ylva leave at home?"
+          ],
+          [
+            "Vad händer med vädret när Ylva går ut?",
+            "What happens to the weather when Ylva goes outside?"
+          ],
+          [
+            "Vad är typiskt aprilväder?",
+            "What is typical April weather?"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 7 - Travel Planning",
+    "sections": [
+      {
+        "heading": "Exercise 7A - Group task",
+        "rows": [
+          [
+            "Alla personer i rutan planerar en resa.",
+            "All the people in the box are planning a trip."
+          ],
+          [
+            "Titta på reseannonserna och diskutera vart de ska åka.",
+            "Look at the travel ads and discuss where they should go."
+          ]
+        ]
+      },
+      {
+        "heading": "Traveller profiles",
+        "rows": [
+          [
+            "1. Kickan fyller 50 år nästa vinter. Hon vill resa bort med sin man och deras barn. Bo på fint hotell, skön semester i två eller tre veckor.",
+            "1. Kickan turns 50 next winter. She wants to travel away with her husband and children. Stay at a nice hotel, a lovely holiday for two or three weeks."
+          ],
+          [
+            "2. Pernilla och Ylva är intresserade av kultur. De tycker om att turista i storstäder och sitta på caféer. Resan måste vara billig.",
+            "2. Pernilla and Ylva are interested in culture. They like to be tourists in big cities and sit at cafés. The trip must be cheap."
+          ],
+          [
+            "3. Andrew och Alice älskar naturen och äventyr. De vill resa till en riktigt exotisk plats. De har varit gifta i 25 år och vill fira med en resa de aldrig glömmer.",
+            "3. Andrew and Alice love nature and adventure. They want to travel to a really exotic place. Married 25 years, they want to celebrate with a trip they will never forget."
+          ],
+          [
+            "4. Robert och Anja är konstnärer. De skulpterar och målar. De vill resa till en vacker plats för inspiration. De kan stanna en månad. Båda älskar havet.",
+            "4. Robert and Anja are artists. They sculpt and paint. They want to travel to a beautiful place for inspiration. They can stay a month. Both love the sea."
+          ]
+        ]
+      },
+      {
+        "heading": "Exercise 7B - Packing lists",
+        "rows": [
+          [
+            "Vad behöver personerna packa för sina resor? Gör listor.",
+            "What do the people need to pack for their trips? Make lists."
+          ],
+          [
+            "1. Ishotellet i Jukkasjärvi: mössa, tröja, dunjacka, vantar",
+            "1. The Ice Hotel in Jukkasjärvi: beanie, sweater, down jacket, mittens"
+          ],
+          [
+            "2. Långhelg i Paris: T-shirt, kjol eller shorts",
+            "2. Long weekend in Paris: T-shirt, skirt or shorts"
+          ],
+          [
+            "3. Mauritius: badshorts, solös",
+            "3. Mauritius: swim shorts, sunscreen"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 8 - Travel Ads",
+    "sections": [
+      {
+        "heading": "Travel advertisements",
+        "rows": [
+          [
+            "Se Stockholms skärgård i sommar – Kanalbolagets båtkort 1000 kr, barn halva priset, 30 dagar.",
+            "See Stockholm's archipelago this summer – Kanalbolaget boat pass 1,000 kr, children half price, 30 days."
+          ],
+          [
+            "SISTA MINUTEN! Långhelg i Paris – Torsdag till söndag 998 kr. Enkelt, men centralt hotell.",
+            "LAST MINUTE! Long weekend in Paris – Thursday to Sunday 998 kr. Simple but centrally located hotel."
+          ],
+          [
+            "MAURITIUS I VINTER – Förstklassigt hotell, stor pool vid stranden. Halvpension, frukostbuffé, tre-rätters middag.",
+            "MAURITIUS THIS WINTER – First-class hotel, large pool by the beach. Half board, breakfast buffet, three-course dinner."
+          ],
+          [
+            "Med buss till Europas städer – 14 dagars rundtur, allt inkluderat, 5 900 kr per person.",
+            "By bus to European cities – 14-day round trip, everything included, 5,900 kr per person."
+          ],
+          [
+            "MIDNATTSSOL I LAPPLAND – Vandringsresor, fantastiskt landskap, lokala delikatesser, bekväma stugor.",
+            "MIDNIGHT SUN IN LAPLAND – Hiking trips, fantastic landscape, local delicacies, comfortable cabins."
+          ],
+          [
+            "Sommar på Gotland – Boka hus på Sveriges vackraste ö i alla prisklasser.",
+            "Summer on Gotland – Book a house on Sweden's most beautiful island in all price ranges."
+          ],
+          [
+            "Kulturvecka i TOKYO – Femstjärnigt hotell, helpension, konst, musik, film och teater, 31 800 kr.",
+            "Culture week in TOKYO – Five-star hotel, full board, art, music, film and theatre, 31,800 kr."
+          ],
+          [
+            "Gourmetweekend i Värmland – Charmigt hotell, champagne, frukostar, eftermiddagste, fyrarätters middagar, 3 700 kr.",
+            "Gourmet weekend in Värmland – Charming hotel, champagne, breakfasts, afternoon tea, four-course dinners, 3,700 kr."
+          ],
+          [
+            "Ishotellet i Jukkasjärvi – Bo på hotellet gjort av snö och is. Spännande arkitektur, vacker iskonst.",
+            "The Ice Hotel in Jukkasjärvi – Stay at the hotel made of snow and ice. Exciting architecture, beautiful ice art."
+          ]
+        ]
+      },
+      {
+        "heading": "Days of the week (student notes)",
+        "rows": [
+          [
+            "Måndag (Monday), Tisdag (Tuesday), Onsdag (Wednesday)",
+            "Monday, Tuesday, Wednesday"
+          ],
+          [
+            "Torsdag (Thursday / Thor's day), Fredag (Friday / Freya's day)",
+            "Thursday, Friday"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 9 - Personliga pronomen",
+    "sections": [
+      {
+        "heading": "Grammar explanation",
+        "rows": [
+          [
+            "Personliga pronomen",
+            "Personal pronouns"
+          ],
+          [
+            "Personer som gör någonting i en sats heter subjekt.",
+            "People who do something in a sentence are called the subject."
+          ],
+          [
+            "Vi kan säga Sami eller han. Vi kan säga Nasma eller hon.",
+            "We can say Sami or he. We can say Nasma or she."
+          ]
+        ]
+      },
+      {
+        "heading": "Subject form (subjektsform)",
+        "rows": [
+          [
+            "jag, du, han, hon, den/det, vi, ni, de",
+            "I, you, he, she, it, we, you (pl.), they"
+          ]
+        ]
+      },
+      {
+        "heading": "Object form (objektsform)",
+        "rows": [
+          [
+            "mig, dig, honom, henne, den/det, oss, er, dem",
+            "me, you, him, her, it, us, you (pl.), them"
+          ]
+        ]
+      },
+      {
+        "heading": "Subject-Object table",
+        "rows": [
+          [
+            "jag → mig",
+            "I → me"
+          ],
+          [
+            "du → dig",
+            "you → you"
+          ],
+          [
+            "han → honom",
+            "he → him"
+          ],
+          [
+            "hon → henne",
+            "she → her"
+          ],
+          [
+            "vi → oss",
+            "we → us"
+          ],
+          [
+            "ni → er",
+            "you (pl.) → you (pl.)"
+          ],
+          [
+            "de → dem",
+            "they → them"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 10 - Övning A: Pronouns in action",
+    "sections": [
+      {
+        "heading": "Exercise A - Fill in subject and object pronouns",
+        "rows": [
+          [
+            "Vad gör personerna? Fyll i pronomen i subjektsform och objektsform.",
+            "What are the people doing? Fill in the pronouns in subject and object form."
+          ]
+        ]
+      },
+      {
+        "heading": "Answers",
+        "rows": [
+          [
+            "1. Han frågar henne.",
+            "1. He asks her."
+          ],
+          [
+            "2. Hon dansar med honom.",
+            "2. She dances with him."
+          ],
+          [
+            "3. Hon läser för dem.",
+            "3. She reads to them."
+          ],
+          [
+            "4. Hon badar henne.",
+            "4. She bathes her."
+          ],
+          [
+            "5. Hon pratar med henne.",
+            "5. She talks with her."
+          ],
+          [
+            "6. Hon undersöker honom.",
+            "6. She examines him."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 11 - Övning B: Subject pronouns",
+    "sections": [
+      {
+        "heading": "Exercise B - Fill in correct subject pronouns",
+        "rows": [
+          [
+            "Fyll i rätt pronomen i subjektsform.",
+            "Fill in the correct pronoun in subject form."
+          ],
+          [
+            "jag • du • han • hon • den • det • vi • ni • de",
+            "I • you • he • she • it (en) • it (ett) • we • you (pl.) • they"
+          ]
+        ]
+      },
+      {
+        "heading": "Dialogue 1",
+        "rows": [
+          [
+            "– Hej! Hur mår du?",
+            "– Hi! How are you?"
+          ],
+          [
+            "– Hej! Jag mår bra, tack! Och du?",
+            "– Hi! I'm well, thanks! And you?"
+          ],
+          [
+            "– Jag mår bra. Hur mår Sabrina och Alex?",
+            "– I'm well. How are Sabrina and Alex?"
+          ],
+          [
+            "– De mår bra.",
+            "– They're well."
+          ]
+        ]
+      },
+      {
+        "heading": "Dialogue 2",
+        "rows": [
+          [
+            "– Vart åker du nu?",
+            "– Where are you going now?"
+          ],
+          [
+            "– Jag åker till Heron City. Jag ska träffa en kompis.",
+            "– I'm going to Heron City. I'm going to meet a friend."
+          ],
+          [
+            "– Vi ska gå på bio och se Terminator 3.",
+            "– We're going to the cinema to see Terminator 3."
+          ],
+          [
+            "– Han heter Tony.",
+            "– His name is Tony."
+          ]
+        ]
+      },
+      {
+        "heading": "Dialogue 3",
+        "rows": [
+          [
+            "– Hur mår din syster, Simona?",
+            "– How is your sister, Simona?"
+          ],
+          [
+            "– Hon mår bra. Hon jobbar varje dag.",
+            "– She's well. She works every day."
+          ],
+          [
+            "– Du måste gå nu. Hej då!",
+            "– You have to go now. Goodbye!"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 12 - Övning C: Object pronouns",
+    "sections": [
+      {
+        "heading": "Exercise C - Fill in correct object pronouns",
+        "rows": [
+          [
+            "Fyll i rätt pronomen i objektsform.",
+            "Fill in the correct pronoun in object form."
+          ]
+        ]
+      },
+      {
+        "heading": "Reference table",
+        "rows": [
+          [
+            "jag → mig. Du lyssnar på mig.",
+            "I → me. You listen to me."
+          ],
+          [
+            "du → dig. Jag lyssnar på dig.",
+            "you → you. I listen to you."
+          ],
+          [
+            "han → honom. Hon lyssnar på honom.",
+            "he → him. She listens to him."
+          ],
+          [
+            "hon → henne. Han åker buss med henne.",
+            "she → her. He takes the bus with her."
+          ],
+          [
+            "vi → oss. Vill du prata med oss?",
+            "we → us. Do you want to talk to us?"
+          ],
+          [
+            "ni → er. Han vill ringa er.",
+            "you (pl.) → you. He wants to call you."
+          ],
+          [
+            "de → dem. Jag äter med dem.",
+            "they → them. I eat with them."
+          ]
+        ]
+      },
+      {
+        "heading": "Fill-in sentences (answers)",
+        "rows": [
+          [
+            "1. Var är Karin? Jag vill prata med henne.",
+            "1. Where is Karin? I want to talk to her."
+          ],
+          [
+            "2. Är Simon och Adam här? Jag såg dem i rum 20.",
+            "2. Are Simon and Adam here? I saw them in room 20."
+          ],
+          [
+            "3. Vi kommer inte i dag. Vänta inte på oss.",
+            "3. We're not coming today. Don't wait for us."
+          ],
+          [
+            "4. Kommer ni till restaurangen? Jag vill äta med er.",
+            "4. Are you coming to the restaurant? I want to eat with you."
+          ],
+          [
+            "5. Adam är här nu. Vill du prata med honom?",
+            "5. Adam is here now. Do you want to talk to him?"
+          ],
+          [
+            "6. Var är du? Jag kan inte se dig.",
+            "6. Where are you? I can't see you."
+          ],
+          [
+            "7. Jag behöver hjälp. Kan du hjälpa mig?",
+            "7. I need help. Can you help me?"
+          ],
+          [
+            "8. Kan du vänta lite? Jag vill prata med dig.",
+            "8. Can you wait a moment? I want to talk to you."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 13 - Ordlista: Sveriges nationaldag (1)",
+    "sections": [
+      {
+        "heading": "Vocabulary (part 1)",
+        "rows": [
+          [
+            "Nationaldag – en speciell dag när ett land firar sitt land och sin historia.",
+            "National day – a special day when a country celebrates its country and history."
+          ],
+          [
+            "Ledig – när man inte arbetar eller går i skolan.",
+            "Free / off – when you don't work or go to school."
+          ],
+          [
+            "Fira – göra något roligt för en speciell dag eller händelse.",
+            "Celebrate – to do something fun for a special day or event."
+          ],
+          [
+            "Picknick – när man tar med sig mat och äter utomhus.",
+            "Picnic – when you bring food and eat outdoors."
+          ],
+          [
+            "Hissa – dra upp en flagga i en flaggstång.",
+            "Hoist – to raise a flag on a flagpole."
+          ],
+          [
+            "Vissa – några personer eller saker, men inte alla.",
+            "Some – some people or things, but not all."
+          ],
+          [
+            "Folkdräkt / Sverigedräkt – traditionella svenska kläder.",
+            "Folk costume – traditional Swedish clothing."
+          ],
+          [
+            "Historia – saker som har hänt förr i tiden.",
+            "History – things that happened in the past."
+          ],
+          [
+            "Kung – en manlig ledare i ett kungadöme / monarki.",
+            "King – a male ruler in a kingdom."
+          ],
+          [
+            "Lag – regler som människor i ett land måste följa.",
+            "Law – rules that people in a country must follow."
+          ],
+          [
+            "Officiell – något som är bestämt av staten eller myndigheter.",
+            "Official – something decided by the state or authorities."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 14 - Ordlista: Sveriges nationaldag (2)",
+    "sections": [
+      {
+        "heading": "Vocabulary (part 2)",
+        "rows": [
+          [
+            "Röd dag – en dag då många är lediga från jobb och skola.",
+            "Public holiday / red day – a day when many are off from work and school."
+          ],
+          [
+            "Tal – när en person pratar framför många människor.",
+            "Speech – when a person speaks in front of many people."
+          ],
+          [
+            "Torg – en öppen plats i en stad där människor kan träffas.",
+            "Town square – an open space in a city where people can meet."
+          ],
+          [
+            "Jämfört med – när man ser skillnader mellan två saker.",
+            "Compared to – when you see differences between two things."
+          ],
+          [
+            "Sill – en fisk som många i Sverige äter vid högtider.",
+            "Herring – a fish many in Sweden eat at holidays."
+          ],
+          [
+            "Filt – ett mjukt tyg man kan ligga på eller ha över sig.",
+            "Blanket – a soft fabric to lie on or wrap around yourself."
+          ],
+          [
+            "Inträde – pengar man betalar för att komma in någonstans.",
+            "Entrance fee – money you pay to enter somewhere."
+          ],
+          [
+            "Angöra – att komma fram till en plats med båt.",
+            "To dock – to arrive at a place by boat."
+          ],
+          [
+            "Brygga – en plats av trä vid vattnet där båtar kan stanna.",
+            "Pier / jetty – a wooden structure by water where boats stop."
+          ],
+          [
+            "Inställa / ställa in – att något inte händer som planerat.",
+            "To cancel – when something doesn't happen as planned."
+          ],
+          [
+            "Kiosk – en liten butik för godis, glass, dricka och tidningar.",
+            "Kiosk – a small shop for sweets, ice cream, drinks and newspapers."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 15 - Text: Sveriges nationaldag (part 1)",
+    "sections": [
+      {
+        "heading": "Reading text",
+        "rows": [
+          [
+            "Sveriges nationaldag är den 6 juni.",
+            "Sweden's national day is 6 June."
+          ],
+          [
+            "Det är en viktig dag och många är lediga från jobbet och skolan.",
+            "It is an important day and many are off from work and school."
+          ],
+          [
+            "Många träffar familj och vänner, går på konserter eller har picknick.",
+            "Many meet family and friends, go to concerts or have picnics."
+          ],
+          [
+            "Många hissar den svenska flaggan och har blåa och gula kläder.",
+            "Many raise the Swedish flag and wear blue and yellow clothes."
+          ],
+          [
+            "Vissa människor har folkdräkt, som också kallas Sverigedräkt.",
+            "Some people wear folk costume, also called Sverigedräkt."
+          ],
+          [
+            "Sverige firar nationaldagen för att minnas viktiga saker i sin historia.",
+            "Sweden celebrates the national day to remember important things in its history."
+          ],
+          [
+            "År 1523 blev Gustav Vasa kung i Sverige. År 1809 fick Sverige en ny viktig lag.",
+            "In 1523 Gustav Vasa became king of Sweden. In 1809 Sweden got an important new law."
+          ],
+          [
+            "Den 6 juni blev officiell nationaldag år 1983. Sedan 2005 är det en röd dag.",
+            "6 June became the official national day in 1983. Since 2005 it is a public holiday."
+          ],
+          [
+            "På nationaldagen finns musik, tal och firanden i parker och på torg.",
+            "On the national day there is music, speeches and celebrations in parks and town squares."
+          ],
+          [
+            "Många äter sommarmat som sill, potatis och jordgubbar.",
+            "Many eat summer food such as herring, potatoes and strawberries."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "In-class Page 16 - Text: Sveriges nationaldag (part 2)",
+    "sections": [
+      {
+        "heading": "Reading text (continued)",
+        "rows": [
+          [
+            "I Sverige är nationaldagen ganska lugn jämfört med vissa andra länder.",
+            "In Sweden the national day is quite calm compared to some other countries."
+          ],
+          [
+            "Men många tycker att dagen är viktig och rolig.",
+            "But many people think the day is important and fun."
+          ]
+        ]
+      },
+      {
+        "heading": "Images on this page",
+        "rows": [
+          [
+            "Gustav Vasa (1496–1560) – Kung som gav Sverige sin självständighet.",
+            "Gustav Vasa (1496–1560) – King who gave Sweden its independence."
+          ],
+          [
+            "Jordgubbar – klassisk sommarmat på nationaldagen.",
+            "Strawberries – classic summer food on the national day."
+          ],
+          [
+            "Traditionell folkdräkt, Sverigedräkten – bärs vid nationella firanden.",
+            "Traditional folk costume, Sverigedräkten – worn at national celebrations."
+          ]
+        ]
+      }
+    ]
+  }
+];
+
+    const week6OffClassPageSizes = {
+  "1": [
+    1400,
+    1866
+  ],
+  "2": [
+    1400,
+    1866
+  ],
+  "3": [
+    1400,
+    1866
+  ],
+  "4": [
+    1400,
+    1866
+  ],
+  "5": [
+    1400,
+    1866
+  ],
+  "6": [
+    1400,
+    1866
+  ],
+  "7": [
+    1400,
+    1866
+  ],
+  "8": [
+    1400,
+    1866
+  ]
+};
+
+    const week6OffClassQrCodes = [
+  {
+    "page": 1,
+    "type": "url",
+    "value": "https://youtu.be/RoJhiFy8PUM",
+    "x": 167,
+    "y": 111,
+    "w": 91,
+    "h": 88
+  },
+  {
+    "page": 1,
+    "type": "url",
+    "value": "https://youtu.be/Fq14mupZ5n8",
+    "x": 1212,
+    "y": 152,
+    "w": 65,
+    "h": 65
+  },
+  {
+    "page": 2,
+    "type": "url",
+    "value": "https://youtu.be/6rEnvK5xUbo",
+    "x": 143,
+    "y": 166,
+    "w": 124,
+    "h": 117
+  },
+  {
+    "page": 3,
+    "type": "url",
+    "value": "https://youtu.be/alMrytR740M",
+    "x": 1178,
+    "y": 166,
+    "w": 98,
+    "h": 96
+  },
+  {
+    "page": 4,
+    "type": "url",
+    "value": "https://youtu.be/RXFtNeDczeI",
+    "x": 1085,
+    "y": 940,
+    "w": 131,
+    "h": 132
+  },
+  {
+    "page": 5,
+    "type": "url",
+    "value": "https://youtu.be/Csx0kc1yzs4",
+    "x": 1202,
+    "y": 162,
+    "w": 120,
+    "h": 117
+  },
+  {
+    "page": 6,
+    "type": "url",
+    "value": "https://youtu.be/FaQSbX3ZSWM",
+    "x": 1136,
+    "y": 153,
+    "w": 77,
+    "h": 72
+  },
+  {
+    "page": 7,
+    "type": "url",
+    "value": "https://youtu.be/zJaiuxwVBhE",
+    "x": 1180,
+    "y": 857,
+    "w": 88,
+    "h": 86
+  },
+  {
+    "page": 8,
+    "type": "url",
+    "value": "https://youtu.be/b70Dw3r2-7U",
+    "x": 1142,
+    "y": 1142,
+    "w": 85,
+    "h": 84
+  }
+];
+
+    const week6OffClassTerms = [
+  [
+    "bostad",
+    "home / housing"
+  ],
+  [
+    "en lägenhet",
+    "an apartment / flat"
+  ],
+  [
+    "ett hus",
+    "a house"
+  ],
+  [
+    "en villa",
+    "a detached house"
+  ],
+  [
+    "ett rum",
+    "a room"
+  ],
+  [
+    "ett kök",
+    "a kitchen"
+  ],
+  [
+    "ett vardagsrum",
+    "a living room"
+  ],
+  [
+    "ett sovrum",
+    "a bedroom"
+  ],
+  [
+    "ett badrum",
+    "a bathroom"
+  ],
+  [
+    "en balkong",
+    "a balcony"
+  ],
+  [
+    "en hall",
+    "an entrance hall"
+  ],
+  [
+    "en våning",
+    "a floor / storey"
+  ],
+  [
+    "sjätte våningen",
+    "the sixth floor"
+  ],
+  [
+    "en etta",
+    "a one-room apartment"
+  ],
+  [
+    "ett område",
+    "an area / neighbourhood"
+  ],
+  [
+    "en gata",
+    "a street"
+  ],
+  [
+    "en busshållplats",
+    "a bus stop"
+  ],
+  [
+    "en park",
+    "a park"
+  ],
+  [
+    "nära",
+    "near / close to"
+  ],
+  [
+    "trivs",
+    "feel comfortable / enjoy living"
+  ],
+  [
+    "Var bor du?",
+    "Where do you live?"
+  ],
+  [
+    "Vilken våning bor du på?",
+    "What floor do you live on?"
+  ],
+  [
+    "Vem bor du med?",
+    "Who do you live with?"
+  ],
+  [
+    "Hur många rum är det?",
+    "How many rooms are there?"
+  ],
+  [
+    "en tvättstuga",
+    "a laundry room"
+  ],
+  [
+    "flytta",
+    "to move (home)"
+  ]
+];
+
+    const week6OffClassTranslations = [
+  {
+    "title": "Off-class Page 1 - Bostad (Cover)",
+    "sections": [
+      {
+        "heading": "Booklet introduction",
+        "rows": [
+          [
+            "BOSTAD",
+            "HOUSING / HOME"
+          ],
+          [
+            "Häftet handlar om din bostad.",
+            "The booklet is about your home."
+          ],
+          [
+            "att berätta vilken våning du bor på",
+            "how to say which floor you live on"
+          ],
+          [
+            "namn på olika rum",
+            "names of different rooms"
+          ],
+          [
+            "att skriva och berätta om din bostad",
+            "how to write and talk about your home"
+          ],
+          [
+            "att prata med en kompis om era bostäder",
+            "how to talk with a friend about your homes"
+          ]
+        ]
+      },
+      {
+        "heading": "Floor plan labels",
+        "rows": [
+          [
+            "HALL 9 m²",
+            "Entrance hall 9 m²"
+          ],
+          [
+            "KÖK 12 m²",
+            "Kitchen 12 m²"
+          ],
+          [
+            "SOVRUM 10 m²",
+            "Bedroom 10 m²"
+          ],
+          [
+            "BAD",
+            "Bathroom"
+          ],
+          [
+            "KLK",
+            "Wardrobe (klädkammare)"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Off-class Page 2 - Exercise A: Maria's home",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Titta på filmen många gånger. Pausa och säg efter.",
+            "Watch the video many times. Pause and repeat."
+          ]
+        ]
+      },
+      {
+        "heading": "Maria's presentation",
+        "rows": [
+          [
+            "Jag heter Maria. Jag bor i Malmö.",
+            "My name is Maria. I live in Malmö."
+          ],
+          [
+            "Jag bor med min man Tomas och vår son Josef.",
+            "I live with my husband Tomas and our son Josef."
+          ],
+          [
+            "Vi bor på sjätte våningen i en lägenhet.",
+            "We live on the sixth floor in an apartment."
+          ],
+          [
+            "Vi har ett rum och ett kök. Det är en etta.",
+            "We have one room and a kitchen. It is a one-room apartment."
+          ],
+          [
+            "Vi har ett stort kök och ett litet sovrum.",
+            "We have a large kitchen and a small bedroom."
+          ],
+          [
+            "Vi har ett badrum men ingen balkong.",
+            "We have a bathroom but no balcony."
+          ],
+          [
+            "Det finns en park och en busshållplats nära huset.",
+            "There is a park and a bus stop near the building."
+          ],
+          [
+            "Vi trivs bra i Malmö.",
+            "We enjoy living in Malmö."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Off-class Page 3 - Exercise B: Vocabulary",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Skriv orden på ditt språk och på svenska.",
+            "Write the words in your language and in Swedish."
+          ]
+        ]
+      },
+      {
+        "heading": "Key vocabulary",
+        "rows": [
+          [
+            "bor",
+            "live / reside"
+          ],
+          [
+            "med",
+            "with"
+          ],
+          [
+            "min familj",
+            "my family"
+          ],
+          [
+            "sjätte",
+            "sixth"
+          ],
+          [
+            "en våning",
+            "a floor / storey"
+          ],
+          [
+            "en lägenhet",
+            "an apartment"
+          ],
+          [
+            "ett rum",
+            "a room"
+          ],
+          [
+            "stort",
+            "large / big"
+          ],
+          [
+            "ett kök",
+            "a kitchen"
+          ],
+          [
+            "en etta",
+            "a one-room apartment"
+          ],
+          [
+            "ett vardagsrum",
+            "a living room"
+          ],
+          [
+            "litet",
+            "small"
+          ],
+          [
+            "ett sovrum",
+            "a bedroom"
+          ],
+          [
+            "ett badrum",
+            "a bathroom"
+          ],
+          [
+            "en balkong",
+            "a balcony"
+          ],
+          [
+            "finns",
+            "there is / exists"
+          ],
+          [
+            "en park",
+            "a park"
+          ],
+          [
+            "nära",
+            "near"
+          ],
+          [
+            "ett hus",
+            "a house / building"
+          ],
+          [
+            "en busshållplats",
+            "a bus stop"
+          ],
+          [
+            "trivs",
+            "enjoy / feel at home"
+          ],
+          [
+            "bra",
+            "well / good"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Off-class Page 4 - Exercise C & D",
+    "sections": [
+      {
+        "heading": "Exercise C - Questions about Maria",
+        "rows": [
+          [
+            "1. Var bor Maria?",
+            "1. Where does Maria live?"
+          ],
+          [
+            "2. Vilken våning bor hon på?",
+            "2. Which floor does she live on?"
+          ],
+          [
+            "3. Hur många rum har Marias lägenhet?",
+            "3. How many rooms does Maria's apartment have?"
+          ],
+          [
+            "4. Vilka rum finns det i lägenheten?",
+            "4. What rooms are in the apartment?"
+          ],
+          [
+            "5. Har Maria en balkong?",
+            "5. Does Maria have a balcony?"
+          ],
+          [
+            "6. Trivs Maria och Tomas?",
+            "6. Do Maria and Tomas enjoy living there?"
+          ]
+        ]
+      },
+      {
+        "heading": "Exercise D - Dialogue (listen)",
+        "rows": [
+          [
+            "Var bor du? – Jag bor i Göteborg.",
+            "Where do you live? – I live in Gothenburg."
+          ],
+          [
+            "I vilket område bor du? – Jag bor i Frölunda.",
+            "What area do you live in? – I live in Frölunda."
+          ],
+          [
+            "Vilken gata bor du på? – Jag bor på Topasgatan.",
+            "What street do you live on? – I live on Topasgatan."
+          ],
+          [
+            "Vilken våning bor du på? – Jag bor på andra våningen.",
+            "What floor? – I live on the second floor."
+          ],
+          [
+            "Vem bor du med? – Jag bor med min son.",
+            "Who do you live with? – I live with my son."
+          ],
+          [
+            "Hur många rum är det? – Det är två rum och kök.",
+            "How many rooms? – Two rooms and a kitchen."
+          ],
+          [
+            "Hur många badrum finns det? – Det finns ett badrum.",
+            "How many bathrooms? – There is one bathroom."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Off-class Page 5 - Exercise G: About yourself",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Titta på filmen. Svara på frågorna om dig.",
+            "Watch the video. Answer the questions about yourself."
+          ]
+        ]
+      },
+      {
+        "heading": "Questions",
+        "rows": [
+          [
+            "1. Hur mår du idag?",
+            "1. How are you today?"
+          ],
+          [
+            "2. Var bor du?",
+            "2. Where do you live?"
+          ],
+          [
+            "3. Hur stor är din lägenhet?",
+            "3. How big is your apartment?"
+          ],
+          [
+            "4. Vilka bor du med, eller bor du ensam?",
+            "4. Who do you live with, or do you live alone?"
+          ],
+          [
+            "5. Vilken våning bor du på?",
+            "5. What floor do you live on?"
+          ],
+          [
+            "6. Har du balkong?",
+            "6. Do you have a balcony?"
+          ],
+          [
+            "7. Vad finns vid ditt hus?",
+            "7. What is near your building?"
+          ],
+          [
+            "8. Vilka affärer finns i närheten?",
+            "8. What shops are nearby?"
+          ],
+          [
+            "9. Hur åker du till centrum?",
+            "9. How do you get to the city centre?"
+          ],
+          [
+            "10. Var är tvättstugan?",
+            "10. Where is the laundry room?"
+          ],
+          [
+            "11. Trivs du i din lägenhet?",
+            "11. Do you enjoy your apartment?"
+          ],
+          [
+            "12. Vill du flytta?",
+            "12. Do you want to move?"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Off-class Page 6 - Exercise I: Dictation",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Lyssna på orden och skriv dem på raderna. Öva fyra gånger.",
+            "Listen to the words and write them on the lines. Practise four times."
+          ]
+        ]
+      },
+      {
+        "heading": "Note",
+        "rows": [
+          [
+            "Fyra kolumner med numrerade rader 1-10 för att skriva orden fyra gånger.",
+            "Four columns with numbered lines 1-10 for writing the words four times."
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Off-class Page 7 - Exercise M: Name the room",
+    "sections": [
+      {
+        "heading": "Instruction",
+        "rows": [
+          [
+            "Vad heter rummet/platsen? Skriv på raden.",
+            "What is the room/place called? Write on the line."
+          ]
+        ]
+      },
+      {
+        "heading": "Word bank",
+        "rows": [
+          [
+            "ett hus",
+            "a house"
+          ],
+          [
+            "ett kök",
+            "a kitchen"
+          ],
+          [
+            "en balkong",
+            "a balcony"
+          ],
+          [
+            "ett badrum",
+            "a bathroom"
+          ],
+          [
+            "en park",
+            "a park"
+          ],
+          [
+            "ett vardagsrum",
+            "a living room"
+          ],
+          [
+            "ett sovrum",
+            "a bedroom"
+          ],
+          [
+            "en busshållplats",
+            "a bus stop"
+          ]
+        ]
+      },
+      {
+        "heading": "Pictures",
+        "rows": [
+          [
+            "Sovrum, kök, badrum, balkong, park, busshållplats, vardagsrum, hus",
+            "Bedroom, kitchen, bathroom, balcony, park, bus stop, living room, house"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Off-class Page 8 - Exercise N & O: Fill-in exercises",
+    "sections": [
+      {
+        "heading": "Exercise N - Fill in missing words",
+        "rows": [
+          [
+            "Titta på filmen många gånger. Fyll i de ord som fattas.",
+            "Watch the video many times. Fill in the missing words."
+          ],
+          [
+            "Han heter Tarek. Tarek bor på Tingsgatan 5.",
+            "His name is Tarek. Tarek lives on Tingsgatan 5."
+          ],
+          [
+            "Tarek bor på våning tre och har ett badrum.",
+            "Tarek lives on the third floor and has one bathroom."
+          ],
+          [
+            "Mona bor i Kalmar i en villa.",
+            "Mona lives in Kalmar in a detached house."
+          ],
+          [
+            "Samuel bor på våning två och bor själv.",
+            "Samuel lives on the second floor and lives alone."
+          ],
+          [
+            "Linda bor i Alvesta med sina barn.",
+            "Linda lives in Alvesta with her children."
+          ]
+        ]
+      },
+      {
+        "heading": "Exercise O - Question words",
+        "rows": [
+          [
+            "Hur, Vad, Var, Vilken, Vem",
+            "How, What, Where, Which, Who"
+          ],
+          [
+            "1. Vad heter du? – Jag heter Samuel.",
+            "1. What is your name? – My name is Samuel."
+          ],
+          [
+            "2. Var bor du? – Jag bor i Tranås.",
+            "2. Where do you live? – I live in Tranås."
+          ],
+          [
+            "3. Vem bor du med? – Jag bor med mina barn.",
+            "3. Who do you live with? – I live with my children."
+          ],
+          [
+            "4. Vilken gata bor du på? – Jag bor på Kålvägen 8.",
+            "4. What street? – I live on Kålvägen 8."
+          ],
+          [
+            "5. Vilken våning bor du på? – Jag bor på våning sju.",
+            "5. What floor? – I live on the seventh floor."
+          ],
+          [
+            "6. Hur många badrum har du? – Jag har ett badrum.",
+            "6. How many bathrooms? – I have one bathroom."
+          ]
+        ]
+      }
+    ]
+  }
+];
 
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
@@ -3124,6 +5146,66 @@
       setPage(0);
     }
 
+    function renderWeek6OffClassTerms() {
+      const grid = document.querySelector("#week6OffClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week6OffClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek6OffClassComparison() {
+      const thumbs = document.querySelector("#week6OffClassCompareThumbs");
+      const image = document.querySelector("#week6OffClassCompareImage");
+      const overlay = document.querySelector("#week6OffClassCompareQrOverlay");
+      const panel = document.querySelector("#week6OffClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week6OffClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week6-off-class-pages/page-${page}.jpg`;
+        image.alt = `Week 6 off-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week6OffClassPageSizes, week6OffClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Off-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week6OffClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week6OffClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
@@ -3214,6 +5296,8 @@
     renderWeek5OffClassComparison();
     renderWeek6InClassTerms();
     renderWeek6InClassComparison();
+    renderWeek6OffClassTerms();
+    renderWeek6OffClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
