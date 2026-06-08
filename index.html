@@ -996,6 +996,13 @@
     <span class="nav-label week-nav" data-week="week6">Off-class</span>
     <a class="week-nav" data-week="week6" href="#week6-off-class-compare">Translations</a>
     <a class="week-nav" data-week="week6" href="#week6-off-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week7">Week 7</span>
+    <span class="nav-label week-nav" data-week="week7">In-class</span>
+    <a class="week-nav" data-week="week7" href="#week7">Overview</a>
+    <a class="week-nav" data-week="week7" href="#week7-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week7" href="#week7-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week7">Off-class</span>
+    <a class="week-nav" data-week="week7" href="#week7-off-class">Off-class Slot</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1019,6 +1026,7 @@
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week4">Week 4</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week5">Week 5</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week6">Week 6</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week7">Week 7</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1511,6 +1519,57 @@
       <p class="section-lead">Important Week 6 off-class housing words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week6OffClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week7" class="week-panel" data-week="week7">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 7</h1>
+          <p>In-class material about verb groups, past tense forms, common irregular verbs, short preterite stories, and the reading text Alma berättar.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week7-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week7-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week7-in-class-compare"><strong>In-class material</strong><span>Six classroom pages with full Swedish-English translation coverage.</span></a>
+            <a class="material-card" href="#week7-off-class"><strong>Off-class material</strong><span>Reserved for Week 7 homework/off-class pages when you upload them.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 7 in-class worksheet preview">
+          <img src="assets/sfi-week7-in-class-pages/page-01.jpg" alt="Week 7 in-class verb group worksheet page" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week7-in-class-compare" class="week-panel" data-week="week7">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 7 classroom page photos with English translations. Every Swedish line identified from OCR and visual review is represented on the right.</p>
+      <div class="compare">
+        <div class="thumbs" id="week7InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week7InClassCompareImage" src="assets/sfi-week7-in-class-pages/page-01.jpg" alt="Week 7 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week7InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week7InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week7-in-class-words" class="week-panel" data-week="week7">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 7 verb forms and reading words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week7InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week7-off-class" class="week-panel" data-week="week7">
+      <h2>Week 7 Off-class Material</h2>
+      <p class="section-lead">No Week 7 off-class material was found yet. This slot is ready for homework pages when you add them later.</p>
+      <div class="panel pad">
+        <p class="note">When you say “update week 7” again, I will scan the folder, compress new images, and add any new pages here.</p>
       </div>
     </section>
 
@@ -4507,6 +4566,240 @@
   }
 ];
 
+    const week7InClassPageSizes = {
+      1: [1400, 1866], 2: [1400, 1866], 3: [1400, 1866],
+      4: [1400, 1866], 5: [1400, 1866], 6: [1400, 1866]
+    };
+
+    const week7InClassQrCodes = [];
+
+    const week7InClassTerms = [
+      ["verbets former", "forms of the verb"], ["verbgrupp", "verb group"], ["infinitiv", "infinitive"],
+      ["presens", "present tense"], ["preteritum", "past tense"], ["ändelse", "ending"],
+      ["arbeta, arbetar, arbetade", "work, works, worked"], ["ringa, ringer, ringde", "call, calls, called"],
+      ["köpa, köper, köpte", "buy, buys, bought"], ["bo, bor, bodde", "live, lives, lived"],
+      ["stänga, stänger, stängde", "close, closes, closed"], ["känna, känner, kände", "feel/know, feels/knows, felt/knew"],
+      ["hända, händer, hände", "happen, happens, happened"], ["glömma, glömmer, glömde", "forget, forgets, forgot"],
+      ["klippa, klipper, klippte", "cut, cuts, cut"], ["byta, byter, bytte", "change, changes, changed"],
+      ["hjälpa, hjälper, hjälpte", "help, helps, helped"], ["resa, reser, reste", "travel, travels, traveled"],
+      ["hoppas, hoppades", "hope, hoped"], ["trivas, trivdes", "enjoy/thrive, enjoyed/thrived"],
+      ["födas, föddes", "be born, was/were born"], ["flytta, flyttade", "move, moved"],
+      ["vänta, väntade", "wait, waited"], ["lära sig, lärde sig", "learn, learned"], ["tycka, tyckte", "think/like, thought/liked"],
+      ["gifta sig, gifte sig", "get married, got married"], ["följa, följde", "follow/accompany, followed/accompanied"],
+      ["dricka, drack", "drink, drank"], ["sitta, satt", "sit, sat"], ["springa, sprang", "run, ran"],
+      ["bli, blev", "become, became"], ["skriva, skrev", "write, wrote"], ["se, såg", "see, saw"],
+      ["komma, kom", "come, came"], ["gå, gick", "go/walk, went/walked"], ["äta, åt", "eat, ate"],
+      ["finnas, fanns", "exist/be there, existed/was there"], ["dö, dog", "die, died"], ["förstå, förstod", "understand, understood"],
+      ["ge, gav", "give, gave"], ["göra, gjorde", "do/make, did/made"], ["ha, hade", "have, had"],
+      ["ligga, låg", "lie/be located, lay/was located"], ["stå, stod", "stand, stood"], ["vara, var", "be, was/were"],
+      ["veta, visste", "know, knew"], ["lägga, la/lade", "put/lay, put/laid"], ["säga, sa/sade", "say, said"],
+      ["sätta, satte", "put/set, put/set"], ["fotogenlampa", "kerosene lamp"], ["stearinljus", "candle"],
+      ["vedbod", "woodshed"], ["grisstia", "pigsty"], ["hönshus", "henhouse"], ["rinnande vatten", "running water"],
+      ["brunn", "well"], ["balja", "tub"], ["släktingar", "relatives"], ["klasskamrater", "classmates"],
+      ["pensionär", "pensioner / retired person"]
+    ];
+
+    const week7InClassTranslations = [
+      { title: "In-class Page 1 - Verbets former: verbgrupp 1-3", sections: [
+        { heading: "Explanation", rows: [
+          ["Verbets former: verbgrupp 1-3", "Forms of the verb: verb groups 1-3"],
+          ["Svenska verb brukar delas in i fyra grupper, efter vilka ändelser de har.", "Swedish verbs are usually divided into four groups according to which endings they have."],
+          ["Här nedanför ser du grupperna 1-3.", "Below you see groups 1-3."],
+          ["Grupp 2 brukar delas upp i två undergrupper, 2a och 2b.", "Group 2 is usually divided into two subgroups, 2a and 2b."],
+          ["Lägg märke till att verbgrupp 1 har kvar sitt -a i alla former.", "Notice that verb group 1 keeps its -a in all forms."],
+          ["Verbgrupp 3 slutar på annan vokal än -a i infinitiv.", "Verb group 3 ends in a vowel other than -a in the infinitive."]
+        ] },
+        { heading: "Verb table", rows: [
+          ["verbgrupp", "verb group"], ["infinitiv", "infinitive"], ["presens", "present tense"], ["preteritum", "past tense"], ["preteritum-ändelse", "past tense ending"],
+          ["arbeta - arbetar - arbetade - de", "work - works - worked - ending de"],
+          ["ringa - ringer - ringde - de", "call - calls - called - ending de"],
+          ["köpa - köper - köpte - p + te", "buy - buys - bought - p + te"],
+          ["åka - åker - åkte - k + te", "go/travel - goes/travels - went/traveled - k + te"],
+          ["läsa - läser - läste - s + te", "read - reads - read - s + te"],
+          ["heta - heter - hette - t + te", "be called - is called - was called - t + te"],
+          ["bo - bor - bodde - dde", "live - lives - lived - ending dde"],
+          ["sy - syr - sydde - dde", "sew - sews - sewed - ending dde"]
+        ] },
+        { heading: "Exercise 1", rows: [
+          ["Öva verbgrupp 1.", "Practice verb group 1."],
+          ["Titta på verbgrupp 1 i rutan ovan.", "Look at verb group 1 in the box above."],
+          ["Fyll sedan i de former som fattas här nedanför.", "Then fill in the forms that are missing below."],
+          ["Se exempel.", "See the example."],
+          ["titta - tittar - tittade", "look/watch - looks/watches - looked/watched"],
+          ["sluta - slutar - slutade", "finish/stop - finishes/stops - finished/stopped"],
+          ["börja - börjar - började", "begin/start - begins/starts - began/started"],
+          ["öppna - öppnar - öppnade", "open - opens - opened"],
+          ["stanna - stannar - stannade", "stop/stay - stops/stays - stopped/stayed"],
+          ["diska - diskar - diskade", "do the dishes - does the dishes - did the dishes"],
+          ["städa - städar - städade", "clean - cleans - cleaned"],
+          ["tala - talar - talade", "speak - speaks - spoke"],
+          ["regna - regnar - regnade", "rain - rains - rained"]
+        ] }
+      ] },
+      { title: "In-class Page 2 - Öva verbgrupp 2", sections: [
+        { heading: "Instruction", rows: [
+          ["Öva verbgrupp 2.", "Practice verb group 2."],
+          ["Titta på verbgrupp 2 i rutan på föregående sida.", "Look at verb group 2 in the box on the previous page."],
+          ["Fyll sedan i de former som fattas här nedanför.", "Then fill in the forms that are missing below."],
+          ["Se exempel.", "See the example."]
+        ] },
+        { heading: "Verb group 2a", rows: [
+          ["stänga - stänger - stängde", "close - closes - closed"],
+          ["känna - känner - kände", "feel/know - feels/knows - felt/knew"],
+          ["hänga - hänger - hängde", "hang - hangs - hung"],
+          ["hända - händer - hände", "happen - happens - happened"],
+          ["ställa - ställer - ställde", "put/place - puts/places - put/placed"],
+          ["glömma - glömmer - glömde", "forget - forgets - forgot"],
+          ["lära - lär - lärde", "teach/learn - teaches/learns - taught/learned"],
+          ["köra - kör - körde", "drive - drives - drove"],
+          ["hyra - hyr - hyrde", "rent - rents - rented"],
+          ["höra - hör - hörde", "hear - hears - heard"],
+          ["Några verb i grupp 2a har kort presensform.", "Some verbs in group 2a have a short present-tense form."]
+        ] },
+        { heading: "Verb group 2b", rows: [
+          ["klippa - klipper - klippte", "cut - cuts - cut"],
+          ["blåsa - blåser - blåste", "blow - blows - blew"],
+          ["röka - röker - rökte", "smoke - smokes - smoked"],
+          ["byta - byter - bytte", "change - changes - changed"],
+          ["hjälpa - hjälper - hjälpte", "help - helps - helped"],
+          ["resa - reser - reste", "travel - travels - traveled"],
+          ["tänka - tänker - tänkte", "think - thinks - thought"],
+          ["gifta sig - gifter sig - gifte sig", "get married - gets married - got married"],
+          ["tycka - tycker - tyckte", "think/like - thinks/likes - thought/liked"],
+          ["leka - leker - lekte", "play - plays - played"],
+          ["möta - möter - mötte", "meet - meets - met"]
+        ] }
+      ] },
+      { title: "In-class Page 3 - Verbgrupp 3 and S-verbs", sections: [
+        { heading: "Exercise 3", rows: [
+          ["Öva verbgrupp 3.", "Practice verb group 3."],
+          ["Titta på verbgrupp 3 i rutan på s. 72.", "Look at verb group 3 in the box on page 72."],
+          ["Fyll sedan i de former som fattas här nedanför.", "Then fill in the forms that are missing below."],
+          ["Se exempel.", "See the example."],
+          ["må - mår - mådde", "feel/be doing - feels/is doing - felt/was doing"],
+          ["sy - syr - sydde", "sew - sews - sewed"],
+          ["tro - tror - trodde", "believe - believes - believed"]
+        ] },
+        { heading: "Exercise 4", rows: [
+          ["Skriv verb som slutar på -s.", "Write verbs that end in -s."],
+          ["Här är några vanliga verb som alltid slutar på -s.", "Here are some common verbs that always end in -s."],
+          ["Läs verben i rutan och skriv sedan passande verb i preteritum i meningarna.", "Read the verbs in the box and then write suitable verbs in the past tense in the sentences."],
+          ["hoppas - hoppas - hoppades", "hope - hopes - hoped"],
+          ["trivas - trivs - trivdes", "enjoy/thrive - enjoys/thrives - enjoyed/thrived"],
+          ["födas - föds - föddes", "be born - is born - was/were born"]
+        ] },
+        { heading: "Sara sentences", rows: [
+          ["Saras barn föddes i ett land där det var krig.", "Sara's children were born in a country where there was war."],
+          ["Därför flyttade hon med sina barn till Sverige.", "Therefore she moved with her children to Sweden."],
+          ["Hon hoppades på ett bättre liv.", "She hoped for a better life."],
+          ["Första tiden i det nya landet trivdes hon inte, men nu känns allting bättre.", "During the first time in the new country she did not feel at home, but now everything feels better."]
+        ] }
+      ] },
+      { title: "In-class Page 4 - Berättelser om Ali och familjen Nilsson", sections: [
+        { heading: "Instruction", rows: [
+          ["Berättelser om Ali och familjen Nilsson", "Stories about Ali and the Nilsson family"],
+          ["Skriv preteritumformer av verben.", "Write the past-tense forms of the verbs."],
+          ["Alla verben är från grupp 1-3.", "All the verbs are from groups 1-3."]
+        ] },
+        { heading: "Ali", rows: [
+          ["Ali flyttade från Iran till Sverige för fem år sedan.", "Ali moved from Iran to Sweden five years ago."],
+          ["Sedan väntade han ett år på att få uppehållstillstånd.", "Then he waited one year to get a residence permit."],
+          ["Under den tiden läste han svenska.", "During that time he studied Swedish."],
+          ["Han tyckte att svenska var lätt och lärde sig språket snabbt.", "He thought Swedish was easy and learned the language quickly."],
+          ["Han började arbeta på en pizzeria och gillade jobbet där.", "He started working at a pizzeria and liked the job there."],
+          ["Senare lånade han pengar på bank och öppnade en restaurang.", "Later he borrowed money from a bank and opened a restaurant."],
+          ["Ali jobbade väldigt mycket de första åren.", "Ali worked very much during the first years."],
+          ["Han tänkte bara på jobbet och hade inte tid med något annat.", "He only thought about work and did not have time for anything else."],
+          ["Men förra sommaren åkte han på semester till hemlandet och där träffade han Farida.", "But last summer he went on vacation to his home country and there he met Farida."],
+          ["Sedan blev livet annorlunda.", "Then life became different."],
+          ["De gifte sig och Farida följde med Ali till Sverige.", "They got married and Farida accompanied Ali to Sweden."]
+        ] },
+        { heading: "Familjen Nilsson", rows: [
+          ["Familjen Nilsson hyrde tidigare en lägenhet i Nybo centrum.", "The Nilsson family previously rented an apartment in Nybo center."],
+          ["Föräldrarna Simon och Karin trivdes inte så bra där, så de sparade pengar och köpte sedan eget hus på Bygatan.", "The parents Simon and Karin did not like it very much there, so they saved money and then bought their own house on Bygatan."],
+          ["Huset på Bygatan ligger inte så långt ifrån platsen där de bodde förut, så barnen behövde inte byta skola.", "The house on Bygatan is not very far from the place where they lived before, so the children did not need to change school."],
+          ["Men ibland säger barnen att det var roligare i centrum.", "But sometimes the children say that it was more fun in the center."],
+          ["Där var det mycket folk och det hände mera.", "There were many people there and more happened."]
+        ] }
+      ] },
+      { title: "In-class Page 5 - Verbgrupp 4 and Sara's Story", sections: [
+        { heading: "Verb group 4: vowel-changing verbs", rows: [
+          ["Några andra vanliga verb i grupp 4", "Some other common verbs in group 4"],
+          ["Verb som byter vokal efter ett visst mönster.", "Verbs that change vowel according to a certain pattern."],
+          ["dricka - dricker - drack", "drink - drinks - drank"],
+          ["sitta - sitter - satt", "sit - sits - sat"],
+          ["springa - springer - sprang", "run - runs - ran"],
+          ["bli - blir - blev", "become - becomes - became"],
+          ["skriva - skriver - skrev", "write - writes - wrote"],
+          ["se - ser - såg", "see - sees - saw"],
+          ["komma - kommer - kom", "come - comes - came"],
+          ["sova - sover - sov", "sleep - sleeps - slept"],
+          ["gå - går - gick", "go/walk - goes/walks - went/walked"],
+          ["äta - äter - åt", "eat - eats - ate"]
+        ] },
+        { heading: "Irregular verbs", rows: [
+          ["Verb med speciella former (oregelbundna).", "Verbs with special forms (irregular)."],
+          ["finnas - finns - fanns", "exist/be there - exists/is there - existed/was there"],
+          ["dö - dör - dog", "die - dies - died"],
+          ["förstå - förstår - förstod", "understand - understands - understood"],
+          ["ge - ger - gav", "give - gives - gave"],
+          ["göra - gör - gjorde", "do/make - does/makes - did/made"],
+          ["ha - har - hade", "have - has - had"],
+          ["ligga - ligger - låg", "lie/be located - lies/is located - lay/was located"],
+          ["stå - står - stod", "stand - stands - stood"],
+          ["vara - är - var", "be - is/are - was/were"],
+          ["veta - vet - visste", "know - knows - knew"],
+          ["lägga - lägger - la/lade", "put/lay - puts/lays - put/laid"],
+          ["säga - säger - sa/sade", "say - says - said"],
+          ["sätta - sätter - satte", "put/set - puts/sets - put/set"],
+          ["ta - tar - tog", "take - takes - took"]
+        ] },
+        { heading: "Instruction", rows: [
+          ["Skriv verben som fattas i preteritum.", "Write the missing verbs in the past tense."],
+          ["Välj hjälpverb eller andra verb med speciella former från listorna ovan och den på s. 78.", "Choose auxiliary verbs or other verbs with special forms from the lists above and the one on page 78."]
+        ] },
+        { heading: "Sara och hennes barn", rows: [
+          ["Sara och hennes barn kom till Sverige en vacker och solig dag i februari.", "Sara and her children came to Sweden on a beautiful and sunny day in February."],
+          ["Men den första tiden i det nya landet var svår.", "But the first time in the new country was difficult."],
+          ["Sara hade inte egen bostad utan hon och barnen fick bo tillsammans med många andra flyktingar.", "Sara did not have her own home, so she and the children had to live together with many other refugees."],
+          ["I början kunde barnen inte äta och både de och Sara sov dåligt på nätterna.", "In the beginning the children could not eat and both they and Sara slept badly at night."],
+          ["Sara satt ofta vid fönstret och tittade ut för det fanns ingenting att göra.", "Sara often sat by the window and looked out because there was nothing to do."],
+          ["Ibland ringde hon till sin mamma i hemlandet eller skrev brev.", "Sometimes she called her mother in her home country or wrote letters."],
+          ["Lite senare blev situationen bättre.", "A little later the situation became better."],
+          ["Sara och barnen fick vänner som de kunde prata med och de gick ut på promenader eller tog bussen in till stan och tittade i affärer.", "Sara and the children got friends whom they could talk with, and they went out for walks or took the bus into town and looked in shops."],
+          ["Jag visste absolut ingenting om Sverige då och jag kommer aldrig att glömma den där tiden, tänker Sara.", "I knew absolutely nothing about Sweden then and I will never forget that time, Sara thinks."]
+        ] }
+      ] },
+      { title: "In-class Page 6 - Alma berättar", sections: [
+        { heading: "Full text", rows: [
+          ["Alma berättar", "Alma tells / Alma narrates"],
+          ["När jag var liten bodde vi i Småland på en stor gård där min far arbetade.", "When I was little, we lived in Småland on a large farm where my father worked."],
+          ["Vi var fem personer i familjen och vi bodde i ett rum och kök.", "We were five people in the family and we lived in one room and kitchen."],
+          ["Vi hade ingen elektricitet så vi eldade med ved för att få värme och vi använde fotogenlampor och stearinljus.", "We had no electricity, so we made fires with wood to get heat and we used kerosene lamps and candles."],
+          ["Jag minns att vi alltid hade en fotogenlampa i hallen som man kunde ta med sig om man behövde gå ut på dass när det var mörkt.", "I remember that we always had a kerosene lamp in the hallway that one could take along if one needed to go out to the outhouse when it was dark."],
+          ["Dasset låg på gården i samma hus som vedboden, grisstian och hönshuset.", "The outhouse was in the yard in the same building as the woodshed, the pigsty and the henhouse."],
+          ["Vi hade inte heller rinnande vatten inne.", "We also did not have running water indoors."],
+          ["Istället fick vi hämta vatten i en brunn på gården.", "Instead we had to fetch water from a well in the yard."],
+          ["På lördagskvällen hämtade vi mycket vatten.", "On Saturday evening we fetched a lot of water."],
+          ["Vi värmde vattnet och badade i en balja i köket.", "We heated the water and bathed in a tub in the kitchen."],
+          ["Far badade först, sen mor och sist vi barn.", "Father bathed first, then mother, and we children last."],
+          ["1933 var jag tio år och då flyttade vi från Småland till Sörmland.", "In 1933 I was ten years old and then we moved from Småland to Sörmland."],
+          ["Vi flyttade eftersom min far hade fått ett bättre arbete på en stor gård utanför Södertälje.", "We moved because my father had gotten a better job on a large farm outside Södertälje."],
+          ["Vi flyttade in i en lägenhet på gården.", "We moved into an apartment on the farm."],
+          ["Den var inte större än vår gamla lägenhet men den var modernare och det fanns elektricitet!", "It was not bigger than our old apartment, but it was more modern and there was electricity!"],
+          ["Det var ändå svårt att flytta från alla sina vänner och släktingar.", "It was still difficult to move away from all one's friends and relatives."],
+          ["Jag längtade ofta tillbaka till mina klasskamrater för i den nya skolan retade de mig och sa att jag hade gröt i halsen när jag pratade småländska.", "I often longed back for my classmates because in the new school they teased me and said that I had porridge in my throat when I spoke the Småland dialect."],
+          ["Jag längtade också efter mormor och morfar men först när jag var 17 år fick jag råd att åka tillbaka och hälsa på dem.", "I also missed my maternal grandmother and grandfather, but only when I was 17 could I afford to go back and visit them."],
+          ["Det var långt att åka trettio mil på den tiden och det var dyrt.", "It was far to travel 300 kilometers in those days and it was expensive."],
+          ["Mor och far åkte aldrig tillbaka och hälsade på sina föräldrar.", "Mother and father never went back and visited their parents."],
+          ["De skrev förstås brev till varandra och ringde någon gång ibland.", "Of course they wrote letters to each other and called once in a while."],
+          ["Min första egna lägenhet fick jag när jag var 28 år och det var när jag gifte mig med Göte.", "I got my first own apartment when I was 28, and that was when I married Göte."],
+          ["Vi fick fem barn tillsammans och visst var det lite trångt ibland, även om vi hade större bostäder än mina föräldrar.", "We had five children together and it was certainly a little crowded sometimes, even though we had larger homes than my parents."],
+          ["Nu är jag pensionär och bor ensam i fyra rum och kök.", "Now I am retired and live alone in four rooms and a kitchen."]
+        ] }
+      ] }
+    ];
+
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
       grid.innerHTML = "";
@@ -5206,14 +5499,74 @@
       setPage(0);
     }
 
+    function renderWeek7InClassTerms() {
+      const grid = document.querySelector("#week7InClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week7InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek7InClassComparison() {
+      const thumbs = document.querySelector("#week7InClassCompareThumbs");
+      const image = document.querySelector("#week7InClassCompareImage");
+      const overlay = document.querySelector("#week7InClassCompareQrOverlay");
+      const panel = document.querySelector("#week7InClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week7InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week7-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 7 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week7InClassPageSizes, week7InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week7InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week7InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -5298,6 +5651,8 @@
     renderWeek6InClassComparison();
     renderWeek6OffClassTerms();
     renderWeek6OffClassComparison();
+    renderWeek7InClassTerms();
+    renderWeek7InClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
