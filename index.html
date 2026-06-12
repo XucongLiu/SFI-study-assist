@@ -766,10 +766,31 @@
       padding: 12px;
     }
 
+    .tts-settings {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .tts-settings > div {
+      display: grid;
+      gap: 6px;
+    }
+
     .tts-body label {
       color: var(--muted);
       font-size: 13px;
       font-weight: 700;
+    }
+
+    .tts-body select {
+      min-height: 38px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+      font: inherit;
     }
 
     .tts-body textarea {
@@ -1077,6 +1098,10 @@
         height: 54px;
       }
 
+      .tts-settings {
+        grid-template-columns: 1fr;
+      }
+
       .thumbs {
         position: static;
         grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
@@ -1164,6 +1189,19 @@
         <button class="tts-close" type="button" id="ttsClose" title="Close">x</button>
       </div>
       <div class="tts-body">
+        <div class="tts-settings">
+          <div>
+            <label for="ttsEngineSelect">Engine</label>
+            <select id="ttsEngineSelect" data-tts-engine-select>
+              <option value="azure">Azure</option>
+              <option value="google">Google</option>
+            </select>
+          </div>
+          <div>
+            <label for="ttsVoiceSelect">Voice</label>
+            <select id="ttsVoiceSelect" data-tts-voice-select></select>
+          </div>
+        </div>
         <label for="ttsInput">Swedish text</label>
         <textarea id="ttsInput" maxlength="1200" spellcheck="false" placeholder="Skriv svenska här..."></textarea>
         <div class="tts-actions">
@@ -1198,12 +1236,12 @@
         </div>
         <div class="voice-control">
           <label for="engineSelect">Speech engine</label>
-          <select id="engineSelect">
+          <select id="engineSelect" data-tts-engine-select>
             <option value="azure">Azure</option>
             <option value="google">Google</option>
           </select>
           <label for="voiceSelect">Swedish voice</label>
-          <select id="voiceSelect"></select>
+          <select id="voiceSelect" data-tts-voice-select></select>
         </div>
         <div class="voice-status" id="voiceStatus">Voice: Azure or Google TTS when configured, browser voice as fallback.</div>
         <div class="material-switch">
@@ -2457,30 +2495,45 @@
       if (status) status.textContent = message;
     }
 
+    function engineSelects() {
+      return [...document.querySelectorAll("[data-tts-engine-select]")];
+    }
+
+    function voiceSelects() {
+      return [...document.querySelectorAll("[data-tts-voice-select]")];
+    }
+
+    function syncEngineSelects(engine) {
+      engineSelects().forEach(select => {
+        select.value = engine;
+      });
+    }
+
     function selectedEngine() {
-      const select = document.querySelector("#engineSelect");
+      const select = engineSelects().find(item => ttsVoices[item.value]);
       return select && ttsVoices[select.value] ? select.value : "azure";
     }
 
     function selectedVoice() {
-      const select = document.querySelector("#voiceSelect");
+      const select = voiceSelects().find(item => voiceNames[item.value]);
       const engine = selectedEngine();
       const voices = ttsVoices[engine] || ttsVoices.azure;
       return select && voiceNames[select.value] ? select.value : voices[0][0];
     }
 
-    function populateVoiceSelect(engine, preferredVoice) {
-      const select = document.querySelector("#voiceSelect");
-      if (!select) return;
+    function populateVoiceSelects(engine, preferredVoice) {
       const voices = ttsVoices[engine] || ttsVoices.azure;
-      select.replaceChildren();
-      voices.forEach(([value, label]) => {
-        const option = document.createElement("option");
-        option.value = value;
-        option.textContent = label;
-        select.append(option);
+      const selected = voices.some(([value]) => value === preferredVoice) ? preferredVoice : voices[0][0];
+      voiceSelects().forEach(select => {
+        select.replaceChildren();
+        voices.forEach(([value, label]) => {
+          const option = document.createElement("option");
+          option.value = value;
+          option.textContent = label;
+          select.append(option);
+        });
+        select.value = selected;
       });
-      select.value = voices.some(([value]) => value === preferredVoice) ? preferredVoice : voices[0][0];
     }
 
     function describeVoiceSelection() {
@@ -5876,21 +5929,25 @@
       }
     });
 
-    document.querySelector("#engineSelect").addEventListener("change", () => {
-      const engine = selectedEngine();
+    engineSelects().forEach(select => select.addEventListener("change", event => {
+      const engine = event.currentTarget.value;
       localStorage.setItem("sfi-study-tts-engine", engine);
-      populateVoiceSelect(engine, localStorage.getItem(`sfi-study-tts-voice-${engine}`));
+      syncEngineSelects(engine);
+      populateVoiceSelects(engine, localStorage.getItem(`sfi-study-tts-voice-${engine}`));
       localStorage.setItem(`sfi-study-tts-voice-${engine}`, selectedVoice());
       setVoiceStatus(`Voice selected: ${describeVoiceSelection()}`);
-    });
+    }));
 
-    document.querySelector("#voiceSelect").addEventListener("change", () => {
+    voiceSelects().forEach(select => select.addEventListener("change", event => {
       const engine = selectedEngine();
-      const voice = selectedVoice();
+      const voice = event.currentTarget.value;
+      voiceSelects().forEach(item => {
+        item.value = voice;
+      });
       localStorage.setItem(`sfi-study-tts-voice-${engine}`, voice);
       if (engine === "azure") localStorage.setItem("sfi-week1-voice", voice);
       setVoiceStatus(`Voice selected: ${describeVoiceSelection()}`);
-    });
+    }));
     document.querySelectorAll(".week-tab").forEach(tab => {
       tab.addEventListener("click", () => setActiveWeek(tab.dataset.weekTab, { updateHash: true }));
     });
@@ -5903,10 +5960,10 @@
     flashPool = shuffle(flashPool);
     const savedEngine = localStorage.getItem("sfi-study-tts-engine");
     const initialEngine = savedEngine && ttsVoices[savedEngine] ? savedEngine : "azure";
-    document.querySelector("#engineSelect").value = initialEngine;
+    syncEngineSelects(initialEngine);
     const legacyVoice = localStorage.getItem("sfi-week1-voice");
     const savedVoice = localStorage.getItem(`sfi-study-tts-voice-${initialEngine}`) || (initialEngine === "azure" ? legacyVoice : null);
-    populateVoiceSelect(initialEngine, savedVoice);
+    populateVoiceSelects(initialEngine, savedVoice);
     localStorage.setItem(`sfi-study-tts-voice-${initialEngine}`, selectedVoice());
     setVoiceStatus(`Voice selected: ${describeVoiceSelection()}`);
     updateTtsMeter();
