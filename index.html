@@ -625,7 +625,7 @@
     .video-dock {
       position: fixed;
       right: 18px;
-      bottom: 18px;
+      bottom: 88px;
       z-index: 40;
       width: min(520px, calc(100vw - 36px));
       overflow: hidden;
@@ -700,6 +700,134 @@
 
     .video-dock.external-only .video-fallback {
       display: block;
+    }
+
+    .tts-widget {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 42;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      pointer-events: none;
+    }
+
+    .tts-panel {
+      width: min(420px, calc(100vw - 36px));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: translateY(12px);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform 0.18s ease, opacity 0.18s ease, visibility 0.18s ease;
+      pointer-events: auto;
+    }
+
+    .tts-widget.open .tts-panel {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .tts-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      background: var(--soft-green);
+    }
+
+    .tts-head strong {
+      font-size: 15px;
+    }
+
+    .tts-close {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .tts-body {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .tts-body label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tts-body textarea {
+      width: 100%;
+      min-height: 120px;
+      resize: vertical;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.45;
+    }
+
+    .tts-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .tts-actions .btn {
+      min-height: 38px;
+      padding: 8px 12px;
+      font-size: 14px;
+    }
+
+    .tts-meter {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tts-launcher {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(32, 85, 119, 0.28);
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .tts-launcher::before {
+      content: "";
+      width: 22px;
+      height: 18px;
+      display: block;
+      background: currentColor;
+      clip-path: polygon(0 30%, 34% 30%, 72% 0, 72% 100%, 34% 70%, 0 70%);
+    }
+
+    .tts-launcher:hover,
+    .tts-launcher:focus {
+      outline: 3px solid rgba(32, 85, 119, 0.24);
     }
 
     .voice-status {
@@ -939,6 +1067,16 @@
         transform: none;
       }
 
+      .tts-widget {
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .tts-launcher {
+        width: 54px;
+        height: 54px;
+      }
+
       .thumbs {
         position: static;
         grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
@@ -1017,6 +1155,26 @@
     <div class="video-fallback">
       This video cannot be embedded here. Use the external-open button to watch it on YouTube.
     </div>
+  </aside>
+
+  <aside class="tts-widget" id="ttsWidget" aria-label="Custom Swedish text to speech">
+    <section class="tts-panel" aria-labelledby="ttsPanelTitle">
+      <div class="tts-head">
+        <strong id="ttsPanelTitle">Speak Swedish</strong>
+        <button class="tts-close" type="button" id="ttsClose" title="Close">x</button>
+      </div>
+      <div class="tts-body">
+        <label for="ttsInput">Swedish text</label>
+        <textarea id="ttsInput" maxlength="1200" spellcheck="false" placeholder="Skriv svenska här..."></textarea>
+        <div class="tts-actions">
+          <button class="btn primary" type="button" id="ttsPlay">Play</button>
+          <button class="btn" type="button" id="ttsSlow">Slow</button>
+          <button class="btn" type="button" id="ttsClear">Clear</button>
+          <span class="tts-meter" id="ttsMeter">0 / 1200</span>
+        </div>
+      </div>
+    </section>
+    <button class="tts-launcher" type="button" id="ttsLauncher" aria-label="Open Swedish text to speech" title="Speak Swedish"></button>
   </aside>
 
   <div class="week-tabs" role="tablist" aria-label="Weeks">
@@ -5609,6 +5767,62 @@
       document.querySelector("#videoDock").classList.remove("open", "external-only");
       document.querySelector("#videoFrame").src = "";
     });
+
+    const ttsWidget = document.querySelector("#ttsWidget");
+    const ttsInput = document.querySelector("#ttsInput");
+    const ttsMeter = document.querySelector("#ttsMeter");
+
+    function updateTtsMeter() {
+      if (!ttsInput || !ttsMeter) return;
+      ttsMeter.textContent = `${ttsInput.value.length} / ${ttsInput.maxLength || 1200}`;
+    }
+
+    function openTtsWidget() {
+      ttsWidget?.classList.add("open");
+      setTimeout(() => ttsInput?.focus(), 20);
+    }
+
+    function closeTtsWidget() {
+      ttsWidget?.classList.remove("open");
+    }
+
+    function speakCustomText(rate = 0.86) {
+      const text = ttsInput?.value.trim();
+      if (!text) {
+        setVoiceStatus("Type Swedish text first.");
+        openTtsWidget();
+        return;
+      }
+      speak(text, rate);
+    }
+
+    document.querySelector("#ttsLauncher")?.addEventListener("click", () => {
+      if (ttsWidget?.classList.contains("open")) {
+        closeTtsWidget();
+      } else {
+        openTtsWidget();
+      }
+    });
+    document.querySelector("#ttsClose")?.addEventListener("click", closeTtsWidget);
+    document.querySelector("#ttsPlay")?.addEventListener("click", () => speakCustomText(0.86));
+    document.querySelector("#ttsSlow")?.addEventListener("click", () => speakCustomText(0.62));
+    document.querySelector("#ttsClear")?.addEventListener("click", () => {
+      if (!ttsInput) return;
+      ttsInput.value = "";
+      updateTtsMeter();
+      ttsInput.focus();
+    });
+    ttsInput?.addEventListener("input", updateTtsMeter);
+    ttsInput?.addEventListener("keydown", event => {
+      if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+        event.preventDefault();
+        speakCustomText(event.shiftKey ? 0.62 : 0.86);
+      }
+      if (event.key === "Escape") {
+        closeTtsWidget();
+      }
+    });
+
     document.querySelector("#voiceSelect").addEventListener("change", () => {
       const voice = selectedVoice();
       localStorage.setItem("sfi-week1-voice", voice);
@@ -5628,6 +5842,7 @@
     if (savedVoice && voiceNames[savedVoice]) {
       document.querySelector("#voiceSelect").value = savedVoice;
     }
+    updateTtsMeter();
     renderAlphabet();
     renderWeek1Terms();
     setFlash(0);
