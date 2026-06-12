@@ -1197,13 +1197,15 @@
             <a class="btn" href="#week1-words">Practice Words</a>
         </div>
         <div class="voice-control">
-          <label for="voiceSelect">Swedish voice</label>
-          <select id="voiceSelect">
-            <option value="sv-SE-SofieNeural">Sofie</option>
-            <option value="sv-SE-MattiasNeural">Mattias</option>
+          <label for="engineSelect">Speech engine</label>
+          <select id="engineSelect">
+            <option value="azure">Azure</option>
+            <option value="google">Google</option>
           </select>
+          <label for="voiceSelect">Swedish voice</label>
+          <select id="voiceSelect"></select>
         </div>
-        <div class="voice-status" id="voiceStatus">Voice: Azure AI Speech when configured, browser voice as fallback.</div>
+        <div class="voice-status" id="voiceStatus">Voice: Azure or Google TTS when configured, browser voice as fallback.</div>
         <div class="material-switch">
           <a class="material-card" href="#compare"><strong>Off-class material</strong><span>Alphabet and vowel workbook pages already built for Week 1.</span></a>
           <a class="material-card" href="#week1-in-class"><strong>In-class material</strong><span>Reserved for Week 1 classroom handouts when you upload them.</span></a>
@@ -2407,9 +2409,32 @@
     let score = 0;
     let answered = 0;
     const audioCache = new Map();
+    const ttsEngineNames = {
+      azure: "Azure AI Speech",
+      google: "Google Cloud TTS"
+    };
+    const googleChirp3VoiceNames = [
+      "Achernar", "Achird", "Algenib", "Algieba", "Alnilam", "Aoede", "Autonoe", "Callirrhoe",
+      "Charon", "Despina", "Enceladus", "Erinome", "Fenrir", "Gacrux", "Iapetus", "Kore",
+      "Laomedeia", "Leda", "Orus", "Puck", "Pulcherrima", "Rasalgethi", "Sadachbia",
+      "Sadaltager", "Schedar", "Sulafat", "Umbriel", "Vindemiatrix", "Zephyr", "Zubenelgenubi"
+    ];
+    const googleStandardVoiceNames = ["A", "B", "C", "D", "E", "F", "G"];
+    const googleWavenetVoiceNames = ["A", "B", "C", "D", "E", "F", "G"];
+    const ttsVoices = {
+      azure: [
+        ["sv-SE-SofieNeural", "Sofie"],
+        ["sv-SE-MattiasNeural", "Mattias"]
+      ],
+      google: [
+        ...googleChirp3VoiceNames.map(name => [`sv-SE-Chirp3-HD-${name}`, `Chirp3 HD ${name}`]),
+        ...googleStandardVoiceNames.map(name => [`sv-SE-Standard-${name}`, `Standard ${name}`]),
+        ...googleWavenetVoiceNames.map(name => [`sv-SE-Wavenet-${name}`, `Wavenet ${name}`])
+      ]
+    };
     const voiceNames = {
-      "sv-SE-SofieNeural": "Sofie",
-      "sv-SE-MattiasNeural": "Mattias"
+      ...Object.fromEntries(ttsVoices.azure),
+      ...Object.fromEntries(ttsVoices.google)
     };
     const nonEmbeddableVideos = new Set([
       "https://youtu.be/cBM8O1T0cVc"
@@ -2432,34 +2457,62 @@
       if (status) status.textContent = message;
     }
 
+    function selectedEngine() {
+      const select = document.querySelector("#engineSelect");
+      return select && ttsVoices[select.value] ? select.value : "azure";
+    }
+
     function selectedVoice() {
       const select = document.querySelector("#voiceSelect");
-      return select ? select.value : "sv-SE-SofieNeural";
+      const engine = selectedEngine();
+      const voices = ttsVoices[engine] || ttsVoices.azure;
+      return select && voiceNames[select.value] ? select.value : voices[0][0];
+    }
+
+    function populateVoiceSelect(engine, preferredVoice) {
+      const select = document.querySelector("#voiceSelect");
+      if (!select) return;
+      const voices = ttsVoices[engine] || ttsVoices.azure;
+      select.replaceChildren();
+      voices.forEach(([value, label]) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = label;
+        select.append(option);
+      });
+      select.value = voices.some(([value]) => value === preferredVoice) ? preferredVoice : voices[0][0];
+    }
+
+    function describeVoiceSelection() {
+      const engine = selectedEngine();
+      const voice = selectedVoice();
+      return `${ttsEngineNames[engine] || engine} - ${voiceNames[voice] || voice}`;
     }
 
     async function speak(text, rate = 0.86) {
       const slow = rate < 0.75;
+      const engine = selectedEngine();
       const voice = selectedVoice();
-      const cacheKey = `${voice}:${slow ? "slow" : "normal"}:${text}`;
+      const cacheKey = `${engine}:${voice}:${slow ? "slow" : "normal"}:${text}`;
       try {
         let audioUrl = audioCache.get(cacheKey);
         if (!audioUrl) {
           const response = await fetch("/api/tts", {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify({ text, slow, voice })
+            body: JSON.stringify({ text, slow, voice, engine })
           });
-          if (!response.ok) throw new Error(`Azure TTS unavailable: ${response.status}`);
+          if (!response.ok) throw new Error(`${ttsEngineNames[engine] || "Cloud"} TTS unavailable: ${response.status}`);
           const audioBlob = await response.blob();
           audioUrl = URL.createObjectURL(audioBlob);
           audioCache.set(cacheKey, audioUrl);
         }
         const audio = new Audio(audioUrl);
         await audio.play();
-        setVoiceStatus(`Voice: Azure AI Speech - ${voiceNames[voice] || voice}`);
+        setVoiceStatus(`Voice: ${describeVoiceSelection()}`);
       } catch (error) {
         console.warn(error);
-        setVoiceStatus("Voice: browser fallback. Configure Azure Speech in Cloudflare for AI voice.");
+        setVoiceStatus(`Voice: browser fallback. Check ${ttsEngineNames[engine] || "cloud"} TTS configuration in Cloudflare.`);
         browserSpeak(text, rate);
       }
     }
@@ -5823,10 +5876,20 @@
       }
     });
 
+    document.querySelector("#engineSelect").addEventListener("change", () => {
+      const engine = selectedEngine();
+      localStorage.setItem("sfi-study-tts-engine", engine);
+      populateVoiceSelect(engine, localStorage.getItem(`sfi-study-tts-voice-${engine}`));
+      localStorage.setItem(`sfi-study-tts-voice-${engine}`, selectedVoice());
+      setVoiceStatus(`Voice selected: ${describeVoiceSelection()}`);
+    });
+
     document.querySelector("#voiceSelect").addEventListener("change", () => {
+      const engine = selectedEngine();
       const voice = selectedVoice();
-      localStorage.setItem("sfi-week1-voice", voice);
-      setVoiceStatus(`Voice selected: ${voiceNames[voice] || voice}`);
+      localStorage.setItem(`sfi-study-tts-voice-${engine}`, voice);
+      if (engine === "azure") localStorage.setItem("sfi-week1-voice", voice);
+      setVoiceStatus(`Voice selected: ${describeVoiceSelection()}`);
     });
     document.querySelectorAll(".week-tab").forEach(tab => {
       tab.addEventListener("click", () => setActiveWeek(tab.dataset.weekTab, { updateHash: true }));
@@ -5838,10 +5901,14 @@
     });
 
     flashPool = shuffle(flashPool);
-    const savedVoice = localStorage.getItem("sfi-week1-voice");
-    if (savedVoice && voiceNames[savedVoice]) {
-      document.querySelector("#voiceSelect").value = savedVoice;
-    }
+    const savedEngine = localStorage.getItem("sfi-study-tts-engine");
+    const initialEngine = savedEngine && ttsVoices[savedEngine] ? savedEngine : "azure";
+    document.querySelector("#engineSelect").value = initialEngine;
+    const legacyVoice = localStorage.getItem("sfi-week1-voice");
+    const savedVoice = localStorage.getItem(`sfi-study-tts-voice-${initialEngine}`) || (initialEngine === "azure" ? legacyVoice : null);
+    populateVoiceSelect(initialEngine, savedVoice);
+    localStorage.setItem(`sfi-study-tts-voice-${initialEngine}`, selectedVoice());
+    setVoiceStatus(`Voice selected: ${describeVoiceSelection()}`);
     updateTtsMeter();
     renderAlphabet();
     renderWeek1Terms();
