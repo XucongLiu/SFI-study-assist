@@ -1165,7 +1165,8 @@
     <a class="week-nav" data-week="week7" href="#week7-in-class-compare">Translations</a>
     <a class="week-nav" data-week="week7" href="#week7-in-class-words">Word Learning</a>
     <span class="nav-label week-nav" data-week="week7">Off-class</span>
-    <a class="week-nav" data-week="week7" href="#week7-off-class">Off-class Slot</a>
+    <a class="week-nav" data-week="week7" href="#week7-off-class-compare">Translations</a>
+    <a class="week-nav" data-week="week7" href="#week7-off-class-words">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1724,14 +1725,14 @@
       <div class="hero">
         <div>
           <h1>SFI Week 7</h1>
-          <p>In-class material about verb groups, past tense forms, common irregular verbs, short preterite stories, and the reading text Alma berättar.</p>
+          <p>In-class verb and housing practice plus off-class housing vocabulary, grammar, reading, and sentence exercises.</p>
           <div class="actions">
             <a class="btn primary" href="#week7-in-class-compare">Study In-class Pages</a>
             <a class="btn" href="#week7-in-class-words">Practice Words</a>
           </div>
           <div class="material-switch">
-            <a class="material-card" href="#week7-in-class-compare"><strong>In-class material</strong><span>Six classroom pages with full Swedish-English translation coverage.</span></a>
-            <a class="material-card" href="#week7-off-class"><strong>Off-class material</strong><span>Reserved for Week 7 homework/off-class pages when you upload them.</span></a>
+            <a class="material-card" href="#week7-in-class-compare"><strong>In-class material</strong><span>Twelve classroom pages: verb groups, preterite stories, and housing practice.</span></a>
+            <a class="material-card" href="#week7-off-class-compare"><strong>Off-class material</strong><span>Nine housing booklet pages with QR links, translations, and words.</span></a>
           </div>
         </div>
         <div class="scan-preview" aria-label="Week 7 in-class worksheet preview">
@@ -1742,7 +1743,7 @@
 
     <section id="week7-in-class-compare" class="week-panel" data-week="week7">
       <h2>In-class Translation</h2>
-      <p class="section-lead">Compare the Week 7 classroom page photos with English translations. Every Swedish line identified from OCR and visual review is represented on the right.</p>
+      <p class="section-lead">Compare the Week 7 classroom page photos with English translations. The original Swedish text and worksheet prompts are represented on the right.</p>
       <div class="compare">
         <div class="thumbs" id="week7InClassCompareThumbs"></div>
         <div class="page-frame">
@@ -1757,17 +1758,32 @@
 
     <section id="week7-in-class-words" class="week-panel" data-week="week7">
       <h2>In-class Word Learning</h2>
-      <p class="section-lead">Important Week 7 verb forms and reading words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <p class="section-lead">Important Week 7 in-class verb and housing words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week7InClassTerms"></div>
       </div>
     </section>
 
-    <section id="week7-off-class" class="week-panel" data-week="week7">
-      <h2>Week 7 Off-class Material</h2>
-      <p class="section-lead">No Week 7 off-class material was found yet. This slot is ready for homework pages when you add them later.</p>
+    <section id="week7-off-class-compare" class="week-panel" data-week="week7">
+      <h2>Off-class Translation</h2>
+      <p class="section-lead">Compare the Week 7 off-class housing booklet photos with English translations and QR media links.</p>
+      <div class="compare">
+        <div class="thumbs" id="week7OffClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week7OffClassCompareImage" src="assets/sfi-week7-off-class-pages/page-01.jpg" alt="Week 7 off-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week7OffClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week7OffClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week7-off-class-words" class="week-panel" data-week="week7">
+      <h2>Off-class Word Learning</h2>
+      <p class="section-lead">Important Week 7 off-class housing words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
-        <p class="note">When you say “update week 7” again, I will scan the folder, compress new images, and add any new pages here.</p>
+        <div class="term-list" id="week7OffClassTerms"></div>
       </div>
     </section>
 
@@ -4832,10 +4848,23 @@
 
     const week7InClassPageSizes = {
       1: [1400, 1866], 2: [1400, 1866], 3: [1400, 1866],
-      4: [1400, 1866], 5: [1400, 1866], 6: [1400, 1866]
+      4: [1400, 1866], 5: [1400, 1866], 6: [1400, 1866],
+      7: [1400, 1867], 8: [1400, 1867], 9: [1400, 1867],
+      10: [1400, 1867], 11: [1400, 1867], 12: [1400, 1867]
     };
 
     const week7InClassQrCodes = [];
+
+    const week7OffClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867],
+      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867],
+      7: [1400, 1867], 8: [1400, 1867], 9: [1400, 1867]
+    };
+
+    const week7OffClassQrCodes = [
+      { page: 1, type: "url", value: "https://blip.sano.ma/player/a/lYOyF", x: 1094, y: 134, w: 96, h: 98 },
+      { page: 3, type: "url", value: "https://blip.sano.ma/player/a/MEjKw", x: 1000, y: 120, w: 78, h: 82 }
+    ];
 
     const week7InClassTerms = [
       ["verbets former", "forms of the verb"], ["verbgrupp", "verb group"], ["infinitiv", "infinitive"],
@@ -4860,7 +4889,29 @@
       ["sätta, satte", "put/set, put/set"], ["fotogenlampa", "kerosene lamp"], ["stearinljus", "candle"],
       ["vedbod", "woodshed"], ["grisstia", "pigsty"], ["hönshus", "henhouse"], ["rinnande vatten", "running water"],
       ["brunn", "well"], ["balja", "tub"], ["släktingar", "relatives"], ["klasskamrater", "classmates"],
-      ["pensionär", "pensioner / retired person"]
+      ["pensionär", "pensioner / retired person"], ["bo", "live"], ["en gård", "yard / courtyard"],
+      ["en våning", "floor / story"], ["nära", "near"], ["en hiss", "elevator"], ["en affär", "shop"],
+      ["en trappa", "staircase / stairs"], ["en lägenhet", "apartment"], ["en granne", "neighbor"],
+      ["hälsa", "greet"], ["mötas", "meet each other"], ["leka", "play"], ["varandra", "each other"],
+      ["ute", "outside"], ["trivas", "like living / enjoy oneself"], ["ett sovrum", "bedroom"],
+      ["ett vardagsrum", "living room"], ["en hyra", "rent"], ["ett kök", "kitchen"], ["en balkong", "balcony"],
+      ["en hall", "hallway"], ["en soffa", "sofa"], ["en fåtölj", "armchair"], ["en garderob", "wardrobe"],
+      ["ett kylskåp", "refrigerator"], ["en tvättmaskin", "washing machine"], ["bestämd form", "definite form"],
+      ["obestämd form", "indefinite form"]
+    ];
+
+    const week7OffClassTerms = [
+      ["kommer", "comes"], ["Chile", "Chile"], ["Sverige", "Sweden"], ["en månad", "month"],
+      ["en familj", "family"], ["bor", "lives"], ["en lägenhet", "apartment"], ["en granne", "neighbor"],
+      ["heter", "is called / is named"], ["också", "also"], ["en vän", "friend"], ["fikar", "has coffee / has a fika"],
+      ["tillsammans", "together"], ["promenerar", "walks"], ["en kväll", "evening"], ["bra", "good / well"],
+      ["svenska", "Swedish"], ["hjälper", "helps"], ["ringer på", "rings / knocks at"], ["en dörr", "door"],
+      ["öppnar", "opens"], ["mycket", "very / much"], ["sjuk", "sick"], ["feber", "fever"],
+      ["lagar mat", "cooks food"], ["ett apotek", "pharmacy"], ["köper", "buys"], ["medicin", "medicine"],
+      ["en adress", "address"], ["ett kuvert", "envelope"], ["en hyra", "rent"], ["en hyresavi", "rent invoice"],
+      ["ett postnummer", "postal code"], ["ett sovrum", "bedroom"], ["ett badrum", "bathroom"], ["ett kök", "kitchen"],
+      ["en hall", "hallway"], ["en trädgård", "garden"], ["en etta", "one-room apartment"], ["en tvåa", "two-room apartment"],
+      ["bottenvåning", "ground floor"], ["subjekt", "subject"], ["verb", "verb"], ["plats", "place"], ["tid", "time"]
     ];
 
     const week7InClassTranslations = [
@@ -5062,6 +5113,308 @@
           ["Nu är jag pensionär och bor ensam i fyra rum och kök.", "Now I am retired and live alone in four rooms and a kitchen."]
         ] }
       ] }
+      ,
+      { title: "In-class Page 7 - Nygatan 3A", sections: [
+        { heading: "Reading", rows: [
+          ["Nygatan 3A", "Nygatan 3A"],
+          ["Familjen Andersson bor i ett gult hus på Nygatan 3A i Hässleholm.", "The Andersson family lives in a yellow house at Nygatan 3A in Hässleholm."],
+          ["Huset har fyra våningar men det finns inte någon hiss.", "The house has four floors, but there is no elevator."],
+          ["Martin, Malin, Lisa och Tim bor en trappa upp.", "Martin, Malin, Lisa and Tim live one flight up."],
+          ["De har många grannar.", "They have many neighbors."],
+          ["De hälsar och pratar när de möts i trappan.", "They say hello and talk when they meet on the stairs."],
+          ["Barnen leker ofta med varandra ute på gården.", "The children often play with each other outside in the yard."],
+          ["Det är nära till skolan och till en affär.", "It is close to the school and to a shop."],
+          ["De har en stor lägenhet på fyra rum och kök och en liten balkong.", "They have a large apartment with four rooms and a kitchen and a small balcony."],
+          ["Det finns en hall, tre sovrum och ett vardagsrum.", "There is a hallway, three bedrooms and a living room."],
+          ["Det är en fin lägenhet med billig hyra och de trivs bra i huset.", "It is a nice apartment with cheap rent, and they like living in the building."]
+        ] },
+        { heading: "Vocabulary", rows: [
+          ["Vad betyder orden? Titta i lexikon och skriv på ditt språk.", "What do the words mean? Look in a dictionary and write in your language."],
+          ["bo (bor)", "live / lives"], ["en gård", "yard / courtyard"], ["en våning, -ar", "floor / floors"],
+          ["nära", "near"], ["en hiss", "elevator"], ["en affär", "shop"], ["en trappa", "staircase / stairs"],
+          ["en lägenhet", "apartment"], ["många", "many"], ["ett rum", "room"], ["en granne, -ar", "neighbor / neighbors"],
+          ["ett kök", "kitchen"], ["hälsa (hälsar)", "greet / greets"], ["en balkong", "balcony"],
+          ["mötas (möts)", "meet each other / meet"], ["en hall", "hallway"], ["leka (leker)", "play / plays"],
+          ["ett sovrum", "bedroom"], ["ofta", "often"], ["ett vardagsrum", "living room"], ["varandra", "each other"],
+          ["en hyra", "rent"], ["ute", "outside"], ["trivas (trivs)", "like living / enjoy oneself"]
+        ] }
+      ] },
+      { title: "In-class Page 8 - Frågor om Nygatan 3A", sections: [
+        { heading: "Questions and answers", rows: [
+          ["Frågor om Nygatan 3A", "Questions about Nygatan 3A"],
+          ["Läs texten Nygatan 3A och skriv svar på frågorna.", "Read the text Nygatan 3A and write answers to the questions."],
+          ["1. Var bor familjen Andersson? - Familjen Andersson bor i ett gult hus på Nygatan 3A i Hässleholm.", "1. Where does the Andersson family live? - The Andersson family lives in a yellow house at Nygatan 3A in Hässleholm."],
+          ["2. Bor Malin och Martin i ett hyreshus eller en villa? - De bor i ett hyreshus.", "2. Do Malin and Martin live in an apartment building or a villa? - They live in an apartment building."],
+          ["3. Hur många våningar har huset? - Huset har fyra våningar.", "3. How many floors does the building have? - The building has four floors."],
+          ["4. På vilken våning bor Malin och Martin?", "4. On which floor do Malin and Martin live?"],
+          ["5. Vad gör barnen ute på gården? - Barnen leker med varandra.", "5. What do the children do outside in the yard? - The children play with each other."],
+          ["6. Hur stor lägenhet har familjen? - De har en lägenhet på fyra rum och kök och en liten balkong.", "6. How large is the family's apartment? - They have an apartment with four rooms and a kitchen and a small balcony."],
+          ["7. Hur trivs de i huset? - De trivs bra.", "7. How do they like living in the building? - They like it well."],
+          ["8. Varför är det bra att bo på Nygatan 3A? - Det är en fin lägenhet med billig hyra.", "8. Why is it good to live at Nygatan 3A? - It is a nice apartment with cheap rent."],
+          ["9. När betalar man hyran? Stryk under rätt svar.", "9. When does one pay the rent? Underline the correct answer."],
+          ["a. i början av månaden", "a. at the beginning of the month"],
+          ["b. i mitten av månaden", "b. in the middle of the month"],
+          ["c. i slutet av månaden", "c. at the end of the month"]
+        ] }
+      ] },
+      { title: "In-class Page 9 - En lägenhet", sections: [
+        { heading: "Rooms", rows: [
+          ["En lägenhet", "An apartment"],
+          ["1. Skriv orden i rätt rum.", "1. Write the words in the correct room."],
+          ["en hall", "hallway"], ["ett kök", "kitchen"], ["ett vardagsrum", "living room"],
+          ["ett sovrum", "bedroom"], ["ett badrum", "bathroom"], ["en balkong", "balcony"]
+        ] },
+        { heading: "Fill in the correct word", rows: [
+          ["2. Fyll i rätt ord.", "2. Fill in the correct word."],
+          ["sover", "sleeps"], ["lagar", "cooks / makes"], ["hänger", "hangs"], ["tittar", "watches / looks"],
+          ["duschar", "showers"], ["vädrar", "airs / ventilates"],
+          ["1. Jag sover i sovrummet.", "1. I sleep in the bedroom."],
+          ["2. Jag tittar på tv i vardagsrummet.", "2. I watch TV in the living room."],
+          ["3. Jag lagar mat och äter i köket.", "3. I cook food and eat in the kitchen."],
+          ["4. Jag duschar i badrummet.", "4. I shower in the bathroom."],
+          ["5. Jag hänger min jacka i hallen.", "5. I hang my jacket in the hallway."],
+          ["6. Jag vädrar mina kläder på balkongen.", "6. I air my clothes on the balcony."]
+        ] }
+      ] },
+      { title: "In-class Page 10 - Möbler", sections: [
+        { heading: "Furniture words", rows: [
+          ["Möbler", "Furniture"],
+          ["Skriv rätt ord under bilderna.", "Write the correct word under the pictures."],
+          ["ett skrivbord", "desk"], ["en byrå", "chest of drawers"], ["en stol", "chair"],
+          ["en tv", "TV"], ["ett soffbord", "coffee table"], ["en soffa", "sofa"],
+          ["en fåtölj", "armchair"], ["en säng", "bed"], ["en bokhylla", "bookcase / bookshelf"],
+          ["ett bord", "table"]
+        ] }
+      ] },
+      { title: "In-class Page 11 - I vilket rum?", sections: [
+        { heading: "Room sorting", rows: [
+          ["I vilket rum?", "In which room?"],
+          ["I vilket rum finns de här sakerna? Skriv in orden i rätt rum.", "In which room are these things? Write the words in the correct room."],
+          ["en säng", "bed"], ["ett köksskåp", "kitchen cupboard"], ["en toalettstol", "toilet"],
+          ["en garderob", "wardrobe"], ["en fåtölj", "armchair"], ["en frys", "freezer"],
+          ["en spis", "stove"], ["ett matbord", "dining table"], ["en byrå", "chest of drawers"],
+          ["ett tvättställ", "washbasin / sink"], ["en sänglampa", "bedside lamp"], ["ett kylskåp", "refrigerator"],
+          ["ett badkar", "bathtub"], ["en soffa", "sofa"], ["en väckarklocka", "alarm clock"],
+          ["en tv", "TV"], ["ett soffbord", "coffee table"], ["en bokhylla", "bookcase / bookshelf"],
+          ["en dusch", "shower"], ["en tvättmaskin", "washing machine"],
+          ["Ett vardagsrum", "A living room"], ["Ett kök", "A kitchen"], ["Ett badrum", "A bathroom"], ["Ett sovrum", "A bedroom"]
+        ] }
+      ] },
+      { title: "In-class Page 12 - En stol - stolen", sections: [
+        { heading: "Definite form", rows: [
+          ["En stol - stolen", "A chair - the chair"],
+          ["obestämd form", "indefinite form"], ["bestämd form", "definite form"],
+          ["en stol, en matta, ett bord, ett foto", "a chair, a rug, a table, a photo"],
+          ["stolen, mattan, bordet, fotot", "the chair, the rug, the table, the photo"],
+          ["Skriv orden i bestämd form.", "Write the words in the definite form."]
+        ] },
+        { heading: "Sentences", rows: [
+          ["1. Martin sätter sig i soffan.", "1. Martin sits down on the sofa."],
+          ["2. Det finns muggar i skåpet.", "2. There are mugs in the cupboard."],
+          ["3. Fåtöljen står framför tv:n.", "3. The armchair is in front of the TV."],
+          ["4. Malin hjälper Lisa att bädda sängen.", "4. Malin helps Lisa make the bed."],
+          ["5. Tim ställer glaset på bordet.", "5. Tim puts the glass on the table."],
+          ["6. Malin hänger in alla kläder i garderoben.", "6. Malin hangs all the clothes in the wardrobe."],
+          ["7. Kan du räcka mig saltet?", "7. Can you pass me the salt?"],
+          ["8. Tim dricker upp mjölken.", "8. Tim drinks up the milk."],
+          ["9. Malin och Martin städar en gång i veckan.", "9. Malin and Martin clean once a week."],
+          ["10. De tar tåget till Göteborg.", "10. They take the train to Gothenburg."],
+          ["11. Malin tar bussen till jobbet.", "11. Malin takes the bus to work."],
+          ["12. Martin hämtar fatet med frukt i köket.", "12. Martin fetches the dish with fruit in the kitchen."],
+          ["13. Martin flyttar tavlan som hänger över soffan.", "13. Martin moves the painting that hangs above the sofa."],
+          ["14. Tim går in i badrummet och tvättar händerna.", "14. Tim goes into the bathroom and washes his hands."],
+          ["15. Lisa vattnar blomman som står i fönstret.", "15. Lisa waters the flower that stands in the window."]
+        ] }
+      ] }
+    ];
+
+    const week7OffClassTranslations = [
+      { title: "Off-class Page 1 - Bostad Ordlista 1-19", sections: [
+        { heading: "Instructions", rows: [
+          ["BOSTAD - NIVÅ 1", "HOUSING - LEVEL 1"],
+          ["BOSTAD", "HOUSING"],
+          ["Ordlista", "Word list"],
+          ["Öva uttalet med din lärare.", "Practice the pronunciation with your teacher."],
+          ["Översätt orden till ditt språk.", "Translate the words into your language."],
+          ["Träna att skriva orden på svenska.", "Practice writing the words in Swedish."],
+          ["Svenska", "Swedish"], ["Uttal", "Pronunciation"], ["Ditt språk", "Your language"], ["Skriv på svenska", "Write in Swedish"]
+        ] },
+        { heading: "Words", rows: [
+          ["1. kommer", "comes"], ["2. Chile", "Chile"], ["3. Sverige", "Sweden"], ["4. en månad", "a month"],
+          ["5. en familj", "a family"], ["6. bor", "lives"], ["7. en lägenhet", "an apartment"], ["8. en granne", "a neighbor"],
+          ["9. heter", "is called / is named"], ["10. också", "also"], ["11. en vän", "a friend"], ["12. fikar", "has coffee / has a fika"],
+          ["13. tillsammans", "together"], ["14. promenerar", "walks"], ["15. en kväll", "an evening"], ["16. bra", "good / well"],
+          ["17. svenska", "Swedish"], ["18. hjälper", "helps"], ["19. ringer på", "rings / knocks at"]
+        ] }
+      ] },
+      { title: "Off-class Page 2 - Bostad Ordlista 20-29", sections: [
+        { heading: "Words", rows: [
+          ["Skriv på svenska", "Write in Swedish"], ["Svenska", "Swedish"], ["Uttal", "Pronunciation"], ["Ditt språk", "Your language"],
+          ["20. en dörr", "a door"], ["21. öppnar", "opens"], ["22. mycket", "very / much"], ["23. sjuk", "sick"],
+          ["24. feber", "fever"], ["25. lagar", "cooks / makes"], ["26. mat", "food"], ["27. ett apotek", "a pharmacy"],
+          ["28. köper", "buys"], ["29. medicin", "medicine"]
+        ] }
+      ] },
+      { title: "Off-class Page 3 - Bra grannar", sections: [
+        { heading: "Reading", rows: [
+          ["Bra grannar", "Good neighbors"],
+          ["Sara kommer från Chile.", "Sara comes from Chile."],
+          ["Hon kom till Sverige för fem månader sedan.", "She came to Sweden five months ago."],
+          ["Saras familj bor i Chile.", "Sara's family lives in Chile."],
+          ["Sara bor i en lägenhet.", "Sara lives in an apartment."],
+          ["En granne heter Mona.", "A neighbor is called Mona."],
+          ["Hon kommer också från Chile.", "She also comes from Chile."],
+          ["Sara och Mona är vänner.", "Sara and Mona are friends."],
+          ["De fikar tillsammans och promenerar på kvällarna.", "They have coffee together and walk in the evenings."],
+          ["Mona kom till Sverige för tio år sedan.", "Mona came to Sweden ten years ago."],
+          ["Hon pratar bra svenska.", "She speaks good Swedish."],
+          ["Mona hjälper Sara med svenskan när hon får brev.", "Mona helps Sara with Swedish when she receives letters."],
+          ["Sara ringer på Monas dörr en dag.", "Sara rings at Mona's door one day."],
+          ["Mona öppnar inte.", "Mona does not open."],
+          ["Hon är mycket sjuk och har feber.", "She is very sick and has a fever."],
+          ["Sara hjälper Mona nu.", "Sara helps Mona now."],
+          ["Hon lagar mat till Mona och hon går till apoteket och köper medicin.", "She cooks food for Mona and goes to the pharmacy and buys medicine."]
+        ] },
+        { heading: "Questions", rows: [
+          ["Svara på frågorna.", "Answer the questions."],
+          ["1. Varifrån kommer Sara?", "1. Where does Sara come from?"],
+          ["2. När kom Sara till Sverige?", "2. When did Sara come to Sweden?"],
+          ["3. Var bor Saras familj?", "3. Where does Sara's family live?"],
+          ["4. Vad heter Saras granne?", "4. What is Sara's neighbor called?"],
+          ["5. Varifrån kommer Mona?", "5. Where does Mona come from?"],
+          ["6. Vad gör Sara och Mona tillsammans?", "6. What do Sara and Mona do together?"],
+          ["7. När kom Mona till Sverige?", "7. When did Mona come to Sweden?"],
+          ["8. Mona hjälper Sara. Vad gör hon?", "8. Mona helps Sara. What does she do?"],
+          ["9. Varför öppnar Mona inte dörren?", "9. Why does Mona not open the door?"],
+          ["10. Sara hjälper Mona. Vad gör hon?", "10. Sara helps Mona. What does she do?"]
+        ] }
+      ] },
+      { title: "Off-class Page 4 - Adress och hyresavi", sections: [
+        { heading: "Envelope", rows: [
+          ["Läs adressen på kuvertet och svara på frågorna.", "Read the address on the envelope and answer the questions."],
+          ["1. Vad heter Sara i efternamn?", "1. What is Sara's last name?"],
+          ["2. I vilken stad bor Sara?", "2. In which city does Sara live?"],
+          ["3. På vilken gata bor hon?", "3. On which street does she live?"],
+          ["4. På vilken våning bor hon?", "4. On which floor does she live?"],
+          ["5. Vilket postnummer har hon?", "5. What postal code does she have?"],
+          ["Sara Rojas, Storgatan 13, 5 tr, 211 42 Malmö", "Sara Rojas, Storgatan 13, 5th floor, 211 42 Malmö"]
+        ] },
+        { heading: "Rent invoice", rows: [
+          ["Läs Saras hyresavi och svara på frågorna.", "Read Sara's rent invoice and answer the questions."],
+          ["1. Vad betalar Sara i hyra?", "1. What does Sara pay in rent?"],
+          ["2. Hur mycket betalar Sara för sin parkeringsplats?", "2. How much does Sara pay for her parking space?"],
+          ["3. Hur mycket betalar Sara för internet per månad?", "3. How much does Sara pay for internet per month?"],
+          ["4. Hur mycket måste Sara betala totalt?", "4. How much must Sara pay in total?"],
+          ["5. När måste Sara betala hyran?", "5. When must Sara pay the rent?"],
+          ["Hyresavi", "Rent invoice"], ["Period: november", "Period: November"], ["Hyra: 3 500", "Rent: 3,500"],
+          ["Internet månadsavgift: 299", "Internet monthly fee: 299"], ["Kabel-TV: 250", "Cable TV: 250"],
+          ["Hyra p-plats: 200", "Rent parking space: 200"], ["Att betala: 4 249", "Amount to pay: 4,249"],
+          ["Förfallodatum: 2020-10-31", "Due date: 2020-10-31"]
+        ] }
+      ] },
+      { title: "Off-class Page 5 - Grammatik: Ordföljd", sections: [
+        { heading: "Instruction", rows: [
+          ["Grammatik", "Grammar"],
+          ["A Ordföljd", "A Word order"],
+          ["Skriv meningar. Börja med subjekt. Använd stor bokstav och punkt.", "Write sentences. Start with the subject. Use a capital letter and a full stop."],
+          ["Exempel: från Chile / kommer / Sara", "Example: from Chile / comes / Sara"],
+          ["Sara kommer från Chile.", "Sara comes from Chile."]
+        ] },
+        { heading: "Sentences", rows: [
+          ["1. i Chile / Saras familj / bor", "1. Sara's family lives in Chile."],
+          ["2. i en lägenhet / bor / Sara", "2. Sara lives in an apartment."],
+          ["3. är / vänner / Sara och Mona", "3. Sara and Mona are friends."],
+          ["4. på kvällarna / de / promenerar", "4. They walk in the evenings."],
+          ["5. med svenskan / Mona / hjälper / Sara", "5. Mona helps Sara with Swedish."],
+          ["6. Monas dörr / ringer på / Sara", "6. Sara rings at Mona's door."],
+          ["7. inte / Mona / öppnar", "7. Mona does not open."],
+          ["8. sjuk / Mona / mycket / är", "8. Mona is very sick."],
+          ["9. till Mona / lagar / Sara / mat", "9. Sara cooks food for Mona."],
+          ["10. på apoteket / medicin / Sara / köper", "10. Sara buys medicine at the pharmacy."]
+        ] }
+      ] },
+      { title: "Off-class Page 6 - Ordkunskap", sections: [
+        { heading: "Instruction and word bank", rows: [
+          ["B Ordkunskap", "B Vocabulary knowledge"],
+          ["Vilket ord passar till beskrivningarna? Välj bland orden i rutan.", "Which word fits the descriptions? Choose from the words in the box."],
+          ["ett sovrum", "a bedroom"], ["ett kök", "a kitchen"], ["en trädgård", "a garden"], ["ett badrum", "a bathroom"],
+          ["en hall", "a hallway"], ["en etta", "a one-room apartment"], ["ett kylskåp", "a refrigerator"],
+          ["en tvåa", "a two-room apartment"], ["en frys", "a freezer"], ["bv", "ground floor"], ["ett vardagsrum", "a living room"]
+        ] },
+        { heading: "Descriptions", rows: [
+          ["Exempel: Ett rum där man tittar på teve. - ett vardagsrum", "Example: A room where one watches TV. - a living room"],
+          ["1. Ett rum där man sover.", "1. A room where one sleeps."],
+          ["2. Ett rum där man duschar.", "2. A room where one showers."],
+          ["3. Ett rum där man lagar mat.", "3. A room where one cooks food."],
+          ["4. Här tar man av sig skor och jacka.", "4. Here one takes off shoes and a jacket."],
+          ["5. Här har man mjölk och smör.", "5. Here one has milk and butter."],
+          ["6. Här har man glass.", "6. Here one has ice cream."],
+          ["7. Ett rum och kök.", "7. One room and kitchen."],
+          ["8. Två rum och kök.", "8. Two rooms and kitchen."],
+          ["9. En bottenvåning.", "9. A ground floor."],
+          ["10. Här finns träd och blommor.", "10. Here there are trees and flowers."]
+        ] }
+      ] },
+      { title: "Off-class Page 7 - Frågor och svar / Substantiv", sections: [
+        { heading: "C Questions and answers", rows: [
+          ["C Frågor och svar", "C Questions and answers"],
+          ["Para ihop frågorna med rätt svar.", "Match the questions with the correct answers."],
+          ["1. Varifrån kommer Sara? - Hon kommer från Chile.", "1. Where does Sara come from? - She comes from Chile."],
+          ["2. Hur är Monas svenska? - Hon pratar bra svenska.", "2. How is Mona's Swedish? - She speaks good Swedish."],
+          ["3. Vad gör Sara och Mona? - De fikar och promenerar.", "3. What do Sara and Mona do? - They have coffee and walk."],
+          ["4. Varför öppnar Mona inte? - Hon är sjuk.", "4. Why does Mona not open? - She is sick."],
+          ["5. Var köper Sara medicin? - Hon går till apoteket.", "5. Where does Sara buy medicine? - She goes to the pharmacy."]
+        ] },
+        { heading: "D Nouns", rows: [
+          ["D Substantiv", "D Nouns"],
+          ["Skriv substantiven i singular och plural.", "Write the nouns in singular and plural."],
+          ["singular", "singular"], ["plural", "plural"], ["Exempel: en månad - månader", "Example: a month - months"],
+          ["1. en familj - familjer", "1. a family - families"], ["2. en lägenhet - lägenheter", "2. an apartment - apartments"],
+          ["3. en granne - grannar", "3. a neighbor - neighbors"], ["4. en vän - vänner", "4. a friend - friends"],
+          ["5. en kväll - kvällar", "5. an evening - evenings"], ["6. ett år - år", "6. a year - years"],
+          ["7. en dörr - dörrar", "7. a door - doors"], ["8. en medicin - mediciner", "8. a medicine - medicines"]
+        ] }
+      ] },
+      { title: "Off-class Page 8 - Verb: är eller har", sections: [
+        { heading: "Exercise", rows: [
+          ["E Verb", "E Verbs"],
+          ["Skriv är eller har i meningarna.", "Write är or har in the sentences."],
+          ["Exempel: Sara och Mona är vänner.", "Example: Sara and Mona are friends."],
+          ["1. Mona är sjuk.", "1. Mona is sick."],
+          ["2. Mona har feber.", "2. Mona has a fever."],
+          ["3. Mona är duktig på svenska.", "3. Mona is good at Swedish."],
+          ["4. Sara har ingen familj i Sverige.", "4. Sara has no family in Sweden."],
+          ["5. Sara är från Chile.", "5. Sara is from Chile."],
+          ["6. Sara är 20 år.", "6. Sara is 20 years old."],
+          ["7. Mona har mörkt hår.", "7. Mona has dark hair."],
+          ["8. Mona har ont i halsen.", "8. Mona has a sore throat."]
+        ] }
+      ] },
+      { title: "Off-class Page 9 - Verb, plats och tid", sections: [
+        { heading: "Verbs", rows: [
+          ["F Verb, plats och tid", "F Verbs, place and time"],
+          ["1. Stryk under alla verb som finns i meningarna.", "1. Underline all verbs found in the sentences."],
+          ["Exempel: Sara kommer från Chile.", "Example: Sara comes from Chile."],
+          ["a) Hon kom till Sverige för fem månader sedan.", "a) She came to Sweden five months ago."],
+          ["b) Saras familj bor i Chile.", "b) Sara's family lives in Chile."],
+          ["c) Sara bor i en lägenhet.", "c) Sara lives in an apartment."],
+          ["d) En granne heter Mona.", "d) A neighbor is called Mona."],
+          ["e) Hon kommer också från Chile.", "e) She also comes from Chile."]
+        ] },
+        { heading: "Place and time", rows: [
+          ["2. Stryk under alla ord eller fraser som beskriver plats i meningarna.", "2. Underline all words or phrases that describe place in the sentences."],
+          ["Exempel: Sara bor i Sverige.", "Example: Sara lives in Sweden."],
+          ["a) Saras familj bor i Chile.", "a) Sara's family lives in Chile."],
+          ["b) Sara bor i en lägenhet.", "b) Sara lives in an apartment."],
+          ["c) Sara köper medicin på apoteket.", "c) Sara buys medicine at the pharmacy."],
+          ["3. Stryk under alla ord eller fraser som beskriver tid i meningarna.", "3. Underline all words or phrases that describe time in the sentences."],
+          ["Exempel: Hon kom till Sverige för fem månader sedan.", "Example: She came to Sweden five months ago."],
+          ["a) De fikar tillsammans och promenerar på kvällarna.", "a) They have coffee together and walk in the evenings."],
+          ["b) Mona kom till Sverige för tio år sedan.", "b) Mona came to Sweden ten years ago."],
+          ["c) Sara ringer på Monas dörr en dag.", "c) Sara rings at Mona's door one day."],
+          ["d) Sara hjälper Mona nu.", "d) Sara helps Mona now."]
+        ] }
+      ] }
     ];
 
     function renderAlphabet() {
@@ -5238,7 +5591,7 @@
       const parts = [];
       if (urls) parts.push(`${urls} clickable link${urls === 1 ? "" : "s"}`);
       if (unreadable) parts.push(`${unreadable} unreadable code`);
-      return `QR scan: ${parts.join(", ")}. Hover over a highlighted code to see its content. Click green codes to play the YouTube video inside this page.`;
+      return `QR scan: ${parts.join(", ")}. Hover over a highlighted code to see its content. Click green codes to open linked media; YouTube links play inside this page when embedding is allowed.`;
     }
 
     function createSpeakableText(text) {
@@ -5823,6 +6176,66 @@
       setPage(0);
     }
 
+    function renderWeek7OffClassTerms() {
+      const grid = document.querySelector("#week7OffClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week7OffClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek7OffClassComparison() {
+      const thumbs = document.querySelector("#week7OffClassCompareThumbs");
+      const image = document.querySelector("#week7OffClassCompareImage");
+      const overlay = document.querySelector("#week7OffClassCompareQrOverlay");
+      const panel = document.querySelector("#week7OffClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week7OffClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week7-off-class-pages/page-${page}.jpg`;
+        image.alt = `Week 7 off-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week7OffClassPageSizes, week7OffClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Off-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week7OffClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week7OffClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
@@ -5992,6 +6405,8 @@
     renderWeek6OffClassComparison();
     renderWeek7InClassTerms();
     renderWeek7InClassComparison();
+    renderWeek7OffClassTerms();
+    renderWeek7OffClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
