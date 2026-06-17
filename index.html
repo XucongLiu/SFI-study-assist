@@ -1167,6 +1167,13 @@
     <span class="nav-label week-nav" data-week="week7">Off-class</span>
     <a class="week-nav" data-week="week7" href="#week7-off-class-compare">Translations</a>
     <a class="week-nav" data-week="week7" href="#week7-off-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week8">Week 8</span>
+    <span class="nav-label week-nav" data-week="week8">In-class</span>
+    <a class="week-nav" data-week="week8" href="#week8">Overview</a>
+    <a class="week-nav" data-week="week8" href="#week8-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week8" href="#week8-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week8">Off-class</span>
+    <a class="week-nav" data-week="week8" href="#week8-off-class">Add Pages Later</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1224,6 +1231,7 @@
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week5">Week 5</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week6">Week 6</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week7">Week 7</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week8">Week 8</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1784,6 +1792,57 @@
       <p class="section-lead">Important Week 7 off-class housing words. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week7OffClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week8" class="week-panel" data-week="week8">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 8</h1>
+          <p>In-class reading and study-skills material about distance learning, Lärcentrum support, and practical habits for learning more effectively.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week8-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week8-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week8-in-class-compare"><strong>In-class material</strong><span>Four classroom pages: Joshua studies online, Lärcentrum support, and five study tips.</span></a>
+            <a class="material-card" href="#week8-off-class"><strong>Off-class material</strong><span>No Week 8 off-class pages have been added yet. This slot is ready for future uploads.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 8 in-class reading preview">
+          <img src="assets/sfi-week8-in-class-pages/page-01.jpg" alt="Week 8 in-class reading page about Joshua studying remotely" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week8-in-class-compare" class="week-panel" data-week="week8">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 8 classroom page photos with English translations. Click Swedish snippets on the right to hear the pronunciation.</p>
+      <div class="compare">
+        <div class="thumbs" id="week8InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week8InClassCompareImage" src="assets/sfi-week8-in-class-pages/page-01.jpg" alt="Week 8 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week8InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week8InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week8-in-class-words" class="week-panel" data-week="week8">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 8 in-class words from the reading and study-skills pages. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week8InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week8-off-class" class="week-panel" data-week="week8">
+      <h2>Off-class Material</h2>
+      <p class="section-lead">No Week 8 off-class page photos were found in the raw image folder yet.</p>
+      <div class="panel pad">
+        <p class="note">When Week 8 off-class images are added later, put them in the Week 8 raw folder and run the same update process. This section is already reserved for them.</p>
       </div>
     </section>
 
@@ -5417,6 +5476,149 @@
       ] }
     ];
 
+    const week8InClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867], 4: [1400, 1867]
+    };
+
+    const week8InClassQrCodes = [
+      { page: 1, type: "url", value: "https://blip.sano.ma/player/a/KzHwQ", x: 1186, y: 107, w: 84, h: 78 }
+    ];
+
+    const week8InClassTerms = [
+      ["distans", "remote / distance"], ["studerar", "studies"], ["föreläsning", "lecture"],
+      ["ordföljd", "word order"], ["uppmärksamt", "attentively"], ["antecknar", "takes notes"],
+      ["rak ordföljd", "straight word order"], ["omvänd ordföljd", "inverted word order"], ["subjekt", "subject"],
+      ["verb", "verb"], ["koncentrera sig", "concentrate"], ["inloggad", "logged in"],
+      ["klasskamrater", "classmates"], ["pandemi", "pandemic"], ["undervisning", "teaching / instruction"],
+      ["på distans", "remotely"], ["knackar", "knocks"], ["inneboende", "lodger / tenant in someone's home"],
+      ["familj", "family"], ["öppnar", "opens"], ["snäll", "kind"],
+      ["stänga", "close"], ["gruppsamtal", "group conversation"], ["kalla tillbaka", "call back"],
+      ["möte", "meeting"], ["dotter", "daughter"], ["förkyld", "has a cold"],
+      ["eftermiddag", "afternoon"], ["ifred", "in peace"], ["undervisningen", "the teaching / instruction"],
+      ["lektion", "lesson"], ["läxa", "homework"], ["bestämmer sig", "decides"],
+      ["diskbänken", "the kitchen counter / sink counter"], ["hemifrån", "from home"], ["strular", "is acting up / malfunctioning"],
+      ["märkte", "noticed"], ["röra på sig", "move around / exercise"], ["längtar", "longs"],
+      ["Lärcentrum", "Learning Center"], ["stöd", "support"], ["vuxenutbildning", "adult education"],
+      ["studieteknik", "study techniques"], ["specialpedagog", "special-needs educator"], ["speciallärare", "special teacher"],
+      ["rådgivning", "guidance / counseling"], ["studieplats", "study place"], ["anpassad lärmiljö", "adapted learning environment"],
+      ["hjälpmedel", "assistive tools"], ["läsplatta", "tablet"], ["strategier", "strategies"],
+      ["lärande", "learning"], ["verksamheter", "organizations / services"], ["folkbokförd", "registered as living"],
+      ["kommun", "municipality"], ["vända dig", "turn to / contact"], ["plugga", "study"],
+      ["läggdags", "bedtime"], ["sömn", "sleep"], ["träna", "exercise / train"],
+      ["planera", "plan"], ["repetition", "repetition / review"], ["lyckas", "succeed"],
+      ["bearbetar", "processes"], ["hjärna", "brain"], ["i förväg", "in advance"],
+      ["komma ihåg", "remember"], ["forskning", "research"], ["fysisk aktivitet", "physical activity"],
+      ["promenad", "walk"], ["joggingrunda", "jogging route / run"], ["stressad", "stressed"]
+    ];
+
+    const week8InClassTranslations = [
+      { title: "In-class Page 1 - Joshua studerar på distans", sections: [
+        { heading: "Reading", rows: [
+          ["Joshua studerar på distans", "Joshua studies remotely."],
+          ["Joshua sitter framför datorn.", "Joshua is sitting in front of the computer."],
+          ["Han kom till Sverige för några månader sedan och studerar svenska nu.", "He came to Sweden a few months ago and is studying Swedish now."],
+          ["Läraren har en digital föreläsning om ordföljd och Joshua lyssnar uppmärksamt.", "The teacher is giving a digital lecture about word order and Joshua listens attentively."],
+          ["Joshua antecknar: rak och omvänd ordföljd, subjekt och verb.", "Joshua takes notes: straight and inverted word order, subject and verb."],
+          ["Orden är nya för honom och han måste koncentrera sig.", "The words are new to him and he has to concentrate."],
+          ["Han ser att 24 andra personer är inloggade.", "He sees that 24 other people are logged in."],
+          ["De är hans klasskamrater men de har inte träffats på länge.", "They are his classmates but they have not met for a long time."],
+          ["De har bara sett varandra via datorn.", "They have only seen each other through the computer."],
+          ["Året är 2020 och en pandemi pågår i världen.", "The year is 2020 and a pandemic is happening in the world."],
+          ["Nästan all undervisning har varit på distans sedan fem månader tillbaka.", "Almost all teaching has been remote for the past five months."],
+          ["Joshua och hans klasskamrater samtalar om ordföljden i en mening när det knackar på dörren.", "Joshua and his classmates are talking about the word order in a sentence when there is a knock on the door."],
+          ["Han bor inneboende hos en svensk familj och det är familjens son som öppnar dörren.", "He lives as a lodger with a Swedish family and it is the family's son who opens the door."]
+        ] }
+      ] },
+      { title: "In-class Page 2 - Joshua's lesson at home", sections: [
+        { heading: "Reading", rows: [
+          ["- Joshua, vill du ha pasta till lunch idag? frågar han.", "- Joshua, do you want pasta for lunch today? he asks."],
+          ["- Tack Oskar, det låter gott, svarar Joshua.", "- Thanks Oskar, that sounds good, Joshua answers."],
+          ["Kan du vara snäll att gå ut och stänga dörren?", "Can you be kind and go out and close the door?"],
+          ["Jag har lektion på min dator.", "I have a lesson on my computer."],
+          ["- Okej då.", "- Okay then."],
+          ["Jag säger till pappa att du vill ha pasta.", "I will tell Dad that you want pasta."],
+          ["Joshua fokuserar på gruppsamtalet.", "Joshua focuses on the group conversation."],
+          ["De har bara tio minuter kvar att arbeta.", "They have only ten minutes left to work."],
+          ["Sedan ska läraren kalla tillbaka dem till det stora mötet.", "Then the teacher will call them back to the large meeting."],
+          ["Det knackar på dörren igen.", "There is another knock on the door."],
+          ["Det är Alina, som är dottern i familjen.", "It is Alina, who is the daughter in the family."],
+          ["Hon är också hemma från skolan idag.", "She is also home from school today."],
+          ["Båda barnen är förkylda.", "Both children have colds."],
+          ["- Vill du spela fotboll med mig i eftermiddag? frågar Alina.", "- Do you want to play football with me this afternoon? Alina asks."],
+          ["- Ja, det kan jag men nu måste jag få vara ifred.", "- Yes, I can, but now I have to be left in peace."],
+          ["Jag behöver koncentrera mig på undervisningen.", "I need to concentrate on the lesson."],
+          ["- Okej.", "- Okay."],
+          ["Jag stänger dörren nu.", "I am closing the door now."],
+          ["- Tack.", "- Thanks."],
+          ["Efter en stund är Joshuas lektion slut.", "After a while Joshua's lesson is over."],
+          ["Han fick en läxa som han ska göra till imorgon då han har nästa lektion.", "He received homework that he will do for tomorrow, when he has his next lesson."],
+          ["Han bestämmer sig för att göra läxan på kvällen.", "He decides to do the homework in the evening."],
+          ["Nu går han ut i köket och äter lunch.", "Now he goes out to the kitchen and eats lunch."],
+          ["Vid diskbänken står familjens pappa Gonzalo, som jobbar hemifrån.", "At the kitchen counter stands the family's father Gonzalo, who works from home."],
+          ["- Gick lektionen bra? undrar Gonzalo.", "- Did the lesson go well? Gonzalo wonders."],
+          ["Vårt wifi strular idag, så jag hoppas du inte missade något viktigt.", "Our Wi-Fi is acting up today, so I hope you did not miss anything important."],
+          ["- Det gick jättebra och jag märkte inte att det var något problem, svarar Joshua.", "- It went very well and I did not notice that there was any problem, Joshua answers."],
+          ["Efter maten behöver Joshua röra på sig.", "After the meal Joshua needs to move around."],
+          ["Det är jobbigt att ha lektion hemma vid sin dator.", "It is difficult to have a lesson at home at his computer."],
+          ["Han går ut med Alina och spelar fotboll ett par timmar.", "He goes outside with Alina and plays football for a couple of hours."],
+          ["På kvällen sätter han sig vid datorn igen och gör läxan.", "In the evening he sits down at the computer again and does the homework."],
+          ["Joshua längtar till när han får träffa sin lärare och sina klasskamrater på skolan igen.", "Joshua longs for when he will get to meet his teacher and classmates at school again."]
+        ] }
+      ] },
+      { title: "In-class Page 3 - Lärcentrum", sections: [
+        { heading: "Instruction", rows: [
+          ["Läsa", "Read."],
+          ["Läs informationen och svara på frågorna.", "Read the information and answer the questions."]
+        ] },
+        { heading: "Information", rows: [
+          ["Lärcentrum", "Learning Center."],
+          ["Behöver du stöd när du studerar på en vuxenutbildning?", "Do you need support when you study in adult education?"],
+          ["Då är du välkommen till Lärcentrum.", "Then you are welcome at Lärcentrum."],
+          ["På Lärcentrum kan du", "At Lärcentrum you can:"],
+          ["få extra stöd i matematik, svenska eller studieteknik", "get extra support in mathematics, Swedish, or study techniques."],
+          ["träffa specialpedagog eller speciallärare för rådgivning", "meet a special-needs educator or special teacher for guidance."],
+          ["boka en studieplats i en anpassad lärmiljö", "book a study place in an adapted learning environment."],
+          ["få hjälp att använda olika digitala hjälpmedel i studier, till exempel dator, läsplatta och telefon.", "get help using different digital assistive tools in your studies, for example a computer, tablet, and phone."],
+          ["Vi går tillsammans igenom vilket stöd du behöver.", "Together we go through what support you need."],
+          ["Du kan exempelvis få extra stöd, strategier för lärande och tips på hjälpmedel.", "For example, you can get extra support, strategies for learning, and tips about assistive tools."],
+          ["Vi kan hjälpa dig i kontakter med din skola och med andra verksamheter som är kopplade till dina studier.", "We can help you with contacts with your school and with other services that are connected to your studies."],
+          ["Du behöver vara folkbokförd i Uppsala kommun eller Knivsta kommun.", "You need to be registered as living in Uppsala municipality or Knivsta municipality."],
+          ["Källa: https://utbildningsochjobbcenter.uppsala.se/", "Source: https://utbildningsochjobbcenter.uppsala.se/"]
+        ] },
+        { heading: "Questions", rows: [
+          ["1 Vart kan du vända dig om du behöver hjälp med dina studier?", "1. Where can you turn if you need help with your studies?"],
+          ["2 Vad kan du få hjälp med på Lärcentrum? Ge två exempel.", "2. What can you get help with at Lärcentrum? Give two examples."],
+          ["3 Vilka kan få hjälp?", "3. Who can get help?"]
+        ] }
+      ] },
+      { title: "In-class Page 4 - Five tips for studying", sections: [
+        { heading: "Instruction and headings", rows: [
+          ["Läs texterna och para ihop dem med rätt rubrik.", "Read the texts and match them with the correct heading."],
+          ["Planera", "Plan."],
+          ["Repetition", "Repetition / review."],
+          ["Sömn", "Sleep."],
+          ["Plugga strax innan läggdags", "Study shortly before bedtime."],
+          ["Träna", "Exercise."],
+          ["Fem tips för att lyckas med dina studier", "Five tips for succeeding with your studies."]
+        ] },
+        { heading: "Tips", rows: [
+          ["1. När du sover bearbetar din hjärna ny information.", "1. When you sleep, your brain processes new information."],
+          ["Om du pluggar några minuter strax innan du ska sova är chanserna stora att du lär dig mer.", "If you study for a few minutes shortly before you go to sleep, the chances are high that you will learn more."],
+          ["2. Det är viktigt att dela upp det du ska lära dig.", "2. It is important to divide up what you are going to learn."],
+          ["Det känns lättare att plugga om du gör lite i taget.", "It feels easier to study if you do a little at a time."],
+          ["Bestäm i förväg hur mycket du ska lära dig varje dag.", "Decide in advance how much you are going to learn each day."],
+          ["3. Det räcker inte att läsa ny information en gång för att man ska komma ihåg någonting på riktigt.", "3. It is not enough to read new information once if you are going to truly remember something."],
+          ["För att lära sig ny kunskap måste man läsa och repetera många gånger.", "To learn new knowledge, you have to read and repeat many times."],
+          ["4. Forskning har visat att fysisk aktivitet hjälper hjärnan att ta in ny kunskap.", "4. Research has shown that physical activity helps the brain take in new knowledge."],
+          ["När man känner sig trött kan man ta en promenad eller en joggingrunda för att ge nya krafter åt hjärnan.", "When you feel tired, you can take a walk or a jog to give the brain new energy."],
+          ["5. Det är ingen idé att plugga hela natten.", "5. There is no point in studying all night."],
+          ["Det gör dig stressad och du lär dig mindre.", "It makes you stressed and you learn less."],
+          ["Se till att du får din viktiga sömn.", "Make sure that you get your important sleep."],
+          ["Då lär du dig mer.", "Then you learn more."]
+        ] }
+      ] }
+    ];
+
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
       grid.innerHTML = "";
@@ -6236,14 +6438,74 @@
       setPage(0);
     }
 
+    function renderWeek8InClassTerms() {
+      const grid = document.querySelector("#week8InClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week8InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek8InClassComparison() {
+      const thumbs = document.querySelector("#week8InClassCompareThumbs");
+      const image = document.querySelector("#week8InClassCompareImage");
+      const overlay = document.querySelector("#week8InClassCompareQrOverlay");
+      const panel = document.querySelector("#week8InClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week8InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week8-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 8 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week8InClassPageSizes, week8InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week8InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week8InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week8") ? "week8" : hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -6407,6 +6669,8 @@
     renderWeek7InClassComparison();
     renderWeek7OffClassTerms();
     renderWeek7OffClassComparison();
+    renderWeek8InClassTerms();
+    renderWeek8InClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
