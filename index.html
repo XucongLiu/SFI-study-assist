@@ -1174,6 +1174,14 @@
     <a class="week-nav" data-week="week8" href="#week8-in-class-words">Word Learning</a>
     <span class="nav-label week-nav" data-week="week8">Off-class</span>
     <a class="week-nav" data-week="week8" href="#week8-off-class">Add Pages Later</a>
+    <span class="nav-label week-nav" data-week="week9">Week 9</span>
+    <span class="nav-label week-nav" data-week="week9">In-class</span>
+    <a class="week-nav" data-week="week9" href="#week9">Overview</a>
+    <a class="week-nav" data-week="week9" href="#week9-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week9" href="#week9-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week9">Off-class</span>
+    <a class="week-nav" data-week="week9" href="#week9-off-class-compare">Translations</a>
+    <a class="week-nav" data-week="week9" href="#week9-off-class-words">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1232,6 +1240,7 @@
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week6">Week 6</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week7">Week 7</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week8">Week 8</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week9">Week 9</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1843,6 +1852,72 @@
       <p class="section-lead">No Week 8 off-class page photos were found in the raw image folder yet.</p>
       <div class="panel pad">
         <p class="note">When Week 8 off-class images are added later, put them in the Week 8 raw folder and run the same update process. This section is already reserved for them.</p>
+      </div>
+    </section>
+
+    <section id="week9" class="week-panel" data-week="week9">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 9</h1>
+          <p>Grocery shopping Swedish: the classroom story I affären with receipt reading, plus the MAT B+ food booklet with groceries, shop dialogues, kitchen verbs, and QR video exercises.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week9-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week9-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week9-in-class-compare"><strong>In-class material</strong><span>Six classroom pages: shopping word list, the I affären story, comprehension questions, and receipt reading.</span></a>
+            <a class="material-card" href="#week9-off-class-compare"><strong>Off-class material</strong><span>Fourteen MAT B+ booklet pages: groceries, shop dialogues, kitchen verbs, and eleven QR video links.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 9 in-class reading preview">
+          <img src="assets/sfi-week9-in-class-pages/page-02.jpg" alt="Week 9 in-class reading page about shopping in the store" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week9-in-class-compare" class="week-panel" data-week="week9">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 9 classroom page photos with English translations. Click Swedish snippets on the right to hear the pronunciation.</p>
+      <div class="compare">
+        <div class="thumbs" id="week9InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week9InClassCompareImage" src="assets/sfi-week9-in-class-pages/page-01.jpg" alt="Week 9 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week9InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week9InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week9-in-class-words" class="week-panel" data-week="week9">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 9 in-class words from the shopping story and receipt pages. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week9InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week9-off-class-compare" class="week-panel" data-week="week9">
+      <h2>Off-class Translation</h2>
+      <p class="section-lead">Compare the Week 9 MAT B+ booklet photos with English translations. QR overlays are clickable and open the linked videos.</p>
+      <div class="compare">
+        <div class="thumbs" id="week9OffClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week9OffClassCompareImage" src="assets/sfi-week9-off-class-pages/page-01.jpg" alt="Week 9 off-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week9OffClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week9OffClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week9-off-class-words" class="week-panel" data-week="week9">
+      <h2>Off-class Word Learning</h2>
+      <p class="section-lead">Important Week 9 off-class words from the MAT B+ booklet. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week9OffClassTerms"></div>
       </div>
     </section>
 
@@ -5619,6 +5694,570 @@
       ] }
     ];
 
+    const week9InClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867],
+      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867]
+    };
+
+    const week9InClassQrCodes = [];
+
+    const week9OffClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867],
+      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867],
+      7: [1400, 1867], 8: [1400, 1867], 9: [1400, 1867],
+      10: [1400, 1867], 11: [1400, 1867], 12: [1400, 1867],
+      13: [1400, 1867], 14: [1400, 1867]
+    };
+
+    const week9OffClassQrCodes = [
+      { page: 1, type: "url", value: "https://youtu.be/RoJhiFy8PUM", x: 200, y: 151, w: 69, h: 63 },
+      { page: 2, type: "url", value: "https://youtu.be/e6EXxD_sHHI", x: 1139, y: 123, w: 106, h: 111 },
+      { page: 3, type: "url", value: "https://youtu.be/_aUvuAe36o4", x: 1121, y: 167, w: 105, h: 100 },
+      { page: 5, type: "url", value: "https://youtu.be/z9-7tviTo-s", x: 1098, y: 201, w: 93, h: 88 },
+      { page: 6, type: "url", value: "https://youtu.be/vaMZ3sQp73I", x: 1102, y: 111, w: 143, h: 140 },
+      { page: 7, type: "url", value: "https://youtu.be/wbEDzJ6FaVw", x: 1019, y: 131, w: 95, h: 90 },
+      { page: 8, type: "url", value: "https://youtu.be/n9SjlgWAOu8", x: 1170, y: 126, w: 77, h: 77 },
+      { page: 10, type: "url", value: "https://youtu.be/husi-8_Xwvg", x: 1093, y: 151, w: 88, h: 88 },
+      { page: 11, type: "url", value: "https://youtu.be/g3S9mtKtCkk", x: 1140, y: 441, w: 92, h: 93 },
+      { page: 12, type: "url", value: "https://youtu.be/mJ5Bdh6tMCc", x: 1224, y: 280, w: 77, h: 78 },
+      { page: 13, type: "url", value: "https://youtu.be/B6GGHolT5Ew", x: 1038, y: 158, w: 90, h: 84 }
+    ];
+
+    const week9InClassTerms = [
+      ["en kundvagn", "shopping trolley / cart"], ["en kassa", "checkout"], ["först", "first"],
+      ["betala (betalar)", "pay (pays)"], ["en kyldisk", "refrigerated counter"], ["folk", "people"],
+      ["en liter", "liter"], ["en kö", "queue"], ["en äppelkaka", "apple cake"],
+      ["ett kort", "card"], ["tycka om (tycker om)", "like (likes)"], ["kontanter", "cash"],
+      ["en rabattkupong", "discount coupon"], ["en kassörska", "cashier"], ["kosta (kostar)", "cost (costs)"],
+      ["tillbaka", "back"], ["i stället för", "instead of"], ["ett kvitto", "receipt"],
+      ["en frys", "freezer"], ["en vara, varor", "product, goods"], ["extrapris", "special offer"],
+      ["en kasse", "shopping bag"], ["en sallad", "salad"], ["hungrig", "hungry"],
+      ["sedan, sen", "then / afterwards"], ["hämtar", "picks up"], ["dagis", "daycare / preschool"],
+      ["handla mat", "buy food / shop for groceries"], ["en kartong ägg", "carton of eggs"], ["ett paket socker", "package of sugar"],
+      ["mjöl", "flour"], ["mjölk", "milk"], ["en påse potatis", "bag of potatoes"],
+      ["en smörgås", "sandwich"], ["mjukost", "soft cheese (in a tube)"], ["apelsinmarmelad", "orange marmalade"],
+      ["en kyckling", "chicken"], ["godis", "candy / sweets"], ["barnprogram", "children's programs"],
+      ["lämnar", "hands over / leaves"], ["lägger", "puts / places"], ["strösocker", "granulated sugar"],
+      ["vetemjöl", "wheat flour"], ["lösvikt", "loose weight / by the kilo"], ["rabatt", "discount"],
+      ["väger", "weighs"], ["ett datum", "date"], ["totalt", "in total"]
+    ];
+
+    const week9OffClassTerms = [
+      ["ett livsmedel, livsmedel", "food item, groceries"], ["en mataffär", "grocery store"], ["en hylla, hyllor", "shelf, shelves"],
+      ["en lista", "list"], ["grönsaker", "vegetables"], ["en frukt", "fruit"],
+      ["blomkål", "cauliflower"], ["paprika", "bell pepper"], ["en aubergine", "eggplant / aubergine"],
+      ["purjolök", "leek"], ["tomater", "tomatoes"], ["en gurka", "cucumber"],
+      ["sallad", "lettuce / salad"], ["äpplen", "apples"], ["päron", "pears"],
+      ["bananer", "bananas"], ["apelsiner", "oranges"], ["clementiner", "clementines"],
+      ["kiwi", "kiwi"], ["en vattenmelon", "watermelon"], ["en mango", "mango"],
+      ["mejerivaror", "dairy products"], ["yoghurt", "yogurt"], ["ost", "cheese"],
+      ["smör", "butter"], ["charken", "the deli / meat counter"], ["nötkött", "beef"],
+      ["köttfärs", "minced meat"], ["korv", "sausage"], ["kyckling", "chicken"],
+      ["mjöl", "flour"], ["ägg", "eggs"], ["en tygpåse, tygpåsar", "cloth bag, cloth bags"],
+      ["en förkortning, förkortningar", "abbreviation, abbreviations"], ["stycken (st)", "pieces"], ["ett paket (pkt)", "package"],
+      ["cirka (ca)", "approximately"], ["havregryn", "oats / oatmeal"], ["ketchup", "ketchup"],
+      ["senap", "mustard"], ["ekologisk", "organic"], ["slut", "sold out / finished"],
+      ["bredvid", "next to"], ["korvbröd", "hot dog buns"], ["en sked", "spoon"],
+      ["en skål", "bowl"], ["en smörkniv", "butter knife"], ["en osthyvel", "cheese slicer"],
+      ["ett glas", "glass"], ["en kopp", "cup"], ["en tidning", "newspaper"],
+      ["en gaffel", "fork"], ["en kniv", "knife"], ["sköljer", "rinses"],
+      ["hackar", "chops"], ["skär", "cuts"], ["river", "grates"],
+      ["skalar", "peels"], ["steker", "fries"], ["kokar", "boils"],
+      ["vispar", "whisks"], ["blandar", "mixes"], ["häller", "pours"],
+      ["vitlök", "garlic"], ["en sås", "sauce"], ["middag", "dinner"],
+      ["kvällsmat", "evening meal / supper"], ["fikar", "has a fika / coffee break"], ["bullar", "buns"],
+      ["luktar", "smells"], ["smakar", "tastes"], ["ett mått", "measure / unit"],
+      ["en burk", "can / jar"], ["en flaska, flaskor", "bottle, bottles"], ["läsk", "soda / soft drink"],
+      ["majs", "corn"], ["en papperskasse", "paper bag"], ["vindruvor", "grapes"],
+      ["Smaklig måltid!", "Enjoy your meal!"]
+    ];
+
+    const week9InClassTranslations = [
+      { title: "In-class Page 1 - Vad betyder orden?", sections: [
+        { heading: "Instruction", rows: [
+          ["Vad betyder orden? Titta i lexikon och skriv på ditt språk.", "What do the words mean? Look in a dictionary and write in your language."]
+        ] },
+        { heading: "Word list", rows: [
+          ["en kundvagn", "a shopping trolley / cart"],
+          ["en kassa", "a checkout"],
+          ["först", "first"],
+          ["betala (betalar)", "to pay (pays)"],
+          ["en kyldisk", "a refrigerated counter"],
+          ["folk", "people"],
+          ["en liter", "a liter"],
+          ["en kö", "a queue"],
+          ["en äppelkaka", "an apple cake"],
+          ["ett kort", "a card"],
+          ["tycka om (tycker om)", "to like (likes)"],
+          ["kontanter", "cash"],
+          ["en rabattkupong", "a discount coupon"],
+          ["en kassörska", "a cashier"],
+          ["kosta (kostar)", "to cost (costs)"],
+          ["tillbaka", "back"],
+          ["i stället för", "instead of"],
+          ["ett kvitto", "a receipt"],
+          ["en frys", "a freezer"],
+          ["en vara, -or", "a product, products"],
+          ["extrapris", "special offer"],
+          ["en kasse", "a shopping bag"],
+          ["en sallad", "a salad"],
+          ["hungrig", "hungry"],
+          ["sedan, sen", "then / afterwards"]
+        ] }
+      ] },
+      { title: "In-class Page 2 - I affären", sections: [
+        { heading: "Reading", rows: [
+          ["I affären", "In the shop."],
+          ["Malin hämtar Lisa på dagis efter jobbet och de går till affären.", "Malin picks up Lisa at daycare after work and they go to the shop."],
+          ["De ska handla mat.", "They are going to buy food."],
+          ["Malin tar en kundvagn och de går först till kyldisken.", "Malin takes a shopping trolley and they go first to the refrigerated counter."],
+          ["Malin tar en liter mjölk och en kartong ägg.", "Malin takes a liter of milk and a carton of eggs."],
+          ["Lisa vill att mamma ska baka en äppelkaka så de behöver köpa ett paket socker och ett paket mjöl.", "Lisa wants Mom to bake an apple cake, so they need to buy a package of sugar and a package of flour."],
+          ["Sedan går de till frukt- och grönsaksdisken.", "Then they go to the fruit and vegetable section."],
+          ["Där tar de några äpplen, några tomater och en påse potatis.", "There they take some apples, some tomatoes, and a bag of potatoes."],
+          ["Tim tycker om smörgås med mjukost till frukost, så Malin tar också en tub med mjukost och en burk med apelsinmarmelad.", "Tim likes a sandwich with soft cheese for breakfast, so Malin also takes a tube of soft cheese and a jar of orange marmalade."],
+          ["Hon har en rabattkupong på apelsinmarmelad så den kostar bara 24 kronor i stället för 29 kronor.", "She has a discount coupon for orange marmalade, so it costs only 24 kronor instead of 29 kronor."],
+          ["I frysen tar Malin en kyckling eftersom det är extrapris på kyckling den här veckan.", "In the freezer Malin takes a chicken because chicken is on special offer this week."],
+          ["I kväll tänker hon laga kyckling med potatis och en sallad till middag.", "Tonight she plans to cook chicken with potatoes and a salad for dinner."],
+          ["De köper också en påse chips till lördag.", "They also buy a bag of chips for Saturday."],
+          ["Varje lördag tittar Tim och Lisa på barnprogram på tv och de får äta chips eller godis.", "Every Saturday Tim and Lisa watch children's programs on TV and they are allowed to eat chips or candy."],
+          ["Sedan går de till kassan för att betala.", "Then they go to the checkout to pay."],
+          ["Det är mycket folk i affären och de måste stå i kö i tio minuter.", "There are a lot of people in the shop and they have to stand in a queue for ten minutes."],
+          ["- Det blir 248 kronor, säger kassörskan.", "- That will be 248 kronor, says the cashier."],
+          ["- Kan jag betala med kort? frågar Malin. Jag har bara 200 kronor i kontanter.", "- Can I pay by card? Malin asks. I only have 200 kronor in cash."],
+          ["- Ja, det går bra, svarar kassörskan.", "- Yes, that is fine, the cashier answers."],
+          ["Malin lämnar kortet och rabattkupongen.", "Malin hands over the card and the discount coupon."],
+          ["- Varsågod. Här är kortet tillbaka och kvittot.", "- Here you go. Here is the card back and the receipt."],
+          ["- Tack, säger Malin.", "- Thanks, says Malin."],
+          ["Lisa hjälper Malin och lägger varorna i en kasse.", "Lisa helps Malin and puts the goods in a shopping bag."],
+          ["Malin och Lisa går hem.", "Malin and Lisa go home."],
+          ["Nu är Lisa hungrig och vill ha mat.", "Now Lisa is hungry and wants food."]
+        ] }
+      ] },
+      { title: "In-class Page 3 - Frågor om texten I affären", sections: [
+        { heading: "Instruction", rows: [
+          ["Läs texten I affären och skriv svar på frågorna.", "Read the text In the shop and write answers to the questions."]
+        ] },
+        { heading: "Questions", rows: [
+          ["1. Vad gör Malin efter jobbet?", "1. What does Malin do after work?"],
+          ["2. Vad tar Malin i frysdisken?", "2. What does Malin take from the freezer section?"],
+          ["3. Vad köper de till äppelkakan?", "3. What do they buy for the apple cake?"],
+          ["4. Vad ska familjen äta för mat till middag?", "4. What is the family going to eat for dinner?"],
+          ["5. Varför kostar apelsinmarmeladen bara 24 kronor?", "5. Why does the orange marmalade cost only 24 kronor?"],
+          ["6. Vad brukar Tim och Lisa göra på lördagarna?", "6. What do Tim and Lisa usually do on Saturdays?"],
+          ["7. Hur länge måste de stå i kö i kassan?", "7. How long do they have to stand in the queue at the checkout?"],
+          ["8. Hur mycket blir det att betala?", "8. How much is there to pay?"],
+          ["9. Betalar Malin kontant eller med kort?", "9. Does Malin pay in cash or by card?"],
+          ["10. Vad hjälper Lisa till med?", "10. What does Lisa help with?"]
+        ] }
+      ] },
+      { title: "In-class Page 4 - Välj rätt alternativ", sections: [
+        { heading: "Instruction", rows: [
+          ["Titta i texten I affären och stryk under rätt svar.", "Look at the text In the shop and underline the correct answer."]
+        ] },
+        { heading: "Items 1-3", rows: [
+          ["1. a) Malin hämtar Lisa i skolan.", "1. a) Malin picks up Lisa at school."],
+          ["b) Malin hämtar Lisa på dagis.", "b) Malin picks up Lisa at daycare."],
+          ["c) Lisa hämtar Malin på dagis.", "c) Lisa picks up Malin at daycare."],
+          ["2. a) Malin tar lite mjölk.", "2. a) Malin takes a little milk."],
+          ["b) Malin tar en liter mjöl.", "b) Malin takes a liter of flour."],
+          ["c) Malin tar en liter mjölk.", "c) Malin takes a liter of milk."],
+          ["3. a) De tar några äpplen.", "3. a) They take some apples."],
+          ["b) De tar några apelsiner.", "b) They take some oranges."],
+          ["c) De tar några nektariner.", "c) They take some nectarines."]
+        ] },
+        { heading: "Items 4-6", rows: [
+          ["4. a) Malin betalar med kort.", "4. a) Malin pays by card."],
+          ["b) Malin betalar kontant.", "b) Malin pays in cash."],
+          ["c) Malin betalar rabatt.", "c) Malin pays a discount."],
+          ["5. a) Lisa lägger varorna i en kasse.", "5. a) Lisa puts the goods in a shopping bag."],
+          ["b) Lisa lägger Malin i en kasse.", "b) Lisa puts Malin in a shopping bag."],
+          ["c) Lisa lägger varorna i en kassa.", "c) Lisa puts the goods in a checkout."],
+          ["6. a) Det är 7 kronors rabatt på apelsinmarmelad.", "6. a) There is a 7 kronor discount on orange marmalade."],
+          ["b) Det är 5 kronors rabatt på apelsinmarmelad.", "b) There is a 5 kronor discount on orange marmalade."],
+          ["c) Det är 10 kronors rabatt på apelsinmarmelad.", "c) There is a 10 kronor discount on orange marmalade."]
+        ] },
+        { heading: "Items 7-9", rows: [
+          ["7. a) Malin tänker laga köttfärs med potatis till middag.", "7. a) Malin plans to cook minced meat with potatoes for dinner."],
+          ["b) Malin tänker laga kyckling med ris till middag.", "b) Malin plans to cook chicken with rice for dinner."],
+          ["c) Malin tänker laga kyckling med potatis till middag.", "c) Malin plans to cook chicken with potatoes for dinner."],
+          ["8. a) Varje söndag tittar Tim och Lisa på barnprogram.", "8. a) Every Sunday Tim and Lisa watch children's programs."],
+          ["b) Varje lördag får Tim och Lisa äta chips eller godis.", "b) Every Saturday Tim and Lisa are allowed to eat chips or candy."],
+          ["c) Varje söndag får Tim och Lisa äta chips eller godis.", "c) Every Sunday Tim and Lisa are allowed to eat chips or candy."],
+          ["9. a) Malin får kortet och pengar tillbaka.", "9. a) Malin gets the card and money back."],
+          ["b) Malin får pengar och kvittot tillbaka.", "b) Malin gets money and the receipt back."],
+          ["c) Malin får kortet och kvittot tillbaka.", "c) Malin gets the card and the receipt back."]
+        ] }
+      ] },
+      { title: "In-class Page 5 - Kvitto", sections: [
+        { heading: "Introduction", rows: [
+          ["Kvitto", "Receipt."],
+          ["Det här är Malins kvitto som hon fick i affären när hon handlade.", "This is Malin's receipt that she got in the shop when she was shopping."]
+        ] },
+        { heading: "Receipt", rows: [
+          ["MYRSKOGENS LIVS, Hässleholm", "Myrskogen's Grocery, Hässleholm."],
+          ["Säljare: 6, Kassa: 04", "Salesperson: 6, Checkout: 04."],
+          ["Datum: 2012-05-25, Tid: 16.47", "Date: 2012-05-25, Time: 16:47."],
+          ["Kyckling 1,426 kg * 22,00 kr/kg - 31,00", "Chicken 1.426 kg at 22.00 kr/kg - 31.00."],
+          ["Mjölk - 11,00", "Milk - 11.00."],
+          ["Svenska äpplen 1,450 kg * 25,00 kr/kg - 36,00", "Swedish apples 1.450 kg at 25.00 kr/kg - 36.00."],
+          ["Tomater 0,595 kg * 25,00 kr/kg - 15,00", "Tomatoes 0.595 kg at 25.00 kr/kg - 15.00."],
+          ["Ägg 12p - 35,00", "Eggs, 12-pack - 35.00."],
+          ["Strösocker - 20,00", "Granulated sugar - 20.00."],
+          ["Vetemjöl - 12,00", "Wheat flour - 12.00."],
+          ["Mjukost, tub - 29,00", "Soft cheese, tube - 29.00."],
+          ["Potatis, lösvikt 1,900 kg * 7,00 kr/kg - 13,00", "Potatoes, loose weight 1.900 kg at 7.00 kr/kg - 13.00."],
+          ["Apelsinmarmelad - 24,00 (rabatt 5 kr)", "Orange marmalade - 24.00 (discount 5 kr)."],
+          ["Potatischips - 22,00", "Potato chips - 22.00."],
+          ["Total - 248,00", "Total - 248.00."]
+        ] }
+      ] },
+      { title: "In-class Page 6 - Frågor om kvittot", sections: [
+        { heading: "Instruction", rows: [
+          ["Titta på kvittot och svara på frågorna.", "Look at the receipt and answer the questions."]
+        ] },
+        { heading: "Questions", rows: [
+          ["1. Vilket datum är det när Malin och Lisa är i affären och handlar?", "1. What date is it when Malin and Lisa are in the shop buying groceries?"],
+          ["2. Vad heter affären?", "2. What is the shop called?"],
+          ["3. Vad är klockan när Malin betalar i kassan?", "3. What time is it when Malin pays at the checkout?"],
+          ["4. Hur mycket kostar kycklingen per kilo?", "4. How much does the chicken cost per kilo?"],
+          ["5. Vad kostar tomaterna per kilo?", "5. What do the tomatoes cost per kilo?"],
+          ["6. Hur mycket väger tomaterna som Malin köper?", "6. How much do the tomatoes that Malin buys weigh?"],
+          ["7. Hur många ägg är det i kartongen?", "7. How many eggs are there in the carton?"],
+          ["8. Hur mycket blir det totalt som Malin måste betala?", "8. How much in total does Malin have to pay?"]
+        ] }
+      ] }
+    ];
+
+    const week9OffClassTranslations = [
+      { title: "Off-class Page 1 - MAT B+ cover", sections: [
+        { heading: "Cover", rows: [
+          ["MAT", "FOOD."],
+          ["Detta häfte handlar om mat.", "This booklet is about food."],
+          ["Här tränar du på:", "Here you practice:"],
+          ["många livsmedel", "many food items."],
+          ["att berätta om någon som går och handlar", "telling about someone who goes shopping."],
+          ["några förkortningar", "some abbreviations."],
+          ["att ställa några frågor i mataffären", "asking some questions in the grocery store."],
+          ["att läsa ett kvitto", "reading a receipt."],
+          ["några verb du använder i köket", "some verbs you use in the kitchen."],
+          ["att prata om att handla", "talking about shopping."],
+          ["pausgympa", "exercise break (QR video at the top left)."]
+        ] }
+      ] },
+      { title: "Off-class Page 2 - A. Eva handlar mat", sections: [
+        { heading: "Instruction", rows: [
+          ["A. Titta på filmen många gånger. Pausa och säg efter.", "A. Watch the film many times. Pause and repeat."]
+        ] },
+        { heading: "Reading", rows: [
+          ["Eva går till mataffären. Hon går till Coop.", "Eva goes to the grocery store. She goes to Coop."],
+          ["Hon tar en kundvagn och tittar i hyllorna.", "She takes a shopping trolley and looks at the shelves."],
+          ["Hon läser på sin lista.", "She reads her list."],
+          ["Eva behöver grönsaker.", "Eva needs vegetables."],
+          ["Hon köper blomkål, paprika och aubergine.", "She buys cauliflower, bell pepper, and eggplant."],
+          ["Hon köper purjolök, tomater och gurka.", "She buys leek, tomatoes, and cucumber."],
+          ["Hon köper också sallad.", "She also buys lettuce."],
+          ["Eva vill köpa frukt.", "Eva wants to buy fruit."],
+          ["Hon köper äpplen, päron, bananer, apelsiner, clementiner och kiwi.", "She buys apples, pears, bananas, oranges, clementines, and kiwi."],
+          ["Hon köper en vattenmelon och en mango.", "She buys a watermelon and a mango."],
+          ["Eva går till avdelningen för mejerivaror.", "Eva goes to the dairy department."],
+          ["Eva köper två liter mjölk och en liter yoghurt.", "Eva buys two liters of milk and one liter of yogurt."],
+          ["Hon köper ost och smör.", "She buys cheese and butter."],
+          ["Eva går till charken.", "Eva goes to the meat counter."],
+          ["Hon köper nötkött, köttfärs, korv och kyckling.", "She buys beef, minced meat, sausage, and chicken."],
+          ["Hon går vidare.", "She moves on."],
+          ["Hon köper mjöl och ägg.", "She buys flour and eggs."],
+          ["Eva betalar i kassan.", "Eva pays at the checkout."],
+          ["Hon packar varorna i tygpåsar och går hem.", "She packs the goods in cloth bags and goes home."]
+        ] },
+        { heading: "Word list on the page", rows: [
+          ["blomkål, vattenmelon, paprika, mango", "cauliflower, watermelon, bell pepper, mango."],
+          ["aubergine, purjolök, tomater, gurka, sallad", "eggplant, leek, tomatoes, cucumber, lettuce."],
+          ["äpplen, päron, bananer, apelsiner, clementiner, kiwi", "apples, pears, bananas, oranges, clementines, kiwi."],
+          ["mjölk, yoghurt, ost, smör", "milk, yogurt, cheese, butter."],
+          ["nötkött, köttfärs, korv, kyckling, mjöl, ägg", "beef, minced meat, sausage, chicken, flour, eggs."]
+        ] }
+      ] },
+      { title: "Off-class Page 3 - B. Skriv orden", sections: [
+        { heading: "Instruction", rows: [
+          ["B. Skriv orden på ditt språk och på svenska.", "B. Write the words in your language and in Swedish."]
+        ] },
+        { heading: "Word list", rows: [
+          ["går", "walks / goes"],
+          ["till", "to"],
+          ["en affär, tre affärer", "a shop, three shops"],
+          ["tar", "takes"],
+          ["en kundvagn", "a shopping trolley"],
+          ["en lista, tre listor", "a list, three lists"],
+          ["köper", "buys"],
+          ["grönsaker", "vegetables"],
+          ["också", "also"],
+          ["en frukt", "a fruit"],
+          ["en liter", "a liter"],
+          ["mellan", "between"],
+          ["en hylla, tre hyllor", "a shelf, three shelves"],
+          ["betalar", "pays"],
+          ["en kassa", "a checkout"],
+          ["packar", "packs"],
+          ["allt", "everything"],
+          ["en påse, tre påsar", "a bag, three bags"],
+          ["hem", "home"]
+        ] }
+      ] },
+      { title: "Off-class Page 4 - C. Frågor och D. Förkortningar", sections: [
+        { heading: "C. Questions about the text", rows: [
+          ["C. Svara på frågorna till texten.", "C. Answer the questions about the text."],
+          ["1. Vart går Eva och handlar?", "1. Where does Eva go shopping?"],
+          ["2. Vad har Eva med sig till affären?", "2. What does Eva bring with her to the shop?"],
+          ["3. Vad står först på listan?", "3. What is first on the list?"],
+          ["4. Vad köper Eva efter grönsakerna?", "4. What does Eva buy after the vegetables?"],
+          ["5. Skriv tre frukter som Eva köper.", "5. Write three fruits that Eva buys."],
+          ["6. Var köper Eva köttfärs?", "6. Where does Eva buy minced meat?"],
+          ["7. Vilka mejerivaror köper Eva?", "7. Which dairy products does Eva buy?"],
+          ["8. Var betalar Eva?", "8. Where does Eva pay?"],
+          ["9. Vad packar Eva i?", "9. What does Eva pack the goods in?"]
+        ] },
+        { heading: "D. Abbreviations", rows: [
+          ["D. Titta på filmen och träna på olika förkortningar.", "D. Watch the film and practice different abbreviations."],
+          ["kg = kilo (1000 g)", "kg = kilo (1000 grams)."],
+          ["hg = hekto (100 g)", "hg = hectogram (100 grams)."],
+          ["g = gram", "g = gram."],
+          ["st = stycken", "st = pieces."],
+          ["kr = kronor", "kr = kronor (Swedish crowns)."],
+          ["l = liter", "l = liter."],
+          ["pkt = paket", "pkt = package."],
+          ["ca = cirka", "ca = approximately."]
+        ] }
+      ] },
+      { title: "Off-class Page 5 - E. Berätta om när du handlar", sections: [
+        { heading: "Instruction", rows: [
+          ["E. Titta på filmen och svara på frågorna.", "E. Watch the film and answer the questions."],
+          ["Berätta om när du handlar.", "Tell about when you go shopping."]
+        ] },
+        { heading: "Questions", rows: [
+          ["1. Var handlar du?", "1. Where do you shop?"],
+          ["2. När handlar du?", "2. When do you shop?"],
+          ["3. Handlar du ensam eller tillsammans med någon?", "3. Do you shop alone or together with someone?"],
+          ["4. Hur ofta handlar du?", "4. How often do you shop?"],
+          ["5. Vad handlar du mest?", "5. What do you buy most?"],
+          ["6. Vad handlar du aldrig?", "6. What do you never buy?"],
+          ["7. Hur lång tid tar det att handla?", "7. How long does it take to shop?"],
+          ["8. Hur mycket betalar du, ungefär?", "8. How much do you pay, approximately?"]
+        ] }
+      ] },
+      { title: "Off-class Page 6 - G. och H. I mataffären", sections: [
+        { heading: "G. Listening questions", rows: [
+          ["G. Lyssna på I MATAFFÄREN. Svara på frågorna.", "G. Listen to IN THE GROCERY STORE. Answer the questions."],
+          ["1. Vad frågar Axel efter först? (olja / havregryn / ketchup)", "1. What does Axel ask for first? (oil / oats / ketchup)"],
+          ["2. Var finns havregryn? (Bredvid korvbröden. / De är slut. / På en annan hylla.)", "2. Where are the oats? (Next to the hot dog buns. / They are sold out. / On another shelf.)"],
+          ["3. Vad frågar Axel efter sen? (havregryn / ketchup / senap)", "3. What does Axel ask for next? (oats / ketchup / mustard)"],
+          ["4. Var finns ketchupen? (på en ny plats / på lagret / i kassan)", "4. Where is the ketchup? (in a new place / in the warehouse / at the checkout)"],
+          ["5. Behöver Axel senap? (Ja. / Nej, han behöver hjälp. / Han vill betala.)", "5. Does Axel need mustard? (Yes. / No, he needs help. / He wants to pay.)"]
+        ] },
+        { heading: "H. Fill in the missing words", rows: [
+          ["H. Lyssna en gång till och fyll i ord som saknas.", "H. Listen one more time and fill in the missing words."],
+          ["- Ursäkta, jag hittar inte ekologiska havregryn. Är de slut?", "- Excuse me, I cannot find organic oats. Are they sold out?"],
+          ["+ Ja, tyvärr. Vi får in mer nästa vecka.", "+ Yes, unfortunately. We will get more in next week."],
+          ["- Det var ju synd. Jag hittar inte ketchup ___. Är den också slut?", "- That is a pity. I cannot find ketchup ___. Is it also sold out?"],
+          ["+ Nej, den är inte slut, men vi har flyttat ketchupen till en annan hylla.", "+ No, it is not sold out, but we have moved the ketchup to another shelf."],
+          ["- Jaha. Var står den nu?", "- I see. Where is it now?"],
+          ["+ Den står till ___ där borta, bredvid korvbröden. Jag kan följa dig och visa.", "+ It is over there to the ___, next to the hot dog buns. I can come with you and show you."],
+          ["- Tack, vad ___. Och senap också. Precis vad jag behövde.", "- Thanks, how ___. And mustard too. Exactly what I needed."],
+          ["+ Säg till om det är mer jag kan hjälpa dig med.", "+ Let me know if there is anything else I can help you with."],
+          ["- Tack, men nu var det ___. Jag ska betala.", "- Thanks, but that was ___. I am going to pay."],
+          ["+ Okej.", "+ Okay."]
+        ] }
+      ] },
+      { title: "Off-class Page 7 - L. och M. Kvitton", sections: [
+        { heading: "L. Receipt questions", rows: [
+          ["L. Titta på filmen om kvitto. Titta på kvittot och svara på frågorna.", "L. Watch the film about receipts. Look at the receipt and answer the questions."],
+          ["1. Vad kostar 1 kg mannagryn?", "1. What does 1 kg of semolina cost?"],
+          ["2. Vad kostar 1 kg äpplen?", "2. What does 1 kg of apples cost?"],
+          ["3. Vad väger kundens äpplen?", "3. How much do the customer's apples weigh?"],
+          ["4. Hur mycket juice köper kunden?", "4. How much juice does the customer buy?"],
+          ["5. Hur många varor köper kunden?", "5. How many items does the customer buy?"],
+          ["6. Vad ska kunden betala totalt?", "6. How much does the customer pay in total?"],
+          ["7. Vad kostar ett paket jäst?", "7. What does a package of yeast cost?"],
+          ["8. Vad väger brödkryddorna?", "8. How much do the bread spices weigh?"],
+          ["9. Hur mycket rabatt får kunden på smöret?", "9. How much discount does the customer get on the butter?"],
+          ["10. Får kunden rabatt på avokado?", "10. Does the customer get a discount on avocado?"]
+        ] },
+        { heading: "Receipt items (Willys)", rows: [
+          ["Willys Hvitfeldtsplatsen, Mån-Fre 7-21, Lör-Sön 9-21", "Willys at Hvitfeldtsplatsen, Mon-Fri 7-21, Sat-Sun 9-21."],
+          ["avokado bitar (fryst avokado)", "avocado pieces (frozen avocado)."],
+          ["brödkryddor, malda", "bread spices, ground."],
+          ["himalayasalt", "Himalayan salt."],
+          ["grahamsgryn", "graham flakes."],
+          ["mannagryn", "semolina."],
+          ["jäst, färsk hushåll", "yeast, fresh household."],
+          ["tropisk juice", "tropical juice."],
+          ["äpple Aroma", "Aroma apples."],
+          ["smör (rabatt)", "butter (discount)."]
+        ] },
+        { heading: "M. Your own receipt", rows: [
+          ["M. Titta på ett kvitto som du har hemma. Svara på frågorna till ditt kvitto.", "M. Look at a receipt that you have at home. Answer the questions about your receipt."],
+          ["1. Vad heter affären?", "1. What is the shop called?"],
+          ["2. Hur många varor köpte du?", "2. How many items did you buy?"],
+          ["3. Vilken gata ligger affären på?", "3. What street is the shop on?"],
+          ["4. Vilket datum handlade du?", "4. What date did you shop?"],
+          ["5. När har affären öppet?", "5. When is the shop open?"],
+          ["6. Vad kostade allt?", "6. What did everything cost?"]
+        ] }
+      ] },
+      { title: "Off-class Page 8 - N. och O. Varorna i plural", sections: [
+        { heading: "Instructions", rows: [
+          ["N. Titta på filmen och träna på varorna.", "N. Watch the film and practice the goods."],
+          ["När du handlar säger du ofta orden i plural, t.ex. Jag ska handla tomater. Jag ska handla bananer.", "When you shop you often say the words in plural, for example: I am going to buy tomatoes. I am going to buy bananas."],
+          ["O. Skriv namnen på varorna.", "O. Write the names of the goods."]
+        ] },
+        { heading: "Pictures on the page", rows: [
+          ["blomkål", "cauliflower."],
+          ["grönsaker", "vegetables."],
+          ["paprikor", "bell peppers."],
+          ["en aubergine", "an eggplant."],
+          ["purjolök", "leeks."],
+          ["tomater", "tomatoes."],
+          ["gurka", "cucumber."],
+          ["sallad", "lettuce."],
+          ["frukt", "fruit."],
+          ["äpplen", "apples."],
+          ["päron", "pears."],
+          ["bananer", "bananas."]
+        ] }
+      ] },
+      { title: "Off-class Page 9 - O. Varorna, fortsättning", sections: [
+        { heading: "Pictures on the page", rows: [
+          ["apelsiner", "oranges."],
+          ["clementiner", "clementines."],
+          ["kiwi", "kiwis."],
+          ["en vattenmelon", "a watermelon."],
+          ["en mango", "a mango."],
+          ["mjölk", "milk."],
+          ["yoghurt", "yogurt."],
+          ["ost", "cheese."],
+          ["smör (Bregott)", "butter (Bregott brand)."],
+          ["nötkött", "beef."],
+          ["köttfärs", "minced meat."],
+          ["korv", "sausages."],
+          ["kyckling", "chicken."],
+          ["mjöl", "flour."],
+          ["ägg", "eggs."]
+        ] }
+      ] },
+      { title: "Off-class Page 10 - P. Karims frukost och lunch", sections: [
+        { heading: "Instruction", rows: [
+          ["P. Titta på filmen om Karim. Fyll i orden som fattas.", "P. Watch the film about Karim. Fill in the missing words."]
+        ] },
+        { heading: "Gap text", rows: [
+          ["Karim ___ frukost klockan sju på morgonen.", "Karim ___ breakfast at seven in the morning."],
+          ["Han ställer fram en ___ och en sked.", "He sets out a ___ and a spoon."],
+          ["Han öppnar kylskåpet och tar fram yoghurt till ___.", "He opens the refrigerator and takes out yogurt for ___."],
+          ["Han tar en smörkniv och en ___.", "He takes a butter knife and a ___."],
+          ["Han tar fram smör och ___. Han gör en ___.", "He takes out butter and ___. He makes a ___."],
+          ["Han häller upp ett ___ juice och en ___ te.", "He pours a ___ of juice and a ___ of tea."],
+          ["Han äter frukost och läser en ___.", "He eats breakfast and reads a ___."],
+          ["Klockan 13.00 äter Karim ___.", "At 13:00 Karim eats ___."],
+          ["Till lunch ska han äta en sallad.", "For lunch he is going to eat a salad."],
+          ["Han sköljer salladen och ___ den.", "He rinses the lettuce and ___ it."],
+          ["Han skär ___. Han öppnar en ___ majs.", "He cuts ___. He opens a ___ of corn."],
+          ["Han river en ___.", "He grates a ___."],
+          ["Han blandar allt och häller dressing på ___.", "He mixes everything and pours dressing on ___."],
+          ["Han tar fram en ___ och en ___ och äter salladen.", "He takes out a ___ and a ___ and eats the salad."],
+          ["Smaklig ___!", "Enjoy your ___!"]
+        ] },
+        { heading: "Word bank", rows: [
+          ["fram, ost, glas, hackar, gurka, osthyvel, måltid", "out, cheese, glass, chops, cucumber, cheese slicer, meal."],
+          ["burk, kopp, bröd, ställer, morot, skål, kniv", "can, cup, bread, sets, carrot, bowl, knife."],
+          ["frukost, smörgås, tidning, gaffel, lunch, salladen", "breakfast, sandwich, newspaper, fork, lunch, the salad."]
+        ] }
+      ] },
+      { title: "Off-class Page 11 - Q. Verb i köket", sections: [
+        { heading: "Instruction", rows: [
+          ["Q. Titta på filmen. Skriv rätt verb på raderna.", "Q. Watch the film. Write the correct verb on the lines."]
+        ] },
+        { heading: "Kitchen verbs shown in the pictures", rows: [
+          ["steka (steker)", "to fry (fries) - food frying in a pan."],
+          ["hälla (häller)", "to pour (pours) - pouring from a pot."],
+          ["hacka (hackar)", "to chop (chops) - chopping on a cutting board."],
+          ["riva (river)", "to grate (grates) - grating a carrot."],
+          ["hälla upp vatten", "to pour water - filling a pot from the tap."],
+          ["skölja (sköljer)", "to rinse (rinses) - rinsing vegetables in a bowl."],
+          ["skala (skalar)", "to peel (peels) - peeling potatoes."],
+          ["öppna en burk", "to open a can - using a can opener."],
+          ["skära (skär)", "to cut (cuts) - cutting a tomato."],
+          ["vispa (vispar)", "to whisk (whisks) - whisking in a bowl."],
+          ["röra (rör)", "to stir (stirs) - stirring a pot of food."]
+        ] }
+      ] },
+      { title: "Off-class Page 12 - R. Karims kväll", sections: [
+        { heading: "Instruction", rows: [
+          ["R. Titta på filmen. Fyll i orden som fattas.", "R. Watch the film. Fill in the missing words."]
+        ] },
+        { heading: "Gap text", rows: [
+          ["Karim ___ med en kompis klockan tre.", "Karim ___ with a friend at three o'clock."],
+          ["De sitter hemma ___ Karim.", "They sit at Karim's ___."],
+          ["De dricker kaffe och äter ___.", "They drink coffee and eat ___."],
+          ["Karim tycker ___ kaffe med ___ och socker.", "Karim likes coffee with ___ and sugar."],
+          ["De äter också några kakor.", "They also eat some cookies."],
+          ["Klockan sex på kvällen lagar Karim ___.", "At six in the evening Karim cooks ___."],
+          ["Han kokar ___.", "He boils ___."],
+          ["Han brukar grilla ___ eller lammkött.", "He usually grills ___ or lamb."],
+          ["Idag ___ han fisk.", "Today he ___ fish."],
+          ["Han gör en ___ av yoghurt och vitlök.", "He makes a ___ of yogurt and garlic."],
+          ["Han tar fram ___ ur frysen.", "He takes ___ out of the freezer."],
+          ["Mm, det ___ så gott. Det smakar gott också!", "Mm, it ___ so good. It tastes good too!"],
+          ["Karim dricker ___ till maten.", "Karim drinks ___ with the food."],
+          ["Vid nio äter Karim ___.", "At nine Karim eats ___."],
+          ["Han tar en smörgås och en ___.", "He has a sandwich and a ___."],
+          ["Ibland tar han ___ äpple. Ikväll tar han ett ___.", "Sometimes he has an apple. Tonight he has a ___."],
+          ["God natt!", "Good night!"]
+        ] },
+        { heading: "Word bank", rows: [
+          ["päron, luktar, vatten, mjölk, ett, steker, potatis", "pear, smells, water, milk, a/an, fries, potatoes."],
+          ["sås, hos, om, kyckling, middag, kvällsmat", "sauce, at (someone's place), about, chicken, dinner, evening meal."],
+          ["också, fikar, bullar, frukt", "also, has a fika, buns, fruit."]
+        ] }
+      ] },
+      { title: "Off-class Page 13 - S. Dialoger i affären", sections: [
+        { heading: "Instruction", rows: [
+          ["S. Lyssna på dialogerna. Träna med en kompis.", "S. Listen to the dialogues. Practice with a friend."]
+        ] },
+        { heading: "Dialogues", rows: [
+          ["- Ursäkta, var finns socker?", "- Excuse me, where is the sugar?"],
+          ["+ I hyllan bredvid mjöl och havregryn.", "+ On the shelf next to flour and oats."],
+          ["- Tack!", "- Thanks!"],
+          ["- Hej, var har ni ägg någonstans?", "- Hi, where do you have eggs?"],
+          ["+ De ligger i kylen till höger om smör och ost.", "+ They are in the refrigerated section to the right of butter and cheese."],
+          ["- Har ni ekologiska vindruvor?", "- Do you have organic grapes?"],
+          ["+ Nej, tyvärr. De är slut.", "+ No, unfortunately. They are sold out."],
+          ["- Kan jag betala med kontanter?", "- Can I pay with cash?"],
+          ["+ Nej, vi tar bara kort.", "+ No, we only take cards."],
+          ["- Vad kostar en papperskasse?", "- What does a paper bag cost?"],
+          ["+ Den kostar fem kronor.", "+ It costs five kronor."],
+          ["- Vill du ha kvittot?", "- Do you want the receipt?"],
+          ["+ Ja, tack.", "+ Yes, please."]
+        ] }
+      ] },
+      { title: "Off-class Page 14 - T. Rätt mått och U. Vad handlade du?", sections: [
+        { heading: "T. Circle the correct measure", rows: [
+          ["T. Ringa in rätt mått för varje livsmedel.", "T. Circle the correct measure for each food item."],
+          ["1. Jag köpte 2 kg / liter / msk mjölk.", "1. I bought 2 kg / liters / tablespoons of milk."],
+          ["2. Jag köpte 3 påsar / burkar / dl majs.", "2. I bought 3 bags / cans / deciliters of corn."],
+          ["3. Jag köpte 2 liter / stycken / dl vattenmeloner.", "3. I bought 2 liters / pieces / deciliters of watermelons."],
+          ["4. Jag köpte 1 g / liter / kg ost.", "4. I bought 1 gram / liter / kg of cheese."],
+          ["5. Jag köpte 2 kg / flaskor / paket läsk.", "5. I bought 2 kg / bottles / packages of soda."],
+          ["6. Jag köpte 1 stycken / liter / kg köttfärs.", "6. I bought 1 piece / liter / kg of minced meat."],
+          ["7. Jag köpte 1 stycken / paket / liter ägg.", "7. I bought 1 piece / package / liter of eggs."],
+          ["8. Jag köpte 1 liter / flaskor / kg kyckling.", "8. I bought 1 liter / bottles / kg of chicken."],
+          ["9. Jag köpte 1 g / liter / kg tomater.", "9. I bought 1 gram / liter / kg of tomatoes."],
+          ["10. Jag köpte 1 stycken / g / paket mjöl.", "10. I bought 1 piece / gram / package of flour."]
+        ] },
+        { heading: "U. Write what you bought", rows: [
+          ["U. Skriv vad du handlade senast.", "U. Write what you bought most recently."]
+        ] }
+      ] }
+    ];
+
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
       grid.innerHTML = "";
@@ -6498,14 +7137,134 @@
       setPage(0);
     }
 
+    function renderWeek9InClassTerms() {
+      const grid = document.querySelector("#week9InClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week9InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek9InClassComparison() {
+      const thumbs = document.querySelector("#week9InClassCompareThumbs");
+      const image = document.querySelector("#week9InClassCompareImage");
+      const overlay = document.querySelector("#week9InClassCompareQrOverlay");
+      const panel = document.querySelector("#week9InClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week9InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week9-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 9 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week9InClassPageSizes, week9InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week9InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week9InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
+    function renderWeek9OffClassTerms() {
+      const grid = document.querySelector("#week9OffClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week9OffClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek9OffClassComparison() {
+      const thumbs = document.querySelector("#week9OffClassCompareThumbs");
+      const image = document.querySelector("#week9OffClassCompareImage");
+      const overlay = document.querySelector("#week9OffClassCompareQrOverlay");
+      const panel = document.querySelector("#week9OffClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week9OffClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week9-off-class-pages/page-${page}.jpg`;
+        image.alt = `Week 9 off-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week9OffClassPageSizes, week9OffClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Off-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week9OffClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week9OffClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week8") ? "week8" : hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week9") ? "week9" : hash.startsWith("#week8") ? "week8" : hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -6671,6 +7430,10 @@
     renderWeek7OffClassComparison();
     renderWeek8InClassTerms();
     renderWeek8InClassComparison();
+    renderWeek9InClassTerms();
+    renderWeek9InClassComparison();
+    renderWeek9OffClassTerms();
+    renderWeek9OffClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
