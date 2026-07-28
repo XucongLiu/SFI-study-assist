@@ -1182,6 +1182,13 @@
     <span class="nav-label week-nav" data-week="week9">Off-class</span>
     <a class="week-nav" data-week="week9" href="#week9-off-class-compare">Translations</a>
     <a class="week-nav" data-week="week9" href="#week9-off-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week10">Week 10</span>
+    <span class="nav-label week-nav" data-week="week10">In-class</span>
+    <a class="week-nav" data-week="week10" href="#week10">Overview</a>
+    <a class="week-nav" data-week="week10" href="#week10-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week10" href="#week10-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week10">Off-class</span>
+    <a class="week-nav" data-week="week10" href="#week10-off-class">Add Pages Later</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1241,6 +1248,7 @@
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week7">Week 7</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week8">Week 8</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week9">Week 9</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week10">Week 10</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1918,6 +1926,57 @@
       <p class="section-lead">Important Week 9 off-class words from the MAT B+ booklet. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week9OffClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week10" class="week-panel" data-week="week10">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 10</h1>
+          <p>Noun grammar week: definite plural forms across all five noun groups, the full four-form table, a dinner-party dialogue, a reading about Sara, and the Midsommar tradition text.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week10-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week10-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week10-in-class-compare"><strong>In-class material</strong><span>Six classroom pages: definite plural rules and tables, the Gäster till middagen dialogue, Sara's text, and Midsommar.</span></a>
+            <a class="material-card" href="#week10-off-class"><strong>Off-class material</strong><span>No Week 10 off-class pages have been uploaded yet. This slot is ready for them.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 10 in-class grammar preview">
+          <img src="assets/sfi-week10-in-class-pages/page-01.jpg" alt="Week 10 in-class page about definite plural noun forms" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week10-in-class-compare" class="week-panel" data-week="week10">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 10 classroom page photos with English translations. Click Swedish snippets on the right to hear the pronunciation.</p>
+      <div class="compare">
+        <div class="thumbs" id="week10InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week10InClassCompareImage" src="assets/sfi-week10-in-class-pages/page-01.jpg" alt="Week 10 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week10InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week10InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week10-in-class-words" class="week-panel" data-week="week10">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 10 in-class words from the noun exercises, the dinner dialogue, and the Midsommar text. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week10InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week10-off-class" class="week-panel" data-week="week10">
+      <h2>Off-class Material</h2>
+      <p class="section-lead">No Week 10 off-class page photos were found in the raw image folder yet.</p>
+      <div class="panel pad">
+        <p class="note">When Week 10 off-class images are added later, put them in the Week 10 raw folder and run the same update process. This section is already reserved for them.</p>
       </div>
     </section>
 
@@ -6258,6 +6317,234 @@
       ] }
     ];
 
+    const week10InClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867],
+      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867]
+    };
+
+    const week10InClassQrCodes = [];
+
+    const week10InClassTerms = [
+      ["ett substantiv", "noun"], ["plural", "plural"], ["singular", "singular"],
+      ["bestämd form", "definite form"], ["obestämd form", "indefinite form"], ["en ändelse", "ending"],
+      ["en grupp", "group"], ["en konsonant", "consonant"], ["jämför", "compare"],
+      ["som fattas", "that are missing"], ["blandade", "mixed"], ["en klocka, klockorna", "clock, the clocks"],
+      ["en pojke, pojkarna", "boy, the boys"], ["en polis, poliserna", "police officer, the police officers"], ["ett foto, fotona", "photo, the photos"],
+      ["ett glas, glasen", "glass, the glasses"], ["en dammsugare, dammsugarna", "vacuum cleaner, the vacuum cleaners"], ["en lampa", "lamp"],
+      ["en soffa", "sofa"], ["en bokhylla", "bookshelf"], ["en tallrik", "plate"],
+      ["en kniv", "knife"], ["en gaffel", "fork"], ["en telefon", "telephone"],
+      ["en apparat", "device / appliance"], ["en maskin", "machine"], ["ett frimärke", "stamp"],
+      ["ett häfte", "booklet"], ["ett brev", "letter"], ["ett ord", "word"],
+      ["ett paket", "package"], ["ett år", "year"], ["en bussförare", "bus driver"],
+      ["en politiker", "politician"], ["en arm", "arm"], ["ett ben", "leg / bone"],
+      ["en gata", "street"], ["en väg", "road"], ["ett sjukhus", "hospital"],
+      ["en tröja", "sweater"], ["en vante", "mitten"], ["ett rum", "room"],
+      ["en operation", "operation / surgery"], ["en väska", "bag"], ["en kasse", "carrier bag"],
+      ["en pennvässare", "pencil sharpener"], ["en stad, städer", "city, cities"], ["ett land, länder", "country, countries"],
+      ["ett torg", "square / marketplace"], ["ett problem", "problem"], ["en gäst, gäster", "guest, guests"],
+      ["har bjudit in", "have invited"], ["en granne", "neighbor"], ["vuxna", "adults"],
+      ["har dukat fram", "has set out (on the table)"], ["tidigare på dagen", "earlier in the day"], ["en kyckling", "chicken"],
+      ["en massa", "a lot of"], ["grönsaker", "vegetables"], ["en vinflaska", "wine bottle"],
+      ["en läskedryck", "soft drink"], ["en karamell", "sweet / candy"], ["en ugn", "oven"],
+      ["klara", "ready / done"], ["en salladsskål", "salad bowl"], ["en fruktskål", "fruit bowl"],
+      ["en godisskål", "candy bowl"], ["dåligt städat", "badly cleaned / untidy"], ["ställ in", "put in / put away"],
+      ["ett skrivbord", "desk"], ["häng in", "hang up"], ["en garderob", "wardrobe"],
+      ["jag hinner inte", "I do not have time"], ["en tändare", "lighter"], ["ett samtal", "conversation / call"],
+      ["en kyrka", "church"], ["en stövel, stövlarna", "boot, the boots"], ["en tandborste", "toothbrush"],
+      ["en tand, tänder", "tooth, teeth"], ["ett område", "area"], ["en bror, brodern", "brother, the brother"],
+      ["en natt, natten", "night, the night"], ["en biff, biffar", "steak / patty, steaks"], ["ett öra, öronen", "ear, the ears"],
+      ["ett barn", "child"], ["en tidning", "newspaper"], ["en station", "station"],
+      ["ett ämne", "subject / topic"], ["ett jobb", "job"], ["en arbetare", "worker"],
+      ["en komiker", "comedian"], ["stryk under", "underline"], ["en kurskamrat", "course mate / classmate"],
+      ["slutade", "finished / quit"], ["ett daghem", "daycare center"], ["lämnar", "drops off / leaves"],
+      ["som vanligt", "as usual"], ["stannar", "stop"], ["berättar", "tells"],
+      ["ett pizzeria", "pizzeria"], ["framtidsplaner", "plans for the future"], ["en släkting", "relative"],
+      ["ett hemland", "home country"], ["trodde", "thought / believed"], ["död", "dead"],
+      ["kramar", "hugs"], ["en tårta", "cake"], ["sjunger sånger", "sing songs"],
+      ["Midsommar", "Midsummer"], ["sommarsolstånd", "summer solstice"], ["ett dygn", "24-hour period"],
+      ["midsommarafton", "Midsummer's Eve"], ["midsommardagen", "Midsummer's Day"], ["en helg", "holiday / weekend"],
+      ["reser en stång", "raise a pole"], ["klär med blad och blommor", "decorate with leaves and flowers"], ["en midsommarstång", "maypole"],
+      ["dansar runt", "dance around"], ["firar", "celebrate"], ["lägga sig", "go to bed"],
+      ["förrän", "until / before"], ["romantisk", "romantic"], ["en tradition", "tradition"],
+      ["plocka", "pick"], ["sorters blommor", "kinds of flowers"], ["en kudde", "pillow"],
+      ["drömmer om", "dream about"], ["gifta sig med", "marry"], ["ett midsommarbröllop", "Midsummer wedding"],
+      ["traditionell", "traditional"], ["färsk potatis", "new potatoes"], ["lax", "salmon"],
+      ["sill", "herring"], ["en efterrätt", "dessert"], ["jordgubbar", "strawberries"],
+      ["bråk", "fighting / trouble"], ["fylleri", "drunkenness"], ["ta hand om", "take care of"],
+      ["druckit", "drunk (past participle)"]
+    ];
+
+    const week10InClassTranslations = [
+      { title: "In-class Page 1 - C. Substantiv i plural: bestämd form", sections: [
+        { heading: "Rules", rows: [
+          ["C. Substantiv i plural: bestämd form", "C. Nouns in the plural: definite form."],
+          ["De flesta substantiv i bestämd form plural får ändelsen -na.", "Most nouns in the definite plural take the ending -na."],
+          ["Ett-ord som slutar på -n i obestämd form plural (t.ex. äpplen) får bara -a i bestämd form plural.", "Ett-words that end in -n in the indefinite plural (for example äpplen) take only -a in the definite plural."],
+          ["Ett-ord som slutar på konsonant (t.ex. barn, hus) får ändelsen -en i bestämd form plural.", "Ett-words that end in a consonant (for example barn, hus) take the ending -en in the definite plural."]
+        ] },
+        { heading: "Model table (group, indefinite plural, definite plural, ending)", rows: [
+          ["1 - klockor - klockorna - ändelse -na", "1 - clocks - the clocks - ending -na."],
+          ["2 - pojkar - pojkarna - ändelse -na", "2 - boys - the boys - ending -na."],
+          ["3 - poliser - poliserna - ändelse -na", "3 - police officers - the police officers - ending -na."],
+          ["4 - foton - fotona - ändelse -a", "4 - photos - the photos - ending -a."],
+          ["5 - glas - glasen - ändelse -en", "5 - glasses - the glasses - ending -en."],
+          ["dammsugare - dammsugarna - ändelse -na", "vacuum cleaners - the vacuum cleaners - ending -na."],
+          ["iranier - iranierna - ändelse -na", "Iranians - the Iranians - ending -na."]
+        ] },
+        { heading: "Exercise 1", rows: [
+          ["1. Skriv substantiven i bestämd form plural. Jämför med orden i rutan på s. 123.", "1. Write the nouns in the definite plural. Compare with the words in the box on page 123."],
+          ["Grupp 1: lampor - lamporna", "Group 1: lamps - the lamps."],
+          ["soffor - sofforna", "sofas - the sofas."],
+          ["bokhyllor - bokhyllorna", "bookshelves - the bookshelves."],
+          ["Grupp 2: tallrikar - tallrikarna", "Group 2: plates - the plates."],
+          ["knivar - knivarna", "knives - the knives."],
+          ["gafflar - gafflarna", "forks - the forks."],
+          ["Grupp 3: telefoner - telefonerna", "Group 3: telephones - the telephones."],
+          ["apparater - apparaterna", "devices - the devices."],
+          ["maskiner - maskinerna", "machines - the machines."],
+          ["Grupp 4: frimärken - frimärkena", "Group 4: stamps - the stamps."],
+          ["häften - häftena", "booklets - the booklets."],
+          ["äpplen - äpplena", "apples - the apples."]
+        ] }
+      ] },
+      { title: "In-class Page 2 - Grupp 5 och övning 2", sections: [
+        { heading: "Exercise 1, group 5", rows: [
+          ["brev - breven", "letters - the letters."],
+          ["ord - orden", "words - the words."],
+          ["paket - paketen", "packages - the packages."],
+          ["år - åren", "years - the years."],
+          ["bussförare - bussförarna", "bus drivers - the bus drivers."],
+          ["cd-spelare - cd-spelarna", "CD players - the CD players."],
+          ["politiker - politikerna", "politicians - the politicians."]
+        ] },
+        { heading: "Exercise 2", rows: [
+          ["2. Skriv substantiven som fattas. Substantiv från alla grupper är blandade.", "2. Write the nouns that are missing. Nouns from all groups are mixed together."],
+          ["a) armar - armarna", "a) arms - the arms."],
+          ["b) ben - benen", "b) legs - the legs."],
+          ["c) gator - gatorna", "c) streets - the streets."],
+          ["d) vägar - vägarna", "d) roads - the roads."],
+          ["e) sjukhus - sjukhusen", "e) hospitals - the hospitals."],
+          ["f) tröjor - tröjorna", "f) sweaters - the sweaters."],
+          ["g) vantar - vantarna", "g) mittens - the mittens."],
+          ["h) rum - rummen", "h) rooms - the rooms."],
+          ["i) operationer - operationerna", "i) operations - the operations."],
+          ["j) väskor - väskorna", "j) bags - the bags."],
+          ["k) kassar - kassarna", "k) carrier bags - the carrier bags."],
+          ["l) pennvässare - pennvässarna", "l) pencil sharpeners - the pencil sharpeners."],
+          ["m) städer - städerna", "m) cities - the cities."],
+          ["n) länder - länderna", "n) countries - the countries."],
+          ["o) torg - torgen", "o) squares - the squares."],
+          ["p) problem - problemen", "p) problems - the problems."]
+        ] }
+      ] },
+      { title: "In-class Page 3 - Gäster till middagen", sections: [
+        { heading: "Instruction", rows: [
+          ["3. Läs texten och skriv färdigt dialogen.", "3. Read the text and complete the dialogue."],
+          ["Använd passande ord i bestämd form plural. Ta hjälp av bilderna om du behöver.", "Use suitable words in the definite plural. Use the pictures for help if you need to."]
+        ] },
+        { heading: "Reading", rows: [
+          ["Gäster till middagen", "Guests for dinner."],
+          ["Julia och Daniel har bjudit in några av sina grannar.", "Julia and Daniel have invited some of their neighbors."],
+          ["Det blir sju gäster, fem vuxna och två barn.", "There will be seven guests, five adults and two children."],
+          ["Julia har dukat fram tallrikar, knivar och gafflar.", "Julia has set out plates, knives, and forks."],
+          ["Tidigare på dagen var hon och Daniel ute och handlade flera kycklingar, en massa grönsaker, några vinflaskor, läskedrycker, bananer, äpplen och karameller.", "Earlier in the day she and Daniel were out shopping for several chickens, a lot of vegetables, some bottles of wine, soft drinks, bananas, apples, and sweets."]
+        ] },
+        { heading: "Dialogue to complete", rows: [
+          ["a) Julia: Jag ser i ugnen att ___ är klara nu.", "a) Julia: I can see in the oven that the ___ are ready now."],
+          ["b) Daniel: Och jag har lagt ___ i den stora salladsskålen och ___ och ___ i fruktskålen.", "b) Daniel: And I have put the ___ in the big salad bowl, and the ___ and the ___ in the fruit bowl."],
+          ["c) Julia: Då kan du lägga ___ i godisskålen också.", "c) Julia: Then you can put the ___ in the candy bowl too."],
+          ["d) Daniel: Kanske ska jag öppna ___. Men alla dricker nog inte vin, så jag tar fram ___ också.", "d) Daniel: Maybe I should open the ___. But probably not everyone drinks wine, so I will get out the ___ as well."],
+          ["e) Julia: Det är bra. Då tar du fram ___ också så att vi har något att dricka ur. Allt annat har jag dukat fram.", "e) Julia: That is good. Then you get out the ___ too, so we have something to drink from. I have set out everything else."],
+          ["f) Daniel: Nehej, du har glömt ___!", "f) Daniel: Oh no, you have forgotten the ___!"],
+          ["g) Julia: Oj, då. Men du Daniel. Det är dåligt städat här, tycker jag. Ställ in de här ___ i bokhyllan.", "g) Julia: Oops. But listen, Daniel. I think it is untidy in here. Put these ___ in the bookshelf."],
+          ["Och de här ___ kan du lägga på ditt skrivbord.", "And you can put these ___ on your desk."],
+          ["h) Daniel: Okej. Och du hänger in de här ___ i garderoben!", "h) Daniel: Okay. And you hang these ___ in the wardrobe!"],
+          ["i) Julia: Jag hinner inte. ___ kommer ju nu!", "i) Julia: I do not have time. The ___ are arriving right now!"]
+        ] }
+      ] },
+      { title: "In-class Page 4 - Alla fyra former", sections: [
+        { heading: "Model table (indefinite singular, definite singular, indefinite plural, definite plural)", rows: [
+          ["1 en väska - väskan - väskor - väskorna", "1 a bag - the bag - bags - the bags."],
+          ["2 en tidning - tidningen - tidningar - tidningarna", "2 a newspaper - the newspaper - newspapers - the newspapers."],
+          ["3 en station - stationen - stationer - stationerna", "3 a station - the station - stations - the stations."],
+          ["4 ett ämne - ämnet - ämnen - ämnena", "4 a subject - the subject - subjects - the subjects."],
+          ["5 ett jobb - jobbet - jobb - jobben", "5 a job - the job - jobs - the jobs."],
+          ["en arbetare - arbetaren - arbetare - arbetarna", "a worker - the worker - workers - the workers."],
+          ["en komiker - komikern - komiker - komikerna", "a comedian - the comedian - comedians - the comedians."]
+        ] },
+        { heading: "Exercise 1", rows: [
+          ["1. Skriv substantiv som fattas. Substantiv från alla grupper står blandade.", "1. Write the nouns that are missing. Nouns from all groups are mixed together."],
+          ["a) en tändare - ___ - ___ - ___", "a) a lighter - the lighter - lighters - the lighters."],
+          ["b) ett samtal - ___ - samtal - ___", "b) a conversation - the conversation - conversations - the conversations."],
+          ["c) ___ - kyrkan - ___ - kyrkorna", "c) a church - the church - churches - the churches."],
+          ["d) en stövel - ___ - ___ - stövlarna", "d) a boot - the boot - boots - the boots."],
+          ["e) en tandborste - ___ - ___ - ___", "e) a toothbrush - the toothbrush - toothbrushes - the toothbrushes."],
+          ["f) ___ - tanden - tänder - ___", "f) a tooth - the tooth - teeth - the teeth."],
+          ["g) ett område - ___ - ___ - områdena", "g) an area - the area - areas - the areas."],
+          ["h) en bror - brodern - ___ - ___", "h) a brother - the brother - brothers - the brothers."],
+          ["i) ___ - natten - ___ - ___", "i) a night - the night - nights - the nights."],
+          ["j) ___ - ___ - biffar - ___", "j) a steak - the steak - steaks - the steaks."],
+          ["k) ett öra - ___ - ___ - öronen", "k) an ear - the ear - ears - the ears."],
+          ["l) ett barn - ___ - ___ - ___", "l) a child - the child - children - the children."]
+        ] }
+      ] },
+      { title: "In-class Page 5 - Saras särskilda dag", sections: [
+        { heading: "Instruction", rows: [
+          ["2. Läs texten om Saras särskilda dag.", "2. Read the text about Sara's special day."],
+          ["a) Stryk under alla substantiv. Det första är redan understruket.", "a) Underline all the nouns. The first one is already underlined."]
+        ] },
+        { heading: "Reading", rows: [
+          ["Sara", "Sara."],
+          ["En dag går Sara och tänker på en kurskamrat som heter Neda.", "One day Sara is walking along thinking about a classmate named Neda."],
+          ["Hon slutade på kursen för några veckor sedan: \"Var är hon nu? Vad gör hon nu?\" tänker Sara.", "She left the course a few weeks ago: \"Where is she now? What is she doing now?\" Sara thinks."],
+          ["Sara går till daghemmet och lämnar barnen som vanligt.", "Sara goes to the daycare center and drops off the children as usual."],
+          ["Efter bara några minuter ser hon en kvinna på vägen.", "After only a few minutes she sees a woman on the road."],
+          ["Men det är ju Neda!", "But it is Neda!"],
+          ["De stannar och pratar länge.", "They stop and talk for a long time."],
+          ["Neda berättar att hon har fått jobb på en pizzeria. Allt är bra.", "Neda tells her that she has got a job at a pizzeria. Everything is fine."],
+          ["Lite senare kommer Sara till kursen. Då ser hon att Jakob har kommit tillbaka.", "A little later Sara arrives at the course. Then she sees that Jakob has come back."],
+          ["Han slutade kursen för flera månader sedan för han hade stora problem i familjen.", "He left the course several months ago because he had big problems in the family."],
+          ["Men nu ser han glad ut och pratar om sina framtidsplaner.", "But now he looks happy and talks about his plans for the future."],
+          ["När Sara kommer hem på eftermiddagen läser hon ett brev som hon har fått samma dag.", "When Sara comes home in the afternoon she reads a letter that she received the same day."],
+          ["Det är från en kvinna, en släkting i hemlandet.", "It is from a woman, a relative in her home country."],
+          ["Och Sara som trodde att den här kvinnan var död!", "And Sara had thought that this woman was dead!"],
+          ["Sara kramar barnen och på kvällen äter de tårta och sjunger sånger tillsammans.", "Sara hugs the children, and in the evening they eat cake and sing songs together."]
+        ] },
+        { heading: "Task b", rows: [
+          ["b) Välj tio substantiv i texten ovan och skriv dem i alla former som i uppgift 1 på s. 127. Skriv på separat papper.", "b) Choose ten nouns from the text above and write them in all forms, as in exercise 1 on page 127. Write on a separate sheet of paper."],
+          ["Exempel: en dag, dagen, dagar, dagarna", "Example: a day, the day, days, the days."]
+        ] }
+      ] },
+      { title: "In-class Page 6 - Midsommar", sections: [
+        { heading: "Reading", rows: [
+          ["Midsommar", "Midsummer."],
+          ["Den 21 juni är det sommarsolstånd.", "The 21st of June is the summer solstice."],
+          ["Det är den dagen som solen är uppe längst.", "That is the day when the sun is up the longest."],
+          ["I norra Sverige är solen uppe hela dygnet.", "In northern Sweden the sun is up around the clock."],
+          ["Fredagen närmast den 21 kallas för midsommarafton, och lördagen kallas för midsommardagen.", "The Friday closest to the 21st is called Midsummer's Eve, and the Saturday is called Midsummer's Day."],
+          ["Midsommar är en av de största helgerna i Sverige.", "Midsummer is one of the biggest holidays in Sweden."],
+          ["På midsommarafton reser man en stång som man klär med blad och blommor.", "On Midsummer's Eve people raise a pole that they decorate with leaves and flowers."],
+          ["Sedan dansar man runt midsommarstången.", "Then people dance around the maypole."],
+          ["Man firar hela eftermiddagen och hela kvällen.", "People celebrate the whole afternoon and the whole evening."],
+          ["Många tycker inte att man ska gå och lägga sig förrän solen går upp igen på midsommardagens morgon.", "Many think you should not go to bed until the sun rises again on the morning of Midsummer's Day."],
+          ["Midsommar är en romantisk helg.", "Midsummer is a romantic holiday."],
+          ["Det är en gammal tradition att plocka sju eller nio sorters blommor och lägga under kudden på midsommaraftonens natt.", "It is an old tradition to pick seven or nine kinds of flowers and put them under your pillow on the night of Midsummer's Eve."],
+          ["Då drömmer man om den man ska gifta sig med.", "Then you dream about the person you are going to marry."],
+          ["Det är också mycket vanligt med midsommarbröllop.", "Midsummer weddings are also very common."],
+          ["Traditionell mat på midsommar är färsk potatis med lax eller sill och till efterrätt äter man gärna jordgubbar.", "Traditional food at Midsummer is new potatoes with salmon or herring, and for dessert people like to eat strawberries."],
+          ["Tyvärr är midsommar också en helg med mycket bråk och fylleri.", "Unfortunately Midsummer is also a holiday with a lot of fighting and drunkenness."],
+          ["Polisen får arbeta extra mycket på midsommar för att ta hand om alla som har druckit för mycket alkohol.", "The police have to work extra hard at Midsummer to take care of everyone who has drunk too much alcohol."]
+        ] },
+        { heading: "Exercise 1", rows: [
+          ["1. Fyll i rätt ord och svara på frågorna. Orden finns i texten.", "1. Fill in the correct word and answer the questions. The words are in the text."],
+          ["a) Vem betalar ett ... i ditt hemland? Flickans eller pojkens föräldrar eller flickan och pojken?", "a) Who pays for a ... in your home country? The girl's or the boy's parents, or the girl and the boy?"],
+          ["b) Tycker du om att ... blommor?", "b) Do you like to ... flowers?"],
+          ["c) ... du ofta på nätterna?", "c) Do you ... often at night?"],
+          ["d) Vad vill du ha till ... idag? Glass eller frukt?", "d) What would you like for ... today? Ice cream or fruit?"]
+        ] }
+      ] }
+    ];
+
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
       grid.innerHTML = "";
@@ -7257,14 +7544,74 @@
       setPage(0);
     }
 
+    function renderWeek10InClassTerms() {
+      const grid = document.querySelector("#week10InClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week10InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek10InClassComparison() {
+      const thumbs = document.querySelector("#week10InClassCompareThumbs");
+      const image = document.querySelector("#week10InClassCompareImage");
+      const overlay = document.querySelector("#week10InClassCompareQrOverlay");
+      const panel = document.querySelector("#week10InClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week10InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week10-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 10 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week10InClassPageSizes, week10InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week10InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week10InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week9") ? "week9" : hash.startsWith("#week8") ? "week8" : hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week10") ? "week10" : hash.startsWith("#week9") ? "week9" : hash.startsWith("#week8") ? "week8" : hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -7434,6 +7781,8 @@
     renderWeek9InClassComparison();
     renderWeek9OffClassTerms();
     renderWeek9OffClassComparison();
+    renderWeek10InClassTerms();
+    renderWeek10InClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
