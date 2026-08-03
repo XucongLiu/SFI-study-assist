@@ -1188,7 +1188,8 @@
     <a class="week-nav" data-week="week10" href="#week10-in-class-compare">Translations</a>
     <a class="week-nav" data-week="week10" href="#week10-in-class-words">Word Learning</a>
     <span class="nav-label week-nav" data-week="week10">Off-class</span>
-    <a class="week-nav" data-week="week10" href="#week10-off-class">Add Pages Later</a>
+    <a class="week-nav" data-week="week10" href="#week10-off-class-compare">Translations</a>
+    <a class="week-nav" data-week="week10" href="#week10-off-class-words">Word Learning</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1939,8 +1940,8 @@
             <a class="btn" href="#week10-in-class-words">Practice Words</a>
           </div>
           <div class="material-switch">
-            <a class="material-card" href="#week10-in-class-compare"><strong>In-class material</strong><span>Six classroom pages: definite plural rules and tables, the Gäster till middagen dialogue, Sara's text, and Midsommar.</span></a>
-            <a class="material-card" href="#week10-off-class"><strong>Off-class material</strong><span>No Week 10 off-class pages have been uploaded yet. This slot is ready for them.</span></a>
+            <a class="material-card" href="#week10-in-class-compare"><strong>In-class material</strong><span>Eight classroom pages: definite plural rules and tables, the Gäster till middagen dialogue, Sara's text, Midsommar, a first-date dialogue, and modal verb (hjälpverb) exercises.</span></a>
+            <a class="material-card" href="#week10-off-class-compare"><strong>Off-class material</strong><span>Ten MIN FRAMTID (My Future) booklet pages: Amina's future story, modal verb practice, personal questions, and 8 QR video links.</span></a>
           </div>
         </div>
         <div class="scan-preview" aria-label="Week 10 in-class grammar preview">
@@ -1972,11 +1973,26 @@
       </div>
     </section>
 
-    <section id="week10-off-class" class="week-panel" data-week="week10">
-      <h2>Off-class Material</h2>
-      <p class="section-lead">No Week 10 off-class page photos were found in the raw image folder yet.</p>
+    <section id="week10-off-class-compare" class="week-panel" data-week="week10">
+      <h2>Off-class Translation</h2>
+      <p class="section-lead">Compare the Week 10 MIN FRAMTID booklet photos with English translations. QR overlays are clickable and open the linked videos.</p>
+      <div class="compare">
+        <div class="thumbs" id="week10OffClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week10OffClassCompareImage" src="assets/sfi-week10-off-class-pages/page-01.jpg" alt="Week 10 off-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week10OffClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week10OffClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week10-off-class-words" class="week-panel" data-week="week10">
+      <h2>Off-class Word Learning</h2>
+      <p class="section-lead">Important Week 10 off-class words from the MIN FRAMTID booklet. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
-        <p class="note">When Week 10 off-class images are added later, put them in the Week 10 raw folder and run the same update process. This section is already reserved for them.</p>
+        <div class="term-list" id="week10OffClassTerms"></div>
       </div>
     </section>
 
@@ -6319,10 +6335,29 @@
 
     const week10InClassPageSizes = {
       1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867],
-      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867]
+      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867],
+      7: [1400, 1867], 8: [1400, 1867]
     };
 
     const week10InClassQrCodes = [];
+
+    const week10OffClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867],
+      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867],
+      7: [1400, 1867], 8: [1400, 1867], 9: [1400, 1867],
+      10: [1400, 1867]
+    };
+
+    const week10OffClassQrCodes = [
+      { page: 1, type: "url", value: "https://youtu.be/RoJhiFy8PUM", x: 189, y: 104, w: 73, h: 71 },
+      { page: 2, type: "url", value: "https://youtu.be/lWH1K_c1Lio", x: 1144, y: 228, w: 125, h: 124 },
+      { page: 3, type: "url", value: "https://youtu.be/ebJ55HeHgU4", x: 1176, y: 124, w: 64, h: 58 },
+      { page: 4, type: "url", value: "https://youtu.be/Y3CE47oSxoY", x: 1177, y: 1187, w: 123, h: 122 },
+      { page: 5, type: "url", value: "https://youtu.be/ZUVx__Mjq8c", x: 1066, y: 134, w: 106, h: 102 },
+      { page: 6, type: "url", value: "https://youtu.be/7XIL_HkQSXo", x: 1064, y: 314, w: 127, h: 129 },
+      { page: 8, type: "url", value: "https://youtu.be/61KuVMlOVhw", x: 1133, y: 1203, w: 84, h: 88 },
+      { page: 10, type: "url", value: "https://youtu.be/loSxvPtVD2Y", x: 1198, y: 77, w: 70, h: 64 }
+    ];
 
     const week10InClassTerms = [
       ["ett substantiv", "noun"], ["plural", "plural"], ["singular", "singular"],
@@ -6371,7 +6406,48 @@
       ["traditionell", "traditional"], ["färsk potatis", "new potatoes"], ["lax", "salmon"],
       ["sill", "herring"], ["en efterrätt", "dessert"], ["jordgubbar", "strawberries"],
       ["bråk", "fighting / trouble"], ["fylleri", "drunkenness"], ["ta hand om", "take care of"],
-      ["druckit", "drunk (past participle)"]
+      ["druckit", "drunk (past participle)"], ["en dejt", "date"], ["beställer", "orders"],
+      ["kycklingcurry", "chicken curry"], ["nudlar", "noodles"], ["räkor", "shrimp"],
+      ["lära känna varandra", "get to know each other"], ["passar ihop", "are a good match / fit together"], ["smakar", "tastes"],
+      ["starkt", "spicy / strong"], ["jättegott", "delicious"], ["ett äventyr", "adventure"],
+      ["spännande", "exciting"], ["ärligt talat", "honestly"], ["trivs", "enjoy / feel at home"],
+      ["lugn och ro", "peace and quiet"], ["en myskväll", "a cozy evening"], ["tråkigt", "boring"],
+      ["rastlös", "restless"], ["fredagsmys", "Friday coziness (Swedish tradition)"], ["trygghet", "security"],
+      ["lycka", "happiness"], ["en släkt", "extended family"], ["i närheten", "nearby"],
+      ["ställer upp för varandra", "support each other"], ["blod är tjockare än vatten", "blood is thicker than water"], ["stämmer", "is true / correct"],
+      ["umgås", "spend time / socialize"], ["lägger sig i", "interferes / meddles"], ["skvallrar", "gossip"],
+      ["skvaller", "gossip (noun)"], ["notan", "the bill / check"], ["ett hjälpverb", "auxiliary / modal verb"],
+      ["ska", "shall / will / going to"], ["vill", "want to"], ["kan", "can / know how to"],
+      ["får", "may / is allowed to"], ["måste", "must / have to"], ["behöver", "need to"],
+      ["brukar", "usually do"], ["borde", "should / ought to"], ["tänker", "plan to / intend to"],
+      ["infinitiv", "infinitive"], ["röka", "smoke"], ["hyran", "the rent"],
+      ["ledig", "off / free"], ["duscha", "shower"], ["frisör", "hairdresser"],
+      ["konferens", "conference"], ["låna", "borrow"], ["ett ögonblick", "a moment"],
+      ["gifta sig", "get married"], ["Systemet", "the state liquor store (Systembolaget)"], ["vitt / rött (vin)", "white / red (wine)"],
+      ["Strandkaféet", "the beach café (place name)"], ["Stadshotellet", "the city hotel (place name)"], ["äckliga cigarretter", "disgusting cigarettes"]
+    ];
+
+    const week10OffClassTerms = [
+      ["framtiden", "the future"], ["hjälpverb", "auxiliary / modal verbs"], ["korta svar", "short answers"],
+      ["återberätta", "retell"], ["klar", "finished / ready"], ["en busschaufför", "bus driver"],
+      ["några", "a few / some"], ["spara", "save (money)"], ["ett biljardbord", "billiard / pool table"],
+      ["jorden runt", "around the world"], ["då", "then"], ["en semester", "vacation"],
+      ["ge", "give"], ["andra", "others"], ["en människa, människor", "person, people"],
+      ["bygga", "build"], ["en brunn", "well (water)"], ["fler", "more"],
+      ["rent vatten", "clean water"], ["allt", "everything"], ["blir", "becomes / turns out"],
+      ["hoppas", "hope"], ["utbilda sig", "get an education / educate oneself"], ["flytta", "move (relocate)"],
+      ["naturen", "nature"], ["lönen", "the salary"], ["en sjuksköterska", "nurse"],
+      ["studera", "study"], ["norska", "Norwegian (language)"], ["danska", "Danish (language)"],
+      ["swahili", "Swahili"], ["en utbildning", "education"], ["betalt", "paid"],
+      ["plugga", "study (informal)"], ["följa med", "come along"], ["ett husdjur", "pet"],
+      ["fritiden", "free time / leisure"], ["träffa", "meet"], ["släktingar", "relatives"],
+      ["lära sig", "learn"], ["subjekt", "subject (grammar)"], ["dansa", "dance"],
+      ["träna", "exercise / train"], ["tvätta", "wash / do laundry"], ["åka", "travel / go"],
+      ["gå hem", "go home"], ["tala", "speak"], ["sjunga", "sing"],
+      ["ljuga", "lie (tell a lie)"], ["utomlands", "abroad"], ["försöker", "try"],
+      ["köra bil", "drive a car"], ["vissla", "whistle"], ["krama", "hug"],
+      ["gift", "married"], ["tycker om", "like"], ["lyssnar på", "listen to"],
+      ["hemlandet", "the home country"], ["förstår", "understand"]
     ];
 
     const week10InClassTranslations = [
@@ -6541,6 +6617,268 @@
           ["b) Tycker du om att ... blommor?", "b) Do you like to ... flowers?"],
           ["c) ... du ofta på nätterna?", "c) Do you ... often at night?"],
           ["d) Vad vill du ha till ... idag? Glass eller frukt?", "d) What would you like for ... today? Ice cream or fruit?"]
+        ] }
+      ] },
+      { title: "In-class Page 7 - Första dejten", sections: [
+        { heading: "Setup", rows: [
+          ["Första dejten", "The first date."],
+          ["Maria och Fredrik är på sin första dejt på en thai-restaurang.", "Maria and Fredrik are on their first date at a Thai restaurant."],
+          ["Fredrik beställer en kycklingcurry med ris och Maria tar nudlar med räkor.", "Fredrik orders a chicken curry with rice and Maria has noodles with shrimp."],
+          ["När de har fått sin mat, börjar de prata.", "When they have gotten their food, they start talking."],
+          ["De vill lära känna varandra för att se om de passar ihop.", "They want to get to know each other to see if they are a good match."]
+        ] },
+        { heading: "Dialogue", rows: [
+          ["Maria: Smakar det bra?", "Maria: Does it taste good?"],
+          ["Fredrik: Ja, fast det är lite för starkt för mig. Hur är din mat?", "Fredrik: Yes, though it is a little too spicy for me. How is your food?"],
+          ["Maria: Jättegott! Jag älskar thaimat.", "Maria: Delicious! I love Thai food."],
+          ["Jaha ... Vad ska vi börja med? Vad är viktigt för dig i livet?", "So ... What should we start with? What is important to you in life?"],
+          ["Fredrik: Jaa ... Familjen och släkten är viktiga för mig.", "Fredrik: Well ... Family and relatives are important to me."],
+          ["Jag har en stor släkt och nästan alla bor här i närheten.", "I have a big extended family and almost everyone lives nearby."],
+          ["Vi äter ofta middag hos varandra och ställer upp för varandra när någon behöver hjälp.", "We often eat dinner at each other's homes and support each other when someone needs help."],
+          ["Blod är tjockare än vatten, sägs det och det stämmer.", "Blood is thicker than water, as they say, and it is true."],
+          ["Maria: Hmm ... då tycker vi olika i den frågan.", "Maria: Hmm ... then we think differently about that."],
+          ["Fredrik: Verkligen? Jag vill ha trygghet, inte äventyr.", "Fredrik: Really? I want security, not adventure."],
+          ["Fast jobb, trivsamt hem och familjeliv, det är lycka för mig.", "A steady job, a cozy home, and family life, that is happiness for me."],
+          ["Fredrik: Vad, gillar du inte dina släktingar?", "Fredrik: What, don't you like your relatives?"],
+          ["Maria: Jo, fast jag umgås inte så mycket med dem.", "Maria: I do, but I don't spend much time with them."],
+          ["De lägger sig i och skvallrar, och det gillar jag inte.", "They meddle and gossip, and I don't like that."],
+          ["Fredrik: Jag gillar inte heller skvaller. Men vad är viktigt för dig?", "Fredrik: I don't like gossip either. But what is important to you?"],
+          ["Maria: Jag älskar att resa! Om jag hade pengar, skulle jag resa världen runt.", "Maria: I love to travel! If I had money, I would travel around the world."],
+          ["Jag gillar att prova olika länders mat och lära mig om olika kulturer.", "I like trying different countries' food and learning about different cultures."],
+          ["Livet ska vara ett spännande äventyr!", "Life should be an exciting adventure!"],
+          ["Fredrik: Jaså. Ärligt talat så tycker jag inte om att resa.", "Fredrik: I see. Honestly, I don't like traveling."],
+          ["Jag trivs bra hemma. Jag gillar att ha lugn och ro.", "I feel comfortable at home. I like having peace and quiet."],
+          ["En myskväll hemma med god mat och någon bra film på tv, sånt tycker jag om.", "A cozy evening at home with good food and a good movie on TV, that is what I like."],
+          ["Maria: Blir det inte tråkigt? Jag blir rastlös om det inte händer något.", "Maria: Doesn't that get boring? I get restless if nothing happens."],
+          ["Svenssonlivet med jobb, villa och fredagsmys - det passar inte mig.", "The ordinary \"Svensson\" life with a job, a house, and cozy Fridays - that does not suit me."],
+          ["Maria: Oj, vad klockan är mycket! Ska vi be om notan?", "Maria: Oh, look at the time! Shall we ask for the bill?"]
+        ] }
+      ] },
+      { title: "In-class Page 8 - Hjälpverb", sections: [
+        { heading: "A. Example modal verbs", rows: [
+          ["Hjälpverb", "Auxiliary / modal verbs."],
+          ["ska - Vad ska du göra på lördag?", "shall/will - What are you going to do on Saturday?"],
+          ["vill - Jag vill inte äta nu. Jag är inte hungrig.", "want to - I don't want to eat now. I am not hungry."],
+          ["kan - Jag kan inte spela piano.", "can - I can't play the piano."],
+          ["får - Du får inte röka här!", "may - You are not allowed to smoke here!"],
+          ["måste - Jag måste betala hyran före 31/10.", "must - I have to pay the rent before October 31."],
+          ["behöver - Han behöver inte gå till skolan i morgon. Han är ledig.", "need to - He doesn't need to go to school tomorrow. He has the day off."],
+          ["brukar - Jag brukar duscha efter jobbet.", "usually - I usually shower after work."],
+          ["borde - Du borde äta mer frukt och grönsaker!", "should - You should eat more fruit and vegetables!"],
+          ["tänker - De tänker köpa ett hus på landet. (tänker = ska)", "plan to - They are planning to buy a house in the countryside. (tänker = will/going to)"],
+          ["FORMELL REGEL: hjälpverb + infinitiv", "FORMAL RULE: auxiliary verb + infinitive."]
+        ] },
+        { heading: "B. Fill in a suitable modal verb", rows: [
+          ["1. ___ du gå hem nu?", "1. ___ you going home now?"],
+          ["2. ___ han tala svenska?", "2. ___ he speak Swedish?"],
+          ["3. Min dotter ___ bli frisör.", "3. My daughter ___ become a hairdresser."],
+          ["4. Åh, vad skönt! Vi ___ inte gå till skolan i morgon. Lärarna har konferens.", "4. Oh, how nice! We ___ not have to go to school tomorrow. The teachers have a conference."],
+          ["5. ___ jag låna din penna ett ögonblick?", "5. ___ I borrow your pen for a moment?"],
+          ["6. Patrik ___ inte gifta sig. Han ___ bo ensam.", "6. Patrik does ___ want to get married. He ___ to live alone."],
+          ["7. Vi ___ gå nu! Klockan är mycket.", "7. We ___ go now! It's getting late."],
+          ["8. Mår du inte bra, Nina? Du ___ gå till doktorn.", "8. Aren't you feeling well, Nina? You ___ go to the doctor."],
+          ["9. Jag ___ alltid sova en stund efter lunch.", "9. I ___ always sleep for a while after lunch."],
+          ["10. Min man ___ sluta röka, men han ___ inte. Då ___ han prova Nicorette-tabletter! De är jättebra!", "10. My husband ___ to quit smoking, but he ___ not. Then he ___ try Nicorette tablets! They are really good!"]
+        ] },
+        { heading: "Dialogue exercises 11-12", rows: [
+          ["11. - Jag ___ gå till Systemet. ___ du ha något?", "11. - I ___ going to the liquor store. ___ you want anything?"],
+          ["- Ja, ___ du köpa en flaska Rioja Blanco?", "- Yes, ___ you buy a bottle of Rioja Blanco?"],
+          ["- Vitt eller rött?", "- White or red?"],
+          ["- 'Blanco' betyder 'vitt'! Du ___ lära dig lite spanska!", "- 'Blanco' means 'white'! You ___ learn some Spanish!"],
+          ["12. - ___ vi gå på Strandkaféet och ta en kopp kaffe?", "12. - ___ we go to the beach café and have a cup of coffee?"],
+          ["- Men man ___ inte röka där! ___ vi inte gå någon annanstans? På Stadshotellet? Där ___ man röka.", "- But you ___ not smoke there! ___ we go somewhere else instead? At the city hotel? There you ___ smoke."],
+          ["- ___ du alltid röka? ___ du inte gå ut på gatan med dina äckliga cigarretter?", "- Do you always ___ to smoke? ___ you not go out on the street with your disgusting cigarettes?"],
+          ["- Det är inte lika gott. Men det förstår inte du!", "- It's not as good. But you don't understand that!"]
+        ] }
+      ] }
+    ];
+
+    const week10OffClassTranslations = [
+      { title: "Off-class Page 1 - MIN FRAMTID cover", sections: [
+        { heading: "Cover", rows: [
+          ["MIN FRAMTID", "MY FUTURE."],
+          ["Detta häfte handlar om framtiden.", "This booklet is about the future."],
+          ["Här tränar du på:", "Here you practice:"],
+          ["att använda hjälpverb", "using modal verbs."],
+          ["att skriva och prata om framtiden", "writing and talking about the future."],
+          ["korta svar", "short answers."],
+          ["att återberätta till bilder om en persons framtid", "retelling from pictures about a person's future."],
+          ["att förstå när människor talar om framtiden", "understanding when people talk about the future."],
+          ["att skriva och berätta vad du tänker om framtiden", "writing and telling what you think about the future."],
+          ["pausgympa", "exercise break (QR video at the top left)."]
+        ] }
+      ] },
+      { title: "Off-class Page 2 - A. Amina berättar om sin framtid", sections: [
+        { heading: "Instruction", rows: [
+          ["A. Titta på filmen många gånger. Pausa och säg efter.", "A. Watch the film many times. Pause and repeat."]
+        ] },
+        { heading: "Reading", rows: [
+          ["Min framtid", "My future."],
+          ["Jag heter Amina. Jag läser sfi på Odinsskolan.", "My name is Amina. I study SFI at Odinsskolan."],
+          ["När jag är klar med sfi vill jag jobba.", "When I am finished with SFI I want to work."],
+          ["Jag vill jobba som busschaufför.", "I want to work as a bus driver."],
+          ["Jag vill jobba några år först och spara pengar.", "I want to work a few years first and save money."],
+          ["Det är så mycket jag vill köpa.", "There is so much I want to buy."],
+          ["Jag vill köpa ett hus, ett biljardbord och en katt.", "I want to buy a house, a pool table, and a cat."],
+          ["Sen vill jag resa. Om tre år ska jag resa jorden runt.", "Then I want to travel. In three years I am going to travel around the world."],
+          ["Jag tänker köpa en lägenhet i Spanien. Då kan jag åka dit på semester.", "I am planning to buy an apartment in Spain. Then I can go there on vacation."],
+          ["Jag tänker ge lite pengar till mina släktingar.", "I am planning to give some money to my relatives."],
+          ["Jag ska också ge pengar till andra människor.", "I am also going to give money to other people."],
+          ["Jag vill bygga brunnar i Afrika så att fler människor kan få rent vatten.", "I want to build wells in Africa so that more people can get clean water."],
+          ["Jag hoppas att allt i min framtid blir bra.", "I hope that everything in my future turns out well."]
+        ] }
+      ] },
+      { title: "Off-class Page 3 - B. Skriv orden", sections: [
+        { heading: "Instruction", rows: [
+          ["B. Skriv orden på ett papper på svenska och på ditt språk. Träna på orden.", "B. Write the words on a piece of paper in Swedish and in your language. Practice the words."]
+        ] },
+        { heading: "Word list", rows: [
+          ["klar", "finished / ready"],
+          ["vill", "want to"],
+          ["en busschaufför", "a bus driver"],
+          ["några", "a few / some"],
+          ["spara", "save"],
+          ["ett biljardbord", "a pool table"],
+          ["jorden runt", "around the world"],
+          ["då", "then"],
+          ["en semester", "a vacation"],
+          ["ge", "give"],
+          ["andra", "others"],
+          ["en människa", "a person"],
+          ["bygga", "build"],
+          ["en brunn", "a well"],
+          ["fler", "more"],
+          ["rent", "clean"],
+          ["allt", "everything"],
+          ["blir", "becomes / turns out"]
+        ] }
+      ] },
+      { title: "Off-class Page 4 - C. Frågor och D. Hjälpverb", sections: [
+        { heading: "C. Questions about the text", rows: [
+          ["C. Svara på frågorna till texten.", "C. Answer the questions about the text."],
+          ["1. Vad gör Amina nu?", "1. What is Amina doing now?"],
+          ["2. Vad vill Amina göra efter sfi?", "2. What does Amina want to do after SFI?"],
+          ["3. Varför vill hon spara pengar?", "3. Why does she want to save money?"],
+          ["4. Vad vill Amina köpa?", "4. What does Amina want to buy?"],
+          ["5. Vad ska Amina göra om tre år?", "5. What is Amina going to do in three years?"],
+          ["6. Var vill hon köpa en lägenhet?", "6. Where does she want to buy an apartment?"],
+          ["7. Vad ska Aminas släktingar få?", "7. What are Amina's relatives going to get?"],
+          ["8. Varför vill Amina bygga brunnar i Afrika?", "8. Why does Amina want to build wells in Africa?"],
+          ["9. Vad hoppas Amina?", "9. What does Amina hope?"]
+        ] },
+        { heading: "D. Modal verb translation", rows: [
+          ["D. Titta på filmen om hjälpverb. Översätt meningarna till ditt språk.", "D. Watch the film about modal verbs. Translate the sentences into your language."],
+          ["Jag kan tala arabiska.", "I can speak Arabic."],
+          ["Jag vill jobba som lärare.", "I want to work as a teacher."],
+          ["Jag måste gå hem.", "I have to go home."],
+          ["Jag brukar läsa på kvällarna.", "I usually read in the evenings."],
+          ["Du får inte röka här.", "You are not allowed to smoke here."],
+          ["Han ska åka buss.", "He is going to take the bus."]
+        ] }
+      ] },
+      { title: "Off-class Page 5 - E. Vad vill du göra i framtiden?", sections: [
+        { heading: "Instruction and questions", rows: [
+          ["E. Titta på filmen och svara på frågorna.", "E. Watch the film and answer the questions."],
+          ["Vad vill du göra i framtiden?", "What do you want to do in the future?"],
+          ["1. Var vill du bo?", "1. Where do you want to live?"],
+          ["2. Vad vill du jobba med?", "2. What do you want to work with?"],
+          ["3. Vad vill du göra på fritiden?", "3. What do you want to do in your free time?"],
+          ["4. Vad vill du göra på semestern?", "4. What do you want to do on vacation?"],
+          ["5. Vad vill du köpa?", "5. What do you want to buy?"],
+          ["6. Hur ofta vill du träffa dina släktingar?", "6. How often do you want to meet your relatives?"],
+          ["7. Vill du ha husdjur?", "7. Do you want to have a pet?"],
+          ["8. Vad vill du lära dig i framtiden?", "8. What do you want to learn in the future?"]
+        ] }
+      ] },
+      { title: "Off-class Page 6 - G. och H. Min framtid (lyssna)", sections: [
+        { heading: "G. Listening questions", rows: [
+          ["G. Lyssna på MIN FRAMTID. Ringa in rätt svar.", "G. Listen to MY FUTURE. Circle the correct answer."],
+          ["1. Vad vill Ahmed göra? (Utbilda sig. / Flytta till Norge. / Jobba som kock.)", "1. What does Ahmed want to do? (Get an education. / Move to Norway. / Work as a cook.)"],
+          ["2. Vad är bättre i Norge, säger Ahmed? (naturen / lönen / skolorna)", "2. What is better in Norway, says Ahmed? (the nature / the salary / the schools)"],
+          ["3. Vad jobbar Lena som? (lärare / kock / sjuksköterska)", "3. What does Lena work as? (teacher / cook / nurse)"],
+          ["4. Vad vill Lena göra? (flytta / jobba / studera)", "4. What does Lena want to do? (move / work / study)"],
+          ["5. Vilket språk vill Lena lära sig? (norska / danska / swahili)", "5. Which language does Lena want to learn? (Norwegian / Danish / Swahili)"]
+        ] },
+        { heading: "H. Fill in the missing words", rows: [
+          ["H. Lyssna en gång till och fyll i orden som fattas.", "H. Listen one more time and fill in the missing words."],
+          ["- Ahmed, vad vill du ___ i framtiden?", "- Ahmed, what do you want to ___ in the future?"],
+          ["+ Åh, jag vet ___, men jag vill nog ___ till Norge.", "+ Oh, I don't know ___, but I probably want to ___ to Norway."],
+          ["- Jaså, vad ___ du göra där?", "- Oh, what ___ you do there?"],
+          ["+ Jag är ju klar ___ min utbildning, och nu jobbar jag som sjuksköterska, men jag hörde ___ sjuksköterskor får mycket betalt i Norge.", "+ I have finished ___ my education, and now I work as a nurse, but I heard ___ nurses get paid a lot in Norway."],
+          ["- Jaha, då förstår jag att du ___ flytta.", "- I see, then I understand that you ___ to move."],
+          ["+ ___ vill du göra i framtiden, Lena?", "+ ___ do you want to do in the future, Lena?"],
+          ["- Nu jobbar jag ju som kock, men jag vill göra något nytt. Jag vill gärna plugga ___.", "- Right now I work as a cook, but I want to do something new. I would like to study ___."],
+          ["+ Då kan du följa med ___ till Norge och lära ___ norska.", "+ Then you could come along ___ to Norway and learn ___ Norwegian."]
+        ] }
+      ] },
+      { title: "Off-class Page 7 - L. Gör bra meningar", sections: [
+        { heading: "Instruction", rows: [
+          ["L. Gör bra meningar av orden. Börja med subjekt.", "L. Make correct sentences from the words. Start with the subject."]
+        ] },
+        { heading: "Word sets to reorder", rows: [
+          ["Danmark vill jag resa till", "(unscrambled) Jag vill resa till Danmark. - I want to travel to Denmark."],
+          ["dansa vi brukar på söndagar", "(unscrambled) Vi brukar dansa på söndagar. - We usually dance on Sundays."],
+          ["träna svenska varje dag du måste", "(unscrambled) Du måste träna svenska varje dag. - You must practice Swedish every day."],
+          ["hon på tisdagar tvätta brukar", "(unscrambled) Hon brukar tvätta på tisdagar. - She usually does laundry on Tuesdays."],
+          ["åka till stockholm de imorgon ska", "(unscrambled) De ska åka till Stockholm imorgon. - They are going to Stockholm tomorrow."],
+          ["måste hem gå jag nu", "(unscrambled) Jag måste gå hem nu. - I have to go home now."],
+          ["kan tre språk tala han", "(unscrambled) Han kan tala tre språk. - He can speak three languages."],
+          ["behöver lära sig svenska nu hon", "(unscrambled) Hon behöver lära sig svenska nu. - She needs to learn Swedish now."],
+          ["brukar på morgonen dricka te de", "(unscrambled) De brukar dricka te på morgonen. - They usually drink tea in the morning."],
+          ["röka inte här du får", "(unscrambled) Du får inte röka här. - You are not allowed to smoke here."],
+          ["min mamma ska träffa jag imorgon", "(unscrambled) Jag ska träffa min mamma imorgon. - I am going to meet my mom tomorrow."],
+          ["tänker jag i framtiden jobba som pilot", "(unscrambled) Jag tänker jobba som pilot i framtiden. - I am planning to work as a pilot in the future."]
+        ] }
+      ] },
+      { title: "Off-class Page 8 - M. och N. Svara på frågorna", sections: [
+        { heading: "M. Personal questions", rows: [
+          ["M. Svara på frågorna.", "M. Answer the questions."],
+          ["1. Vad ska du göra i morgon?", "1. What are you going to do tomorrow?"],
+          ["2. Vad vill du äta ikväll?", "2. What do you want to eat tonight?"],
+          ["3. Vad brukar du göra på helgerna?", "3. What do you usually do on weekends?"],
+          ["4. Vad behöver du göra idag?", "4. What do you need to do today?"],
+          ["5. Vad kan du göra?", "5. What can you do?"],
+          ["6. Vad vill du göra när du är ledig?", "6. What do you want to do when you are off work?"],
+          ["7. Vad brukar du äta på morgonen?", "7. What do you usually eat in the morning?"],
+          ["8. Vad får du inte göra?", "8. What are you not allowed to do?"]
+        ] },
+        { heading: "N. Short answers", rows: [
+          ["N. Titta på filmen om Korta svar. Svara på frågorna.", "N. Watch the film about Short answers. Answer the questions."],
+          ["T.ex. Kan du skriva? Ja, det kan jag / Nej, det kan jag inte.", "Example: Can you write? Yes, I can. / No, I can't."],
+          ["1. Kan du tala svenska?", "1. Can you speak Swedish?"],
+          ["2. Vill du sjunga?", "2. Do you want to sing?"],
+          ["3. Måste du träna?", "3. Do you have to exercise?"],
+          ["4. Brukar du ljuga?", "4. Do you usually lie?"]
+        ] }
+      ] },
+      { title: "Off-class Page 9 - N. fortsättning", sections: [
+        { heading: "N. Short answers, continued", rows: [
+          ["5. Ska du åka utomlands?", "5. Are you going abroad?"],
+          ["6. Försöker du lära dig svenska?", "6. Are you trying to learn Swedish?"],
+          ["7. Får du köra bil?", "7. Are you allowed to drive a car?"],
+          ["8. Brukar du röka?", "8. Do you usually smoke?"],
+          ["9. Måste du laga mat idag?", "9. Do you have to cook today?"],
+          ["10. Vill du åka till Malmö?", "10. Do you want to go to Malmö?"],
+          ["11. Behöver du äta?", "11. Do you need to eat?"],
+          ["12. Kan du vissla?", "12. Can you whistle?"],
+          ["13. Får jag krama dig?", "13. May I hug you?"],
+          ["14. Vill du åka hem?", "14. Do you want to go home?"],
+          ["15. Dansar du på torsdagar?", "15. Do you dance on Thursdays?"],
+          ["16. Fikar du på helgerna?", "16. Do you have a fika on weekends?"],
+          ["17. Röker du?", "17. Do you smoke?"],
+          ["18. Är du gift?", "18. Are you married?"],
+          ["19. Är du sjuk?", "19. Are you sick?"],
+          ["20. Tycker du om kaffe?", "20. Do you like coffee?"],
+          ["21. Läser du svenska?", "21. Are you studying Swedish?"],
+          ["22. Lyssnar du på musik nu?", "22. Are you listening to music now?"],
+          ["23. Tänker du på ditt hemland?", "23. Are you thinking about your home country?"],
+          ["24. Förstår du vad jag säger?", "24. Do you understand what I am saying?"]
+        ] }
+      ] },
+      { title: "Off-class Page 10 - O. Diktamen", sections: [
+        { heading: "Instruction", rows: [
+          ["O. Lyssna på orden och skriv dem på raderna. Öva fyra gånger.", "O. Listen to the words and write them on the lines. Practice four times."],
+          ["(Fyra numrerade kolumner med tomma rader 1-10 för diktamen från videon, upprepade fyra gånger.)", "(Four numbered columns with blank lines 1-10 for dictation from the video, repeated four times.)"]
         ] }
       ] }
     ];
@@ -7604,6 +7942,66 @@
       setPage(0);
     }
 
+    function renderWeek10OffClassTerms() {
+      const grid = document.querySelector("#week10OffClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week10OffClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek10OffClassComparison() {
+      const thumbs = document.querySelector("#week10OffClassCompareThumbs");
+      const image = document.querySelector("#week10OffClassCompareImage");
+      const overlay = document.querySelector("#week10OffClassCompareQrOverlay");
+      const panel = document.querySelector("#week10OffClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week10OffClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week10-off-class-pages/page-${page}.jpg`;
+        image.alt = `Week 10 off-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week10OffClassPageSizes, week10OffClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">Off-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week10OffClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week10OffClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
@@ -7783,6 +8181,8 @@
     renderWeek9OffClassComparison();
     renderWeek10InClassTerms();
     renderWeek10InClassComparison();
+    renderWeek10OffClassTerms();
+    renderWeek10OffClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
