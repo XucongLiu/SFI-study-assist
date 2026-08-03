@@ -1190,6 +1190,13 @@
     <span class="nav-label week-nav" data-week="week10">Off-class</span>
     <a class="week-nav" data-week="week10" href="#week10-off-class-compare">Translations</a>
     <a class="week-nav" data-week="week10" href="#week10-off-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week11">Week 11</span>
+    <span class="nav-label week-nav" data-week="week11">In-class</span>
+    <a class="week-nav" data-week="week11" href="#week11">Overview</a>
+    <a class="week-nav" data-week="week11" href="#week11-in-class-compare">Translations</a>
+    <a class="week-nav" data-week="week11" href="#week11-in-class-words">Word Learning</a>
+    <span class="nav-label week-nav" data-week="week11">Off-class</span>
+    <a class="week-nav" data-week="week11" href="#week11-off-class">Add Pages Later</a>
   </nav>
 
   <aside class="video-dock" id="videoDock" aria-label="Embedded YouTube player">
@@ -1250,6 +1257,7 @@
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week8">Week 8</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week9">Week 9</button>
     <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week10">Week 10</button>
+    <button class="week-tab" type="button" role="tab" aria-selected="false" data-week-tab="week11">Week 11</button>
   </div>
 
   <header id="week1" class="week-panel" data-week="week1">
@@ -1993,6 +2001,57 @@
       <p class="section-lead">Important Week 10 off-class words from the MIN FRAMTID booklet. Each entry shows Swedish, English, and a play button for pronunciation.</p>
       <div class="panel pad">
         <div class="term-list" id="week10OffClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week11" class="week-panel" data-week="week11">
+      <div class="hero">
+        <div>
+          <h1>SFI Week 11</h1>
+          <p>Bostad (housing) grammar level 1: living in a collective household — vocabulary, word order, conjunctions, subordinate clauses, reflexive pronouns, adjective forms, verb forms, and a listening exercise.</p>
+          <div class="actions">
+            <a class="btn primary" href="#week11-in-class-compare">Study In-class Pages</a>
+            <a class="btn" href="#week11-in-class-words">Practice Words</a>
+          </div>
+          <div class="material-switch">
+            <a class="material-card" href="#week11-in-class-compare"><strong>In-class material</strong><span>Eight classroom pages: Bo i kollektiv word list, word order, conjunctions, subordinate clauses, pronouns, adjectives, verb forms, and listening.</span></a>
+            <a class="material-card" href="#week11-off-class"><strong>Off-class material</strong><span>No Week 11 off-class pages have been uploaded yet. This slot is ready for them.</span></a>
+          </div>
+        </div>
+        <div class="scan-preview" aria-label="Week 11 in-class grammar preview">
+          <img src="assets/sfi-week11-in-class-pages/page-01.jpg" alt="Week 11 in-class page: Bo i kollektiv word list" />
+        </div>
+      </div>
+    </section>
+
+    <section id="week11-in-class-compare" class="week-panel" data-week="week11">
+      <h2>In-class Translation</h2>
+      <p class="section-lead">Compare the Week 11 classroom page photos with English translations. Click Swedish snippets on the right to hear the pronunciation.</p>
+      <div class="compare">
+        <div class="thumbs" id="week11InClassCompareThumbs"></div>
+        <div class="page-frame">
+          <div class="qr-stage">
+            <img id="week11InClassCompareImage" src="assets/sfi-week11-in-class-pages/page-01.jpg" alt="Week 11 in-class page 1 for translation comparison" />
+            <div class="qr-overlay" id="week11InClassCompareQrOverlay"></div>
+          </div>
+        </div>
+        <div class="translation-panel" id="week11InClassTranslationPanel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="week11-in-class-words" class="week-panel" data-week="week11">
+      <h2>In-class Word Learning</h2>
+      <p class="section-lead">Important Week 11 in-class words from the Bo i kollektiv housing worksheet. Each entry shows Swedish, English, and a play button for pronunciation.</p>
+      <div class="panel pad">
+        <div class="term-list" id="week11InClassTerms"></div>
+      </div>
+    </section>
+
+    <section id="week11-off-class" class="week-panel" data-week="week11">
+      <h2>Off-class Material</h2>
+      <p class="section-lead">No Week 11 off-class page photos were found in the raw image folder yet.</p>
+      <div class="panel pad">
+        <p class="note">When Week 11 off-class images are added later, put them in the Week 11 raw folder and run the same update process. This section is already reserved for them.</p>
       </div>
     </section>
 
@@ -6883,6 +6942,243 @@
       ] }
     ];
 
+    const week11InClassPageSizes = {
+      1: [1400, 1867], 2: [1400, 1867], 3: [1400, 1867],
+      4: [1400, 1867], 5: [1400, 1867], 6: [1400, 1867],
+      7: [1400, 1867], 8: [1400, 1867]
+    };
+
+    const week11InClassQrCodes = [
+      { page: 1, type: "url", value: "https://blip.sano.ma/player/a/3UlvG", x: 1086, y: 97, w: 93, h: 84 }
+    ];
+
+    const week11InClassTerms = [
+      ["ett kollektiv", "a collective / shared household"], ["en flickvän", "a girlfriend"], ["en kilometer", "a kilometer"],
+      ["var sin", "one each"], ["flyttar ihop", "move in together"], ["istället", "instead"],
+      ["nyfiken", "curious"], ["en medlem", "a member"], ["kemi", "chemistry"],
+      ["IT", "IT / information technology"], ["en konsult", "a consultant"], ["en förskollärare", "a preschool teacher"],
+      ["en kvadratmeter", "a square meter"], ["gör sig i ordning", "get ready"], ["hellre", "rather / preferably"],
+      ["snackar", "chat / talk"], ["ett krav", "a demand / requirement"], ["umgås", "socialize / spend time together"],
+      ["är för sig själv", "is by oneself / keeps to oneself"], ["praktisk", "practical"], ["en fördel", "an advantage"],
+      ["gemensam", "shared / common"], ["undviker", "avoids"], ["en konflikt", "a conflict"],
+      ["visar hänsyn", "shows consideration"], ["säger till", "lets someone know / speaks up"], ["i förväg", "in advance"],
+      ["rak och ärlig", "direct and honest"], ["en lapp", "a note"], ["även om", "even if"],
+      ["en barnpassning", "childcare / babysitting"], ["ordföljd", "word order"], ["rak ordföljd", "straight word order"],
+      ["omvänd ordföljd", "inverted word order"], ["subjekt", "subject"], ["bindeord", "conjunction"],
+      ["en bisats", "a subordinate clause"], ["reflexivt pronomen", "reflexive pronoun"], ["adjektiv", "adjective"],
+      ["presens", "present tense"], ["preteritum", "past tense"], ["supinum", "supine (verb form used with 'har')"],
+      ["planerar", "plans"], ["tittar", "watches / looks"], ["hittar", "finds"],
+      ["hyr", "rents"], ["studerar", "studies"], ["delar", "shares"],
+      ["står", "stands"], ["sitter", "sits"], ["stänger", "closes"],
+      ["lånar", "borrows"], ["hjälper", "helps"], ["följer", "follows"],
+      ["visar", "shows"], ["tar med", "brings"], ["pratar", "talks"],
+      ["skriver", "writes"], ["hörförståelse", "listening comprehension"], ["boende", "housing / accommodation"],
+      ["närheten till parker", "proximity to parks"], ["hyran", "the rent"], ["området", "the area"],
+      ["köket", "the kitchen"], ["grannarna", "the neighbors"], ["trädgården", "the garden"],
+      ["balkongen", "the balcony"]
+    ];
+
+    const week11InClassTranslations = [
+      { title: "In-class Page 1 - Bo i kollektiv: Ordlista (1-18)", sections: [
+        { heading: "Instruction", rows: [
+          ["Bo i kollektiv", "Living in a collective household."],
+          ["Ordlista", "Word list."],
+          ["Öva uttalet med din lärare.", "Practice the pronunciation with your teacher."],
+          ["Översätt orden till ditt språk.", "Translate the words into your language."],
+          ["Träna att skriva orden på svenska.", "Practice writing the words in Swedish."]
+        ] },
+        { heading: "Word list (with pronunciation guide)", rows: [
+          ["1 ett kollektiv (kåll-ek-tiv)", "1 a collective / shared household."],
+          ["2 en flickvän (flick-vän)", "2 a girlfriend."],
+          ["3 en kilometer (tji-lo-me-ter)", "3 a kilometer."],
+          ["4 var sin (va-shin)", "4 one each."],
+          ["5 flyttar ihop (flytt-ar-i-hop)", "5 move in together."],
+          ["6 istället (i-ställ-e)", "6 instead."],
+          ["7 nyfiken (ny-fi-ken)", "7 curious."],
+          ["8 en medlem (med-lem)", "8 a member."],
+          ["9 kemi (tje-mi)", "9 chemistry."],
+          ["10 IT (i-te)", "10 IT."],
+          ["11 en konsult (kån-sult)", "11 a consultant."],
+          ["12 en förskollärare (fö-shko-lä-ra-re)", "12 a preschool teacher."],
+          ["13 en kvadratmeter (kva-drat-me-ter)", "13 a square meter."],
+          ["14 gör sig i ordning (jö-shej-i-åd-ning)", "14 get ready."],
+          ["15 hellre (hell-re)", "15 rather / preferably."],
+          ["16 snackar (snack-ar)", "16 chat / talk."],
+          ["17 ett krav (krav)", "17 a demand / requirement."],
+          ["18 umgås (um-gås)", "18 socialize / spend time together."]
+        ] }
+      ] },
+      { title: "In-class Page 2 - Bo i kollektiv: Ordlista (19-31)", sections: [
+        { heading: "Word list (with pronunciation guide)", rows: [
+          ["19 är för sig själv (ä-fö-shej-själv)", "19 is by oneself / keeps to oneself."],
+          ["20 praktisk (prak-tisk)", "20 practical."],
+          ["21 en fördel (fö-del)", "21 an advantage."],
+          ["22 gemensam (je-men-sam)", "22 shared / common."],
+          ["23 undviker (und-vik-er)", "23 avoids."],
+          ["24 en konflikt (kån-flikt)", "24 a conflict."],
+          ["25 visar hänsyn (vi-sar-hän-syn)", "25 shows consideration."],
+          ["26 säger till (säje-till)", "26 lets someone know / speaks up."],
+          ["27 i förväg (i-för-väg)", "27 in advance."],
+          ["28 rak och ärlig (rak-å-ä-li)", "28 direct and honest."],
+          ["29 en lapp (lapp)", "29 a note."],
+          ["30 även om (ä-ven-åm)", "30 even if."],
+          ["31 en barnpassning (ban-pass-ning)", "31 childcare / babysitting."]
+        ] }
+      ] },
+      { title: "In-class Page 3 - Grammatik A: Ordföljd (rak)", sections: [
+        { heading: "Instruction", rows: [
+          ["A Ordföljd", "A. Word order."],
+          ["Rak ordföljd", "Straight word order."],
+          ["Skriv meningar. Börja med subjekt. Använd stor bokstav och punkt.", "Write sentences. Start with the subject. Use a capital letter and a period."],
+          ["Exempel: bor / en kilometer ifrån varandra / de -> De bor en kilometer ifrån varandra.", "Example: live / a kilometer from each other / they -> They live a kilometer from each other."]
+        ] },
+        { heading: "Exercise (rearrange into straight word order)", rows: [
+          ["1 på universitetet / Maria / studerar / kemi", "1 at the university / Maria / studies / chemistry -> Maria studerar kemi på universitetet."],
+          ["2 två badrum / finns / det", "2 two bathrooms / there is / it -> Det finns två badrum."],
+          ["3 ett eget rum / har / alla", "3 a room of one's own / has / everyone -> Alla har ett eget rum."],
+          ["4 på / teven / sällan / är", "4 on / the TV / rarely / is -> Teven är sällan på."],
+          ["5 alltid / varandra / hjälper / vi", "5 always / each other / help / we -> Vi hjälper alltid varandra."],
+          ["6 visa hänsyn / alla / måste", "6 show consideration / everyone / must -> Alla måste visa hänsyn."],
+          ["7 gör sig i ordning / alla / på morgonen", "7 get ready / everyone / in the morning -> Alla gör sig i ordning på morgonen."],
+          ["8 vid köksbordet / hellre / sitter / de", "8 at the kitchen table / rather / sit / they -> De sitter hellre vid köksbordet."],
+          ["9 arga lappar / de / skriver / inte", "9 angry notes / they / write / not -> De skriver inte arga lappar."],
+          ["10 inte / flytta / vill / de", "10 not / move / want / they -> De vill inte flytta."]
+        ] }
+      ] },
+      { title: "In-class Page 4 - Omvänd ordföljd", sections: [
+        { heading: "Start with time", rows: [
+          ["Omvänd ordföljd", "Inverted word order."],
+          ["Börja med tid.", "Start with time."],
+          ["Exempel: får / en idé / då / de -> Då får de en idé.", "Example: get / an idea / then / they -> Then they get an idea."],
+          ["11 har / varit tillsammans / i ett år / de", "11 have / been together / for a year / they -> I ett år har de varit tillsammans."],
+          ["12 flytta ihop / ska / de / nu", "12 move in together / shall / they / now -> Nu ska de flytta ihop."],
+          ["13 in / Maria / flyttar / först", "13 in / Maria / moves / first -> Först flyttar Maria in."],
+          ["14 Miguel / flyttar / sedan / in", "14 Miguel / moves / then / in -> Sedan flyttar Miguel in."],
+          ["15 i kollektiv / i framtiden / de / vill / bo", "15 in a collective / in the future / they / want / live -> I framtiden vill de bo i kollektiv."]
+        ] },
+        { heading: "Start with place", rows: [
+          ["Börja med plats.", "Start with place."],
+          ["Exempel: umgås / i lägenheten / de -> I lägenheten umgås de.", "Example: socialize / in the apartment / they -> In the apartment they socialize."],
+          ["16 bor / en kilometer ifrån varandra / de", "16 live / a kilometer from each other / they -> En kilometer ifrån varandra bor de."],
+          ["17 en tv / i vardagsrummet / står", "17 a TV / in the living room / stands -> I vardagsrummet står en tv."],
+          ["18 vid köksbordet / de / sitter", "18 at the kitchen table / they / sit -> Vid köksbordet sitter de."],
+          ["19 Maria / på universitetet / studerar", "19 Maria / at the university / studies -> På universitetet studerar Maria."],
+          ["20 två badrum / i lägenheten / finns / det", "20 two bathrooms / in the apartment / there is / it -> I lägenheten finns det två badrum."]
+        ] }
+      ] },
+      { title: "In-class Page 5 - B Bindeord, C Bisatser", sections: [
+        { heading: "B. Conjunctions", rows: [
+          ["B Bindeord", "B. Conjunctions."],
+          ["Skriv ett bindeord som binder samman meningarna. Välj bland orden till höger.", "Write a conjunction that joins the sentences. Choose among the words on the right."],
+          ["Exempel: De tittar på några lägenheter men de hittar ingen som de gillar. (så/men/utan)", "Example: They look at some apartments but they don't find one they like. (so/but/but rather)"],
+          ["1 De hyr en femma ___ startar ett kollektiv. (och/för/eller)", "1 They rent a five-room apartment ___ start a collective household. (and/because/or) -> ...och startar..."],
+          ["2 Alla har ett eget rum ___ de delar på kök. (så/men/eller)", "2 Everyone has their own room ___ they share a kitchen. (so/but/or) -> ...men de delar..."],
+          ["3 De har en tv ___ den är sällan på. (men/så/för)", "3 They have a TV ___ it is rarely on. (but/so/because) -> ...men den är..."],
+          ["4 De har några regler ___ de vill undvika konflikter. (för/men/så)", "4 They have some rules ___ they want to avoid conflicts. (because/but/so) -> ...för de vill..."],
+          ["5 En regel är att vara rak och ärlig ___ de pratar direkt med varandra. (men/så/utan)", "5 One rule is to be direct and honest ___ they speak directly with each other. (but/so/instead) -> ...så de pratar..."],
+          ["6 De skriver inte arga lappar ___ de pratar direkt med varandra. (men/utan/eller)", "6 They don't write angry notes ___ they speak directly with each other. (but/instead/or) -> ...utan de pratar..."],
+          ["7 De trivs ___ vill inte flytta. (eller/men/och)", "7 They enjoy living there ___ don't want to move. (or/but/and) -> ...och vill inte..."],
+          ["8 Ett kollektiv passar Sanna och Andreas ___ båda är sociala. (så/men/för)", "8 A collective household suits Sanna and Andreas ___ they are both social. (so/but/because) -> ...för båda är..."]
+        ] },
+        { heading: "C. Subordinate clauses", rows: [
+          ["C Bisatser", "C. Subordinate clauses."],
+          ["Stryk under bisatserna.", "Underline the subordinate clauses."],
+          ["Exempel: De har några gemensamma regler som alla måste följa.", "Example: They have some shared rules that everyone must follow. (underline: som alla måste följa)"],
+          ["1 Vi sitter hellre vid köksbordet och snackar när vi är hemma.", "1 We prefer sitting at the kitchen table and chatting when we are home. (underline: när vi är hemma)"],
+          ["2 Man kan låna av varandra om man har slut på mjölk.", "2 You can borrow from each other if you run out of milk. (underline: om man har slut på mjölk)"],
+          ["3 De vill inte flytta även om de får barn i framtiden.", "3 They don't want to move even if they have children in the future. (underline: även om de får barn i framtiden)"],
+          ["4 De trivs bra eftersom de är sociala människor.", "4 They enjoy living there because they are social people. (underline: eftersom de är sociala människor)"]
+        ] },
+        { heading: "Continue the sentences with a subordinate clause", rows: [
+          ["Exempel: De har några gemensamma regler som de har bestämt tillsammans.", "Example: They have some shared rules that they have decided on together."],
+          ["5 Jag sitter alltid vid köksbordet när ___", "5 I always sit at the kitchen table when ___"],
+          ["6 Jag brukar låna mjölk av min granne om ___", "6 I usually borrow milk from my neighbor if ___"],
+          ["7 Jag vill inte flytta även om ___", "7 I don't want to move even if ___"],
+          ["8 Jag trivs bra i min lägenhet eftersom ___", "8 I enjoy living in my apartment because ___"]
+        ] }
+      ] },
+      { title: "In-class Page 6 - D Pronomen, E Adjektiv", sections: [
+        { heading: "D. Reflexive pronouns", rows: [
+          ["D Pronomen", "D. Pronouns."],
+          ["Skriv rätt form av reflexivt pronomen i meningarna.", "Write the correct form of the reflexive pronoun in the sentences."],
+          ["Exempel: Alla gör sig i ordning.", "Example: Everyone gets themselves ready."],
+          ["1 Jag gör ___ i ordning.", "1 I get ___ ready. (mig)"],
+          ["2 - När gör du ___ i ordning?", "2 - When do you get ___ ready? (dig)"],
+          ["3 Han gör ___ i ordning framför tv:n.", "3 He gets ___ ready in front of the TV. (sig)"],
+          ["4 - Anna och Kajsa! Gör ___ i ordning nu! Skolan börjar snart, ropar deras pappa.", "4 - Anna and Kajsa! Get ___ ready now! School starts soon, their dad shouts. (er)"],
+          ["5 - Kan du hjälpa mig att göra ___ i ordning? frågar flickan sin mamma.", "5 - Can you help me get ___ ready? the girl asks her mom. (mig)"],
+          ["6 Min bror tycker om att vara för ___ själv.", "6 My brother likes being by ___. (sig)"],
+          ["7 - Vill du ha sällskap eller vill du vara för ___ själv?", "7 - Do you want company or do you want to be by ___? (dig)"],
+          ["8 Vi vill vara för ___ själva nu.", "8 We want to be by ___ now. (oss)"],
+          ["9 Jag vill vara för ___ själv när jag är stressad.", "9 I want to be by ___ when I am stressed. (mig)"],
+          ["10 Johan och Lia är kära och de vill vara för ___ själva.", "10 Johan and Lia are in love and they want to be by ___. (sig)"]
+        ] },
+        { heading: "E. Adjectives", rows: [
+          ["E Adjektiv", "E. Adjectives."],
+          ["Skriv adjektiven i rätt form. Välj bland orden till höger.", "Write the adjectives in the correct form. Choose among the words on the right."],
+          ["Exempel: Min kompis är ärlig. (ärlig/ärligt/ärliga)", "Example: My friend is honest. (honest - en-form/ett-form/plural)"],
+          ["1 Andreas och Sanna är ___ människor. (social/socialt/sociala)", "1 Andreas and Sanna are ___ people. (social) -> sociala"],
+          ["2 Jag har en ___ granne. (nyfiken/nyfiket/nyfikna)", "2 I have a ___ neighbor. (curious) -> nyfiken"],
+          ["3 De har några ___ regler. (gemensam/gemensamt/gemensamma)", "3 They have some ___ rules. (shared) -> gemensamma"],
+          ["4 De skriver inte ___ lappar. (arg/argt/arga)", "4 They don't write ___ notes. (angry) -> arga"],
+          ["5 Det är en ___ regel. (viktig/viktigt/viktiga)", "5 It is an ___ rule. (important) -> viktig"],
+          ["6 Det finns några ___ fördelar med att bo i kollektiv. (praktisk/praktiskt/praktiska)", "6 There are some ___ advantages to living in a collective household. (practical) -> praktiska"],
+          ["7 På gården finns en ___ lekplats. (gemensam/gemensamt/gemensamma)", "7 In the courtyard there is a ___ playground. (shared) -> gemensam"],
+          ["8 Jag vill ha ett ___ svar. (ärlig/ärligt/ärliga)", "8 I want an ___ answer. (honest) -> ärligt"]
+        ] }
+      ] },
+      { title: "In-class Page 7 - F Verb: verbformer", sections: [
+        { heading: "Instruction", rows: [
+          ["F Verb", "F. Verbs."],
+          ["Fyll i verbens olika former.", "Fill in the different forms of the verbs."],
+          ["presens / preteritum / supinum", "present tense / past tense / supine."],
+          ["Exempel: är / var / varit", "Example: is / was / been."]
+        ] },
+        { heading: "Verbs to conjugate (presens / preteritum / supinum)", rows: [
+          ["1 bor", "1 live(s) -> bor / bodde / bott."],
+          ["2 planerar", "2 plan(s) -> planerar / planerade / planerat."],
+          ["3 flyttar", "3 move(s) -> flyttar / flyttade / flyttat."],
+          ["4 tittar", "4 watch(es) / look(s) -> tittar / tittade / tittat."],
+          ["5 hittar", "5 find(s) -> hittar / hittade / hittat."],
+          ["6 hyr", "6 rent(s) -> hyr / hyrde / hyrt."],
+          ["7 studerar", "7 study/studies -> studerar / studerade / studerat."],
+          ["8 delar", "8 share(s) -> delar / delade / delat."],
+          ["9 står", "9 stand(s) -> står / stod / stått."],
+          ["10 sitter", "10 sit(s) -> sitter / satt / suttit."],
+          ["11 snackar", "11 chat(s) -> snackar / snackade / snackat."],
+          ["12 stänger", "12 close(s) -> stänger / stängde / stängt."],
+          ["13 lånar", "13 borrow(s) -> lånar / lånade / lånat."],
+          ["14 hjälper", "14 help(s) -> hjälper / hjälpte / hjälpt."],
+          ["15 säger till", "15 lets know / speaks up -> säger till / sa till / sagt till."],
+          ["16 följer", "16 follow(s) -> följer / följde / följt."],
+          ["17 visar", "17 show(s) -> visar / visade / visat."],
+          ["18 tar med", "18 bring(s) -> tar med / tog med / tagit med."],
+          ["19 pratar", "19 talk(s) -> pratar / pratade / pratat."],
+          ["20 skriver", "20 write(s) -> skriver / skrev / skrivit."]
+        ] }
+      ] },
+      { title: "In-class Page 8 - Hörförståelse", sections: [
+        { heading: "Instruction", rows: [
+          ["Hörförståelse", "Listening comprehension."],
+          ["Du kommer att få lyssna på fem personer som berättar om sitt boende.", "You are going to listen to five people talking about their housing."],
+          ["Du får lyssna två gånger.", "You get to listen twice."],
+          ["Du ska svara på vad de tycker är bra med sitt boende.", "You should answer what they think is good about their housing."],
+          ["Skriv 1 vid det alternativ som person nummer 1 tycker om o.s.v.", "Write 1 next to the option that person number 1 likes, and so on."],
+          ["Observera att två av alternativen blir över.", "Note that two of the options will be left over."],
+          ["Börja med att läsa alternativen.", "Start by reading the options."]
+        ] },
+        { heading: "Options", rows: [
+          ["Närheten till parker", "Proximity to parks."],
+          ["Hyran", "The rent."],
+          ["Området", "The area."],
+          ["Köket", "The kitchen."],
+          ["Grannarna", "The neighbors."],
+          ["Trädgården", "The garden."],
+          ["Balkongen", "The balcony."]
+        ] }
+      ] }
+    ];
+
     function renderAlphabet() {
       const grid = document.querySelector("#alphabetGrid");
       grid.innerHTML = "";
@@ -8002,14 +8298,74 @@
       setPage(0);
     }
 
+    function renderWeek11InClassTerms() {
+      const grid = document.querySelector("#week11InClassTerms");
+      if (!grid) return;
+      grid.innerHTML = "";
+      week11InClassTerms.forEach(([sv, en]) => {
+        const item = document.createElement("div");
+        item.className = "term";
+        item.innerHTML = `<span><strong>${sv}</strong><br><span class="en">${en}</span></span><button class="speak-button" type="button" aria-label="Hear ${sv}"></button>`;
+        item.querySelector("button").addEventListener("click", () => speak(sv));
+        grid.appendChild(item);
+      });
+    }
+
+    function renderWeek11InClassComparison() {
+      const thumbs = document.querySelector("#week11InClassCompareThumbs");
+      const image = document.querySelector("#week11InClassCompareImage");
+      const overlay = document.querySelector("#week11InClassCompareQrOverlay");
+      const panel = document.querySelector("#week11InClassTranslationPanel");
+      if (!thumbs || !image || !overlay || !panel) return;
+
+      function setPage(index) {
+        const pageNumber = index + 1;
+        const page = String(pageNumber).padStart(2, "0");
+        const data = week11InClassTranslations[index];
+        [...thumbs.children].forEach(child => child.classList.remove("active"));
+        thumbs.children[index].classList.add("active");
+        image.src = `assets/sfi-week11-in-class-pages/page-${page}.jpg`;
+        image.alt = `Week 11 in-class page ${pageNumber} for translation comparison`;
+        renderQrOverlay(pageNumber, overlay, week11InClassPageSizes, week11InClassQrCodes);
+
+        panel.innerHTML = `<h3>${data.title}</h3><p class="note">In-class page photo on the left, English translation on the right.</p><p class="qr-summary">${qrSummary(pageNumber, week11InClassQrCodes)}</p>`;
+        data.sections.forEach(section => {
+          const block = document.createElement("div");
+          block.className = "translation-block";
+          block.innerHTML = `<h4>${section.heading}</h4>`;
+          section.rows.forEach(([sv, en]) => {
+            const row = document.createElement("div");
+            row.className = "translation-row";
+            const english = document.createElement("div");
+            english.className = "en";
+            english.textContent = en;
+            row.append(createSpeakableText(sv), english);
+            block.appendChild(row);
+          });
+          panel.appendChild(block);
+        });
+      }
+
+      week11InClassTranslations.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.textContent = `Page ${index + 1}`;
+        if (index === 0) button.classList.add("active");
+        button.addEventListener("click", () => setPage(index));
+        thumbs.appendChild(button);
+      });
+
+      setPage(0);
+    }
+
     function weekForHash(hash) {
       if (!hash) return localStorage.getItem("sfi-active-week") || "week1";
       const target = document.querySelector(hash);
-      return target?.dataset?.week || (hash.startsWith("#week10") ? "week10" : hash.startsWith("#week9") ? "week9" : hash.startsWith("#week8") ? "week8" : hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
+      return target?.dataset?.week || (hash.startsWith("#week11") ? "week11" : hash.startsWith("#week10") ? "week10" : hash.startsWith("#week9") ? "week9" : hash.startsWith("#week8") ? "week8" : hash.startsWith("#week7") ? "week7" : hash.startsWith("#week6") ? "week6" : hash.startsWith("#week5") ? "week5" : hash.startsWith("#week4") ? "week4" : hash.startsWith("#week3") ? "week3" : hash.startsWith("#week2") ? "week2" : "week1");
     }
 
     function setActiveWeek(week, options = {}) {
-      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10"].includes(week) ? week : "week1";
+      const activeWeek = ["week1", "week2", "week3", "week4", "week5", "week6", "week7", "week8", "week9", "week10", "week11"].includes(week) ? week : "week1";
       document.querySelectorAll(".week-panel").forEach(panel => {
         panel.hidden = panel.dataset.week !== activeWeek;
       });
@@ -8183,6 +8539,8 @@
     renderWeek10InClassComparison();
     renderWeek10OffClassTerms();
     renderWeek10OffClassComparison();
+    renderWeek11InClassTerms();
+    renderWeek11InClassComparison();
 
     setActiveWeek(weekForHash(location.hash));
 
